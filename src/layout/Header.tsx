@@ -11,7 +11,7 @@ const items = [
   { href: "/news", label: "News" },
   { href: "/aboutus", label: "About Us" },
   { href: "/contact", label: "Contact" },
-  { href: "/member", label: "Member" },
+  { href: "/members", label: "Members" },
 ];
 
 /**
