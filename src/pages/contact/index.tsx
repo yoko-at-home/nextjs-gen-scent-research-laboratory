@@ -5,7 +5,7 @@ import { useState } from "react";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
-import { FixedLayout } from "src/layout";
+import { FluidLayout } from "src/layout";
 
 const Contact: NextPage = () => {
   const router = useRouter();
@@ -52,7 +52,7 @@ const Contact: NextPage = () => {
   };
 
   return (
-    <FixedLayout>
+    <FluidLayout>
       <PageSEO title={`Contact- ${siteMetadata.author}`} description={siteMetadata.description} />
 
       <PageTitle>Contact</PageTitle>
@@ -125,7 +125,7 @@ const Contact: NextPage = () => {
           </form>
         </div>
       </div>
-    </FixedLayout>
+    </FluidLayout>
   );
 };
 
