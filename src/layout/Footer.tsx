@@ -14,6 +14,9 @@ export const Footer: VFC = () => {
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>All Rights Reserved.</div>
         </div>
+        <div className="flex mb-2 space-x-2 text-sm">
+          <Link href="/privacy">個人情報保護方針</Link>
+        </div>
         <div className="my-8 text-sm text-gray-400">
           <Link href="https://over40webclub.netlify.app/">
             <a target="_blank" rel="noopener noreferrer">
