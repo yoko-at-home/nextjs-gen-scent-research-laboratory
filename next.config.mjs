@@ -8,6 +8,9 @@ const nextConfig = {
   poweredByHeader: false,
   swcMinify: true,
   // experimental: { concurrentFeatures: true, serverComponents: true },
+  images: {
+    domains: ["images.microcms-assets.io"],
+  },
 };
 
 export default nextConfig;
