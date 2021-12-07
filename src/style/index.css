@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.animation {
+  animation-name: fadein;
+  animation-duration: 3s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translatesy(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
