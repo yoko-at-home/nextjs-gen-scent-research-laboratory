@@ -1,6 +1,8 @@
+import { FluidLayout } from "src/layout";
+
 /* eslint-disable import/no-default-export */
 const Members = () => {
-  return <div>Membersページです。</div>;
+  return <FluidLayout>Membersページです。</FluidLayout>;
 };
 
 export default Members;

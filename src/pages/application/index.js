@@ -1,6 +1,8 @@
+import { FluidLayout } from "src/layout";
+
 /* eslint-disable import/no-default-export */
 const Application = () => {
-  return <div>Applicationページです。</div>;
+  return <FluidLayout>Applicationページです。</FluidLayout>;
 };
 
 export default Application;
