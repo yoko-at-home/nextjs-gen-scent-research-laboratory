@@ -29,10 +29,9 @@ module.exports = {
         checkInlineFunction: true,
       },
     ],
-    // "react/destructuring-assignment": ["error", "never"],
-    // import
+    "react/destructuring-assignment": ["off"],
     "import/newline-after-import": "error",
-    "import/no-default-export": "error",
+    "import/no-default-export": "off",
     "import-access/jsdoc": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
