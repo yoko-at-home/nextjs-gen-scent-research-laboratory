@@ -10,7 +10,7 @@ const AboutUs: NextPage = () => {
   return (
     <div
       style={{
-        background: "bottom/cover no-repeat url('/static/images/laurel.png')",
+        background: "bottom/cover no-repeat url('/static/images/laurel.jpg')",
       }}
       className="text-gray-300"
     >

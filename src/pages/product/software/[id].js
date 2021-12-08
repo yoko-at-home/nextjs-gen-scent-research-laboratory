@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import { PageSubTitle } from "src/component/PageTitle";
-import { FluidLayout } from "src/layout";
+import { FixedLayout } from "src/layout";
 
 import { client } from "../../../lib/client";
 
 export default function SoftwareId({ software }) {
   return (
-    <FluidLayout>
+    <FixedLayout>
       <main>
         <PageSubTitle>{software.title}</PageSubTitle>
-        <p>{software.publishedAt}</p>
+        {/* <p>{software.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${software.body}`,
           }}
         />
       </main>
-    </FluidLayout>
+    </FixedLayout>
   );
 }
 

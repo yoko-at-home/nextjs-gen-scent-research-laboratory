@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import { PageSubTitle } from "src/component/PageTitle";
-import { FluidLayout } from "src/layout";
+import { FixedLayout } from "src/layout";
 
 import { client } from "../../../lib/client";
 
 export default function SampleId({ sample }) {
   return (
-    <FluidLayout>
+    <FixedLayout>
       <main>
         <PageSubTitle>{sample.title}</PageSubTitle>
-        <p>{sample.publishedAt}</p>
+        {/* <p>{sample.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${sample.body}`,
           }}
         />
       </main>
-    </FluidLayout>
+    </FixedLayout>
   );
 }
 

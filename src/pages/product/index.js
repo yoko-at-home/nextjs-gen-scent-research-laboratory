@@ -111,7 +111,7 @@ export default function Product({ software, sample, odor, other, totalCount }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "software" });
+  // const data = await client.get({ endpoint: "software" });
   const dataSample = await client.get({ endpoint: "sample" });
   const dataOdor = await client.get({ endpoint: "odor-analysis" });
   const dataOther = await client.get({ endpoint: "other-services" });
@@ -119,7 +119,7 @@ export const getStaticProps = async () => {
   const key = {
     headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
   };
-  const data = await fetch("https://your-service.microcms.io/api/v1/software?offset=0&limit=11", key)
+  const data = await fetch("https://genscent.microcms.io/api/v1/software?offset=0&limit=11", key)
     .then((res) => {
       return res.json();
     })

@@ -9,7 +9,7 @@ export default function otherId({ other }) {
     <FluidLayout>
       <main>
         <PageSubTitle>{other.title}</PageSubTitle>
-        <p>{other.publishedAt}</p>
+        {/* <p>{other.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${other.body}`,

@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import { PageSubTitle } from "src/component/PageTitle";
-import { FluidLayout } from "src/layout";
+import { FixedLayout } from "src/layout";
 
 import { client } from "../../../lib/client";
 
 export default function odorId({ odor }) {
   return (
-    <FluidLayout>
+    <FixedLayout>
       <main>
         <PageSubTitle>{odor.title}</PageSubTitle>
-        <p>{odor.publishedAt}</p>
+        {/* <p>{odor.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${odor.body}`,
           }}
         />
       </main>
-    </FluidLayout>
+    </FixedLayout>
   );
 }
 
