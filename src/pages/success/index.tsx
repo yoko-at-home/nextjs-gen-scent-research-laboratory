@@ -8,7 +8,6 @@ import { FluidLayout } from "src/layout";
 
 const Success: NextPage = () => {
   const router = useRouter();
-  // console.log(router.query);
   return (
     <FluidLayout>
       <PageSEO title={`Success- ${siteMetadata.author}`} description={siteMetadata.description} />
