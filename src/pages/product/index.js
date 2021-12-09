@@ -1,5 +1,6 @@
 /* eslint-disable import/no-default-export */
 /* eslint-disable @typescript-eslint/naming-convention*/
+import Image from "next/image";
 import Link from "next/link";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -23,7 +24,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
                   <Link href={`/product/sample/${sample.id}`}>
                     <a className="mb-3 font-bold">{sample.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24">{sample.description}</div>
+                  <div className="overflow-scroll w-3/4 h-24">{sample.description}</div>
                 </div>
               </li>
             );
@@ -35,7 +36,16 @@ export default function Product({ software, sample, odor, other, software2 }) {
   const Odor = () => {
     return (
       <div>
-        <PageSubTitle>におい分析機器類</PageSubTitle>
+        <div className="flex flex-row mb-6">
+          <div>
+            <PageSubTitle>におい分析機器類</PageSubTitle>
+            <p>揮発性成分用サンプリングシステムや、匂い成分の分析システムなどをご紹介しております。</p>
+          </div>
+          <div className="flex flex-col-reverse items-baseline ml-5">
+            <Image src="/static/images/software/topimage2.jpg" height="62px" width="100px" priority />
+          </div>
+        </div>
+
         <ul className="grid grid-cols-3 gap-4">
           {odor.map((odor) => {
             return (
@@ -107,7 +117,16 @@ export default function Product({ software, sample, odor, other, software2 }) {
       <PageSEO title={`Product - ${siteMetadata.author}`} description={siteMetadata.description} />
 
       <div>
-        <PageSubTitle>ソフトウェア・ライブラリ</PageSubTitle>
+        <div className="flex flex-row mb-6">
+          <div>
+            <PageSubTitle>ソフトウェア・ライブラリ</PageSubTitle>
+            <p>使い勝手を確認したい方のためにトライアルソフトウェアもございます。</p>
+          </div>
+          <div className="flex flex-col-reverse items-baseline ml-5">
+            <Image src="/static/images/software/topimage.jpg" height="62px" width="250px" priority />
+          </div>
+        </div>
+
         <ul className="grid grid-cols-3 gap-4">
           {software.map((software) => {
             return (
