@@ -6,20 +6,27 @@ import { client } from "src/lib/client";
 
 const Home = (props) => {
   return (
-    <FluidLayout>
-      <PageSEO title={`ご挨拶 - ${siteMetadata.author}`} description={siteMetadata.description} />
+    <div
+      style={{
+        background: "top/cover no-repeat url('/static/images/home/background.jpg')",
+      }}
+      className=""
+    >
+      <FluidLayout>
+        <PageSEO title={`ご挨拶 - ${siteMetadata.author}`} description={siteMetadata.description} />
 
-      <div className="">
-        <PageTitle>{props.data.title}</PageTitle>
-        <div
-          className="py-5 px-5 text-lg md:py-10 lg:py-16 animation"
-          dangerouslySetInnerHTML={{
-            // eslint-disable-next-line @typescript-eslint/naming-convention
-            __html: `${props.data.body}`,
-          }}
-        />
-      </div>
-    </FluidLayout>
+        <div className="">
+          <PageTitle>{props.data.title}</PageTitle>
+          <div
+            className="py-5 px-5 text-lg md:py-10 lg:py-16 animation"
+            dangerouslySetInnerHTML={{
+              // eslint-disable-next-line @typescript-eslint/naming-convention
+              __html: `${props.data.body}`,
+            }}
+          />
+        </div>
+      </FluidLayout>
+    </div>
   );
 };
 

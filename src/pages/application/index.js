@@ -1,4 +1,6 @@
 import { PageTitle } from "src/component/PageTitle";
+import { PageSEO } from "src/component/SEO";
+import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 
 /* eslint-disable import/no-default-export */
@@ -12,6 +14,7 @@ const Application = () => {
     >
       <div className="z-40 bg-white bg-opacity-30">
         <FluidLayout>
+          <PageSEO title={`Application - ${siteMetadata.author}`} description={siteMetadata.description} />
           <PageTitle>
             <div className="z-40">Coming soon….</div>
           </PageTitle>

@@ -2,6 +2,8 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import Link from "next/link";
 import { PageSubTitle } from "src/component/PageTitle";
+import { PageSEO } from "src/component/SEO";
+import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 
@@ -102,6 +104,8 @@ export default function Product({ software, sample, odor, other, software2 }) {
 
   return (
     <FluidLayout>
+      <PageSEO title={`Product - ${siteMetadata.author}`} description={siteMetadata.description} />
+
       <div>
         <PageSubTitle>ソフトウェア・ライブラリ</PageSubTitle>
         <ul className="grid grid-cols-3 gap-4">
