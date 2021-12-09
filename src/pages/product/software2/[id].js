@@ -4,15 +4,15 @@ import { FixedLayout } from "src/layout";
 
 import { client } from "../../../lib/client";
 
-export default function otherId({ other }) {
+export default function Software2Id({ software2 }) {
   return (
     <FixedLayout>
       <main>
-        <PageSubTitle>{other.title}</PageSubTitle>
-        {/* <p>{other.publishedAt}</p> */}
+        <PageSubTitle>{software2.title}</PageSubTitle>
+        {/* <p>{software2.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
-            __html: `${other.body}`,
+            __html: `${software2.body}`,
           }}
         />
       </main>
@@ -22,10 +22,10 @@ export default function otherId({ other }) {
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "other-services" });
+  const data = await client.get({ endpoint: "software2" });
 
   const paths = data.contents.map((content) => {
-    return `/product/other-services/${content.id}`;
+    return `/product/software2/${content.id}`;
   });
   return { paths, fallback: false };
 };
@@ -33,11 +33,11 @@ export const getStaticPaths = async () => {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "other-services", contentId: id });
+  const data = await client.get({ endpoint: "software2", contentId: id });
 
   return {
     props: {
-      other: data,
+      software2: data,
     },
   };
 };

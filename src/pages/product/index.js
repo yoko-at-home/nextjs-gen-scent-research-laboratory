@@ -2,11 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import Link from "next/link";
 import { PageSubTitle } from "src/component/PageTitle";
-import { Pagination } from "src/component/Pagination";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 
-export default function Product({ software, sample, odor, other, totalCount }) {
+export default function Product({ software, sample, odor, other, software2 }) {
   const Sample = () => {
     return (
       <div>
@@ -79,6 +78,28 @@ export default function Product({ software, sample, odor, other, totalCount }) {
       </div>
     );
   };
+  const Software2 = () => {
+    return (
+      <ul>
+        {software2.map((software2) => {
+          return (
+            <li key={software2.id}>
+              <div
+                className="flex flex-col p-3 h-40 rounded"
+                style={{ background: `center/cover no-repeat url(${software2.image.url})` }}
+              >
+                <Link href={`/product/software2/${software2.id}`}>
+                  <a className="mb-3 font-bold">{software2.title}</a>
+                </Link>
+                <div className="overflow-scroll h-24">{software2.description}</div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
   return (
     <FluidLayout>
       <div>
@@ -99,8 +120,10 @@ export default function Product({ software, sample, odor, other, totalCount }) {
               </li>
             );
           })}
+          <li>
+            <Software2 />
+          </li>
         </ul>
-        <Pagination totalCount={totalCount} />
       </div>
       <Sample />
       <Odor />
@@ -111,26 +134,16 @@ export default function Product({ software, sample, odor, other, totalCount }) {
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  // const data = await client.get({ endpoint: "software" });
+  const data = await client.get({ endpoint: "software" });
+  const dataSoftware2 = await client.get({ endpoint: "software2" });
   const dataSample = await client.get({ endpoint: "sample" });
   const dataOdor = await client.get({ endpoint: "odor-analysis" });
   const dataOther = await client.get({ endpoint: "other-services" });
 
-  const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
-  };
-  const data = await fetch("https://genscent.microcms.io/api/v1/software?offset=0&limit=11", key)
-    .then((res) => {
-      return res.json();
-    })
-    .catch(() => {
-      return null;
-    });
-
   return {
     props: {
       software: data.contents,
-      totalCount: data.totalCount,
+      software2: dataSoftware2.contents,
       sample: dataSample.contents,
       odor: dataOdor.contents,
       other: dataOther.contents,
