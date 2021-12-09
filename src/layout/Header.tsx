@@ -32,6 +32,7 @@ export const Header: VFC = () => {
             layout="responsive"
             src="/static/images/header/background.jpg"
             alt={siteMetadata.author}
+            priority
           />
         </div>
         <div className="lg:hidden">
@@ -41,6 +42,7 @@ export const Header: VFC = () => {
             layout="responsive"
             src="/static/images/header/background.jpg"
             alt={siteMetadata.author}
+            priority
           />
         </div>
       </div>
