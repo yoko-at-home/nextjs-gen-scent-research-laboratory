@@ -62,11 +62,11 @@ export const Header: VFC = () => {
 export const HeaderFixed: VFC = () => {
   return (
     <header>
-      <nav className="flex justify-center text-gray-600 bg-gray-200">
+      <nav className="flex justify-center text-gray-100 bg-gray-400">
         {items.map(({ href, label }) => {
           return (
-            <NavLink key={href} href={href} activeClassName="bg-gray-500 text-white">
-              <a className="inline-block p-4">{label}</a>
+            <NavLink key={href} href={href} activeClassName="bg-gray-500">
+              <a className="inline-block p-4 hover:text-gray-300 hover:bg-gray-600">{label}</a>
             </NavLink>
           );
         })}
