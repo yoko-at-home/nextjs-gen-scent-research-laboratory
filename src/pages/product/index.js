@@ -42,7 +42,13 @@ export default function Product({ software, sample, odor, other, software2 }) {
             <p>揮発性成分用サンプリングシステムや、匂い成分の分析システムなどをご紹介しております。</p>
           </div>
           <div className="flex flex-col-reverse items-baseline ml-5">
-            <Image src="/static/images/software/topimage2.jpg" height="62px" width="100px" priority />
+            <Image
+              alt="揮発性成分用サンプリングシステム"
+              src="/static/images/software/topimage2.jpg"
+              height="62px"
+              width="100px"
+              priority
+            />
           </div>
         </div>
 
@@ -123,7 +129,13 @@ export default function Product({ software, sample, odor, other, software2 }) {
             <p>使い勝手を確認したい方のためにトライアルソフトウェアもございます。</p>
           </div>
           <div className="flex flex-col-reverse items-baseline ml-5">
-            <Image src="/static/images/software/topimage.jpg" height="62px" width="250px" priority />
+            <Image
+              alt="ソフトウェア・ライブラリ"
+              src="/static/images/software/topimage.jpg"
+              height="62px"
+              width="250px"
+              priority
+            />
           </div>
         </div>
 
