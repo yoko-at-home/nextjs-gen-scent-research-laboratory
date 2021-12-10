@@ -22,8 +22,10 @@ export const Header: VFC = () => {
     <header>
       <div className="relative">
         <Logo />
-        <div className="absolute top-24 left-32 z-30 md:top-28">
-          <h1 className="z-20 text-3xl text-white sm:text-5xl lg:text-6xl xl:text-7xl">{siteMetadata.author}</h1>
+        <div className="absolute top-16 left-8 z-30 sm:top-24 sm:left-32 md:top-28">
+          <h1 className="z-20 text-lg text-white sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl">
+            {siteMetadata.author}
+          </h1>
         </div>
         <div className="hidden lg:block">
           <Image
@@ -46,11 +48,11 @@ export const Header: VFC = () => {
           />
         </div>
       </div>
-      <nav className="flex justify-center text-gray-600 bg-gray-200">
+      <nav className="flex flex-wrap justify-center text-gray-600 bg-gray-200">
         {items.map(({ href, label }) => {
           return (
             <NavLink key={href} href={href} activeClassName="bg-gray-500 text-white">
-              <a className="inline-block p-4">{label}</a>
+              <a className="inline-block p-1 sm:p-4">{label}</a>
             </NavLink>
           );
         })}
@@ -66,7 +68,7 @@ export const HeaderFixed: VFC = () => {
         {items.map(({ href, label }) => {
           return (
             <NavLink key={href} href={href} activeClassName="bg-gray-500">
-              <a className="inline-block p-4 hover:text-gray-300 hover:bg-gray-600">{label}</a>
+              <a className="inline-block p-1 hover:text-gray-300 hover:bg-gray-600 sm:p-4">{label}</a>
             </NavLink>
           );
         })}

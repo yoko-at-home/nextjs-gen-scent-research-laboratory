@@ -10,7 +10,7 @@ const Home = (props) => {
       style={{
         background: "top/cover no-repeat url('/static/images/home/background.jpg')",
       }}
-      className=""
+      className="w-screen"
     >
       <FluidLayout>
         <PageSEO title={`ご挨拶 - ${siteMetadata.author}`} description={siteMetadata.description} />

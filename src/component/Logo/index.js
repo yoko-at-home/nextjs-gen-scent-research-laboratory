@@ -9,7 +9,7 @@ const Logo = () => {
           <Image src={"/static/images/logo.png"} alt="logo" width="70px" height="70px" />
         </Link>
       </div>
-      <div className="absolute top-5 right-16 z-30 lg:hidden">
+      <div className="absolute top-5 right-8 z-30 sm:right-16 lg:hidden">
         <Link href="/" aria-label="Gen-Scent Research Laboratory" passHref>
           <Image src={"/static/images/logo.png"} alt="logo" width="50px" height="50px" />
         </Link>

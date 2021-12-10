@@ -9,10 +9,10 @@ export const Footer: VFC = () => {
   return (
     <footer>
       <div className="flex flex-col items-center mt-32">
-        <div className="flex mb-2 space-x-2 text-sm">
+        <div className="flex justify-between mb-2 space-x-2 text-sm">
           <div>{siteMetadata.author}</div>
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <div>All Rights Reserved.</div>
+          <div className="whitespace-nowrap">{`© ${new Date().getFullYear()}`}</div>
+          <div className="whitespace-nowrap">All Rights Reserved.</div>
         </div>
         <div className="flex mb-2 space-x-2 text-sm">
           <Link href="/privacy">個人情報保護方針</Link>
