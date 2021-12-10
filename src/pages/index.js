@@ -18,7 +18,7 @@ const Home = (props) => {
         <div className="">
           <PageTitle>{props.data.title}</PageTitle>
           <div
-            className="py-5 px-5 text-lg md:py-10 lg:py-16 animation"
+            className="py-5 px-5 sm:text-lg md:py-10 lg:py-16 animation"
             dangerouslySetInnerHTML={{
               // eslint-disable-next-line @typescript-eslint/naming-convention
               __html: `${props.data.body}`,

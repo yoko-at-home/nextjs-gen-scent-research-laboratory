@@ -12,7 +12,7 @@ const News = (props) => {
       <div className="">
         <PageTitle>最新情報</PageTitle>
         <div
-          className="px-5 mb-20 text-lg"
+          className="px-5 mb-20 text-gray-500 sm:text-lg"
           dangerouslySetInnerHTML={{
             // eslint-disable-next-line @typescript-eslint/naming-convention
             __html: `${props.data.body}`,
@@ -20,7 +20,7 @@ const News = (props) => {
         />
         <PageSubTitle>2021年の活動</PageSubTitle>
         <div
-          className="px-5 text-lg"
+          className="px-5 text-gray-500 sm:text-lg"
           dangerouslySetInnerHTML={{
             // eslint-disable-next-line @typescript-eslint/naming-convention
             __html: `${props.data.body2021}`,

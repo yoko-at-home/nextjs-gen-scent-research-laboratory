@@ -18,7 +18,7 @@ export const FixedLayout: VFC<Props> = (props) => {
   return (
     <div className="grid grid-rows-[auto,1fr,auto] mx-auto max-w-screen-md min-h-screen">
       <HeaderFixed />
-      <main className="">
+      <main className="mx-5">
         <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
       </main>
       <div className="flex justify-between mt-20">
