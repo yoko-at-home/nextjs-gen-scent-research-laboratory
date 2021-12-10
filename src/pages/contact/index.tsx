@@ -10,9 +10,7 @@ const Contact: NextPage = () => {
   return (
     <FluidLayout>
       <PageSEO title={`Contact- ${siteMetadata.author}`} description={siteMetadata.description} />
-
       <PageTitle>Contact</PageTitle>
-
       <FormMemberRegistration />
     </FluidLayout>
   );
