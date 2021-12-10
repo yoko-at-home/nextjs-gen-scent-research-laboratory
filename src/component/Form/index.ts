@@ -1,0 +1,1 @@
+export { FormMemberRegistration } from "./FormMemberRegistration";

@@ -1,18 +1,37 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
+import type { InputHTMLAttributes } from "react";
 import { useState } from "react";
-
-import { siteMetadata } from "../data/siteMetaData";
+import { siteMetadata } from "src/data/siteMetaData";
 
 export const FormMemberRegistration: NextPage = () => {
   const router = useRouter();
   const [isCheckboxState, setIsCheckboxState] = useState(false);
+  const [isCheckboxResearcherState, setIsCheckboxResearcherState] = useState(0);
+  const [researcher, setResearcher] = useState("研究者");
+  const [otherOccupation, setOtherOccupation] = useState("");
+  const enableOtherOccupation = isCheckboxResearcherState !== 2;
 
   const handleOnChange = () => {
     setIsCheckboxState((prevCheck) => {
       return !prevCheck;
     });
+  };
+  const handleOnChangeResearcher0 = () => {
+    setIsCheckboxResearcherState(0);
+    setResearcher("研究者");
+  };
+  const handleOnChangeResearcher1 = () => {
+    setIsCheckboxResearcherState(1);
+    setResearcher("代理店/販売店");
+  };
+  const handleOnChangeResearcher2 = () => {
+    setIsCheckboxResearcherState(2);
+    setResearcher(otherOccupation);
+  };
+  const handleOnChangeResearcherText: InputHTMLAttributes<HTMLInputElement>["onChange"] = (event) => {
+    setOtherOccupation(event.currentTarget.value);
   };
 
   const handleRegisterUser = async (event: any) => {
@@ -28,10 +47,12 @@ export const FormMemberRegistration: NextPage = () => {
           "以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。\n完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。\n\n" +
           "お名前: " +
           event.target.fullname.value +
-          " 様\n" +
+          " 様\n\n" +
           "研究室: " +
           event.target.labo.value +
-          "\nメールアドレス: " +
+          "\n\nご職業: " +
+          researcher +
+          "\n\nメールアドレス: " +
           event.target.email.value +
           "\n\nお問い合わせ内容:\n" +
           event.target.message.value +
@@ -88,6 +109,59 @@ export const FormMemberRegistration: NextPage = () => {
                 required
               />
             </div>
+            <div className="flex items-center my-6">
+              <span className="mr-5">ご職業*</span>
+              <div className="mt-0">
+                <label className="inline-flex items-center">
+                  <input
+                    required
+                    type="radio"
+                    id="researcher"
+                    className="form-radio"
+                    name="researcher"
+                    value="研究者"
+                    onChange={handleOnChangeResearcher0}
+                    checked={isCheckboxResearcherState === 0}
+                  />
+                  <span className="ml-2">研究者</span>
+                </label>
+                <label className="inline-flex items-center ml-6">
+                  <input
+                    required
+                    type="radio"
+                    id="researcher"
+                    className="form-radio"
+                    name="researcher"
+                    value="代理店/販売店"
+                    onChange={handleOnChangeResearcher1}
+                    checked={isCheckboxResearcherState === 1}
+                  />
+                  <span className="ml-2">代理店 / 販売店</span>
+                </label>
+                <label className="inline-flex items-center ml-6">
+                  <input
+                    required
+                    type="radio"
+                    id="researcher"
+                    className="form-radio"
+                    name="researcher"
+                    value="その他"
+                    onChange={handleOnChangeResearcher2}
+                    checked={isCheckboxResearcherState === 2}
+                  />
+                  <span className="mx-2 whitespace-nowrap">その他</span>
+                  <input
+                    type="text"
+                    id="other_occupation"
+                    name="other_occupation"
+                    className="block mt-1 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                    onChange={handleOnChangeResearcherText}
+                    value={otherOccupation}
+                    disabled={enableOtherOccupation}
+                  />
+                </label>
+              </div>
+            </div>
             <div className="mb-3">
               <label htmlFor="email">メールアドレス</label>
               <input
@@ -101,18 +175,19 @@ export const FormMemberRegistration: NextPage = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="message">問合せ内容</label>
+              <label htmlFor="message">お問い合わせ内容 （300⽂字以内）</label>
               <textarea
                 id="message"
                 name="message"
                 className="block mt-1 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
                 rows={3}
                 required
-                minLength={20}
+                maxLength={300}
               ></textarea>
             </div>
+
             <div className="flex my-6">
-              <span className="mr-2">ニュースレター配信</span>
+              <span className="mr-5">ニュースレター配信</span>
               <div className="mt-0">
                 <label className="inline-flex items-center">
                   <input
@@ -122,7 +197,7 @@ export const FormMemberRegistration: NextPage = () => {
                     name="newsletter"
                     value="要"
                     onChange={handleOnChange}
-                    checked={isCheckboxState}
+                    checked={isCheckboxState === false}
                   />
                   <span className="ml-2">要</span>
                 </label>
@@ -134,7 +209,7 @@ export const FormMemberRegistration: NextPage = () => {
                     name="newsletter"
                     value="不要"
                     onChange={handleOnChange}
-                    checked={isCheckboxState}
+                    checked={isCheckboxState === true}
                   />
                   <span className="ml-2">不要</span>
                 </label>

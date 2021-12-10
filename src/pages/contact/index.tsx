@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { NextPage } from "next";
-import { FormMemberRegistration } from "src/component/FormMemberRegistration";
+import { FormMemberRegistration } from "src/component/Form";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
