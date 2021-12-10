@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
 import { siteMetadata } from "../data/siteMetaData";
 
-export const FormMemberRegistration = () => {
+export const FormMemberRegistration: NextPage = () => {
   const router = useRouter();
   const [isCheckboxState, setIsCheckboxState] = useState(false);
 
