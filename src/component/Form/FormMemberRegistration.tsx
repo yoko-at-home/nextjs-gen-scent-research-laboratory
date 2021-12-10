@@ -175,7 +175,9 @@ export const FormMemberRegistration: NextPage = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="message">お問い合わせ内容 （300⽂字以内）</label>
+              <label htmlFor="message">
+                お問い合わせ内容 <small>（300⽂字以内）</small>
+              </label>
               <textarea
                 id="message"
                 name="message"
