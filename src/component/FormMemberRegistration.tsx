@@ -19,7 +19,7 @@ export const FormMemberRegistration: NextPage = () => {
     event.preventDefault();
     // const useremail = user?.email || "";
 
-    const newsletter = isCheckboxState === true ? "はい" : "いいえ";
+    const newsletter = isCheckboxState === true ? "要" : "不要";
     const res = await fetch("/api/send", {
       body: JSON.stringify({
         subject: "登録を承りました。",
@@ -35,7 +35,7 @@ export const FormMemberRegistration: NextPage = () => {
           event.target.email.value +
           "\n\nお問い合わせ内容:\n" +
           event.target.message.value +
-          "\n\n\nメール購読を希望: " +
+          "\n\n\nニュースレター配信: " +
           newsletter,
         email: event.target.email.value,
       }),
@@ -53,7 +53,7 @@ export const FormMemberRegistration: NextPage = () => {
   };
 
   return (
-    <div>
+    <div className="text-gray-600">
       <div className="pt-6 pb-8 space-y-2 md:space-y-5">
         <p className="text-lg leading-7 text-gray-500 ">
           資料ご請求、およびお問い合わせの場合は下記ご記入お願いいたします。
@@ -61,7 +61,7 @@ export const FormMemberRegistration: NextPage = () => {
           *は入力必須になります。
         </p>
       </div>
-      <div className="container mt-10 sm:p-6 sm:mt-0 lg:px-20">
+      <div className="container mt-10 font-semibold sm:p-6 sm:mt-0 lg:px-20">
         <div className="mt-5 md:mt-0">
           <form onSubmit={handleRegisterUser}>
             <div className="mb-3">
@@ -112,16 +112,33 @@ export const FormMemberRegistration: NextPage = () => {
               ></textarea>
             </div>
             <div className="flex my-6">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="newsletter"
-                  name="newsletter"
-                  onChange={handleOnChange}
-                  checked={isCheckboxState}
-                />
-                <span className="ml-2 text-gray-500">メールの購読を希望 </span>
-              </label>
+              <span className="mr-2">ニュースレター配信</span>
+              <div className="mt-0">
+                <label className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    id="newsletter"
+                    className="form-radio"
+                    name="newsletter"
+                    value="要"
+                    onChange={handleOnChange}
+                    checked={isCheckboxState}
+                  />
+                  <span className="ml-2">要</span>
+                </label>
+                <label className="inline-flex items-center ml-6">
+                  <input
+                    type="radio"
+                    id="newsletter"
+                    className="form-radio"
+                    name="newsletter"
+                    value="不要"
+                    onChange={handleOnChange}
+                    checked={isCheckboxState}
+                  />
+                  <span className="ml-2">不要</span>
+                </label>
+              </div>
             </div>
             <div className="py-3 px-4 text-right bg-gray-50 sm:px-6">
               <button
