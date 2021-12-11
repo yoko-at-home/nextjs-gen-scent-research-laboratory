@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
 import type { ReactNode, VFC } from "react";
 
 import { Footer } from "./Footer";
@@ -15,6 +15,10 @@ type Props = {
  * @package
  */
 export const FixedLayout: VFC<Props> = (props) => {
+  const router = useRouter();
+  const handleOnClick = () => {
+    return router.back();
+  };
   return (
     <div className="grid grid-rows-[auto,1fr,auto] mx-auto max-w-screen-md min-h-screen">
       <HeaderFixed />
@@ -30,11 +34,11 @@ export const FixedLayout: VFC<Props> = (props) => {
           {/* </Link> */}
         </div>
         <div>
-          <Link href={`/product/`}>
+          <button type="button" onClick={handleOnClick}>
             <a className="p-3 px-3 mr-5 text-xs font-bold text-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80">
-              Product Top
+              戻る
             </a>
-          </Link>
+          </button>
         </div>
       </div>
       <Footer />
