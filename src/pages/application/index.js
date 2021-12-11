@@ -28,14 +28,12 @@ export default function Application({ application }) {
                     className="flex flex-col p-5 mb-5 bg-white bg-opacity-50 rounded sm:p-3"
                     // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                   >
-                    <div className="flex justify-between">
+                    <div className="flex justify-between items-end">
                       <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
                       <Link href={`/application/${item.id}`} passHref>
                         <a className="">
                           {item.detail === true ? (
-                            <span className="p-3 text-gray-100 hover:text-gray-800 hover:bg-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80">
-                              詳細
-                            </span>
+                            <span className="p-2 ml-5 text-gray-700 whitespace-nowrap bg-gray-300">詳細</span>
                           ) : null}
                         </a>
                       </Link>
