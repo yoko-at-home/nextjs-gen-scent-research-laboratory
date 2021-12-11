@@ -18,11 +18,11 @@ export default function Product({ software, sample, odor, other, software2 }) {
             return (
               <li key={sample.id}>
                 <div
-                  className="flex flex-col p-3 h-40 rounded"
+                  className="flex flex-col p-1 h-40 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${sample.image.url})` }}
                 >
                   <Link href={`/product/sample/${sample.id}`}>
-                    <a className="mb-3 font-bold">{sample.title}</a>
+                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{sample.title}</a>
                   </Link>
                   <div className="overflow-scroll w-3/4 h-24">{sample.description}</div>
                 </div>
@@ -57,13 +57,13 @@ export default function Product({ software, sample, odor, other, software2 }) {
             return (
               <li key={odor.id}>
                 <div
-                  className="flex flex-col p-3 h-40 rounded"
+                  className="flex flex-col p-1 h-40 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${odor.image.url})` }}
                 >
                   <Link href={`/product/odor-analysis/${odor.id}`}>
-                    <a className="mb-3 font-bold">{odor.title}</a>
+                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{odor.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24">{odor.description}</div>
+                  <div className="overflow-scroll h-24 text-sm sm:text-base">{odor.description}</div>
                 </div>
               </li>
             );
@@ -81,13 +81,13 @@ export default function Product({ software, sample, odor, other, software2 }) {
             return (
               <li key={other.id}>
                 <div
-                  className="flex flex-col p-3 h-40 rounded"
+                  className="flex flex-col p-1 h-40 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${other.image.url})` }}
                 >
                   <Link href={`/product/other-services/${other.id}`}>
-                    <a className="mb-3 font-bold">{other.title}</a>
+                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{other.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24">{other.description}</div>
+                  <div className="overflow-scroll h-24 text-sm sm:text-base">{other.description}</div>
                 </div>
               </li>
             );
@@ -103,13 +103,13 @@ export default function Product({ software, sample, odor, other, software2 }) {
           return (
             <li key={software2.id}>
               <div
-                className="flex flex-col p-3 h-40 rounded"
+                className="flex flex-col p-1 h-40 rounded sm:p-3"
                 style={{ background: `center/cover no-repeat url(${software2.image.url})` }}
               >
                 <Link href={`/product/software2/${software2.id}`}>
-                  <a className="mb-3 font-bold">{software2.title}</a>
+                  <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{software2.title}</a>
                 </Link>
-                <div className="overflow-scroll h-24">{software2.description}</div>
+                <div className="overflow-scroll h-24 text-sm sm:text-base">{software2.description}</div>
               </div>
             </li>
           );
@@ -144,13 +144,13 @@ export default function Product({ software, sample, odor, other, software2 }) {
             return (
               <li key={software.id}>
                 <div
-                  className="flex flex-col p-3 h-40 rounded"
+                  className="flex flex-col p-1 h-40 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${software.image.url})` }}
                 >
                   <Link href={`/product/software/${software.id}`}>
-                    <a className="mb-3 font-bold">{software.title}</a>
+                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{software.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24">{software.description}</div>
+                  <div className="overflow-scroll h-24 text-sm sm:text-base">{software.description}</div>
                 </div>
               </li>
             );
