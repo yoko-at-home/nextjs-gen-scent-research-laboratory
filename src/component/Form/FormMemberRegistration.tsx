@@ -110,7 +110,7 @@ export const FormMemberRegistration: NextPage = () => {
               />
             </div>
             <div className="flex items-center my-6">
-              <span className="mr-5">ご職業*</span>
+              <span className="mr-5 whitespace-nowrap">ご職業*</span>
               <div className="mt-0">
                 <label className="inline-flex items-center">
                   <input
