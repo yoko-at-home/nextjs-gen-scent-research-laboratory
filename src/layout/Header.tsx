@@ -22,7 +22,7 @@ export const Header: VFC = () => {
     <header>
       <div className="relative">
         <Logo />
-        <div className="absolute top-16 left-8 z-30 sm:top-24 sm:left-32 md:top-28">
+        <div className="absolute top-16 left-8 z-30 sm:top-24 sm:left-32 md:top-28 xl:top-40 xl:left-60">
           <h1 className="z-20 text-lg text-white sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl">
             {siteMetadata.author}
           </h1>
