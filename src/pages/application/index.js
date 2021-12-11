@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -5,7 +6,7 @@ import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 
 /* eslint-disable import/no-default-export */
-const Application = (props) => {
+export default function Application({ application }) {
   return (
     <div
       style={{
@@ -17,20 +18,39 @@ const Application = (props) => {
         <FluidLayout>
           <PageSEO title={`Application - ${siteMetadata.author}`} description={siteMetadata.description} />
           <div className="">
-            <PageTitle>{props.data.title}</PageTitle>
-            <div
-              className="py-5 px-5 text-lg md:py-10 lg:py-16 animation"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line @typescript-eslint/naming-convention
-                __html: `${props.data.body}`,
-              }}
-            />
+            <PageTitle>Application</PageTitle>
           </div>
+          <ul>
+            {application.map((item) => {
+              return (
+                <li key={item.id}>
+                  <div
+                    className="flex flex-col p-5 mb-5 bg-white bg-opacity-50 rounded sm:p-3"
+                    // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
+                  >
+                    <div className="flex justify-between">
+                      <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
+                      <Link href={`/application/${item.id}`} passHref>
+                        <a className="">
+                          {item.detail === true ? (
+                            <span className="p-3 text-gray-100 hover:text-gray-800 hover:bg-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80">
+                              詳細
+                            </span>
+                          ) : null}
+                        </a>
+                      </Link>
+                    </div>
+                    <div className="overflow-scroll text-sm sm:text-base">{item.description}</div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </FluidLayout>
       </div>
     </div>
   );
-};
+}
 
 export const getStaticProps = async () => {
   const data = await client.get({
@@ -39,9 +59,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      data,
+      application: data.contents,
     },
   };
 };
-
-export default Application;
