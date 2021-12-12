@@ -11,9 +11,15 @@ const Success: NextPage = () => {
   return (
     <FluidLayout>
       <PageSEO title={`Success- ${siteMetadata.author}`} description={siteMetadata.description} />
+      <div className="flex justify-center mt-24">
+        <img src="/static/88696-mail.gif" alt="meil" width="180px" />
+      </div>
       <PageTitle>{router.query.subject}</PageTitle>
       <div className="container p-3 text-lg">
         <div className="mt-10 whitespace-pre-line break-words">{router.query.text}</div>
+        <div className="flex justify-center">
+          <img src="/static/88696-mail.gif" alt="meil" width="180px" />
+        </div>
       </div>
     </FluidLayout>
   );
