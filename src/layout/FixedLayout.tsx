@@ -27,11 +27,9 @@ export const FixedLayout: VFC<Props> = (props) => {
       </main>
       <div className="flex justify-between mt-20">
         <div>
-          {/* <Link href={`/`}> */}
           <a className="p-3 px-3 mr-5 text-xs font-bold text-gray-300 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-0">
             Home
           </a>
-          {/* </Link> */}
         </div>
         <div>
           <button type="button" onClick={handleOnClick}>
