@@ -31,7 +31,7 @@ export const FormMemberRegistration: NextPage = () => {
     setResearcher(otherOccupation);
   };
   const handleOnChangeResearcherText: InputHTMLAttributes<HTMLInputElement>["onChange"] = (event) => {
-    setOtherOccupation(event.currentTarget.value);
+    setOtherOccupation("その他 " + event.currentTarget.value);
   };
 
   const handleRegisterUser = async (event: any) => {
@@ -45,15 +45,35 @@ export const FormMemberRegistration: NextPage = () => {
         to: siteMetadata.email,
         text:
           "以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。\n完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。\n\n" +
-          "お名前: " +
+          "姓名: " +
           event.target.fullname.value +
-          " 様\n\n" +
-          "研究室: " +
+          " 様\n" +
+          "英名: " +
+          event.target.englishfullname.value +
+          "\n\nご配属先" +
+          "\n会社/機関/⼤学： " +
           event.target.labo.value +
+          "\n部署/研究：" +
+          event.target.department.value +
           "\n\nご職業: " +
           researcher +
-          "\n\nメールアドレス: " +
+          "\n\nご住所" +
+          "\n〒 " +
+          event.target.zipcode.value +
+          "\n" +
+          event.target.address1.value +
+          event.target.address2.value +
+          event.target.address3.value +
+          "\n\n📞 " +
+          event.target.phone1.value +
+          " 内線: " +
+          event.target.phone2.value +
+          "\n\n📨 " +
           event.target.email.value +
+          "\n\nご専⾨分野: " +
+          event.target.speciality.value +
+          "\n\n資料ご請求製品名: " +
+          event.target.reference.value +
           "\n\nお問い合わせ内容:\n" +
           event.target.message.value +
           "\n\n\nニュースレター配信: " +
@@ -75,33 +95,69 @@ export const FormMemberRegistration: NextPage = () => {
 
   return (
     <div className="container mt-10 font-semibold sm:p-6 sm:mt-0 lg:px-20">
-      <div className="mt-5 md:mt-0">
+      <div className="mt-5 whitespace-nowrap md:mt-0">
         <form onSubmit={handleRegisterUser}>
-          <div className="mb-3">
-            <label htmlFor="fullname">お名前</label>
+          <div className="flex flex-row justify-between items-center mb-3">
+            <div className="mr-3">お名前*</div>
+            <label htmlFor="fullname" className="mr-3 whitespace-nowrap">
+              姓名
+            </label>
             <input
               id="fullname"
               name="fullname"
               type="text"
-              className="block mt-1 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              placeholder="お名前"
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              placeholder="Full Name"
               autoComplete="name"
               required
               minLength={3}
             />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="labo">研究室</label>
+            <label htmlFor="englishfullname" className="mx-3 whitespace-nowrap">
+              英名
+            </label>
             <input
-              id="labo"
-              name="labo"
+              id="englishfullname"
+              name="englishfullname"
               type="text"
-              className="block mt-1 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              placeholder=""
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              placeholder="English Name"
               required
             />
           </div>
-          <div className="flex items-center my-6">
+          <div className="flex mb-3">
+            <div className="mr-3">ご所属先*</div>
+            <div className="flex flex-col justify-start">
+              <div className="flex">
+                <label htmlFor="labo" className="mr-3 whitespace-nowrap">
+                  会社/機関/⼤学*
+                </label>
+                <input
+                  id="labo"
+                  name="labo"
+                  type="text"
+                  className="block overflow-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
+                  placeholder="Company/Organization/University"
+                  required
+                  minLength={3}
+                />
+              </div>
+              <div className="flex">
+                <label htmlFor="department" className="mr-3 whitespace-nowrap">
+                  部署/研究室*
+                </label>
+                <input
+                  id="department"
+                  name="department"
+                  type="text"
+                  className="block overflow-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
+                  placeholder="Department/Laboratory"
+                  required
+                  minLength={3}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center my-6">
             <span className="mr-5 whitespace-nowrap">ご職業*</span>
             <div className="mt-0">
               <label className="inline-flex items-center">
@@ -140,31 +196,130 @@ export const FormMemberRegistration: NextPage = () => {
                   value="その他"
                   onChange={handleOnChangeResearcher2}
                   checked={isCheckboxResearcherState === 2}
+                  placeholder=""
                 />
                 <span className="mx-2 whitespace-nowrap">その他</span>
                 <input
                   type="text"
                   id="other_occupation"
                   name="other_occupation"
-                  className="block mt-1 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                  className="block overflow-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-72"
                   onChange={handleOnChangeResearcherText}
                   value={otherOccupation}
                   disabled={enableOtherOccupation}
+                  required
                 />
               </label>
             </div>
           </div>
-          <div className="mb-3">
-            <label htmlFor="email">メールアドレス</label>
+          <div className="flex flex-row justify-between items-center mb-3">
+            <div className="mr-3">ご住所*</div>
+            <label htmlFor="zipcode" className="mr-3 whitespace-nowrap">
+              〒
+            </label>
             <input
-              id="email"
-              name="email"
-              type="email"
-              className="block mt-1 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              placeholder="送信可能な形式：name@example.com"
-              autoComplete="email"
+              id="zipcode"
+              name="zipcode"
+              type="text"
+              className="block mt-1 w-24 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              autoComplete="postal-code"
+              placeholder="zip code"
+            />
+            <label htmlFor="address" className="mx-3 whitespace-nowrap">
+              住所
+            </label>
+            <input
+              id="address1"
+              name="address1"
+              type="text"
+              className="block mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              autoComplete="address-level1"
+              placeholder="都道府県"
               required
             />
+            <input
+              id="address2"
+              name="address2"
+              type="text"
+              className="block mx-2 mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              autoComplete="address-level2"
+              required
+              placeholder="市町村"
+            />
+            <input
+              id="address3"
+              name="address3"
+              type="text"
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              autoComplete="street-address"
+              required
+              placeholder="番地"
+            />
+          </div>
+          <div className="flex flex-row justify-between items-center mb-3">
+            <div className="mr-3">お電話番号*</div>
+            <label htmlFor="phone1" className="mr-3 whitespace-nowrap"></label>
+            <input
+              id="phone1"
+              name="phone1"
+              type="text"
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              autoComplete="tel"
+              required
+              placeholder="Phone Number"
+            />
+            <label htmlFor="phone2" className="mx-3 whitespace-nowrap">
+              内線
+            </label>
+            <input
+              id="phone2"
+              name="phone2"
+              type="text"
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              placeholder="Extension/Secondary Phone Number"
+            />
+          </div>
+          <div className="mb-3">
+            <div className="flex">
+              <label htmlFor="email" className="mr-3 whitespace-nowrap">
+                メール*
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                autoComplete="email"
+                required
+                placeholder="Email Address"
+              />
+            </div>
+          </div>
+          <div className="mb-3">
+            <div className="flex">
+              <label htmlFor="speciality" className="mr-3 whitespace-nowrap">
+                ご専⾨分野
+              </label>
+              <input
+                id="speciality"
+                name="speciality"
+                type="text"
+                className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              />
+            </div>
+          </div>
+          <div className="mb-3">
+            <div className="flex">
+              <label htmlFor="reference" className="mr-3 whitespace-nowrap">
+                資料ご請求製品名
+              </label>
+              <input
+                id="reference"
+                name="reference"
+                className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                type="text"
+              ></input>
+            </div>
           </div>
           <div className="mb-3">
             <label htmlFor="message">
@@ -173,9 +328,8 @@ export const FormMemberRegistration: NextPage = () => {
             <textarea
               id="message"
               name="message"
-              className="block mt-1 w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
               rows={3}
-              required
               maxLength={300}
             ></textarea>
           </div>
@@ -212,7 +366,7 @@ export const FormMemberRegistration: NextPage = () => {
           <div className="py-3 px-4 text-right bg-gray-50 sm:px-6">
             <button
               type="submit"
-              className="p-2 w-full font-medium text-gray-200 bg-gradient-to-r from-gray-400 focus:from-purple-700 to-gray-500 focus:to-yellow-400 rounded-md border border-gray-50 focus:ring-2 focus:ring-offset-2 shadow-md focus:outline-none"
+              className="p-2 w-full font-medium text-gray-200 bg-gradient-to-r from-gray-400 focus:from-purple-700 to-gray-500 focus:to-yellow-400 border border-gray-50 focus:ring-2 focus:ring-offset-2 shadow-md focus:outline-none"
             >
               送信
             </button>
