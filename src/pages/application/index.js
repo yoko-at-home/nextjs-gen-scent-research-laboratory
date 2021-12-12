@@ -31,10 +31,10 @@ export default function Application({ application }) {
                     <div className="flex justify-between items-end">
                       <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
                       <Link href={`/application/${item.id}`} passHref>
-                        <a className="">
-                          {item.detail === true ? (
+                        <a>
+                          {item.body === undefined ? null : (
                             <span className="p-2 ml-5 text-gray-700 whitespace-nowrap bg-gray-300">詳細</span>
-                          ) : null}
+                          )}
                         </a>
                       </Link>
                     </div>

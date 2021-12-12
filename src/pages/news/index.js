@@ -25,9 +25,9 @@ export default function News({ news }) {
                 <div className="flex flex-row-reverse justify-between items-end">
                   <Link href={`/news/${item.id}`} passHref>
                     <a>
-                      {item.detail === true ? (
+                      {item.body === undefined ? null : (
                         <span className="p-2 ml-5 text-gray-700 whitespace-nowrap bg-gray-300">詳細</span>
-                      ) : null}
+                      )}
                     </a>
                   </Link>
                   <div className="overflow-scroll text-sm sm:text-base">{item.description}</div>
