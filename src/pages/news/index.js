@@ -38,7 +38,7 @@ export default function News({ news, totalCount }) {
           );
         })}
       </ul>
-      {totalCount < 7 ? null : <Pagination totalCount={totalCount} />}
+      {totalCount < 6 ? null : <Pagination totalCount={totalCount} />}
     </FluidLayout>
   );
 }

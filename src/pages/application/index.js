@@ -18,7 +18,7 @@ export default function Application({ application }) {
         <FluidLayout>
           <PageSEO title={`Application - ${siteMetadata.author}`} description={siteMetadata.description} />
           <div className="">
-            <PageTitle>Application</PageTitle>
+            <PageTitle>アプリケーション</PageTitle>
           </div>
           <ul>
             {application.map((item) => {

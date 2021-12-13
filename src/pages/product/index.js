@@ -125,7 +125,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
       <div>
         <div className="flex flex-row mb-6">
           <div>
-            <PageTitle>Product</PageTitle>
+            <PageTitle>製品</PageTitle>
             <PageSubTitle>ソフトウェア・ライブラリ</PageSubTitle>
             <p>使い勝手を確認したい方のためにトライアルソフトウェアもございます。</p>
           </div>
