@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import Link from "next/link";
+import { Pagination } from "src/component/Pagenation";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
-import { client } from "src/lib/client";
 
-export default function News({ news }) {
+export default function News({ news, totalCount }) {
   return (
     <FluidLayout>
       <PageSEO title={`News - ${siteMetadata.author}`} description={siteMetadata.description} />
@@ -37,18 +38,27 @@ export default function News({ news }) {
           );
         })}
       </ul>
+      {totalCount < 5 ? null : <Pagination totalCount={totalCount} />}
     </FluidLayout>
   );
 }
 
 export const getStaticProps = async () => {
-  const data = await client.get({
-    endpoint: "news",
-  });
+  const key = {
+    headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
+  };
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news?offset=0&limit=5`, key)
+    .then((res) => {
+      return res.json();
+    })
+    .catch(() => {
+      return null;
+    });
 
   return {
     props: {
       news: data.contents,
+      totalCount: data.totalCount,
     },
   };
 };
