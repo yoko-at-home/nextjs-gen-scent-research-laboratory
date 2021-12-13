@@ -31,7 +31,7 @@ export const FormMemberRegistration: NextPage = () => {
     setResearcher(otherOccupation);
   };
   const handleOnChangeResearcherText: InputHTMLAttributes<HTMLInputElement>["onChange"] = (event) => {
-    setOtherOccupation("その他 " + event.currentTarget.value);
+    setOtherOccupation(event.currentTarget.value);
   };
 
   const handleRegisterUser = async (event: any) => {
@@ -57,6 +57,8 @@ export const FormMemberRegistration: NextPage = () => {
           event.target.department.value +
           "\n\nご職業: " +
           researcher +
+          "\n その他: " +
+          event.target.other_occupation.value +
           "\n\nご住所" +
           "\n〒 " +
           event.target.zipcode.value +
@@ -120,8 +122,9 @@ export const FormMemberRegistration: NextPage = () => {
               name="englishfullname"
               type="text"
               className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              placeholder="English Name"
+              placeholder="Full Name in English"
               required
+              autoComplete="name"
             />
           </div>
           <div className="flex mb-3">
@@ -305,6 +308,7 @@ export const FormMemberRegistration: NextPage = () => {
                 name="speciality"
                 type="text"
                 className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                placeholder="Field of Expertise"
               />
             </div>
           </div>
@@ -318,6 +322,7 @@ export const FormMemberRegistration: NextPage = () => {
                 name="reference"
                 className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
                 type="text"
+                placeholder="Product name for which information is requested"
               ></input>
             </div>
           </div>
