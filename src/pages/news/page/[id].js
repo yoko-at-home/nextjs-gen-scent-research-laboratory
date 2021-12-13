@@ -22,13 +22,15 @@ export default function newsPageId({ news, totalCount }) {
                   </div>
                 ) : (
                   <div>
-                    <div className="flex justify-between">
-                      <div className="p-1 whitespace-nowrap">{news.title}</div>
+                    <div className="p-1 whitespace-nowrap">{news.title}</div>
+                    <div className="flex justify-between items-end">
+                      <div className=" p-1">{news.description}</div>
                       <Link href={`/news/${news.id}`} passHref>
-                        <a className="p-1 text-blue-600">詳細</a>
+                        <a className="p-1 text-blue-400 hover:text-blue-900 whitespace-nowrap hover:bg-gray-300">
+                          詳細
+                        </a>
                       </Link>
                     </div>
-                    <div className=" p-1">{news.description}</div>
                   </div>
                 )}
                 <hr></hr>
