@@ -1,25 +1,44 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import Link from "next/link";
 import { Pagination } from "src/component/Pagenation";
+import { PageSubTitle } from "src/component/PageTitle";
+import { FixedLayout } from "src/layout";
 
-const PER_PAGE = 5;
+const PER_PAGE = 6;
 
 export default function newsPageId({ news, totalCount }) {
   return (
-    <div>
-      <ul>
-        {news.map((news) => {
-          return (
-            <li key={news.id}>
-              <Link href={`news/${news.id}`}>
-                <a>{news.title}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <Pagination totalCount={totalCount} />
-    </div>
+    <FixedLayout>
+      <PageSubTitle>ニュース一覧</PageSubTitle>
+      <div className="flex flex-col justify-between min-h-full">
+        <ul>
+          {news.map((news) => {
+            return (
+              <li key={news.id}>
+                {!news.body ? (
+                  <div>
+                    <div className="p-1 whitespace-nowrap">{news.title}</div>
+                    <div className=" p-1">{news.description}</div>
+                  </div>
+                ) : (
+                  <div>
+                    <div className="flex justify-between">
+                      <div className="p-1 whitespace-nowrap">{news.title}</div>
+                      <Link href={`/news/${news.id}`} passHref>
+                        <a className="p-1 text-blue-600 whitespace-nowrap">詳細</a>
+                      </Link>
+                    </div>
+                    <div className=" p-1">{news.description}</div>
+                  </div>
+                )}
+                <hr></hr>
+              </li>
+            );
+          })}
+        </ul>
+        <Pagination totalCount={totalCount} />
+      </div>
+    </FixedLayout>
   );
 }
 
@@ -54,7 +73,7 @@ export const getStaticProps = async (context) => {
     headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
   };
 
-  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news?offset=${(id - 1) * 5}&limit=5`, key)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news?offset=${(id - 1) * 6}&limit=6`, key)
     .then((res) => {
       return res.json();
     })
