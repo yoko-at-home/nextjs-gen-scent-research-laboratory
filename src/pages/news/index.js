@@ -12,7 +12,9 @@ export default function News({ news, totalCount }) {
       <PageSEO title={`News - ${siteMetadata.author}`} description={siteMetadata.description} />
 
       <div className="">
-        <PageTitle>最新情報</PageTitle>
+        <PageTitle>
+          <span className="tracking-wider ">最新情報</span>
+        </PageTitle>
       </div>
       <ul>
         {news.map((item) => {
