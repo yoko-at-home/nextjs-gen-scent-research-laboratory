@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { VFC } from "react";
 import { NavLink } from "src/component/Button";
-import Logo from "src/component/Logo";
+import { Logo } from "src/component/Logo";
 import { siteMetadata } from "src/data/siteMetaData";
 
 const items = [
@@ -23,7 +23,7 @@ export const Header: VFC = () => {
       <div className="relative">
         <Logo />
         <div className="absolute top-16 left-8 z-30 sm:top-24 sm:left-32 md:top-28 xl:top-40 xl:left-60">
-          <h1 className="z-20 text-lg text-white sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="z-20 text-lg text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
             {siteMetadata.author}
           </h1>
         </div>
