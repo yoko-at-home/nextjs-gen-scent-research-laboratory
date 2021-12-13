@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import Image from "next/image";
 import Link from "next/link";
-import { PageSubTitle } from "src/component/PageTitle";
+import { PageSubTitle, PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
@@ -14,17 +14,17 @@ export default function Product({ software, sample, odor, other, software2 }) {
       <div>
         <PageSubTitle>GC-MS備品・におい分析用製品・サンプル</PageSubTitle>
         <ul className="grid grid-cols-3 gap-4">
-          {sample.map((sample) => {
+          {sample.map((item) => {
             return (
-              <li key={sample.id}>
+              <li key={item.id}>
                 <div
                   className="flex flex-col p-1 h-40 rounded sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${sample.image.url})` }}
+                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
-                  <Link href={`/product/sample/${sample.id}`}>
-                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{sample.title}</a>
+                  <Link href={`/product/sample/${item.id}`}>
+                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-scroll w-3/4 h-24">{sample.description}</div>
+                  <div className="overflow-scroll w-3/4 h-24">{item.description}</div>
                 </div>
               </li>
             );
@@ -53,17 +53,17 @@ export default function Product({ software, sample, odor, other, software2 }) {
         </div>
 
         <ul className="grid grid-cols-3 gap-4">
-          {odor.map((odor) => {
+          {odor.map((item) => {
             return (
-              <li key={odor.id}>
+              <li key={item.id}>
                 <div
                   className="flex flex-col p-1 h-40 rounded sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${odor.image.url})` }}
+                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
-                  <Link href={`/product/odor-analysis/${odor.id}`}>
-                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{odor.title}</a>
+                  <Link href={`/product/odor-analysis/${item.id}`}>
+                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24 text-sm sm:text-base">{odor.description}</div>
+                  <div className="overflow-scroll h-24 text-sm sm:text-base">{item.description}</div>
                 </div>
               </li>
             );
@@ -77,17 +77,17 @@ export default function Product({ software, sample, odor, other, software2 }) {
       <div>
         <PageSubTitle>他サービス</PageSubTitle>
         <ul className="grid grid-cols-3 gap-4">
-          {other.map((other) => {
+          {other.map((item) => {
             return (
-              <li key={other.id}>
+              <li key={item.id}>
                 <div
                   className="flex flex-col p-1 h-40 rounded sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${other.image.url})` }}
+                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
-                  <Link href={`/product/other-services/${other.id}`}>
-                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{other.title}</a>
+                  <Link href={`/product/other-services/${item.id}`}>
+                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24 text-sm sm:text-base">{other.description}</div>
+                  <div className="overflow-scroll h-24 text-sm sm:text-base">{item.description}</div>
                 </div>
               </li>
             );
@@ -99,17 +99,17 @@ export default function Product({ software, sample, odor, other, software2 }) {
   const Software2 = () => {
     return (
       <ul>
-        {software2.map((software2) => {
+        {software2.map((item) => {
           return (
-            <li key={software2.id}>
+            <li key={item.id}>
               <div
                 className="flex flex-col p-1 h-40 rounded sm:p-3"
-                style={{ background: `center/cover no-repeat url(${software2.image.url})` }}
+                style={{ background: `center/cover no-repeat url(${item.image.url})` }}
               >
-                <Link href={`/product/software2/${software2.id}`}>
-                  <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{software2.title}</a>
+                <Link href={`/product/software2/${item.id}`}>
+                  <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                 </Link>
-                <div className="overflow-scroll h-24 text-sm sm:text-base">{software2.description}</div>
+                <div className="overflow-scroll h-24 text-sm sm:text-base">{item.description}</div>
               </div>
             </li>
           );
@@ -125,6 +125,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
       <div>
         <div className="flex flex-row mb-6">
           <div>
+            <PageTitle>Product</PageTitle>
             <PageSubTitle>ソフトウェア・ライブラリ</PageSubTitle>
             <p>使い勝手を確認したい方のためにトライアルソフトウェアもございます。</p>
           </div>
@@ -140,17 +141,17 @@ export default function Product({ software, sample, odor, other, software2 }) {
         </div>
 
         <ul className="grid grid-cols-3 gap-4">
-          {software.map((software) => {
+          {software.map((item) => {
             return (
-              <li key={software.id}>
+              <li key={item.id}>
                 <div
                   className="flex flex-col p-1 h-40 rounded sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${software.image.url})` }}
+                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
-                  <Link href={`/product/software/${software.id}`}>
-                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{software.title}</a>
+                  <Link href={`/product/software/${item.id}`}>
+                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24 text-sm sm:text-base">{software.description}</div>
+                  <div className="overflow-scroll h-24 text-sm sm:text-base">{item.description}</div>
                 </div>
               </li>
             );
