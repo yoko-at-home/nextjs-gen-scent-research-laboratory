@@ -25,7 +25,7 @@ export default function newsPageId({ news, totalCount }) {
                     <div className="flex justify-between">
                       <div className="p-1 whitespace-nowrap">{news.title}</div>
                       <Link href={`/news/${news.id}`} passHref>
-                        <a className="p-1 text-blue-600 whitespace-nowrap">詳細</a>
+                        <a className="p-1 text-blue-600">詳細</a>
                       </Link>
                     </div>
                     <div className=" p-1">{news.description}</div>
