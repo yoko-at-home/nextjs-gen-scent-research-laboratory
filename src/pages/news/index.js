@@ -33,7 +33,7 @@ export default function News({ news, totalCount }) {
                       )}
                     </a>
                   </Link>
-                  <div className="overflow-scroll text-sm sm:text-base">{item.description}</div>
+                  <div className="text-sm sm:text-base">{item.description}</div>
                 </div>
               </div>
             </li>
