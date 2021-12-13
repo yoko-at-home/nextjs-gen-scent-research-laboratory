@@ -25,7 +25,7 @@ export const FixedLayout: VFC<Props> = (props) => {
       <main className="mx-5">
         <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
       </main>
-      <div className="flex justify-between mt-20">
+      <div className="flex justify-between mt-16">
         <div>
           <a className="p-3 px-3 mr-5 text-xs font-bold text-gray-300 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-0">
             Home
@@ -34,7 +34,7 @@ export const FixedLayout: VFC<Props> = (props) => {
         <div>
           <button type="button" onClick={handleOnClick}>
             <a className="p-3 px-3 mr-5 text-xs font-bold text-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80">
-              戻る
+              Return
             </a>
           </button>
         </div>
