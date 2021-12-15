@@ -38,7 +38,7 @@ export default function Application({ application }) {
                         </a>
                       </Link>
                     </div>
-                    <div className="overflow-scroll text-sm sm:text-base">{item.description}</div>
+                    <div className="text-sm sm:text-base">{item.description}</div>
                   </div>
                 </li>
               );
