@@ -24,7 +24,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
                   <Link href={`/product/sample/${item.id}`}>
                     <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-scroll w-3/4 h-24">{item.description}</div>
+                  <div className="overflow-y-scroll w-3/4 h-24">{item.description}</div>
                 </div>
               </li>
             );
@@ -63,7 +63,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
                   <Link href={`/product/odor-analysis/${item.id}`}>
                     <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24 text-sm sm:text-base">{item.description}</div>
+                  <div className="overflow-y-scroll h-24 text-sm sm:text-base">{item.description}</div>
                 </div>
               </li>
             );
@@ -87,7 +87,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
                   <Link href={`/product/other-services/${item.id}`}>
                     <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24 text-sm sm:text-base">{item.description}</div>
+                  <div className="overflow-y-scroll h-24 text-sm sm:text-base">{item.description}</div>
                 </div>
               </li>
             );
@@ -109,7 +109,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
                 <Link href={`/product/software2/${item.id}`}>
                   <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                 </Link>
-                <div className="overflow-scroll h-24 text-sm sm:text-base">{item.description}</div>
+                <div className="overflow-y-scroll h-24 text-sm sm:text-base">{item.description}</div>
               </div>
             </li>
           );
@@ -151,7 +151,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
                   <Link href={`/product/software/${item.id}`}>
                     <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-scroll h-24 text-sm sm:text-base">{item.description}</div>
+                  <div className="overflow-y-scroll h-24 text-sm sm:text-base">{item.description}</div>
                 </div>
               </li>
             );

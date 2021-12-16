@@ -138,7 +138,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="labo"
                   name="labo"
                   type="text"
-                  className="block overflow-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
+                  className="block overflow-x-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
                   placeholder="Company/Organization/University"
                   required
                   minLength={3}
@@ -152,7 +152,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="department"
                   name="department"
                   type="text"
-                  className="block overflow-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
+                  className="block overflow-x-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
                   placeholder="Department/Laboratory"
                   required
                   minLength={3}
@@ -206,7 +206,7 @@ export const FormMemberRegistration: NextPage = () => {
                   type="text"
                   id="other_occupation"
                   name="other_occupation"
-                  className="block overflow-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-72"
+                  className="block overflow-x-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-72"
                   onChange={handleOnChangeResearcherText}
                   value={otherOccupation}
                   disabled={enableOtherOccupation}
