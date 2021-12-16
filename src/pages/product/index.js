@@ -63,7 +63,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
                   <Link href={`/product/odor-analysis/${item.id}`}>
                     <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-y-scroll h-24 text-sm sm:text-base">{item.description}</div>
+                  <div className="h-24 text-sm sm:text-base">{item.description}</div>
                 </div>
               </li>
             );
@@ -87,7 +87,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
                   <Link href={`/product/other-services/${item.id}`}>
                     <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
                   </Link>
-                  <div className="overflow-y-scroll h-24 text-sm sm:text-base">{item.description}</div>
+                  <div className="h-24 text-sm sm:text-base">{item.description}</div>
                 </div>
               </li>
             );
