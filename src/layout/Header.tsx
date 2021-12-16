@@ -21,7 +21,7 @@ export const Header: VFC = () => {
   return (
     <header>
       <div className="relative">
-        <div className="absolute top-[10%] right-[10%] z-50 justify-between transform translate-x-[50%] translate-y-[50%]flex">
+        <div className="absolute top-[3%] right-[8%] z-50 justify-between transform translate-x-[50%] translate-y-[50%] xl:top-[5%]">
           <Logo />
         </div>
         <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[40%]">
