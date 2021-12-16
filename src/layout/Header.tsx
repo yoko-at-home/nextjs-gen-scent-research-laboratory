@@ -21,16 +21,18 @@ export const Header: VFC = () => {
   return (
     <header>
       <div className="relative">
-        <Logo />
-        <div className="absolute top-16 left-8 z-30 sm:top-24 sm:left-32 md:top-28 xl:top-40 xl:left-60">
-          <h1 className="z-20 text-lg text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+        <div className="absolute top-[10%] right-[10%] z-50 justify-between transform translate-x-[50%] translate-y-[50%]flex">
+          <Logo />
+        </div>
+        <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[40%]">
+          <h1 className="z-20 text-2xl text-white whitespace-nowrap sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
             {siteMetadata.author}
           </h1>
         </div>
         <div className="hidden lg:block">
           <Image
             width="100%"
-            height="25%"
+            height="20%"
             layout="responsive"
             src="/static/images/header/background.jpg"
             alt={siteMetadata.author}
