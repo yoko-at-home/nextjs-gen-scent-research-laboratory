@@ -99,8 +99,8 @@ export const FormMemberRegistration: NextPage = () => {
     <div className="container mt-10 font-semibold sm:p-6 sm:mt-0 lg:px-20">
       <div className="mt-5 whitespace-nowrap md:mt-0">
         <form onSubmit={handleRegisterUser}>
-          <div className="flex flex-row justify-between items-center mb-3">
-            <div className="mr-3">お名前*</div>
+          <div className="flex flex-col justify-between mb-3 sm:flex-row sm:items-center">
+            <div className="mr-3 mb-3">お名前*</div>
             <label htmlFor="fullname" className="mr-3 whitespace-nowrap">
               姓名
             </label>
@@ -127,8 +127,8 @@ export const FormMemberRegistration: NextPage = () => {
               autoComplete="name"
             />
           </div>
-          <div className="flex mb-3">
-            <div className="mr-3">ご所属先*</div>
+          <div className="flex flex-col justify-between mb-3 sm:flex-row">
+            <div className="my-3 mr-3">ご所属先*</div>
             <div className="flex flex-col justify-start">
               <div className="flex">
                 <label htmlFor="labo" className="mr-3 whitespace-nowrap">
@@ -138,7 +138,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="labo"
                   name="labo"
                   type="text"
-                  className="block overflow-x-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
+                  className="block overflow-x-scroll mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
                   placeholder="Company/Organization/University"
                   required
                   minLength={3}
@@ -152,7 +152,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="department"
                   name="department"
                   type="text"
-                  className="block overflow-x-scroll mt-1 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
+                  className="block overflow-x-scroll mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm md:w-96"
                   placeholder="Department/Laboratory"
                   required
                   minLength={3}
@@ -160,9 +160,9 @@ export const FormMemberRegistration: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap items-center my-6">
+          <div className="flex flex-wrap my-6">
             <span className="mr-5 whitespace-nowrap">ご職業*</span>
-            <div className="mt-0">
+            <div className="flex flex-col mt-0">
               <label className="inline-flex items-center">
                 <input
                   required
@@ -176,7 +176,7 @@ export const FormMemberRegistration: NextPage = () => {
                 />
                 <span className="ml-2">研究者</span>
               </label>
-              <label className="inline-flex items-center ml-6">
+              <label className="inline-flex items-center">
                 <input
                   required
                   type="radio"
@@ -189,7 +189,7 @@ export const FormMemberRegistration: NextPage = () => {
                 />
                 <span className="ml-2">代理店 / 販売店</span>
               </label>
-              <label className="inline-flex items-center ml-6">
+              <label className="inline-flex items-center">
                 <input
                   required
                   type="radio"
@@ -201,6 +201,7 @@ export const FormMemberRegistration: NextPage = () => {
                   checked={isCheckboxResearcherState === 2}
                   placeholder=""
                 />
+
                 <span className="mx-2 whitespace-nowrap">その他</span>
                 <input
                   type="text"
@@ -215,51 +216,57 @@ export const FormMemberRegistration: NextPage = () => {
               </label>
             </div>
           </div>
-          <div className="flex flex-row justify-between items-center mb-3">
+          <div className="flex flex-col justify-between mb-3 sm:flex-row sm:items-center">
             <div className="mr-3">ご住所*</div>
-            <label htmlFor="zipcode" className="mr-3 whitespace-nowrap">
-              〒
-            </label>
-            <input
-              id="zipcode"
-              name="zipcode"
-              type="text"
-              className="block mt-1 w-24 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              autoComplete="postal-code"
-              placeholder="zip code"
-            />
-            <label htmlFor="address" className="mx-3 whitespace-nowrap">
-              住所
-            </label>
-            <input
-              id="address1"
-              name="address1"
-              type="text"
-              className="block mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              autoComplete="address-level1"
-              placeholder="都道府県"
-              required
-            />
-            <input
-              id="address2"
-              name="address2"
-              type="text"
-              className="block mx-2 mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              autoComplete="address-level2"
-              required
-              placeholder="市町村"
-            />
-            <input
-              id="address3"
-              name="address3"
-              type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              autoComplete="street-address"
-              required
-              placeholder="番地"
-            />
+            <div className="flex flex-col sm:flex-row">
+              <div className="flex">
+                <label htmlFor="zipcode" className="mr-3 whitespace-nowrap">
+                  〒
+                </label>
+                <input
+                  id="zipcode"
+                  name="zipcode"
+                  type="text"
+                  className="block mt-1 w-24 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                  autoComplete="postal-code"
+                  placeholder="zip code"
+                />
+              </div>
+              <div className="flex">
+                <label htmlFor="address" className="mr-3 whitespace-nowrap sm:mx-3">
+                  住所
+                </label>
+                <input
+                  id="address1"
+                  name="address1"
+                  type="text"
+                  className="block mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                  autoComplete="address-level1"
+                  placeholder="都道府県"
+                  required
+                />
+                <input
+                  id="address2"
+                  name="address2"
+                  type="text"
+                  className="block mx-2 mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                  autoComplete="address-level2"
+                  required
+                  placeholder="市町村"
+                />
+                <input
+                  id="address3"
+                  name="address3"
+                  type="text"
+                  className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                  autoComplete="street-address"
+                  required
+                  placeholder="番地"
+                />
+              </div>
+            </div>
           </div>
-          <div className="flex flex-row justify-between items-center mb-3">
+          <div className="flex flex-col justify-between mb-3 sm:flex-row sm:items-center">
             <div className="mr-3">お電話番号*</div>
             <label htmlFor="phone1" className="mr-3 whitespace-nowrap"></label>
             <input
@@ -283,7 +290,7 @@ export const FormMemberRegistration: NextPage = () => {
             />
           </div>
           <div className="mb-3">
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row">
               <label htmlFor="email" className="mr-3 whitespace-nowrap">
                 メール*
               </label>
@@ -299,7 +306,7 @@ export const FormMemberRegistration: NextPage = () => {
             </div>
           </div>
           <div className="mb-3">
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row">
               <label htmlFor="speciality" className="mr-3 whitespace-nowrap">
                 ご専⾨分野
               </label>
@@ -313,7 +320,7 @@ export const FormMemberRegistration: NextPage = () => {
             </div>
           </div>
           <div className="mb-3">
-            <div className="flex">
+            <div className="flex flex-col sm:flex-row">
               <label htmlFor="reference" className="mr-3 whitespace-nowrap">
                 資料ご請求製品名
               </label>
