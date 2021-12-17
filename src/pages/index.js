@@ -12,7 +12,7 @@ const Home = (props) => {
       }}
     >
       <FluidLayout>
-        <PageSEO title={`ご挨拶 - ${siteMetadata.author}`} description={siteMetadata.description} />
+        <PageSEO title={`Greeting - ${siteMetadata.author}`} description={siteMetadata.description} />
 
         <div className="">
           <PageTitle>{props.data.title}</PageTitle>

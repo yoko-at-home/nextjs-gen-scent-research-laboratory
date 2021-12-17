@@ -18,7 +18,7 @@ const AboutUs: NextPage = () => {
         <PageSEO title={`About Us - ${siteMetadata.author}`} description={siteMetadata.description} />
         <div className="flex flex-col justify-between">
           <PageTitle>
-            <span className="tracking-widest animation">玄川リサーチ</span>
+            <span className="tracking-widest">玄川リサーチ</span>
           </PageTitle>
           <h2 className="my-5 text-xl font-semibold md:text-2xl lg:mb-10 lg:text-3xl animation">
             Gen-Scent Research Laboratory
