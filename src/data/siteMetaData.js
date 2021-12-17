@@ -10,6 +10,6 @@ export const siteMetadata = {
   siteLogo: "/static/images/logo.png",
   image: "/static/images/laurel.png",
   socialBanner: "/static/images/logo.png",
-  email: "tech＠gen-scent.com",
+  email: "tech@gen-scent.com",
   locale: "ja-JP",
 };
