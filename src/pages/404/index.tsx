@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
+import Link from "next/link";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -11,6 +12,13 @@ const Custom404: NextPage = () => {
       <PageSEO title={`Page Not Found- ${siteMetadata.author}`} description={siteMetadata.description} />
       <PageTitle>ページが見つかりません</PageTitle>
       <div className="container p-3 text-lg">
+        お探しのページが見つかりません。
+        <br />
+        サポートをご希望の場合は、
+        <Link href="/contact">
+          <span className="font-semibold text-blue-300">コンタクトページ </span>
+        </Link>
+        よりお問い合わせください。
         <div className="flex justify-center">
           <img src="/static/404-error.gif" alt="meil" width="180px" />
         </div>
