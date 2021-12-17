@@ -127,7 +127,7 @@ export const FormMemberRegistration: NextPage = () => {
               autoComplete="name"
             />
           </div>
-          <div className="flex flex-col justify-between mb-3 sm:flex-row">
+          <div className="flex flex-col mb-3 sm:flex-row">
             <div className="my-3 mr-3">ご所属先*</div>
             <div className="flex flex-col justify-start">
               <div className="flex">
@@ -216,7 +216,7 @@ export const FormMemberRegistration: NextPage = () => {
               </label>
             </div>
           </div>
-          <div className="flex flex-col justify-between mb-3 sm:flex-row sm:items-center">
+          <div className="flex flex-col mb-3 sm:flex-row sm:items-center">
             <div className="mr-3">ご住所*</div>
             <div className="flex flex-col sm:flex-row">
               <div className="flex">
