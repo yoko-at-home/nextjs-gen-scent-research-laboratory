@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { VFC } from "react";
 import { NavLink } from "src/component/Button";
-import { Logo } from "src/component/Logo";
+import { Logo, LogoSmall } from "src/component/Logo";
 import { siteMetadata } from "src/data/siteMetaData";
 
 const items = [
@@ -21,8 +21,9 @@ export const Header: VFC = () => {
   return (
     <header>
       <div className="relative">
-        <div className="hidden absolute top-[3%] right-[8%] z-50 justify-between transform translate-x-[50%] translate-y-[50%] sm:block xl:top-[5%]">
+        <div className="absolute top-[3%] right-[8%] z-50 justify-between transform translate-x-[50%] translate-y-[50%] sm:block xl:top-[5%]">
           <Logo />
+          <LogoSmall />
         </div>
         <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[40%]">
           <h1 className="z-20 text-2xl text-white whitespace-nowrap sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
