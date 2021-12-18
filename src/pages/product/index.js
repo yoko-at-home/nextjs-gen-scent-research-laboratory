@@ -18,13 +18,29 @@ export default function Product({ software, sample, odor, other, software2 }) {
             return (
               <li key={item.id}>
                 <div
-                  className="flex flex-col p-1 h-40 rounded sm:p-3"
+                  className="flex p-1 h-40 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
-                  <Link href={`/product/sample/${item.id}`}>
-                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
-                  </Link>
-                  <div className="overflow-y-scroll w-3/4 h-24">{item.description}</div>
+                  {item.charm ? (
+                    <div className="flex">
+                      <div className="flex flex-col w-3/4">
+                        <Link href={`/product/sample/${item.id}`}>
+                          <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
+                        </Link>
+                        <div className="overflow-y-scroll">{item.description}</div>
+                      </div>
+                      <div className="w-12 sm:w-16 lg:20">
+                        <img src={item.charm.url} alto="product" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col">
+                      <Link href={`/product/sample/${item.id}`}>
+                        <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
+                      </Link>
+                      <div className="overflow-y-scroll">{item.description}</div>
+                    </div>
+                  )}
                 </div>
               </li>
             );
