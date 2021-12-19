@@ -1,10 +1,15 @@
+import type { NextPage } from "next";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 
-const Home = (props) => {
+type Props = {
+  data: string;
+};
+
+const Home: NextPage<Props> = (props: any) => {
   return (
     <div
       style={{
