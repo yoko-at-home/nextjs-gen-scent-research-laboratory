@@ -18,7 +18,7 @@ export const Footer: VFC = () => {
           <Link href="/privacy">個人情報保護方針</Link>
         </div>
         <div className="my-8 text-sm text-gray-400">
-          <Link href="https://over40webclub.netlify.app/">
+          <Link href="https://over40web.club">
             <a target="_blank" rel="noopener noreferrer">
               Powered by Over 40 Web Club
             </a>
