@@ -17,11 +17,34 @@ type Props = {
   software2: string;
 };
 
+const productTitles = [
+  {
+    id: 0,
+    title: "ソフトウェア・ライブラリ",
+    description: "使い勝手を確認したい方のためにトライアルソフトウェアもございます。",
+  },
+  {
+    id: 1,
+    title: "GC-MS備品・におい分析用製品・サンプル",
+    description: "",
+  },
+  {
+    id: 2,
+    title: "におい分析機器類",
+    description: "揮発性成分用サンプリングシステムや、匂い成分の分析システムなどをご紹介しております。",
+  },
+  {
+    id: 3,
+    title: "他サービス",
+    description: "",
+  },
+];
+
 const Product: NextPage<Props> = (props: any) => {
   const Sample = () => {
     return (
       <div>
-        <PageSubTitle>GC-MS備品・におい分析用製品・サンプル</PageSubTitle>
+        <PageSubTitle>{productTitles[1].title}</PageSubTitle>
         <ul className="grid grid-cols-3 gap-4">
           {props.sample.map((item: any) => {
             return (
@@ -63,8 +86,8 @@ const Product: NextPage<Props> = (props: any) => {
       <div>
         <div className="flex flex-row mb-6">
           <div>
-            <PageSubTitle>におい分析機器類</PageSubTitle>
-            <p>揮発性成分用サンプリングシステムや、匂い成分の分析システムなどをご紹介しております。</p>
+            <PageSubTitle>{productTitles[2].title}</PageSubTitle>
+            <p>{productTitles[2].description}</p>
           </div>
           <div className="flex flex-col-reverse items-baseline ml-5">
             <Image
@@ -100,7 +123,7 @@ const Product: NextPage<Props> = (props: any) => {
   const Other = () => {
     return (
       <div>
-        <PageSubTitle>他サービス</PageSubTitle>
+        <PageSubTitle>{productTitles[3].title}</PageSubTitle>
         <ul className="grid grid-cols-3 gap-4">
           {props.other.map((item: any) => {
             return (
@@ -151,8 +174,8 @@ const Product: NextPage<Props> = (props: any) => {
         <div className="flex flex-row mb-6">
           <div>
             <PageTitle>製品</PageTitle>
-            <PageSubTitle>ソフトウェア・ライブラリ</PageSubTitle>
-            <p>使い勝手を確認したい方のためにトライアルソフトウェアもございます。</p>
+            <PageSubTitle>{productTitles[0].title}</PageSubTitle>
+            <p>{productTitles[0].description}</p>
           </div>
           <div className="flex flex-col-reverse items-baseline ml-5">
             <Image
