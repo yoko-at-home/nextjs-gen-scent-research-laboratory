@@ -42,7 +42,7 @@ const Product: NextPage<Props> = (props: any) => {
     return (
       <div>
         <PageSubTitle>{productTitles[1].title}</PageSubTitle>
-        <ul className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 md:px-3 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.sample.map((item: any) => {
             return (
               <li key={item.id}>
@@ -105,7 +105,7 @@ const Product: NextPage<Props> = (props: any) => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 md:px-3 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.odor.map((item: any) => {
             return (
               <li key={item.id}>
@@ -153,7 +153,7 @@ const Product: NextPage<Props> = (props: any) => {
     return (
       <div>
         <PageSubTitle>{productTitles[3].title}</PageSubTitle>
-        <ul className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 md:px-3 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.other.map((item: any) => {
             return (
               <li key={item.id}>
@@ -257,7 +257,7 @@ const Product: NextPage<Props> = (props: any) => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 md:px-3 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.software.map((item: any) => {
             return (
               <li key={item.id}>
