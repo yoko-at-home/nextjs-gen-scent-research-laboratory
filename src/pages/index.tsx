@@ -20,9 +20,11 @@ const Home: NextPage<Props> = (props: any) => {
         <PageSEO title={`Greeting - ${siteMetadata.author}`} description={siteMetadata.description} />
 
         <div className="">
-          <PageTitle>{props.data.title}</PageTitle>
+          <PageTitle>
+            <span className="tracking-widest">{props.data.title}</span>
+          </PageTitle>
           <div
-            className="py-5 px-5 sm:text-lg md:py-10 lg:py-16 animation"
+            className="py-5 px-5 leading-loose sm:text-lg md:py-10 lg:py-16 animation"
             dangerouslySetInnerHTML={{
               // eslint-disable-next-line @typescript-eslint/naming-convention
               __html: `${props.data.body}`,
