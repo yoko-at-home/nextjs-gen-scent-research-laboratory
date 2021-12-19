@@ -39,7 +39,7 @@ const Product: NextPage<Props> = (props: any) => {
                         <div className="overflow-y-scroll">{item.description}</div>
                       </div>
                       <div className="w-12 sm:w-16 lg:20">
-                        <img src={item.charm.url} alto="product" />
+                        <img src={item.charm.url} alt="product" />
                       </div>
                     </div>
                   ) : (
