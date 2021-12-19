@@ -1,5 +1,6 @@
 /* eslint-disable import/no-default-export */
 /* eslint-disable @typescript-eslint/naming-convention*/
+import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageSubTitle, PageTitle } from "src/component/PageTitle";
@@ -8,13 +9,21 @@ import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 
-export default function Product({ software, sample, odor, other, software2 }) {
+type Props = {
+  software: string;
+  sample: string;
+  odor: string;
+  other: string;
+  software2: string;
+};
+
+const Product: NextPage<Props> = (props: any) => {
   const Sample = () => {
     return (
       <div>
         <PageSubTitle>GC-MS備品・におい分析用製品・サンプル</PageSubTitle>
         <ul className="grid grid-cols-3 gap-4">
-          {sample.map((item) => {
+          {props.sample.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
@@ -69,7 +78,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
         </div>
 
         <ul className="grid grid-cols-3 gap-4">
-          {odor.map((item) => {
+          {props.odor.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
@@ -93,7 +102,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
       <div>
         <PageSubTitle>他サービス</PageSubTitle>
         <ul className="grid grid-cols-3 gap-4">
-          {other.map((item) => {
+          {props.other.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
@@ -115,7 +124,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
   const Software2 = () => {
     return (
       <ul>
-        {software2.map((item) => {
+        {props.software2.map((item: any) => {
           return (
             <li key={item.id}>
               <div
@@ -157,7 +166,7 @@ export default function Product({ software, sample, odor, other, software2 }) {
         </div>
 
         <ul className="grid grid-cols-3 gap-4">
-          {software.map((item) => {
+          {props.software.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
@@ -182,7 +191,9 @@ export default function Product({ software, sample, odor, other, software2 }) {
       <Other />
     </FluidLayout>
   );
-}
+};
+
+export default Product;
 
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
