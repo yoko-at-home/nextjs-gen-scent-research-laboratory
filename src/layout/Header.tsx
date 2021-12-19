@@ -26,7 +26,7 @@ export const Header: VFC = () => {
           <LogoSmall />
         </div>
         <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[40%]">
-          <h1 className="z-20 font-calibri text-2xl text-white whitespace-nowrap sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+          <h1 className="z-20 font-serif text-2xl text-white whitespace-nowrap sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
             {siteMetadata.author}
           </h1>
         </div>

@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Calibri", "notosans", "serif"],
-        calibri: ["Calibri", "notosans", "serif"],
+        serif: ["serif"],
       },
     },
   },
