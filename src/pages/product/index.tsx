@@ -10,11 +10,8 @@ import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 
 type Props = {
-  software: string;
-  sample: string;
-  odor: string;
-  other: string;
-  software2: string;
+  className: string;
+  productType: "software" | "software2" | "sample" | "odor" | "other";
 };
 
 const productTitles = [
@@ -45,32 +42,40 @@ const Product: NextPage<Props> = (props: any) => {
     return (
       <div>
         <PageSubTitle>{productTitles[1].title}</PageSubTitle>
-        <ul className="grid grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.sample.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-40 rounded sm:p-3"
+                  className="flex p-1 h-52 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
-                      <div className="flex flex-col w-3/4">
+                      <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/sample/${item.id}`}>
-                          <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
+                          <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                         </Link>
-                        <div className="overflow-y-scroll">{item.description}</div>
+                        <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                          <Link href={`/product/sample/${item.id}`}>
+                            <a>{item.description}</a>
+                          </Link>
+                        </div>
                       </div>
-                      <div className="w-12 sm:w-16 lg:20">
+                      <div className="w-20">
                         <img src={item.charm.url} alt="product" />
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col p-3 w-full">
                       <Link href={`/product/sample/${item.id}`}>
-                        <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
+                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                       </Link>
-                      <div className="overflow-y-scroll">{item.description}</div>
+                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                        <Link href={`/product/sample/${item.id}`}>
+                          <a>{item.description}</a>
+                        </Link>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -89,7 +94,7 @@ const Product: NextPage<Props> = (props: any) => {
             <PageSubTitle>{productTitles[2].title}</PageSubTitle>
             <p>{productTitles[2].description}</p>
           </div>
-          <div className="flex flex-col-reverse items-baseline ml-5">
+          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3-reverse">
             <Image
               alt="揮発性成分用サンプリングシステム"
               src="/static/images/software/topimage2.jpg"
@@ -100,18 +105,42 @@ const Product: NextPage<Props> = (props: any) => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.odor.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex flex-col p-1 h-40 rounded sm:p-3"
+                  className="flex p-1 h-52 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
-                  <Link href={`/product/odor-analysis/${item.id}`}>
-                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
-                  </Link>
-                  <div className="overflow-hidden h-24 text-sm sm:text-base text-ellipsis">{item.description}</div>
+                  {item.charm ? (
+                    <div className="flex">
+                      <div className="flex flex-col p-3 w-3/4">
+                        <Link href={`/product/odor-analysis/${item.id}`}>
+                          <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                        </Link>
+                        <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                          <Link href={`/product/odor-analysis/${item.id}`}>
+                            <a>{item.description}</a>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="w-20">
+                        <img src={item.charm.url} alt="product" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col p-3 w-full">
+                      <Link href={`/product/odor-analysis/${item.id}`}>
+                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                      </Link>
+                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                        <Link href={`/product/odor-analysis/${item.id}`}>
+                          <a>{item.description}</a>
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </li>
             );
@@ -124,18 +153,42 @@ const Product: NextPage<Props> = (props: any) => {
     return (
       <div>
         <PageSubTitle>{productTitles[3].title}</PageSubTitle>
-        <ul className="grid grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.other.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex flex-col p-1 h-40 rounded sm:p-3"
+                  className="flex p-1 h-52 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
-                  <Link href={`/product/other-services/${item.id}`}>
-                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
-                  </Link>
-                  <div className="overflow-hidden h-24 text-sm sm:text-base text-ellipsis">{item.description}</div>
+                  {item.charm ? (
+                    <div className="flex">
+                      <div className="flex flex-col p-3 w-3/4">
+                        <Link href={`/product/other-services/${item.id}`}>
+                          <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                        </Link>
+                        <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                          <Link href={`/product/other-services/${item.id}`}>
+                            <a>{item.description}</a>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="w-20">
+                        <img src={item.charm.url} alt="product" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col p-3 w-full">
+                      <Link href={`/product/other-services/${item.id}`}>
+                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                      </Link>
+                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                        <Link href={`/product/other-services/${item.id}`}>
+                          <a>{item.description}</a>
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </li>
             );
@@ -151,13 +204,29 @@ const Product: NextPage<Props> = (props: any) => {
           return (
             <li key={item.id}>
               <div
-                className="flex flex-col p-1 h-40 rounded sm:p-3"
+                className="flex p-1 h-52 rounded sm:p-3"
                 style={{ background: `center/cover no-repeat url(${item.image.url})` }}
               >
-                <Link href={`/product/software2/${item.id}`}>
-                  <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
-                </Link>
-                <div className="overflow-y-scroll h-24 text-sm sm:text-base">{item.description}</div>
+                {item.charm ? (
+                  <div className="flex">
+                    <div className="flex flex-col p-3 w-3/4">
+                      <Link href={`/product/software2/${item.id}`}>
+                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                      </Link>
+                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">{item.description}</div>
+                    </div>
+                    <div className="w-20">
+                      <img src={item.charm.url} alt="product" />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex flex-col p-3 w-full">
+                    <Link href={`/product/software2/${item.id}`}>
+                      <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                    </Link>
+                    <div className="overflow-hidden text-base text-gray-800 text-ellipsis">{item.description}</div>
+                  </div>
+                )}
               </div>
             </li>
           );
@@ -177,7 +246,7 @@ const Product: NextPage<Props> = (props: any) => {
             <PageSubTitle>{productTitles[0].title}</PageSubTitle>
             <p>{productTitles[0].description}</p>
           </div>
-          <div className="flex flex-col-reverse items-baseline ml-5">
+          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3-reverse">
             <Image
               alt="ソフトウェア・ライブラリ"
               src="/static/images/software/topimage.jpg"
@@ -188,18 +257,42 @@ const Product: NextPage<Props> = (props: any) => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 gap-4 px-5 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.software.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex flex-col p-1 h-40 rounded sm:p-3"
+                  className="flex p-1 h-52 rounded sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
-                  <Link href={`/product/software/${item.id}`}>
-                    <a className="mb-3 text-sm font-semibold sm:text-base sm:font-bold">{item.title}</a>
-                  </Link>
-                  <div className="overflow-y-scroll h-24 text-sm sm:text-base">{item.description}</div>
+                  {item.charm ? (
+                    <div className="flex">
+                      <div className="flex flex-col p-3 w-3/4">
+                        <Link href={`/product/software/${item.id}`}>
+                          <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                        </Link>
+                        <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                          <Link href={`/product/software/${item.id}`}>
+                            <a>{item.description}</a>
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="w-20">
+                        <img src={item.charm.url} alt="product" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col p-3 w-full">
+                      <Link href={`/product/software/${item.id}`}>
+                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                      </Link>
+                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                        <Link href={`/product/software/${item.id}`}>
+                          <a>{item.description}</a>
+                        </Link>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </li>
             );
