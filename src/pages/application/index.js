@@ -10,11 +10,11 @@ export default function Application({ application }) {
   return (
     <div
       style={{
-        background: "center/cover no-repeat url('/static/images/coming-soon.jpg')",
+        background: "center/cover no-repeat url('/static/images/application/gen.jpg')",
       }}
       className="z-10"
     >
-      <div className="z-40 bg-white bg-opacity-70">
+      <div className="z-40 bg-white bg-opacity-10">
         <FluidLayout>
           <PageSEO title={`Application - ${siteMetadata.author}`} description={siteMetadata.description} />
           <div className="">
@@ -25,7 +25,7 @@ export default function Application({ application }) {
               return (
                 <li key={item.id}>
                   <div
-                    className="flex flex-col p-5 mb-5 bg-white bg-opacity-50 rounded sm:p-3"
+                    className="flex flex-col p-5 mb-5 bg-white bg-opacity-80 rounded sm:p-3"
                     // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                   >
                     <div className="flex justify-between items-end">
