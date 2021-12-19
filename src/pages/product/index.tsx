@@ -47,7 +47,7 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-52 rounded sm:p-3"
+                  className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
@@ -110,7 +110,7 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-52 rounded sm:p-3"
+                  className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
@@ -158,7 +158,7 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-52 rounded sm:p-3"
+                  className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
@@ -204,7 +204,7 @@ const Product: NextPage<Props> = (props: any) => {
           return (
             <li key={item.id}>
               <div
-                className="flex p-1 h-52 rounded sm:p-3"
+                className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                 style={{ background: `center/cover no-repeat url(${item.image.url})` }}
               >
                 {item.charm ? (
@@ -262,7 +262,7 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-52 rounded sm:p-3"
+                  className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
