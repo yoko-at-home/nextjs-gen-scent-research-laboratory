@@ -1,3 +1,4 @@
+import type { NextPage } from "next";
 import Link from "next/link";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -6,7 +7,7 @@ import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 
 /* eslint-disable import/no-default-export */
-export default function Application({ application }) {
+const Application: NextPage = (props: any) => {
   return (
     <div
       style={{
@@ -23,7 +24,7 @@ export default function Application({ application }) {
             </PageTitle>
           </div>
           <ul>
-            {application.map((item) => {
+            {props.application.map((item: any) => {
               return (
                 <li key={item.id}>
                   <div
@@ -52,7 +53,9 @@ export default function Application({ application }) {
       </div>
     </div>
   );
-}
+};
+
+export default Application;
 
 export const getStaticProps = async () => {
   const data = await client.get({
