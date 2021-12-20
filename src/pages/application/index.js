@@ -12,13 +12,15 @@ export default function Application({ application }) {
       style={{
         background: "center/cover no-repeat url('/static/images/application/gen.jpg')",
       }}
-      className="z-10"
+      className="z-10 font-extrabold text-green-900"
     >
-      <div className="z-40 bg-white bg-opacity-10">
+      <div className="z-40 bg-white bg-opacity-20">
         <FluidLayout>
           <PageSEO title={`Application - ${siteMetadata.author}`} description={siteMetadata.description} />
           <div className="">
-            <PageTitle>アプリケーション</PageTitle>
+            <PageTitle>
+              <span className="tracking-wider text-emerald-900">アプリケーション</span>
+            </PageTitle>
           </div>
           <ul>
             {application.map((item) => {
@@ -29,11 +31,13 @@ export default function Application({ application }) {
                     // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                   >
                     <div className="flex justify-between items-end">
-                      <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
+                      <div className="p-1 mb-3 font-semibold sm:font-bold">{item.title}</div>
                       <Link href={`/application/${item.id}`} passHref>
                         <a>
                           {item.body === undefined ? null : (
-                            <span className="p-2 ml-5 text-gray-700 whitespace-nowrap bg-gray-300">詳細</span>
+                            <span className="p-2 ml-5 text-gray-700 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-emerald-700">
+                              詳細
+                            </span>
                           )}
                         </a>
                       </Link>

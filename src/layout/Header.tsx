@@ -55,7 +55,7 @@ export const Header: VFC = () => {
         {items.map(({ href, label }) => {
           return (
             <NavLink key={href} href={href} activeClassName="bg-gray-500 text-white">
-              <a className="inline-block p-1 text-base font-semibold hover:text-gray-200 whitespace-nowrap hover:bg-gray-400 bg-opacity-30 bg-gradient-to-r focus:from-gray-300 focus:to-[#4682b4] sm:p-4 sm:text-lg">
+              <a className="inline-block p-1 text-base font-semibold hover:text-gray-200 whitespace-nowrap hover:bg-gray-400 bg-opacity-30 bg-gradient-to-r focus:from-gray-300 sm:p-4 sm:text-lg focus:to-emerald-700">
                 {label}
               </a>
             </NavLink>
