@@ -63,7 +63,7 @@ const Product: NextPage<Props> = (props: any) => {
                         </div>
                       </div>
                       <div className="w-20">
-                        <img src={item.charm.url} alt="product" />
+                        <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
                       </div>
                     </div>
                   ) : (
@@ -126,7 +126,7 @@ const Product: NextPage<Props> = (props: any) => {
                         </div>
                       </div>
                       <div className="w-20">
-                        <img src={item.charm.url} alt="product" />
+                        <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
                       </div>
                     </div>
                   ) : (
@@ -174,7 +174,7 @@ const Product: NextPage<Props> = (props: any) => {
                         </div>
                       </div>
                       <div className="w-20">
-                        <img src={item.charm.url} alt="product" />
+                        <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
                       </div>
                     </div>
                   ) : (
@@ -216,7 +216,7 @@ const Product: NextPage<Props> = (props: any) => {
                       <div className="overflow-hidden text-base text-gray-800 text-ellipsis">{item.description}</div>
                     </div>
                     <div className="w-20">
-                      <img src={item.charm.url} alt="product" />
+                      <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
                     </div>
                   </div>
                 ) : (
@@ -278,7 +278,7 @@ const Product: NextPage<Props> = (props: any) => {
                         </div>
                       </div>
                       <div className="w-20">
-                        <img src={item.charm.url} alt="product" />
+                        <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
                       </div>
                     </div>
                   ) : (

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -16,11 +17,11 @@ const Custom404: NextPage = () => {
         <br />
         サポートをご希望の場合は、
         <Link href="/contact">
-          <span className="font-semibold text-blue-300">コンタクトページ </span>
+          <a className="text-emerald-600">コンタクトページ </a>
         </Link>
         よりお問い合わせください。
         <div className="flex justify-center">
-          <img src="/static/404-error.gif" alt="meil" width="180px" />
+          <Image src="/static/404-error.gif" alt="meil" width="180px" height="180px" />
         </div>
       </div>
     </FluidLayout>
