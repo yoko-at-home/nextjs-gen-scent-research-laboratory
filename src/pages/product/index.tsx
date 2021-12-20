@@ -56,7 +56,7 @@ const Product: NextPage<Props> = (props: any) => {
                         <Link href={`/product/sample/${item.id}`}>
                           <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                         </Link>
-                        <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                        <div className="overflow-hidden text-base text-ellipsis">
                           <Link href={`/product/sample/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
@@ -71,7 +71,7 @@ const Product: NextPage<Props> = (props: any) => {
                       <Link href={`/product/sample/${item.id}`}>
                         <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                       </Link>
-                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                      <div className="overflow-hidden text-base text-ellipsis">
                         <Link href={`/product/sample/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
@@ -119,7 +119,7 @@ const Product: NextPage<Props> = (props: any) => {
                         <Link href={`/product/odor-analysis/${item.id}`}>
                           <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                         </Link>
-                        <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                        <div className="overflow-hidden text-base text-ellipsis">
                           <Link href={`/product/odor-analysis/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
@@ -134,7 +134,7 @@ const Product: NextPage<Props> = (props: any) => {
                       <Link href={`/product/odor-analysis/${item.id}`}>
                         <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                       </Link>
-                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                      <div className="overflow-hidden text-base text-ellipsis">
                         <Link href={`/product/odor-analysis/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
@@ -167,7 +167,7 @@ const Product: NextPage<Props> = (props: any) => {
                         <Link href={`/product/other-services/${item.id}`}>
                           <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                         </Link>
-                        <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                        <div className="overflow-hidden text-base text-ellipsis">
                           <Link href={`/product/other-services/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
@@ -182,7 +182,7 @@ const Product: NextPage<Props> = (props: any) => {
                       <Link href={`/product/other-services/${item.id}`}>
                         <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                       </Link>
-                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                      <div className="overflow-hidden text-base text-ellipsis">
                         <Link href={`/product/other-services/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
@@ -213,7 +213,7 @@ const Product: NextPage<Props> = (props: any) => {
                       <Link href={`/product/software2/${item.id}`}>
                         <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                       </Link>
-                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">{item.description}</div>
+                      <div className="overflow-hidden text-base text-ellipsis">{item.description}</div>
                     </div>
                     <div className="w-20">
                       <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
@@ -224,7 +224,7 @@ const Product: NextPage<Props> = (props: any) => {
                     <Link href={`/product/software2/${item.id}`}>
                       <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                     </Link>
-                    <div className="overflow-hidden text-base text-gray-800 text-ellipsis">{item.description}</div>
+                    <div className="overflow-hidden text-base text-ellipsis">{item.description}</div>
                   </div>
                 )}
               </div>
@@ -271,7 +271,7 @@ const Product: NextPage<Props> = (props: any) => {
                         <Link href={`/product/software/${item.id}`}>
                           <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                         </Link>
-                        <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                        <div className="overflow-hidden text-base text-ellipsis">
                           <Link href={`/product/software/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
@@ -286,7 +286,7 @@ const Product: NextPage<Props> = (props: any) => {
                       <Link href={`/product/software/${item.id}`}>
                         <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
                       </Link>
-                      <div className="overflow-hidden text-base text-gray-800 text-ellipsis">
+                      <div className="overflow-hidden text-base text-ellipsis">
                         <Link href={`/product/software/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>

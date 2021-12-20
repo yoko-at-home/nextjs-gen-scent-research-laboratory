@@ -29,7 +29,7 @@ export default function News({ news, totalCount }) {
                   <Link href={`/news/${item.id}`} passHref>
                     <a>
                       {item.body === undefined ? null : (
-                        <span className="p-2 ml-5 text-gray-700 whitespace-nowrap bg-gray-300">詳細</span>
+                        <span className="p-2 ml-5 whitespace-nowrap bg-gray-300">詳細</span>
                       )}
                     </a>
                   </Link>

@@ -35,7 +35,7 @@ export default function Application({ application }) {
                       <Link href={`/application/${item.id}`} passHref>
                         <a>
                           {item.body === undefined ? null : (
-                            <span className="p-2 ml-5 text-gray-700 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-emerald-700">
+                            <span className="p-2 ml-5 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-emerald-700">
                               詳細
                             </span>
                           )}

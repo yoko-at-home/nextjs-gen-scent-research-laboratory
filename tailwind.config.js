@@ -7,6 +7,19 @@ module.exports = {
         sans: ["Calibri", "notosans", "serif"],
         serif: ["serif"],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: "#717171",
+            a: {
+              color: "#3182ce",
+              "&:hover": {
+                color: "#2c5282",
+              },
+            },
+          },
+        },
+      },
     },
   },
   variants: { extend: {} },
