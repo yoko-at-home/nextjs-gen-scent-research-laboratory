@@ -13,7 +13,7 @@ const Application: NextPage = (props: any) => {
       style={{
         background: "center/cover no-repeat url('/static/images/application/gen.jpg')",
       }}
-      className="z-10 font-extrabold text-green-900"
+      className="z-10"
     >
       <div className="z-40 bg-white bg-opacity-80">
         <FluidLayout>
@@ -28,10 +28,10 @@ const Application: NextPage = (props: any) => {
               return (
                 <li key={item.id}>
                   <div
-                    className="flex flex-col p-5 mb-5"
+                    className="flex flex-col p-5 mb-5 font-extrabold"
                     // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                   >
-                    <div className="flex justify-between items-end">
+                    <div className="flex justify-between items-end text-emerald-900">
                       <div className="p-1 mb-3 text-lg font-semibold sm:text-2xl sm:font-bold md:text-3xl">
                         {item.title}
                       </div>
@@ -45,7 +45,7 @@ const Application: NextPage = (props: any) => {
                         </a>
                       </Link>
                     </div>
-                    <div className="text-sm sm:text-base">{item.description}</div>
+                    <div className="text-sm sm:text-base text-emerald-900">{item.description}</div>
                   </div>
                 </li>
               );
