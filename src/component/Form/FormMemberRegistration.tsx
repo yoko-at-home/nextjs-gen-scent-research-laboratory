@@ -102,29 +102,29 @@ export const FormMemberRegistration: NextPage = () => {
           <div className="flex flex-col justify-between mb-3 sm:flex-row sm:items-center">
             <div className="mr-3 mb-3">お名前*</div>
             <label htmlFor="fullname" className="mr-3 whitespace-nowrap">
-              姓名
+              姓
             </label>
             <input
               id="fullname"
               name="fullname"
               type="text"
               className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              placeholder="Full Name"
-              autoComplete="name"
+              placeholder="Surname"
+              autoComplete="family-name"
               required
               minLength={3}
             />
             <label htmlFor="englishfullname" className="mx-3 whitespace-nowrap">
-              英名
+              名
             </label>
             <input
               id="englishfullname"
               name="englishfullname"
               type="text"
               className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
-              placeholder="Full Name in English"
+              placeholder="Given name"
               required
-              autoComplete="name"
+              autoComplete="given-name"
             />
           </div>
           <div className="flex flex-col mb-3 sm:flex-row">
@@ -240,19 +240,19 @@ export const FormMemberRegistration: NextPage = () => {
                   id="address1"
                   name="address1"
                   type="text"
-                  className="block mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                  className="block mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:w-full sm:text-sm"
                   autoComplete="address-level1"
-                  placeholder="都道府県"
+                  placeholder="Prefecture/State"
                   required
                 />
                 <input
                   id="address2"
                   name="address2"
                   type="text"
-                  className="block mx-2 mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
+                  className="block mx-2 mt-1 w-20 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:w-full sm:text-sm"
                   autoComplete="address-level2"
                   required
-                  placeholder="市町村"
+                  placeholder="City"
                 />
                 <input
                   id="address3"
@@ -261,7 +261,7 @@ export const FormMemberRegistration: NextPage = () => {
                   className="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 shadow-sm sm:text-sm"
                   autoComplete="street-address"
                   required
-                  placeholder="番地"
+                  placeholder="Address"
                 />
               </div>
             </div>
