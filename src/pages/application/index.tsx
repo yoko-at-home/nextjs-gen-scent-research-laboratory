@@ -15,7 +15,7 @@ const Application: NextPage = (props: any) => {
       }}
       className="z-10 font-extrabold text-green-900"
     >
-      <div className="z-40 bg-white bg-opacity-20">
+      <div className="z-40 bg-white bg-opacity-80">
         <FluidLayout>
           <PageSEO title={`Application - ${siteMetadata.author}`} description={siteMetadata.description} />
           <div className="">
@@ -28,11 +28,13 @@ const Application: NextPage = (props: any) => {
               return (
                 <li key={item.id}>
                   <div
-                    className="flex flex-col p-5 mb-5 bg-white bg-opacity-80 rounded sm:p-3"
+                    className="flex flex-col p-5 mb-5"
                     // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                   >
                     <div className="flex justify-between items-end">
-                      <div className="p-1 mb-3 font-semibold sm:font-bold">{item.title}</div>
+                      <div className="p-1 mb-3 text-lg font-semibold sm:text-2xl sm:font-bold md:text-3xl">
+                        {item.title}
+                      </div>
                       <Link href={`/application/${item.id}`} passHref>
                         <a>
                           {item.body === undefined ? null : (
