@@ -3,10 +3,6 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ["Calibri", "notosans", "serif"],
-        serif: ["serif"],
-      },
       typography: {
         DEFAULT: {
           css: {
