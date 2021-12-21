@@ -16,22 +16,24 @@ const Home: NextPage<Props> = (props: any) => {
         background: "top/cover no-repeat url('/static/images/home/background.jpg')",
       }}
     >
-      <FluidLayout>
-        <PageSEO title={`Greeting - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <div className="z-40 bg-white bg-opacity-80">
+        <FluidLayout>
+          <PageSEO title={`Greeting - ${siteMetadata.author}`} description={siteMetadata.description} />
 
-        <div className="">
-          <PageTitle>
-            <span className="tracking-widest">{props.data.title}</span>
-          </PageTitle>
-          <div
-            className="py-5 px-5 leading-loose sm:text-lg md:py-10 lg:py-16 animation"
-            dangerouslySetInnerHTML={{
-              // eslint-disable-next-line @typescript-eslint/naming-convention
-              __html: `${props.data.body}`,
-            }}
-          />
-        </div>
-      </FluidLayout>
+          <div className=" mx-20">
+            <PageTitle>
+              <span className="tracking-widest">{props.data.title}</span>
+            </PageTitle>
+            <div
+              className="py-5 px-5 leading-loose sm:text-lg md:py-10 lg:py-16 animation"
+              dangerouslySetInnerHTML={{
+                // eslint-disable-next-line @typescript-eslint/naming-convention
+                __html: `${props.data.body}`,
+              }}
+            />
+          </div>
+        </FluidLayout>
+      </div>
     </div>
   );
 };
