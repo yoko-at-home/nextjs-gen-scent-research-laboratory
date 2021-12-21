@@ -47,31 +47,51 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/sample/${item.id}`}>
-                          <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                          <a className="font-bold xl:mb-1 xl:text-lg">
+                            {item.title}
+                            <br />
+                            {!undefined ? item.subtitle : null}
+                            <br />
+                            {!undefined ? item.product_title : null}
+                          </a>
                         </Link>
-                        <div className="overflow-hidden text-base text-ellipsis">
+                        <div className="overflow-hidden text-sm text-ellipsis">
                           <Link href={`/product/sample/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
                         </div>
                       </div>
                       <div className="w-20">
-                        <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
+                        <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col p-3 w-full">
+                    <div className="flex flex-col px-3 pt-3 w-full">
                       <Link href={`/product/sample/${item.id}`}>
-                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                        <a className="font-bold xl:mb-1 xl:text-lg">
+                          {item.title}
+                          {undefined ? null : (
+                            <span>
+                              <br />
+                              {item.subtitle}
+                            </span>
+                          )}
+                          {undefined ? null : (
+                            <span>
+                              <br />
+                              {item.product_title}
+                            </span>
+                          )}
+                        </a>
                       </Link>
-                      <div className="overflow-hidden text-base text-ellipsis">
+                      <div className="overflow-hidden text-sm text-ellipsis">
                         <Link href={`/product/sample/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
@@ -99,7 +119,7 @@ const Product: NextPage<Props> = (props: any) => {
               alt="揮発性成分用サンプリングシステム"
               src="/static/images/software/topimage2.jpg"
               height="62px"
-              width="100px"
+              width={`100%`}
               priority
             />
           </div>
@@ -110,31 +130,59 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/odor-analysis/${item.id}`}>
-                          <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                          <a className="font-bold xl:mb-1 xl:text-lg">
+                            {item.title}
+                            {undefined ? null : (
+                              <span>
+                                <br />
+                                {item.subtitle}
+                              </span>
+                            )}
+                            {undefined ? null : (
+                              <span>
+                                <br />
+                                {item.product_title}
+                              </span>
+                            )}
+                          </a>
                         </Link>
-                        <div className="overflow-hidden text-base text-ellipsis">
+                        <div className="overflow-hidden text-sm text-ellipsis">
                           <Link href={`/product/odor-analysis/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
                         </div>
                       </div>
                       <div className="w-20">
-                        <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
+                        <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col p-3 w-full">
+                    <div className="flex flex-col px-3 pt-3 w-full">
                       <Link href={`/product/odor-analysis/${item.id}`}>
-                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                        <a className="font-bold xl:mb-1 xl:text-lg">
+                          {item.title}
+                          {undefined ? null : (
+                            <span>
+                              <br />
+                              {item.subtitle}
+                            </span>
+                          )}
+                          {undefined ? null : (
+                            <span>
+                              <br />
+                              {item.product_title}
+                            </span>
+                          )}
+                        </a>
                       </Link>
-                      <div className="overflow-hidden text-base text-ellipsis">
+                      <div className="overflow-hidden text-sm text-ellipsis">
                         <Link href={`/product/odor-analysis/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
@@ -158,31 +206,51 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/other-services/${item.id}`}>
-                          <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                          <a className="font-bold xl:mb-1 xl:text-lg">
+                            {item.title}
+                            <br />
+                            {!undefined ? item.subtitle : null}
+                            <br />
+                            {!undefined ? item.product_title : null}
+                          </a>
                         </Link>
-                        <div className="overflow-hidden text-base text-ellipsis">
+                        <div className="overflow-hidden text-sm text-ellipsis">
                           <Link href={`/product/other-services/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
                         </div>
                       </div>
                       <div className="w-20">
-                        <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
+                        <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col p-3 w-full">
+                    <div className="flex flex-col px-3 pt-3 w-full">
                       <Link href={`/product/other-services/${item.id}`}>
-                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                        <a className="font-bold xl:mb-1 xl:text-lg">
+                          {item.title}
+                          {undefined ? null : (
+                            <span>
+                              <br />
+                              {item.subtitle}
+                            </span>
+                          )}
+                          {undefined ? null : (
+                            <span>
+                              <br />
+                              {item.product_title}
+                            </span>
+                          )}
+                        </a>
                       </Link>
-                      <div className="overflow-hidden text-base text-ellipsis">
+                      <div className="overflow-hidden text-sm text-ellipsis">
                         <Link href={`/product/other-services/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
@@ -204,27 +272,55 @@ const Product: NextPage<Props> = (props: any) => {
           return (
             <li key={item.id}>
               <div
-                className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                 style={{ background: `center/cover no-repeat url(${item.image.url})` }}
               >
                 {item.charm ? (
                   <div className="flex">
                     <div className="flex flex-col p-3 w-3/4">
                       <Link href={`/product/software2/${item.id}`}>
-                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                        <a className="font-bold xl:mb-1 xl:text-lg">
+                          {item.title}
+                          {undefined ? null : (
+                            <span>
+                              <br />
+                              {item.subtitle}
+                            </span>
+                          )}
+                          {undefined ? null : (
+                            <span>
+                              <br />
+                              {item.product_title}
+                            </span>
+                          )}
+                        </a>
                       </Link>
-                      <div className="overflow-hidden text-base text-ellipsis">{item.description}</div>
+                      <div className="overflow-hidden text-sm text-ellipsis">{item.description}</div>
                     </div>
                     <div className="w-20">
-                      <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
+                      <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
                     </div>
                   </div>
                 ) : (
-                  <div className="flex flex-col p-3 w-full">
+                  <div className="flex flex-col px-3 pt-3 w-full">
                     <Link href={`/product/software2/${item.id}`}>
-                      <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                      <a className="font-bold xl:mb-1 xl:text-lg">
+                        {item.title}
+                        {undefined ? null : (
+                          <span>
+                            <br />
+                            {item.subtitle}
+                          </span>
+                        )}
+                        {undefined ? null : (
+                          <span>
+                            <br />
+                            {item.product_title}
+                          </span>
+                        )}
+                      </a>
                     </Link>
-                    <div className="overflow-hidden text-base text-ellipsis">{item.description}</div>
+                    <div className="overflow-hidden text-sm text-ellipsis">{item.description}</div>
                   </div>
                 )}
               </div>
@@ -262,31 +358,51 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-52 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/software/${item.id}`}>
-                          <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                          <a className="font-bold xl:mb-1 xl:text-lg">
+                            {item.title}
+                            {undefined ? null : (
+                              <span>
+                                <br />
+                                {item.subtitle}
+                              </span>
+                            )}
+                            {undefined ? null : (
+                              <span>
+                                <br />
+                                {item.product_title}
+                              </span>
+                            )}
+                          </a>
                         </Link>
-                        <div className="overflow-hidden text-base text-ellipsis">
+                        <div className="overflow-hidden text-sm text-ellipsis">
                           <Link href={`/product/software/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
                         </div>
                       </div>
                       <div className="w-20">
-                        <Image src={item.charm.url} alt="product" width={`100%`} height={`100%`} />
+                        <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col p-3 w-full">
+                    <div className="flex flex-col px-3 pt-3 w-full">
                       <Link href={`/product/software/${item.id}`}>
-                        <a className="mb-3 text-lg font-bold break-all xl:mb-4 xl:text-xl">{item.title}</a>
+                        <a className="font-bold xl:mb-1 xl:text-lg">
+                          {item.title}
+                          <br />
+                          {item.subtitle}
+                          <br />
+                          {item.product_title}
+                        </a>
                       </Link>
-                      <div className="overflow-hidden text-base text-ellipsis">
+                      <div className="overflow-hidden text-sm text-ellipsis">
                         <Link href={`/product/software/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
