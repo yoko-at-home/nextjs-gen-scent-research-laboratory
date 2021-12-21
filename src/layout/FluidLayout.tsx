@@ -17,7 +17,7 @@ export const FluidLayout: VFC<Props> = (props) => {
   return (
     <div className="grid grid-rows-[auto,1fr,auto] min-h-screen">
       <Header />
-      <main className="mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12 lg:w-9/12">
+      <main className="mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12">
         <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
       </main>
       <Footer />
