@@ -332,7 +332,7 @@ const Product: NextPage<Props> = (props: any) => {
   };
 
   return (
-    <FluidLayout>
+    <FluidLayout width="product">
       <PageSEO title={`Product - ${siteMetadata.author}`} description={siteMetadata.description} />
 
       <div>

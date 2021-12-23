@@ -17,21 +17,19 @@ const Home: NextPage<Props> = (props: any) => {
       }}
     >
       <div className="z-40 font-sans bg-white bg-opacity-80">
-        <FluidLayout>
+        <FluidLayout width="main">
           <PageSEO title={`Greeting - ${siteMetadata.author}`} description={siteMetadata.description} />
 
-          <div className="sm:mx-20">
-            <PageTitle>
-              <span className="tracking-widest">{props.data.title}</span>
-            </PageTitle>
-            <div
-              className="py-5 px-5 leading-loose sm:text-lg md:py-10 lg:py-16 animation"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line @typescript-eslint/naming-convention
-                __html: `${props.data.body}`,
-              }}
-            />
-          </div>
+          <PageTitle>
+            <span className="tracking-widest">{props.data.title}</span>
+          </PageTitle>
+          <div
+            className="py-5 px-5 leading-loose sm:text-lg md:py-10 lg:py-16 animation"
+            dangerouslySetInnerHTML={{
+              // eslint-disable-next-line @typescript-eslint/naming-convention
+              __html: `${props.data.body}`,
+            }}
+          />
         </FluidLayout>
       </div>
     </div>

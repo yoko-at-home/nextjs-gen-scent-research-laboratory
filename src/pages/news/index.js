@@ -8,39 +8,37 @@ import { FluidLayout } from "src/layout";
 
 export default function News({ news, totalCount }) {
   return (
-    <FluidLayout>
+    <FluidLayout width="main">
       <PageSEO title={`News - ${siteMetadata.author}`} description={siteMetadata.description} />
 
-      <div className="sm:mx-20">
-        <PageTitle>
-          <span className="tracking-wider ">最新情報</span>
-        </PageTitle>
-        <ul>
-          {news.map((item) => {
-            return (
-              <li key={item.id}>
-                <div
-                  className="flex flex-col p-8 mb-10 bg-gray-200 bg-opacity-50 rounded sm:p-3"
-                  // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                >
-                  <div className="mb-3 text-xl font-semibold sm:font-bold">{item.title}</div>
-                  <div className="flex flex-row-reverse justify-between items-end">
-                    <Link href={`/news/${item.id}`} passHref>
-                      <a>
-                        {item.body === undefined ? null : (
-                          <span className="p-2 ml-5 whitespace-nowrap bg-gray-300">詳細</span>
-                        )}
-                      </a>
-                    </Link>
-                    <div className="text-sm sm:text-base">{item.description}</div>
-                  </div>
+      <PageTitle>
+        <span className="tracking-wider ">最新情報</span>
+      </PageTitle>
+      <ul>
+        {news.map((item) => {
+          return (
+            <li key={item.id}>
+              <div
+                className="flex flex-col p-8 mb-10 bg-gray-200 bg-opacity-50 rounded sm:p-3"
+                // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
+              >
+                <div className="mb-3 text-xl font-semibold sm:font-bold">{item.title}</div>
+                <div className="flex flex-row-reverse justify-between items-end">
+                  <Link href={`/news/${item.id}`} passHref>
+                    <a>
+                      {item.body === undefined ? null : (
+                        <span className="p-2 ml-5 whitespace-nowrap bg-gray-300">詳細</span>
+                      )}
+                    </a>
+                  </Link>
+                  <div className="text-sm sm:text-base">{item.description}</div>
                 </div>
-              </li>
-            );
-          })}
-        </ul>
-        {totalCount < 6 ? null : <Pagination totalCount={totalCount} />}
-      </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+      {totalCount < 6 ? null : <Pagination totalCount={totalCount} />}
     </FluidLayout>
   );
 }

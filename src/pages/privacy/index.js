@@ -6,7 +6,7 @@ import { client } from "src/lib/client";
 
 const Private = (props) => {
   return (
-    <FluidLayout>
+    <FluidLayout width="main">
       <PageSEO title={`個人情報保護方針 - ${siteMetadata.author}`} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 sm:mx-20">
         <PageTitle>個人情報保護方針</PageTitle>
