@@ -8,7 +8,7 @@ const Private = (props) => {
   return (
     <FluidLayout>
       <PageSEO title={`個人情報保護方針 - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <div className="divide-y divide-gray-200">
+      <div className="divide-y divide-gray-200 sm:mx-20">
         <PageTitle>個人情報保護方針</PageTitle>
         <div
           className="py-5 px-5 text-lg md:py-10 lg:py-16"

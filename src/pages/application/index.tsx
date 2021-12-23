@@ -18,39 +18,39 @@ const Application: NextPage = (props: any) => {
       <div className="z-40 bg-white bg-opacity-80">
         <FluidLayout>
           <PageSEO title={`Application - ${siteMetadata.author}`} description={siteMetadata.description} />
-          <div className="">
+          <div className=" sm:mx-20">
             <PageTitle>
               <span className="tracking-wider text-emerald-900">アプリケーション</span>
             </PageTitle>
-          </div>
-          <ul>
-            {props.application.map((item: any) => {
-              return (
-                <li key={item.id}>
-                  <div
-                    className="flex flex-col p-5 mb-5 font-extrabold"
-                    // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                  >
-                    <div className="flex justify-between items-end text-emerald-900">
-                      <div className="p-1 mb-3 text-lg font-semibold sm:text-2xl sm:font-bold md:text-3xl">
-                        {item.title}
+            <ul>
+              {props.application.map((item: any) => {
+                return (
+                  <li key={item.id}>
+                    <div
+                      className="flex flex-col p-5 mb-5 font-extrabold"
+                      // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
+                    >
+                      <div className="flex justify-between items-end text-emerald-900">
+                        <div className="p-1 mb-3 text-lg font-semibold sm:text-2xl sm:font-bold md:text-3xl">
+                          {item.title}
+                        </div>
+                        <Link href={`/application/${item.id}`} passHref>
+                          <a>
+                            {item.body === undefined ? null : (
+                              <span className="p-2 ml-5 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-emerald-700">
+                                詳細
+                              </span>
+                            )}
+                          </a>
+                        </Link>
                       </div>
-                      <Link href={`/application/${item.id}`} passHref>
-                        <a>
-                          {item.body === undefined ? null : (
-                            <span className="p-2 ml-5 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-emerald-700">
-                              詳細
-                            </span>
-                          )}
-                        </a>
-                      </Link>
+                      <div className="text-sm sm:text-base text-emerald-900">{item.description}</div>
                     </div>
-                    <div className="text-sm sm:text-base text-emerald-900">{item.description}</div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </FluidLayout>
       </div>
     </div>

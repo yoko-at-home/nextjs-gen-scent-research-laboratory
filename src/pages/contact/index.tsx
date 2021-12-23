@@ -10,16 +10,18 @@ const Contact: NextPage = () => {
   return (
     <FluidLayout>
       <PageSEO title={`Contact- ${siteMetadata.author}`} description={siteMetadata.description} />
-      <PageTitle>お問い合わせ</PageTitle>
-      <div className="text-gray-600">
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <p className="text-lg leading-7 text-gray-500 ">
-            資料ご請求、およびお問い合わせの場合は下記ご記入お願いいたします。
-            <br />
-            *は入力必須になります。
-          </p>
+      <div className="sm:mx-20">
+        <PageTitle>お問い合わせ</PageTitle>
+        <div className="text-gray-600">
+          <div className="pt-6 pb-8 space-y-2 md:space-y-5">
+            <p className="text-lg leading-7 text-gray-500 ">
+              資料ご請求、およびお問い合わせの場合は下記ご記入お願いいたします。
+              <br />
+              *は入力必須になります。
+            </p>
+          </div>
+          <FormMemberRegistration />
         </div>
-        <FormMemberRegistration />
       </div>
     </FluidLayout>
   );
