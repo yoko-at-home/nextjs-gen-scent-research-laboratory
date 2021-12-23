@@ -27,7 +27,7 @@ const AboutUs: NextPage = () => {
           <div className="container flex pt-6 pb-8 space-y-2 md:space-y-10 animation">
             <span className="mr-5 text-xl font-semibold whitespace-nowrap">事業内容</span>
             <div className="">
-              <p>GC-MS[用ソフトウェア、データベース販売</p>
+              <p>GC-MS 用ソフトウェア、データベース販売</p>
               <p>香り分析関連製品販売</p>
             </div>
           </div>
