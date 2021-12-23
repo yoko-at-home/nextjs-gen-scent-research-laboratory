@@ -16,7 +16,7 @@ const Home: NextPage<Props> = (props: any) => {
         background: "center/cover no-repeat url('/static/images/home/background.jpg')",
       }}
     >
-      <div className="z-40 bg-white bg-opacity-80">
+      <div className="z-40 font-sans bg-white bg-opacity-80">
         <FluidLayout>
           <PageSEO title={`Greeting - ${siteMetadata.author}`} description={siteMetadata.description} />
 
