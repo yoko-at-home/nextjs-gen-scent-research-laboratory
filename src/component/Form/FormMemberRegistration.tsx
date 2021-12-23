@@ -168,7 +168,7 @@ export const FormMemberRegistration: NextPage = () => {
                   required
                   type="radio"
                   id="researcher"
-                  className=""
+                  className="text-green-800"
                   name="researcher"
                   value="研究者"
                   onChange={handleOnChangeResearcher0}
@@ -181,7 +181,7 @@ export const FormMemberRegistration: NextPage = () => {
                   required
                   type="radio"
                   id="researcher"
-                  className=""
+                  className="text-green-800"
                   name="researcher"
                   value="代理店/販売店"
                   onChange={handleOnChangeResearcher1}
@@ -194,7 +194,7 @@ export const FormMemberRegistration: NextPage = () => {
                   required
                   type="radio"
                   id="researcher"
-                  className=""
+                  className="text-green-800"
                   name="researcher"
                   value="その他"
                   onChange={handleOnChangeResearcher2}
