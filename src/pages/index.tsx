@@ -13,7 +13,7 @@ const Home: NextPage<Props> = (props: any) => {
   return (
     <div
       style={{
-        background: "top/cover no-repeat url('/static/images/home/background.jpg')",
+        background: "center/cover no-repeat url('/static/images/home/background.jpg')",
       }}
     >
       <div className="z-40 bg-white bg-opacity-80">
