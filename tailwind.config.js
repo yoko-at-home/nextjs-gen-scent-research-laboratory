@@ -2,7 +2,7 @@ module.exports = {
   mode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    fontFamily: { body: ["游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "sans-serif"] },
+    fontFamily: { body: ["游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "Calibri", "sans-serif"] },
     extend: {
       typography: {
         DEFAULT: {
