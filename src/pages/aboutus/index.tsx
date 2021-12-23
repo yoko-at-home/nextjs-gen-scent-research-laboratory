@@ -16,7 +16,7 @@ const AboutUs: NextPage = () => {
     >
       <FluidLayout>
         <PageSEO title={`About Us - ${siteMetadata.author}`} description={siteMetadata.description} />
-        <div className="flex flex-col justify-between mx-20">
+        <div className="flex flex-col justify-between sm:mx-20">
           <PageTitle>
             <span className="tracking-widest">玄川リサーチ</span>
           </PageTitle>

@@ -20,7 +20,7 @@ const Home: NextPage<Props> = (props: any) => {
         <FluidLayout>
           <PageSEO title={`Greeting - ${siteMetadata.author}`} description={siteMetadata.description} />
 
-          <div className=" mx-20">
+          <div className="sm:mx-20">
             <PageTitle>
               <span className="tracking-widest">{props.data.title}</span>
             </PageTitle>
