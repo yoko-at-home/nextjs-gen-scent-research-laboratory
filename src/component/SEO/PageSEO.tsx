@@ -1,8 +1,17 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import type { VFC } from "react";
 import { siteMetadata } from "src/data/siteMetaData";
 
-const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
+type Props = {
+  title: string;
+  description: string;
+  ogType: string;
+  ogImage: string;
+  siteUrl: string;
+};
+
+const CommonSEO: VFC<Props> = ({ title, description, ogType, ogImage }) => {
   const router = useRouter();
   return (
     <Head>
@@ -15,28 +24,23 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage }) => {
       <meta property="og:site_name" content={siteMetadata.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
-      {ogImage.constructor.name === "Array" ? (
-        ogImage.map(({ url }) => {
-          return <meta property="og:image" content={url} key={url} />;
-        })
-      ) : (
-        <meta property="og:image" content={ogImage} key={ogImage} />
-      )}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={siteMetadata.twitter} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={twImage} />
+      <meta property="og:image" content={ogImage} key={ogImage} />
     </Head>
   );
 };
 
-export const PageSEO = ({ title, description }) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
+export const PageSEO: VFC<Props> = ({ title, description }) => {
+  const ogSiteLogo = siteMetadata.siteUrl + siteMetadata.siteLogo;
+
   return (
     <>
-      <CommonSEO title={title} description={description} ogType="website" ogImage={ogImageUrl} twImage={twImageUrl} />
+      <CommonSEO
+        title={title}
+        description={description}
+        ogType="website"
+        siteUrl={siteMetadata.siteUrl}
+        ogImage={ogSiteLogo}
+      />
       <link rel="icon" href="/favicon.ico" />
     </>
   );
