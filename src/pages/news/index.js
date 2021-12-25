@@ -9,7 +9,13 @@ import { FluidLayout } from "src/layout";
 export default function News({ news, totalCount }) {
   return (
     <FluidLayout width="main">
-      <PageSEO title={`News - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`News - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
 
       <PageTitle>
         <span className="tracking-wider ">最新情報</span>

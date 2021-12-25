@@ -10,7 +10,13 @@ import { FluidLayout } from "src/layout";
 const Custom404: NextPage = () => {
   return (
     <FluidLayout width="main">
-      <PageSEO title={`Page Not Found- ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`Page Not Found- ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
       <PageTitle>ページが見つかりません</PageTitle>
       <div className="container p-3 text-lg">
         お探しのページが見つかりません。
