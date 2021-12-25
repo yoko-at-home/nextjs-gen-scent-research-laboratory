@@ -333,7 +333,13 @@ const Product: NextPage<Props> = (props: any) => {
 
   return (
     <FluidLayout width="product">
-      <PageSEO title={`Product - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`Product - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
 
       <div>
         <div className="flex flex-row mb-6">

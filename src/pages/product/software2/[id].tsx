@@ -14,7 +14,13 @@ type Props = {
 const Software2Id: NextPage<Props> = (props: any) => {
   return (
     <FixedLayout>
-      <PageSEO title={`ソフトウェア・ライブラリ - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`ソフトウェア・ライブラリ - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
       <main>
         <div className="relative px-3 pt-5 my-6 h-28 text-gray-700 sm:w-2/3">
           <Image className="rounded-lg" src={props.software2.image.url} layout="fill" />
@@ -23,7 +29,6 @@ const Software2Id: NextPage<Props> = (props: any) => {
             <div className="text-xl md:text-2xl">{props.software2.subtitle}</div>
           </div>
         </div>
-        {/* <p>{props.software2.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.software2.body}`,

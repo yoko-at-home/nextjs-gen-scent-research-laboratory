@@ -15,7 +15,13 @@ const AboutUs: NextPage = () => {
       className="text-gray-300"
     >
       <FluidLayout width="main">
-        <PageSEO title={`About Us - ${siteMetadata.author}`} description={siteMetadata.description} />
+        <PageSEO
+          title={`About Us - ${siteMetadata.author}`}
+          description={siteMetadata.description}
+          ogType="website"
+          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+          siteUrl={siteMetadata.siteUrl}
+        />
         <div className="flex flex-col justify-between">
           <PageTitle>
             <span className="tracking-widest">玄川リサーチ</span>

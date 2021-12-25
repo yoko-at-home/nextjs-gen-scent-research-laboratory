@@ -17,6 +17,9 @@ const SampleId: NextPage<Props> = (props: any) => {
       <PageSEO
         title={`GC-MS備品・におい分析用製品・サンプル - ${siteMetadata.author}`}
         description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
       />
 
       <main>
@@ -27,7 +30,6 @@ const SampleId: NextPage<Props> = (props: any) => {
             <div className="text-xl md:text-2xl">{props.sample.subtitle}</div>
           </div>
         </div>
-        {/* <p>{props.sample.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.sample.body}`,

@@ -14,7 +14,13 @@ type Props = {
 const OdorId: NextPage<Props> = (props: any) => {
   return (
     <FixedLayout>
-      <PageSEO title={`におい分析機器類 - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`におい分析機器類 - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
       <main>
         <div className="relative px-3 pt-5 my-6 h-28 text-gray-700 sm:w-2/3">
           <Image className="rounded-lg" src={props.odor.image.url} layout="fill" />
@@ -22,8 +28,7 @@ const OdorId: NextPage<Props> = (props: any) => {
             <div className="">{props.odor.title}</div>
             <div className="text-xl md:text-2xl">{props.odor.subtitle}</div>
           </div>
-        </div>{" "}
-        {/* <p>{props.odor.publishedAt}</p> */}
+        </div>
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.odor.body}`,

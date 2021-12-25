@@ -17,7 +17,13 @@ const Application: NextPage = (props: any) => {
     >
       <div className="z-40 bg-white bg-opacity-80">
         <FluidLayout width="main">
-          <PageSEO title={`Application - ${siteMetadata.author}`} description={siteMetadata.description} />
+          <PageSEO
+            title={`Application - ${siteMetadata.author}`}
+            description={siteMetadata.description}
+            ogType="website"
+            ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+            siteUrl={siteMetadata.siteUrl}
+          />
           <PageTitle>
             <span className="tracking-wider text-emerald-900">アプリケーション</span>
           </PageTitle>

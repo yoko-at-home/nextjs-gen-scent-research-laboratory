@@ -6,7 +6,13 @@ import { FluidLayout } from "src/layout";
 const Members = () => {
   return (
     <FluidLayout>
-      <PageSEO title={`Members - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`Members - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
       Membersページです。
     </FluidLayout>
   );

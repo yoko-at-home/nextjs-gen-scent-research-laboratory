@@ -10,7 +10,13 @@ import { client } from "../../../lib/client";
 const SoftwareId: NextPage = (props: any) => {
   return (
     <FixedLayout>
-      <PageSEO title={`ソフトウェア・ライブラリ - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`ソフトウェア・ライブラリ - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
 
       <main>
         <div className="relative px-3 pt-5 my-6 h-28 text-gray-700 sm:w-2/3">
@@ -20,7 +26,6 @@ const SoftwareId: NextPage = (props: any) => {
             <div className="text-xl md:text-2xl">{props.software.subtitle}</div>
           </div>
         </div>
-        {/* <p>{props.software.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.software.body}`,

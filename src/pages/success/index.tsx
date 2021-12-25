@@ -11,7 +11,13 @@ const Success: NextPage = () => {
   const router = useRouter();
   return (
     <FluidLayout width="main">
-      <PageSEO title={`Success- ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`Success- ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
       <div className="flex justify-center mt-24">
         <Image src="/static/88696-mail.gif" alt="meil" width="180px" height="180px" />
       </div>

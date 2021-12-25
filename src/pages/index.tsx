@@ -18,7 +18,13 @@ const Home: NextPage<Props> = (props: any) => {
     >
       <div className="z-40 font-sans bg-white bg-opacity-80">
         <FluidLayout width="main">
-          <PageSEO title={`Greeting - ${siteMetadata.author}`} description={siteMetadata.description} />
+          <PageSEO
+            title={`Greeting - ${siteMetadata.author}`}
+            description={siteMetadata.description}
+            ogType="website"
+            ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+            siteUrl={siteMetadata.siteUrl}
+          />
 
           <PageTitle>
             <span className="tracking-widest">{props.data.title}</span>

@@ -14,7 +14,13 @@ type Props = {
 const OtherId: NextPage<Props> = (props: any) => {
   return (
     <FixedLayout>
-      <PageSEO title={`他サービス - ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`他サービス - ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
       <main>
         <div className="relative px-3 pt-5 my-6 h-28 text-gray-700 sm:w-2/3">
           <Image className="rounded-lg" src={props.other.image.url} layout="fill" />
@@ -23,7 +29,6 @@ const OtherId: NextPage<Props> = (props: any) => {
             <div className="text-xl md:text-2xl">{props.other.subtitle}</div>
           </div>
         </div>{" "}
-        {/* <p>{props.other.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.other.body}`,

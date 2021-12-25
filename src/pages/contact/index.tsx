@@ -9,7 +9,13 @@ import { FluidLayout } from "src/layout";
 const Contact: NextPage = () => {
   return (
     <FluidLayout width="main">
-      <PageSEO title={`Contact- ${siteMetadata.author}`} description={siteMetadata.description} />
+      <PageSEO
+        title={`Contact- ${siteMetadata.author}`}
+        description={siteMetadata.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
       <PageTitle>お問い合わせ</PageTitle>
       <div className="text-gray-600">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
