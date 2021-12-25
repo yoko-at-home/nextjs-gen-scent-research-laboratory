@@ -1,9 +1,10 @@
+import type { NextPage } from "next";
 import Link from "next/link";
 
-export const Pagination = (props) => {
+export const Pagination: NextPage = (props: any) => {
   const PER_PAGE = 6;
 
-  const range = (start, end) => {
+  const range = (start: number, end: number) => {
     return [...Array(end - start + 1)].map((_, i) => {
       return start + i;
     });
