@@ -6,7 +6,7 @@ import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
 
-export const NewsId: NextPage = (props: any) => {
+const NewsId: NextPage = (props: any) => {
   return (
     <FixedLayout>
       <PageSEO
@@ -28,6 +28,8 @@ export const NewsId: NextPage = (props: any) => {
     </FixedLayout>
   );
 };
+
+export default NewsId;
 
 // 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
