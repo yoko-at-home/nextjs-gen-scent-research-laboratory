@@ -18,7 +18,7 @@ const NewsId: NextPage = (props: any) => {
       />
       <main>
         <PageSubTitle>{props.news.title}</PageSubTitle>
-        <p>{props.news.publishedAt}</p>
+        {/* <p>{props.news.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.news.body}`,
