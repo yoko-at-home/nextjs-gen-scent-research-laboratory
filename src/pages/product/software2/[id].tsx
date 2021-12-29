@@ -22,11 +22,14 @@ const Software2Id: NextPage<Props> = (props: any) => {
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
-        <div className="relative px-3 pt-5 my-6 h-28 text-gray-700 sm:w-2/3">
+        <div className="relative px-3 pt-5 my-6 h-28 text-gray-700 sm:w-3/5">
           <Image className="rounded-lg" src={props.software2.image.url} layout="fill" alt={props.software2.title} />
-          <div className="absolute text-xl font-bold md:text-2xl">
-            <div className="">{props.software2.title}</div>
-            <div className="text-xl md:text-2xl">{props.software2.subtitle}</div>
+          <div className="absolute text-xl font-bold leading-relaxed">
+            <div className="">
+              {props.software2.title}
+              <br />
+              {props.software2.subtitle}
+            </div>
           </div>
         </div>
         <div
