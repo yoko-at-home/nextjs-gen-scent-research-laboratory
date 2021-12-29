@@ -4,7 +4,7 @@ import { Pagination } from "src/component/Pagenation";
 import { PageSubTitle } from "src/component/PageTitle";
 import { FixedLayout } from "src/layout";
 
-const PER_PAGE = 6;
+const PER_PAGE = 4;
 
 export default function newsPageId({ news, totalCount }) {
   return (
@@ -75,7 +75,7 @@ export const getStaticProps = async (context) => {
     headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
   };
 
-  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news?offset=${(id - 1) * 6}&limit=6`, key)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news?offset=${(id - 1) * 4}&limit=4`, key)
     .then((res) => {
       return res.json();
     })
