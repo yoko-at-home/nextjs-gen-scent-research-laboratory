@@ -14,10 +14,10 @@ export const Footer: VFC = () => {
           <div className="whitespace-nowrap">{`© ${new Date().getFullYear()}`}</div>
           <div className="whitespace-nowrap">All Rights Reserved.</div>
         </div>
-        <div className="flex mb-2 space-x-2 text-xs">
+        <div className="flex mb-2 space-x-2 text-xs hover:text-gray-400">
           <Link href="/privacy">個人情報保護方針</Link>
         </div>
-        <div className="my-8 text-xs">
+        <div className="my-8 text-xs hover:text-gray-400">
           <Link href="https://over40web.club">
             <a target="_blank" rel="noopener noreferrer">
               Powered by Over 40 Web Club
