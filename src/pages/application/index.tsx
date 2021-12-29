@@ -24,9 +24,7 @@ const Application: NextPage = (props: any) => {
             ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
             siteUrl={siteMetadata.siteUrl}
           />
-          <PageTitle>
-            <span className="tracking-wider text-emerald-900">アプリケーション</span>
-          </PageTitle>
+          <PageTitle>{/* <span className="tracking-wider text-emerald-900">アプリケーション</span> */}</PageTitle>
           <ul>
             {props.application.map((item: any) => {
               return (
