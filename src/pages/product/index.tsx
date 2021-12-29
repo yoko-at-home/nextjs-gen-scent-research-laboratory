@@ -42,7 +42,7 @@ const Product: NextPage<Props> = (props: any) => {
     return (
       <div>
         <PageSubTitle>{productTitles[1].title}</PageSubTitle>
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-3 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.sample.map((item: any) => {
             return (
               <li key={item.id}>
@@ -54,7 +54,7 @@ const Product: NextPage<Props> = (props: any) => {
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/sample/${item.id}`}>
-                          <a className="font-bold xl:mb-1 xl:text-lg">
+                          <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                             {item.title}
                             <br />
                             {!undefined ? item.subtitle : null}
@@ -75,7 +75,7 @@ const Product: NextPage<Props> = (props: any) => {
                   ) : (
                     <div className="flex flex-col px-3 pt-3 w-full">
                       <Link href={`/product/sample/${item.id}`}>
-                        <a className="font-bold xl:mb-1 xl:text-lg">
+                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                           {item.title}
                           {undefined ? null : (
                             <span>
@@ -84,7 +84,7 @@ const Product: NextPage<Props> = (props: any) => {
                             </span>
                           )}
                           {undefined ? null : (
-                            <span>
+                            <span className="mt-1">
                               <br />
                               {item.product_title}
                             </span>
@@ -125,7 +125,7 @@ const Product: NextPage<Props> = (props: any) => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-3 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.odor.map((item: any) => {
             return (
               <li key={item.id}>
@@ -137,7 +137,7 @@ const Product: NextPage<Props> = (props: any) => {
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/odor-analysis/${item.id}`}>
-                          <a className="font-bold xl:mb-1 xl:text-lg">
+                          <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                             {item.title}
                             {undefined ? null : (
                               <span>
@@ -146,7 +146,7 @@ const Product: NextPage<Props> = (props: any) => {
                               </span>
                             )}
                             {undefined ? null : (
-                              <span>
+                              <span className="mt-1">
                                 <br />
                                 {item.product_title}
                               </span>
@@ -166,7 +166,7 @@ const Product: NextPage<Props> = (props: any) => {
                   ) : (
                     <div className="flex flex-col px-3 pt-3 w-full">
                       <Link href={`/product/odor-analysis/${item.id}`}>
-                        <a className="font-bold xl:mb-1 xl:text-lg">
+                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                           {item.title}
                           {undefined ? null : (
                             <span>
@@ -175,7 +175,7 @@ const Product: NextPage<Props> = (props: any) => {
                             </span>
                           )}
                           {undefined ? null : (
-                            <span>
+                            <span className="mt-1">
                               <br />
                               {item.product_title}
                             </span>
@@ -201,7 +201,7 @@ const Product: NextPage<Props> = (props: any) => {
     return (
       <div>
         <PageSubTitle>{productTitles[3].title}</PageSubTitle>
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-3 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.other.map((item: any) => {
             return (
               <li key={item.id}>
@@ -213,7 +213,7 @@ const Product: NextPage<Props> = (props: any) => {
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/other-services/${item.id}`}>
-                          <a className="font-bold xl:mb-1 xl:text-lg">
+                          <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                             {item.title}
                             <br />
                             {!undefined ? item.subtitle : null}
@@ -234,7 +234,7 @@ const Product: NextPage<Props> = (props: any) => {
                   ) : (
                     <div className="flex flex-col px-3 pt-3 w-full">
                       <Link href={`/product/other-services/${item.id}`}>
-                        <a className="font-bold xl:mb-1 xl:text-lg">
+                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                           {item.title}
                           {undefined ? null : (
                             <span>
@@ -243,7 +243,7 @@ const Product: NextPage<Props> = (props: any) => {
                             </span>
                           )}
                           {undefined ? null : (
-                            <span>
+                            <span className="mt-1">
                               <br />
                               {item.product_title}
                             </span>
@@ -279,7 +279,7 @@ const Product: NextPage<Props> = (props: any) => {
                   <div className="flex">
                     <div className="flex flex-col p-3 w-3/4">
                       <Link href={`/product/software2/${item.id}`}>
-                        <a className="font-bold xl:mb-1 xl:text-lg">
+                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                           {item.title}
                           {undefined ? null : (
                             <span>
@@ -288,7 +288,7 @@ const Product: NextPage<Props> = (props: any) => {
                             </span>
                           )}
                           {undefined ? null : (
-                            <span>
+                            <span className="mt-1">
                               <br />
                               {item.product_title}
                             </span>
@@ -304,7 +304,7 @@ const Product: NextPage<Props> = (props: any) => {
                 ) : (
                   <div className="flex flex-col px-3 pt-3 w-full">
                     <Link href={`/product/software2/${item.id}`}>
-                      <a className="font-bold xl:mb-1 xl:text-lg">
+                      <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                         {item.title}
                         {undefined ? null : (
                           <span>
@@ -313,7 +313,7 @@ const Product: NextPage<Props> = (props: any) => {
                           </span>
                         )}
                         {undefined ? null : (
-                          <span>
+                          <span className="mt-1">
                             <br />
                             {item.product_title}
                           </span>
@@ -359,7 +359,7 @@ const Product: NextPage<Props> = (props: any) => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:px-3 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.software.map((item: any) => {
             return (
               <li key={item.id}>
@@ -371,7 +371,7 @@ const Product: NextPage<Props> = (props: any) => {
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/software/${item.id}`}>
-                          <a className="font-bold xl:mb-1 xl:text-lg">
+                          <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                             {item.title}
                             {undefined ? null : (
                               <span>
@@ -380,7 +380,7 @@ const Product: NextPage<Props> = (props: any) => {
                               </span>
                             )}
                             {undefined ? null : (
-                              <span>
+                              <span className="mt-1">
                                 <br />
                                 {item.product_title}
                               </span>
@@ -400,7 +400,7 @@ const Product: NextPage<Props> = (props: any) => {
                   ) : (
                     <div className="flex flex-col px-3 pt-3 w-full">
                       <Link href={`/product/software/${item.id}`}>
-                        <a className="font-bold xl:mb-1 xl:text-lg">
+                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
                           {item.title}
                           <br />
                           {item.subtitle}
