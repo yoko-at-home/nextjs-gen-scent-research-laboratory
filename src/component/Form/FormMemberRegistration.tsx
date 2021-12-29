@@ -130,8 +130,8 @@ export const FormMemberRegistration: NextPage = () => {
           <div className="flex flex-col mb-3 sm:flex-row">
             <div className="my-3 mr-3">ご所属先*</div>
             <div className="flex flex-col justify-start">
-              <div className="flex">
-                <label htmlFor="labo" className="mr-3 whitespace-nowrap">
+              <div className="flex leading-tight">
+                <label htmlFor="labo" className="inline-flex items-center mr-3 whitespace-nowrap">
                   会社/機関/⼤学*
                 </label>
                 <input
@@ -144,7 +144,7 @@ export const FormMemberRegistration: NextPage = () => {
                   minLength={3}
                 />
               </div>
-              <div className="flex">
+              <div className="flex leading-tight">
                 <label htmlFor="department" className="mr-3 whitespace-nowrap">
                   部署/研究室*
                 </label>
@@ -220,7 +220,7 @@ export const FormMemberRegistration: NextPage = () => {
             <div className="mr-3">ご住所*</div>
             <div className="flex flex-col sm:flex-row">
               <div className="flex">
-                <label htmlFor="zipcode" className="mr-3 whitespace-nowrap">
+                <label htmlFor="zipcode" className="inline-flex items-center mr-3 whitespace-nowrap">
                   〒
                 </label>
                 <input
@@ -233,7 +233,7 @@ export const FormMemberRegistration: NextPage = () => {
                 />
               </div>
               <div className="flex">
-                <label htmlFor="address" className="mr-3 whitespace-nowrap sm:mx-3">
+                <label htmlFor="address" className="inline-flex items-center mr-3 whitespace-nowrap sm:mx-3">
                   住所
                 </label>
                 <input
