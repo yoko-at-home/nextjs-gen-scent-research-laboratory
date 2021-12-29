@@ -27,7 +27,7 @@ const SampleId: NextPage<Props> = (props: any) => {
           <Image className="rounded-lg" src={props.sample.image.url} layout="fill" alt={props.sample.title} />
           <div className="absolute text-xl font-bold md:text-2xl">
             <div className="">{props.sample.title}</div>
-            <div className="text-xl md:text-2xl">{props.sample.subtitle}</div>
+            <div className="text-xl md:text-2xl">{props.sample.product_title}</div>
           </div>
         </div>
         <div
