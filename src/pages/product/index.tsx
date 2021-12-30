@@ -114,7 +114,7 @@ const Product: NextPage<Props> = (props: any) => {
             <PageSubTitle>{productTitles[2].title}</PageSubTitle>
             <p>{productTitles[2].description}</p>
           </div>
-          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3-reverse">
+          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
             <Image
               alt="揮発性成分用サンプリングシステム"
               src="/static/images/software/topimage2.jpg"
