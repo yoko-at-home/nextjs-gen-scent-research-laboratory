@@ -26,10 +26,10 @@ const AboutUs: NextPage = () => {
           <PageTitle>
             <span className="tracking-widest">玄川リサーチ</span>
           </PageTitle>
-          <h2 className="my-5 text-xl font-semibold md:text-2xl lg:mb-10 lg:text-3xl animation">
+          <h2 className="my-5 font-caribri text-xl font-semibold md:text-2xl lg:mb-10 lg:text-3xl animation">
             Gen-Scent Research Laboratory
           </h2>
-          <span className="text-lg animation">Shimomeguro, Meguro, Tokyo, Japan</span>
+          <span className="font-caribri text-lg animation">Shimomeguro, Meguro, Tokyo, Japan</span>
           <div className="container flex pt-6 pb-8 space-y-2 md:space-y-10 animation">
             <span className="mr-5 text-xl font-semibold whitespace-nowrap">事業内容</span>
             <div className="">
