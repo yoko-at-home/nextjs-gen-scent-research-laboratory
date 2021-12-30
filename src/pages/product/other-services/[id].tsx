@@ -1,11 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import type { NextPage } from "next";
-import Image from "next/image";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
-
-import { client } from "../../../lib/client";
+import { client } from "src/lib/client";
 
 type Props = {
   data: string;
@@ -22,13 +20,10 @@ const OtherId: NextPage<Props> = (props: any) => {
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
-        <div className="relative px-3 pt-5 my-6 h-28 text-gray-700 sm:w-2/3">
-          <Image className="rounded-lg" src={props.other.image.url} layout="fill" alt={props.other.title} />
-          <div className="absolute text-xl font-bold md:text-2xl">
-            <div className="">{props.other.title}</div>
-            <div className="text-xl md:text-2xl">{props.other.subtitle}</div>
-          </div>
-        </div>{" "}
+        <div className="mt-10 mb-12 text-2xl font-bold leading-relaxed md:text-3xl">
+          <div className="">{props.other.title}</div>
+          <div className="text-xl md:text-2xl">{props.other.subtitle}</div>
+        </div>
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.other.body}`,
