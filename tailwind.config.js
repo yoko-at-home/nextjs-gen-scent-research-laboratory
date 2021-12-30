@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       body: ['"游ゴシック体"', '"YuGothic"', '"游ゴシック"', '"Yu Gothic"', '"Calibri"', '"sans-serif"'],
       sans: ['"游ゴシック体"', '"YuGothic"', '"游ゴシック"', '"Yu Gothic"', '"Calibri"', '"sans-serif"'],
+      caribri: ['"Calibri"', '"sans-serif"'],
     },
     extend: {
       typography: {

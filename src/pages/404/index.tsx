@@ -23,7 +23,7 @@ const Custom404: NextPage = () => {
         <br />
         サポートをご希望の場合は、
         <Link href="/contact">
-          <a className="text-emerald-600">コンタクトページ </a>
+          <a className="font-bold text-[#830683]">コンタクトページ </a>
         </Link>
         よりお問い合わせください。
         <div className="flex justify-center">

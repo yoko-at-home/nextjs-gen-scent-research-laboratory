@@ -26,7 +26,7 @@ export const Header: VFC = () => {
           <LogoSmall />
         </div>
         <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[40%]">
-          <h1 className="z-20 text-2xl text-white whitespace-nowrap sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+          <h1 className="z-20 font-caribri text-2xl font-bold text-white whitespace-nowrap sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
             {siteMetadata.author}
           </h1>
         </div>
@@ -35,7 +35,7 @@ export const Header: VFC = () => {
             width="100%"
             height="20%"
             layout="responsive"
-            src="/static/images/header/background.jpg"
+            src="/static/images/header/background-lg.jpg"
             alt={siteMetadata.author}
             priority
           />
@@ -55,7 +55,7 @@ export const Header: VFC = () => {
         {items.map(({ href, label }) => {
           return (
             <NavLink key={href} href={href} activeClassName="bg-gray-500 text-white">
-              <a className="inline-block p-1 text-base font-semibold hover:text-gray-200 whitespace-nowrap hover:bg-gray-400 bg-opacity-30 bg-gradient-to-r focus:from-gray-300 sm:p-4 sm:text-lg focus:to-emerald-700">
+              <a className="inline-block p-1 font-caribri text-base font-semibold hover:text-gray-200 whitespace-nowrap hover:bg-gray-400 bg-opacity-30 bg-gradient-to-r focus:from-gray-300 focus:to-[#330033] sm:p-4">
                 {label}
               </a>
             </NavLink>
