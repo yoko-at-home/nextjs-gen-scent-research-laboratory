@@ -5381,7 +5381,7 @@ react-error-boundary@3.1.4:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-react-hooks-use-modal@^2.1.0:
+react-hooks-use-modal@2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-hooks-use-modal/-/react-hooks-use-modal-2.1.0.tgz#ec0a0f545fa421c12cbe724ece5425f34535b088"
   integrity sha512-3/W8QigIUYfGtQcPIxxALxZDi/1Ic91qAft0QTEO88ZRO8WgvE3CjsXsoEBvRE8HXBYZtUDf2dTCoQs6ZdCBPQ==
