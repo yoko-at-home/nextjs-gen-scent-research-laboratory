@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { PageTitle } from "src/component/PageTitle";
+import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
@@ -26,11 +26,11 @@ const Home: NextPage<Props> = (props: any) => {
             siteUrl={siteMetadata.siteUrl}
           />
 
-          <PageTitle>
+          <PageSubTitle>
             <span className="tracking-widest">{props.data.title}</span>
-          </PageTitle>
+          </PageSubTitle>
           <div
-            className="py-5 px-5 leading-loose sm:text-lg md:py-10 lg:py-16 animation"
+            className="py-5 px-5 leading-loose md:py-8 lg:py-12 animation"
             dangerouslySetInnerHTML={{
               // eslint-disable-next-line @typescript-eslint/naming-convention
               __html: `${props.data.body}`,
