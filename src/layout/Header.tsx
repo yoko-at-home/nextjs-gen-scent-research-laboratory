@@ -33,7 +33,7 @@ export const Header: VFC = () => {
         <div className="hidden lg:block">
           <Image
             width="100%"
-            height="20%"
+            height="18%"
             layout="responsive"
             src="/static/images/header/background-lg.jpg"
             alt={siteMetadata.author}
@@ -43,7 +43,7 @@ export const Header: VFC = () => {
         <div className="lg:hidden">
           <Image
             width="100%"
-            height="35%"
+            height="30%"
             layout="responsive"
             src="/static/images/header/background.jpg"
             alt={siteMetadata.author}
