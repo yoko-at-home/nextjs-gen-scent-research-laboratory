@@ -11,7 +11,7 @@ const Application: NextPage = (props: any) => {
   return (
     <div
       style={{
-        background: "center/cover no-repeat url('/static/images/application/gen.jpg')",
+        background: "top/cover no-repeat url('/static/images/application/gen.jpg')",
       }}
       className="z-10"
     >
