@@ -20,7 +20,7 @@ export const FluidLayout: VFC<Props> = (props) => {
       <Header />
       <main
         className={cc([
-          { "mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12  lg:w-9/12": props.width === "main" },
+          { "mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12 lg:w-9/12": props.width === "main" },
           { "mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12": props.width === "product" },
         ])}
       >
