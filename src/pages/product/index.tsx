@@ -223,7 +223,11 @@ const Product: NextPage<Props> = (props: any) => {
                         </Link>
                         <div className="overflow-hidden text-sm text-ellipsis">
                           <Link href={`/product/other-services/${item.id}`}>
-                            <a>{item.description}</a>
+                            <a>
+                              {item.description}
+                              <br />
+                              {item.note}
+                            </a>
                           </Link>
                         </div>
                       </div>
@@ -252,7 +256,11 @@ const Product: NextPage<Props> = (props: any) => {
                       </Link>
                       <div className="overflow-hidden text-sm text-ellipsis">
                         <Link href={`/product/other-services/${item.id}`}>
-                          <a>{item.description}</a>
+                          <a>
+                            {item.description}
+                            <br />
+                            {item.note}
+                          </a>
                         </Link>
                       </div>
                     </div>
