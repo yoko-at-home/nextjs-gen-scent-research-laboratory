@@ -3,7 +3,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { PageSubTitle, PageTitle } from "src/component/PageTitle";
+import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
@@ -47,14 +47,14 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
-                      <div className="flex flex-col p-3 w-3/4">
+                      <div className="flex flex-col p-2 w-3/4">
                         <Link href={`/product/sample/${item.id}`}>
-                          <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                          <a className="mb-2 font-bold leading-tight">
                             {item.title}
                             <br />
                             {!undefined ? item.subtitle : null}
@@ -62,7 +62,7 @@ const Product: NextPage<Props> = (props: any) => {
                             {!undefined ? item.product_title : null}
                           </a>
                         </Link>
-                        <div className="overflow-hidden text-sm text-ellipsis">
+                        <div className="overflow-hidden text-xs text-ellipsis">
                           <Link href={`/product/sample/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
@@ -73,9 +73,9 @@ const Product: NextPage<Props> = (props: any) => {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col px-3 pt-3 w-full">
+                    <div className="flex flex-col px-2 pt-2 w-full">
                       <Link href={`/product/sample/${item.id}`}>
-                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                        <a className="mb-2 font-bold leading-tight">
                           {item.title}
                           {undefined ? null : (
                             <span>
@@ -91,7 +91,7 @@ const Product: NextPage<Props> = (props: any) => {
                           )}
                         </a>
                       </Link>
-                      <div className="overflow-hidden text-sm text-ellipsis">
+                      <div className="overflow-hidden text-xs text-ellipsis">
                         <Link href={`/product/sample/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
@@ -130,14 +130,14 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/odor-analysis/${item.id}`}>
-                          <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                          <a className="mb-2 font-bold leading-tight">
                             {item.title}
                             {undefined ? null : (
                               <span>
@@ -153,7 +153,7 @@ const Product: NextPage<Props> = (props: any) => {
                             )}
                           </a>
                         </Link>
-                        <div className="overflow-hidden text-sm text-ellipsis">
+                        <div className="overflow-hidden text-xs text-ellipsis">
                           <Link href={`/product/odor-analysis/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
@@ -164,9 +164,9 @@ const Product: NextPage<Props> = (props: any) => {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col px-3 pt-3 w-full">
+                    <div className="flex flex-col px-2 pt-2 w-full">
                       <Link href={`/product/odor-analysis/${item.id}`}>
-                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                        <a className="mb-2 font-bold leading-tight">
                           {item.title}
                           {undefined ? null : (
                             <span>
@@ -182,7 +182,7 @@ const Product: NextPage<Props> = (props: any) => {
                           )}
                         </a>
                       </Link>
-                      <div className="overflow-hidden text-sm text-ellipsis">
+                      <div className="overflow-hidden text-xs text-ellipsis">
                         <Link href={`/product/odor-analysis/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
@@ -206,14 +206,14 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/other-services/${item.id}`}>
-                          <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                          <a className="mb-2 font-bold leading-tight">
                             {item.title}
                             <br />
                             {!undefined ? item.subtitle : null}
@@ -221,7 +221,7 @@ const Product: NextPage<Props> = (props: any) => {
                             {!undefined ? item.product_title : null}
                           </a>
                         </Link>
-                        <div className="overflow-hidden text-sm text-ellipsis">
+                        <div className="overflow-hidden text-xs text-ellipsis">
                           <Link href={`/product/other-services/${item.id}`}>
                             <a>
                               {item.description}
@@ -236,9 +236,9 @@ const Product: NextPage<Props> = (props: any) => {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col px-3 pt-3 w-full">
+                    <div className="flex flex-col px-2 pt-2 w-full">
                       <Link href={`/product/other-services/${item.id}`}>
-                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                        <a className="mb-2 font-bold leading-tight">
                           {item.title}
                           {undefined ? null : (
                             <span>
@@ -254,7 +254,7 @@ const Product: NextPage<Props> = (props: any) => {
                           )}
                         </a>
                       </Link>
-                      <div className="overflow-hidden text-sm text-ellipsis">
+                      <div className="overflow-hidden text-xs text-ellipsis">
                         <Link href={`/product/other-services/${item.id}`}>
                           <a>
                             {item.description}
@@ -280,14 +280,14 @@ const Product: NextPage<Props> = (props: any) => {
           return (
             <li key={item.id}>
               <div
-                className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                 style={{ background: `center/cover no-repeat url(${item.image.url})` }}
               >
                 {item.charm ? (
                   <div className="flex">
                     <div className="flex flex-col p-3 w-3/4">
                       <Link href={`/product/software2/${item.id}`}>
-                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                        <a className="mb-2 font-bold leading-tight">
                           {item.title}
                           {undefined ? null : (
                             <span>
@@ -303,16 +303,16 @@ const Product: NextPage<Props> = (props: any) => {
                           )}
                         </a>
                       </Link>
-                      <div className="overflow-hidden text-sm text-ellipsis">{item.description}</div>
+                      <div className="overflow-hidden text-xs text-ellipsis">{item.description}</div>
                     </div>
                     <div className="w-20">
                       <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
                     </div>
                   </div>
                 ) : (
-                  <div className="flex flex-col px-3 pt-3 w-full">
+                  <div className="flex flex-col px-2 pt-2 w-full">
                     <Link href={`/product/software2/${item.id}`}>
-                      <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                      <a className="mb-2 font-bold leading-tight">
                         {item.title}
                         {undefined ? null : (
                           <span>
@@ -328,7 +328,7 @@ const Product: NextPage<Props> = (props: any) => {
                         )}
                       </a>
                     </Link>
-                    <div className="overflow-hidden text-sm text-ellipsis">{item.description}</div>
+                    <div className="overflow-hidden text-xs text-ellipsis">{item.description}</div>
                   </div>
                 )}
               </div>
@@ -352,7 +352,7 @@ const Product: NextPage<Props> = (props: any) => {
       <div>
         <div className="flex flex-row mb-6">
           <div>
-            <PageTitle>製品</PageTitle>
+            {/* <PageTitle>製品</PageTitle> */}
             <PageSubTitle>{productTitles[0].title}</PageSubTitle>
             <p>{productTitles[0].description}</p>
           </div>
@@ -372,14 +372,14 @@ const Product: NextPage<Props> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-44 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
                       <div className="flex flex-col p-3 w-3/4">
                         <Link href={`/product/software/${item.id}`}>
-                          <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                          <a className="mb-2 font-bold leading-tight">
                             {item.title}
                             {undefined ? null : (
                               <span>
@@ -395,7 +395,7 @@ const Product: NextPage<Props> = (props: any) => {
                             )}
                           </a>
                         </Link>
-                        <div className="overflow-hidden text-sm text-ellipsis">
+                        <div className="overflow-hidden text-xs text-ellipsis">
                           <Link href={`/product/software/${item.id}`}>
                             <a>{item.description}</a>
                           </Link>
@@ -406,9 +406,9 @@ const Product: NextPage<Props> = (props: any) => {
                       </div>
                     </div>
                   ) : (
-                    <div className="flex flex-col px-3 pt-3 w-full">
+                    <div className="flex flex-col px-2 pt-2 w-full">
                       <Link href={`/product/software/${item.id}`}>
-                        <a className="font-bold leading-tight xl:mb-1 xl:text-lg">
+                        <a className="mb-2 font-bold leading-tight">
                           {item.title}
                           <br />
                           {item.subtitle}
@@ -416,7 +416,7 @@ const Product: NextPage<Props> = (props: any) => {
                           {item.product_title}
                         </a>
                       </Link>
-                      <div className="overflow-hidden text-sm text-ellipsis">
+                      <div className="overflow-hidden text-xs text-ellipsis">
                         <Link href={`/product/software/${item.id}`}>
                           <a>{item.description}</a>
                         </Link>
