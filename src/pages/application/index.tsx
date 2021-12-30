@@ -34,7 +34,7 @@ const Application: NextPage = (props: any) => {
                     // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                   >
                     <div className="flex justify-between items-end text-[#33CC33]">
-                      <div className="p-1 mb-3 text-3xl font-semibold sm:text-4xl sm:font-bold md:text-5xl">
+                      <div className="p-1 mb-3 text-3xl font-semibold sm:text-2xl sm:font-bold md:text-3xl">
                         {item.title}
                       </div>
                       <Link href={`/application/${item.id}`} passHref>
