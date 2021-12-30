@@ -194,7 +194,7 @@ export const FormMemberRegistration: NextPage = () => {
                   required
                   type="radio"
                   id="researcher"
-                  className="text-[#330033] focus:border-[#330033] focus:ring-[#412c41] "
+                  className="text-[#330033] focus:border-[#330033] focus:ring-[#412c41]"
                   name="researcher"
                   value="その他"
                   onChange={handleOnChangeResearcher2}
@@ -353,7 +353,7 @@ export const FormMemberRegistration: NextPage = () => {
                 <input
                   type="radio"
                   id="newsletter"
-                  className=""
+                  className="text-[#330033] focus:border-[#330033] focus:ring-[#412c41] "
                   name="newsletter"
                   value="要"
                   onChange={handleOnChange}
@@ -365,7 +365,7 @@ export const FormMemberRegistration: NextPage = () => {
                 <input
                   type="radio"
                   id="newsletter"
-                  className=""
+                  className="text-[#330033] focus:border-[#330033] focus:ring-[#412c41]"
                   name="newsletter"
                   value="不要"
                   onChange={handleOnChange}
@@ -378,7 +378,7 @@ export const FormMemberRegistration: NextPage = () => {
           <div className="py-3 px-4 text-right bg-gray-50 sm:px-6">
             <button
               type="submit"
-              className="p-2 w-full font-medium text-gray-200 bg-gradient-to-r from-gray-400 focus:from-purple-700 to-gray-500 focus:to-yellow-400 border border-gray-50 focus:ring-2 focus:ring-offset-2 shadow-md focus:outline-none"
+              className="p-2 w-full font-medium text-gray-200 bg-gradient-to-r from-gray-400 focus:from-[#885b88] to-gray-500 border border-gray-50 focus:ring-2 focus:ring-offset-2 shadow-md focus:outline-none focus:to[#412c41]"
             >
               送信
             </button>
