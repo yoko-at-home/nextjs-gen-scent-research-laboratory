@@ -9,7 +9,7 @@ const App = (props: AppProps) => {
   return (
     <>
       <GoogleAnalytics />
-      <props.Component {...props.pageProps} />;
+      <props.Component {...props.pageProps} />
     </>
   );
 };
