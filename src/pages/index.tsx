@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
@@ -26,9 +25,6 @@ const Home: NextPage<Props> = (props: any) => {
             siteUrl={siteMetadata.siteUrl}
           />
 
-          <PageSubTitle>
-            <span className="tracking-widest">{props.data.title}</span>
-          </PageSubTitle>
           <div
             className="py-5 px-5 leading-loose md:py-8 lg:py-12 animation"
             dangerouslySetInnerHTML={{
