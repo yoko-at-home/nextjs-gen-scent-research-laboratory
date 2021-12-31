@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import type { NextPage } from "next";
+import { ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
@@ -20,13 +21,12 @@ const Software2Id: NextPage<Props> = (props: any) => {
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
-        <div className="mt-10 mb-12 text-2xl font-bold leading-relaxed md:text-3xl">
-          <div className="text-slate-700">
-            {props.software2.title}
-            <br />
-            {props.software2.subtitle}
-          </div>
-        </div>
+        <ProductTitle>
+          {props.software2.title}
+          <br />
+          {props.software2.subtitle}
+          <div className="mt-3 text-3xl md:text-4xl">{props.software2.product_title}</div>
+        </ProductTitle>
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.software2.body}`,

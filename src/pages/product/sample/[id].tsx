@@ -22,11 +22,7 @@ const SampleId: NextPage<Props> = (props: any) => {
       />
 
       <main>
-        <ProductTitle>
-          {props.sample.title}
-          <br />
-          {props.sample.product_title}
-        </ProductTitle>
+        <ProductTitle>{props.sample.title}</ProductTitle>
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.sample.body}`,

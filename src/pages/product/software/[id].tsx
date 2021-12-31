@@ -22,6 +22,7 @@ const SoftwareId: NextPage = (props: any) => {
           {props.software.title}
           <br />
           {props.software.subtitle}
+          <div className="mt-3 text-3xl md:text-4xl">{props.software.product_title}</div>
         </ProductTitle>
         <div
           dangerouslySetInnerHTML={{
