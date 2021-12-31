@@ -10,3 +10,8 @@ export const PageTitle: NextPage = (props) => {
 export const PageSubTitle: NextPage = (props) => {
   return <h2 className="mt-10 mb-5 text-lg font-bold md:mt-14 md:mb-8 md:text-2xl">{props.children}</h2>;
 };
+export const ProductTitle: NextPage = (props) => {
+  return (
+    <h1 className="mt-10 mb-12 text-2xl font-bold leading-relaxed md:text-3xl text-slate-700">{props.children}</h1>
+  );
+};

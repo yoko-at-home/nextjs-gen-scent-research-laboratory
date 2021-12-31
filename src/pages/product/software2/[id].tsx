@@ -21,7 +21,7 @@ const Software2Id: NextPage<Props> = (props: any) => {
       />
       <main>
         <div className="mt-10 mb-12 text-2xl font-bold leading-relaxed md:text-3xl">
-          <div className="">
+          <div className="text-slate-700">
             {props.software2.title}
             <br />
             {props.software2.subtitle}
