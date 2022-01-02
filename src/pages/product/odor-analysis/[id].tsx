@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { NextPage } from "next";
+import { ButtonToContact } from "src/component/Button/Button";
 import { ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -31,6 +31,15 @@ const OdorId: NextPage<Props> = (props: any) => {
             __html: `${props.odor.body}`,
           }}
         />
+        {!props.odor.button ? null : (
+          <div className="mt-20">
+            <div className="mb-10 text-[#330033]">{props.odor.button_desc}</div>
+            <div className="ml-20">
+              <ButtonToContact>{props.odor.button}</ButtonToContact>
+            </div>
+          </div>
+        )}
+        {!props.odor.produced_by ? null : <div className="mt-20 font-bold">Produced by {props.odor.produced_by}</div>}
       </main>
     </FixedLayout>
   );

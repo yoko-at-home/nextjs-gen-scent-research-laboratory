@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { NextPage } from "next";
+import { ButtonToContact } from "src/component/Button/Button";
 import { ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -31,6 +31,14 @@ const OtherId: NextPage<Props> = (props: any) => {
             __html: `${props.other.body}`,
           }}
         />
+        {!props.other.button ? null : (
+          <div className="mt-20">
+            <div className="mb-10 text-[#330033]">{props.other.button_desc}</div>
+            <div className="ml-20">
+              <ButtonToContact>{props.other.button}</ButtonToContact>
+            </div>
+          </div>
+        )}
       </main>
     </FixedLayout>
   );

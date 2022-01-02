@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { NextPage } from "next";
+import { ButtonToContact } from "src/component/Button/Button";
 import { ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -29,6 +29,17 @@ const SoftwareId: NextPage = (props: any) => {
             __html: `${props.software.body}`,
           }}
         />
+        {!props.software.button ? null : (
+          <div className="mt-20">
+            <div className="mb-10 text-[#330033]">{props.software.button_desc}</div>
+            <div className="ml-20">
+              <ButtonToContact>{props.software.button}</ButtonToContact>
+            </div>
+          </div>
+        )}
+        {!props.software.produced_by ? null : (
+          <div className="mt-20 font-bold">Produced by {props.software.produced_by}</div>
+        )}
       </main>
     </FixedLayout>
   );
