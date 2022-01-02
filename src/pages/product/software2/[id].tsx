@@ -1,16 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { NextPage } from "next";
+import type { VFC } from "react";
+import { ButtonToContact } from "src/component/Button/Button";
 import { ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
+import type { Software2Props } from "src/types/type";
 
-type Props = {
-  software2: string;
-};
-
-const Software2Id: NextPage<Props> = (props: any) => {
+const Software2Id: VFC<Software2Props> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
@@ -32,6 +30,17 @@ const Software2Id: NextPage<Props> = (props: any) => {
             __html: `${props.software2.body}`,
           }}
         />
+        {!props.software2.button ? null : (
+          <div className="mt-20">
+            <div className="mb-10 text-[#330033]">{props.software2.button_desc}</div>
+            <div className="ml-20">
+              <ButtonToContact>{props.software2.button}</ButtonToContact>
+            </div>
+          </div>
+        )}
+        {!props.software2.produced_by ? null : (
+          <div className="mt-20 font-bold">Produced by {props.software2.produced_by}</div>
+        )}
       </main>
     </FixedLayout>
   );

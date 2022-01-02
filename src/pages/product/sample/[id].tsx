@@ -1,16 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
+import type { VFC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
 import { ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
+import type { SampleProps } from "src/types/type";
 
-type Props = {
-  sample: string;
-};
-
-const SampleId: NextPage<Props> = (props: any) => {
+const SampleId: VFC<SampleProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO

@@ -1,12 +1,15 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
+/* eslint-disable @typescript-eslint/no-unused-vars*/
+import type { VFC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
 import { ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
+import type { SoftwareProps } from "src/types/type";
 
-const SoftwareId: NextPage = (props: any) => {
+const SoftwareId: VFC<SoftwareProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
@@ -22,7 +25,10 @@ const SoftwareId: NextPage = (props: any) => {
           {props.software.title}
           <br />
           {props.software.subtitle}
-          <div className="mt-3 text-3xl md:text-4xl">{props.software.product_title}</div>
+          <div className="my-6 text-3xl md:text-4xl">{props.software.product_title}</div>
+          {/* 以下product_title1/2はシンプルGC-MSデータ処理ソフトウェアのためにのみ実装 */}
+          <div className="mt-3 text-xl">{props.software.product_title1}</div>
+          <div className="mt-3 text-3xl md:text-4xl">{props.software.product_title2}</div>
         </ProductTitle>
         <div
           dangerouslySetInnerHTML={{

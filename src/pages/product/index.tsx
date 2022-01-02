@@ -1,18 +1,12 @@
-/* eslint-disable import/no-default-export */
-/* eslint-disable @typescript-eslint/naming-convention*/
-import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import type { VFC } from "react";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
-
-type Props = {
-  className: string;
-  productType: "software" | "software2" | "sample" | "odor" | "other";
-};
+import type { ProductProps } from "src/types/type";
 
 const productTitles = [
   {
@@ -37,7 +31,7 @@ const productTitles = [
   },
 ];
 
-const Product: NextPage<Props> = (props: any) => {
+const Product: VFC<ProductProps> = (props: any) => {
   const Sample = () => {
     return (
       <div>
@@ -57,8 +51,6 @@ const Product: NextPage<Props> = (props: any) => {
                           <a className="mb-2 font-bold leading-tight">
                             {item.title}
                             <br />
-                            {!undefined ? item.subtitle : null}
-                            <br />
                             {!undefined ? item.product_title : null}
                           </a>
                         </Link>
@@ -77,17 +69,12 @@ const Product: NextPage<Props> = (props: any) => {
                       <Link href={`/product/sample/${item.id}`}>
                         <a className="mb-2 font-bold leading-tight">
                           {item.title}
+                          {undefined ? null : <div>{item.subtitle}</div>}
                           {undefined ? null : (
-                            <span>
-                              <br />
-                              {item.subtitle}
-                            </span>
-                          )}
-                          {undefined ? null : (
-                            <span className="mt-1">
+                            <div className="mt-1">
                               <br />
                               {item.product_title}
-                            </span>
+                            </div>
                           )}
                         </a>
                       </Link>
@@ -137,18 +124,8 @@ const Product: NextPage<Props> = (props: any) => {
                     <Link href={`/product/odor-analysis/${item.id}`}>
                       <a className="mb-2 font-bold leading-tight">
                         {item.title}
-                        {undefined ? null : (
-                          <span>
-                            <br />
-                            {item.subtitle}
-                          </span>
-                        )}
-                        {undefined ? null : (
-                          <span className="mt-1">
-                            <br />
-                            {item.product_title}
-                          </span>
-                        )}
+                        {undefined ? null : <div>{item.subtitle}</div>}
+                        {undefined ? null : <div className="mt-1">{item.product_title}</div>}
                       </a>
                     </Link>
                     <div className="overflow-hidden text-xs text-ellipsis">
@@ -181,18 +158,8 @@ const Product: NextPage<Props> = (props: any) => {
                     <Link href={`/product/other-services/${item.id}`}>
                       <a className="mb-2 font-bold leading-tight">
                         {item.title}
-                        {undefined ? null : (
-                          <span>
-                            <br />
-                            {item.subtitle}
-                          </span>
-                        )}
-                        {undefined ? null : (
-                          <span className="mt-1">
-                            <br />
-                            {item.product_title}
-                          </span>
-                        )}
+                        {undefined ? null : <div>{item.subtitle}</div>}
+                        {undefined ? null : <div className="mt-1">{item.product_title}</div>}
                       </a>
                     </Link>
                     <div className="overflow-hidden text-xs text-ellipsis">
@@ -227,18 +194,8 @@ const Product: NextPage<Props> = (props: any) => {
                   <Link href={`/product/software2/${item.id}`}>
                     <a className="mb-2 font-bold leading-tight">
                       {item.title}
-                      {undefined ? null : (
-                        <span>
-                          <br />
-                          {item.subtitle}
-                        </span>
-                      )}
-                      {undefined ? null : (
-                        <span className="mt-1">
-                          <br />
-                          {item.product_title}
-                        </span>
-                      )}
+                      {undefined ? null : <div>{item.subtitle}</div>}
+                      {undefined ? null : <div className="mt-1">{item.product_title}</div>}
                     </a>
                   </Link>
                   <div className="overflow-hidden text-xs text-ellipsis">{item.description}</div>
