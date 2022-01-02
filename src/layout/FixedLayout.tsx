@@ -1,5 +1,5 @@
 import type { ReactNode, VFC } from "react";
-import { ButtonReturn } from "src/component/Button/Button";
+import { ButtonReturn } from "src/component/Button";
 
 import { Footer } from "./Footer";
 import { HeaderFixed } from "./Header";
