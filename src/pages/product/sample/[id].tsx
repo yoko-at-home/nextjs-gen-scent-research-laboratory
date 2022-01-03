@@ -13,7 +13,7 @@ const SampleId: VFC<SampleProps> = (props) => {
     <FixedLayout>
       <PageSEO
         title={`${props.sample.title} -GC-MS備品・におい分析用製品・サンプル - ${siteMetadata.author}`}
-        description={siteMetadata.description}
+        description={props.sample.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
         siteUrl={siteMetadata.siteUrl}
