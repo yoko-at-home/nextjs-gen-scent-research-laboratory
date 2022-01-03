@@ -11,9 +11,10 @@ type Props = {
 const Home: NextPage<Props> = (props: any) => {
   return (
     <div
-      style={{
-        background: "center/cover no-repeat url('/static/images/home/background.jpg')",
-      }}
+      className="background "
+      // style={{
+      //   background: "center/cover no-repeat url('/static/images/home/background.jpg')",
+      // }}
     >
       <div className="z-40 font-sans bg-white bg-opacity-80">
         <FluidLayout width="main">
@@ -34,6 +35,22 @@ const Home: NextPage<Props> = (props: any) => {
           />
         </FluidLayout>
       </div>
+      <style jsx>
+        {`
+          .background {
+            background-image: url("/static/images/home/background.jpg");
+            object-fit: cover;
+            background-size: cover;
+            width: 100vw;
+            min-height: 100vh;
+          }
+          @media (max-width: 639px) {
+            .background {
+              background-image: url("/static/images/home/background-mobile.jpg");
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

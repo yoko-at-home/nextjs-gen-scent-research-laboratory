@@ -10,10 +10,10 @@ import { client } from "src/lib/client";
 const Application: NextPage = (props: any) => {
   return (
     <div
-      style={{
-        background: "top/cover no-repeat url('/static/images/application/gen.jpg')",
-      }}
-      className="z-10"
+      // style={{
+      //   background: "top/cover no-repeat url('/static/images/application/gen.jpg')",
+      // }}
+      className="z-10 background"
     >
       <div className="z-40 bg-white bg-opacity-80">
         <FluidLayout width="main">
@@ -29,10 +29,7 @@ const Application: NextPage = (props: any) => {
             {props.application.map((item: any) => {
               return (
                 <li key={item.id}>
-                  <div
-                    className="flex flex-col p-5 mb-5 font-extrabold"
-                    // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                  >
+                  <div className="flex flex-col p-5 mb-5 font-extrabold">
                     <div className="flex justify-between items-end text-[#33CC33]">
                       <div className="p-1 mb-3 text-3xl font-semibold sm:text-2xl sm:font-bold md:text-3xl">
                         {item.title}
@@ -55,6 +52,24 @@ const Application: NextPage = (props: any) => {
           </ul>
         </FluidLayout>
       </div>
+      <style jsx>
+        {`
+          .background {
+            background-image: url("/static/images/application/gen.jpg");
+            object-fit: cover;
+            background-size: cover;
+            width: 100vw;
+            min-height: 100vh;
+            background-position: center;
+          }
+          @media (max-width: 639px) {
+            .background {
+              background-image: url("/static/images/application/gen-mobile.jpg");
+              background-position: bottom;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

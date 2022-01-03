@@ -1,4 +1,5 @@
 import cc from "classcat";
+// import { useRouter } from "next/router";
 import type { ReactNode, VFC } from "react";
 
 import { Footer } from "./Footer";
@@ -15,9 +16,12 @@ type Props = {
  * @package
  */
 export const FluidLayout: VFC<Props> = (props) => {
+  // const router = useRouter();
+  // const url = "/aboutus"
   return (
     <div className="grid grid-rows-[auto,1fr,auto] min-h-screen">
-      <Header />
+      {/* {router.pathname === url ? <Header opacity="aboutus" /> : <Header opacity="main" />} */}
+      <Header opacity="main" />
       <main
         className={cc([
           { "mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12 lg:w-9/12": props.width === "main" },

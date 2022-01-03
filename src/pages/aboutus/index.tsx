@@ -9,10 +9,10 @@ import { siteMetadata } from "../../data/siteMetaData";
 const AboutUs: NextPage = () => {
   return (
     <div
-      style={{
-        background: "top/cover no-repeat url('/static/images/about/background.jpg')",
-      }}
-      className="text-gray-300"
+      // style={{
+      //   background: "top/cover no-repeat url('/static/images/about/background.jpg')",
+      // }}
+      className="text-gray-300 background"
     >
       <FluidLayout width="main">
         <PageSEO
@@ -60,6 +60,24 @@ const AboutUs: NextPage = () => {
         </div>
         {/* </div> */}
       </FluidLayout>
+      <style jsx>
+        {`
+          .background {
+            background-image: url("/static/images/about/background.jpg");
+            object-fit: cover;
+            background-size: cover;
+            width: 100vw;
+            min-height: 100vh;
+            background-position: center;
+          }
+          @media (max-width: 639px) {
+            .background {
+              background-image: url("/static/images/about/background-mobile.jpg");
+              background-position: bottom;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

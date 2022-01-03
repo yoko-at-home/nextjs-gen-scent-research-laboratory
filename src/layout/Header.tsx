@@ -1,3 +1,4 @@
+import cc from "classcat";
 import Image from "next/image";
 import type { VFC } from "react";
 import { NavLink } from "src/component/Button";
@@ -14,10 +15,15 @@ const items = [
   // { href: "/members", label: "Members" },
 ];
 
+type Props = {
+  className?: string;
+  opacity?: "main" | "aboutus";
+};
+
 /**
  * @package
  */
-export const Header: VFC = () => {
+export const Header: VFC<Props> = (props) => {
   return (
     <header>
       <div className="relative">
@@ -30,25 +36,29 @@ export const Header: VFC = () => {
             {siteMetadata.author}
           </h1>
         </div>
-        <div className="hidden lg:block">
-          <Image
-            width="100%"
-            height="18%"
-            layout="responsive"
-            src="/static/images/header/background-lg.jpg"
-            alt={siteMetadata.author}
-            priority
-          />
-        </div>
-        <div className="lg:hidden">
-          <Image
-            width="100%"
-            height="30%"
-            layout="responsive"
-            src="/static/images/header/background.jpg"
-            alt={siteMetadata.author}
-            priority
-          />
+        <div
+          className={cc([{ "opacity-100": props.opacity === "main" }, { "opacity-0": props.opacity === "aboutus" }])}
+        >
+          <div className="hidden lg:block">
+            <Image
+              width="2234px"
+              height="350px"
+              layout="responsive"
+              src="/static/images/header/background-lg.jpg"
+              alt={siteMetadata.author}
+              priority
+            />
+          </div>
+          <div className="lg:hidden">
+            <Image
+              width="100%"
+              height="30%"
+              layout="responsive"
+              src="/static/images/header/background.jpg"
+              alt={siteMetadata.author}
+              priority
+            />
+          </div>
         </div>
       </div>
       <nav className="flex flex-wrap justify-center text-gray-600 bg-gray-200">
