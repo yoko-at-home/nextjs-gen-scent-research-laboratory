@@ -13,7 +13,7 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
-        title={`ソフトウェア・ライブラリ - ${siteMetadata.author}`}
+        title={`${props.software.title} - ソフトウェア・ライブラリ - ${siteMetadata.author}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
