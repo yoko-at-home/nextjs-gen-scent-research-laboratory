@@ -56,7 +56,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                         </Link>
                         <div className="overflow-hidden text-xs text-ellipsis">
                           <Link href={`/product/sample/${item.id}`}>
-                            <a>{item.description}</a>
+                            <a aria-label="Read more">{item.description}</a>
                           </Link>
                         </div>
                       </div>
@@ -80,7 +80,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                       </Link>
                       <div className="overflow-hidden text-xs text-ellipsis">
                         <Link href={`/product/sample/${item.id}`}>
-                          <a>{item.description}</a>
+                          <a aria-label="Read more">{item.description}</a>
                         </Link>
                       </div>
                     </div>
@@ -130,7 +130,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                     </Link>
                     <div className="overflow-hidden text-xs text-ellipsis">
                       <Link href={`/product/odor-analysis/${item.id}`}>
-                        <a>{item.description}</a>
+                        <a aria-label="Read more">{item.description}</a>
                       </Link>
                     </div>
                   </div>
@@ -164,7 +164,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                     </Link>
                     <div className="overflow-hidden text-xs text-ellipsis">
                       <Link href={`/product/other-services/${item.id}`}>
-                        <a>
+                        <a aria-label="Read more">
                           {item.description}
                           <br />
                           {item.note}
@@ -256,7 +256,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                     </Link>
                     <div className="overflow-hidden text-xs text-ellipsis">
                       <Link href={`/product/software/${item.id}`}>
-                        <a>{item.description}</a>
+                        <a aria-label="Read more">{item.description}</a>
                       </Link>
                     </div>
                   </div>

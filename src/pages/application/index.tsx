@@ -38,7 +38,7 @@ const Application: NextPage = (props: any) => {
                         {item.title}
                       </div>
                       <Link href={`/application/${item.id}`} passHref>
-                        <a>
+                        <a aria-label="Read more">
                           {item.body === undefined ? null : (
                             <span className="p-2 ml-5 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-[#33CC33]">
                               詳細

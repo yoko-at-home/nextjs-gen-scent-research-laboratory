@@ -31,7 +31,7 @@ export default function News({ news, totalCount }) {
                 <div className="mb-3 text-xl font-semibold sm:font-bold">{item.title}</div>
                 <div className="flex flex-row-reverse justify-between items-end">
                   <Link href={`/news/${item.id}`} passHref>
-                    <a>
+                    <a aria-label="Read more">
                       {item.body === undefined ? null : (
                         <span className="p-2 ml-5 whitespace-nowrap bg-gray-300">詳細</span>
                       )}
