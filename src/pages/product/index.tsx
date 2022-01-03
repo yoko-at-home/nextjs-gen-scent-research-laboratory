@@ -104,7 +104,7 @@ const Product: VFC<ProductProps> = (props: any) => {
           <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
             <Image
               alt="揮発性成分用サンプリングシステム"
-              src="/static/images/software/topimage2.jpg"
+              src="/static/images/software/sampling.jpg"
               height="62px"
               width={`100%`}
               priority
