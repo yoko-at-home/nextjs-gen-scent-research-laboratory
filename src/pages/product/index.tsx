@@ -211,7 +211,7 @@ const Product: VFC<ProductProps> = (props: any) => {
   return (
     <FluidLayout width="product">
       <PageSEO
-        title={`Product - ${siteMetadata.author}`}
+        title={`Product - ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

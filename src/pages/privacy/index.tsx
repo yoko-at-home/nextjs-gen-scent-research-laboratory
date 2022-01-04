@@ -15,7 +15,7 @@ const Private: NextPage<Props> = (props: any) => {
   return (
     <FluidLayout width="main">
       <PageSEO
-        title={`個人情報保護方針 - ${siteMetadata.author}`}
+        title={`個人情報保護方針 - ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

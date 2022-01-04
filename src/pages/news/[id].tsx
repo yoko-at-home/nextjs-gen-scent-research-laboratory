@@ -11,7 +11,7 @@ const NewsId: VFC<NewsProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
-        title={`News - ${siteMetadata.author}`}
+        title={`${props.news.description} - News - ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

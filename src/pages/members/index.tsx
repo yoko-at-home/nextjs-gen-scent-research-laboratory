@@ -7,7 +7,7 @@ const Members = () => {
   return (
     <FluidLayout>
       <PageSEO
-        title={`Members - ${siteMetadata.author}`}
+        title={`Members - ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

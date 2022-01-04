@@ -11,7 +11,7 @@ const Custom404: NextPage = () => {
   return (
     <FluidLayout width="main">
       <PageSEO
-        title={`Page Not Found- ${siteMetadata.author}`}
+        title={`Page Not Found- ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

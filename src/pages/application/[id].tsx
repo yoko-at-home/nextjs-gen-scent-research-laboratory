@@ -14,7 +14,7 @@ const ApplicationId: NextPage<Props> = (props: any) => {
   return (
     <FixedLayout>
       <PageSEO
-        title={`Application - ${siteMetadata.author}`}
+        title={`Application - ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

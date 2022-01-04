@@ -150,3 +150,14 @@ export type OtherProps = {
     updatedAt: Date;
   };
 };
+export type NewsProps = {
+  news: {
+    body: HTMLAnchorElement;
+    createdAt: Date;
+    description: string;
+    publishedAt: Date;
+    revisedAt: Date;
+    title: string;
+    updatedAt: Date;
+  };
+};

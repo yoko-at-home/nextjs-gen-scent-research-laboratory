@@ -10,7 +10,7 @@ export default function News({ news, totalCount }) {
   return (
     <FluidLayout width="main">
       <PageSEO
-        title={`News - ${siteMetadata.author}`}
+        title={`News - ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

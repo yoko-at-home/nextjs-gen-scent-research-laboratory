@@ -16,7 +16,7 @@ const AboutUs: NextPage = () => {
     >
       <FluidLayout width="main">
         <PageSEO
-          title={`About Us - ${siteMetadata.author}`}
+          title={`About Us - ${siteMetadata.title}`}
           description={siteMetadata.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

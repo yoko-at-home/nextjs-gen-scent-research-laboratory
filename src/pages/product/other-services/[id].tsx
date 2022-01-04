@@ -12,7 +12,7 @@ const OtherId: VFC<OtherProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
-        title={`${props.other.title} -他サービス - ${siteMetadata.author}`}
+        title={`${props.other.title} -他サービス - ${siteMetadata.title}`}
         description={props.other.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

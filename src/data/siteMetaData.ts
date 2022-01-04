@@ -1,9 +1,9 @@
 export const siteMetadata = {
   author: "Gen-Scent Research Laboratory",
-  title: "Gen-Scent Research Laboratory",
+  title: "玄川リサーチ Gen-Scent Research Laboratories",
   headerTitle: "Gen-Scent Research Laboratory",
   description:
-    "玄川リサーチは、におい分析を行う研究者の皆様のお役に立つべく、2021年に開業したばかりのラボラトリです。予算が厳しい中でも何とか良い研究成果を出したいという方にとって有用な分析ツールの販売や、分析手法やデータ解析で悩んでおられる方と一緒に良い結果を導くお手伝いを行います。",
+    "玄川リサーチは、香気成分分析用のソフトウェアや、においの研究に関する製品をご紹介しています。ガスクロマトグラフィ- 質量分析計、その他に関する各種ご相談をお受けいたします。",
   language: "jp-ja",
   siteUrl: "https://www.gen-scent.com",
   siteLogo: "/static/images/logo.png",

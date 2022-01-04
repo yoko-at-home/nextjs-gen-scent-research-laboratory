@@ -19,7 +19,7 @@ const Home: NextPage<Props> = (props: any) => {
       <div className="z-40 font-sans bg-white bg-opacity-80">
         <FluidLayout width="main">
           <PageSEO
-            title={`Greeting - ${siteMetadata.author}`}
+            title={`Home - ${siteMetadata.title}`}
             description={siteMetadata.description}
             ogType="website"
             ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

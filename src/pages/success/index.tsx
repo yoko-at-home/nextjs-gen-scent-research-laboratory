@@ -12,7 +12,7 @@ const Success: NextPage = () => {
   return (
     <FluidLayout width="main">
       <PageSEO
-        title={`Success- ${siteMetadata.author}`}
+        title={`Success- ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
