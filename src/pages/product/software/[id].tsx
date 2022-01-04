@@ -12,13 +12,31 @@ import type { SoftwareProps } from "src/types/type";
 const SoftwareId: VFC<SoftwareProps> = (props) => {
   return (
     <FixedLayout>
-      <PageSEO
-        title={`${props.software.title} - ソフトウェア・ライブラリ - ${siteMetadata.title}`}
-        description={props.software.description}
-        ogType="website"
-        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-        siteUrl={siteMetadata.siteUrl}
-      />
+      {!props.software.title || !props.software.subtitle ? (
+        <PageSEO
+          title={`${props.software.title}  - ${siteMetadata.title}`}
+          description={props.software.description}
+          ogType="website"
+          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+          siteUrl={siteMetadata.siteUrl}
+        />
+      ) : !props.software.title && !props.software.subtitle ? (
+        <PageSEO
+          title={`${props.software.product_title}  - ${siteMetadata.title}`}
+          description={props.software.description}
+          ogType="website"
+          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+          siteUrl={siteMetadata.siteUrl}
+        />
+      ) : (
+        <PageSEO
+          title={`${props.software.title} - ${props.software.subtitle}- ${siteMetadata.title}`}
+          description={props.software.description}
+          ogType="website"
+          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+          siteUrl={siteMetadata.siteUrl}
+        />
+      )}
 
       <main>
         {!props.software.title ? (
