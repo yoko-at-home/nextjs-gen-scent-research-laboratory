@@ -32,7 +32,7 @@ export const Header: VFC<Props> = (props) => {
           <LogoSmall />
         </div>
         <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[40%]">
-          <h1 className="z-20 font-caribri text-3xl font-black tracking-wide text-white whitespace-nowrap">
+          <h1 className="z-20 font-caribri text-3xl font-black tracking-wide text-white whitespace-nowrap sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             {siteMetadata.headerTitle}
           </h1>
         </div>
