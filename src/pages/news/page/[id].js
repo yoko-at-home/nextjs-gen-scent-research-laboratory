@@ -9,7 +9,7 @@ const PER_PAGE = 4;
 export default function newsPageId({ news, totalCount }) {
   return (
     <FixedLayout>
-      <PageSubTitle>ニュース一覧</PageSubTitle>
+      <PageSubTitle fontWeight="bold">ニュース一覧</PageSubTitle>
       <div className="flex flex-col justify-between min-h-full">
         <ul>
           {news.map((news) => {

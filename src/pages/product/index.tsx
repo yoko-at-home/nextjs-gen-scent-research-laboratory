@@ -35,7 +35,7 @@ const Product: VFC<ProductProps> = (props: any) => {
   const Sample = () => {
     return (
       <div>
-        <PageSubTitle>{productTitles[1].title}</PageSubTitle>
+        <PageSubTitle fontWeight="bold">{productTitles[1].title}</PageSubTitle>
         <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.sample.map((item: any) => {
             return (
@@ -98,7 +98,7 @@ const Product: VFC<ProductProps> = (props: any) => {
       <div>
         <div className="flex flex-row mb-6">
           <div>
-            <PageSubTitle>{productTitles[2].title}</PageSubTitle>
+            <PageSubTitle fontWeight="bold">{productTitles[2].title}</PageSubTitle>
             <p>{productTitles[2].description}</p>
           </div>
           <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
@@ -145,7 +145,7 @@ const Product: VFC<ProductProps> = (props: any) => {
   const Other = () => {
     return (
       <div>
-        <PageSubTitle>{productTitles[3].title}</PageSubTitle>
+        <PageSubTitle fontWeight="bold">{productTitles[3].title}</PageSubTitle>
         <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.other.map((item: any) => {
             return (
@@ -222,7 +222,7 @@ const Product: VFC<ProductProps> = (props: any) => {
         <div className="flex flex-row mb-6">
           <div>
             {/* <PageTitle>製品</PageTitle> */}
-            <PageSubTitle>{productTitles[0].title}</PageSubTitle>
+            <PageSubTitle fontWeight="bold">{productTitles[0].title}</PageSubTitle>
             <p>{productTitles[0].description}</p>
           </div>
           <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3-reverse">

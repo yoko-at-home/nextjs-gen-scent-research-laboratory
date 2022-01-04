@@ -21,7 +21,7 @@ const ApplicationId: NextPage<Props> = (props: any) => {
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
-        <PageSubTitle>{props.application.title}</PageSubTitle>
+        <PageSubTitle fontWeight="ordinary">{props.application.title}</PageSubTitle>
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.application.body}`,

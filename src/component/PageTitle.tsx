@@ -1,4 +1,11 @@
+import cc from "classcat";
 import type { NextPage } from "next";
+import type { ReactNode, VFC } from "react";
+
+type FontProps = {
+  fontWeight: "ordinary" | "bold";
+  children: ReactNode;
+};
 
 export const PageTitle: NextPage = (props) => {
   return (
@@ -7,8 +14,17 @@ export const PageTitle: NextPage = (props) => {
     </h1>
   );
 };
-export const PageSubTitle: NextPage = (props) => {
-  return <h2 className="mt-10 mb-5 text-lg font-bold text-[#330033] md:mt-14 md:mb-8 md:text-2xl">{props.children}</h2>;
+export const PageSubTitle: VFC<FontProps> = (props) => {
+  return (
+    <h2
+      className={cc([
+        { "mt-10 mb-5 text-lg font-bold text-[#330033] md:mt-14 md:mb-8 md:text-2xl": "ordinary" },
+        { "mt-10 mb-5 text-lg text-[#330033] md:mt-14 md:mb-8 md:text-2xl": "bold" },
+      ])}
+    >
+      {props.children}
+    </h2>
+  );
 };
 export const ProductTitle: NextPage = (props) => {
   return <h1 className="mt-10 mb-12 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">{props.children}</h1>;

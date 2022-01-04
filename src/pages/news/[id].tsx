@@ -18,7 +18,7 @@ const NewsId: VFC<NewsProps> = (props) => {
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
-        <PageSubTitle>{props.news.title}</PageSubTitle>
+        <PageSubTitle fontWeight="ordinary">{props.news.title}</PageSubTitle>
         {/* <p>{props.news.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
