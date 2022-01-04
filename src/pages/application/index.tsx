@@ -60,7 +60,7 @@ const Application: NextPage = (props: any) => {
             background-size: cover;
             width: 100vw;
             min-height: 100vh;
-            background-position: center;
+            background-position: top;
           }
           @media (max-width: 639px) {
             .background {
