@@ -15,7 +15,7 @@ const MyDocument = () => {
         <meta name="theme-color" content="#330033" />
         {/* <link rel="alternate" type="application/rss+xml" href="/feed.xml" /> */}
         {/* <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" /> */}
-        {/* <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@900&display=swap" rel="stylesheet" /> */}
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet"></link>
       </Head>
       <body className="antialiased bg-white">

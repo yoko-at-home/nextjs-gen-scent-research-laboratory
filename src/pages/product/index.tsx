@@ -54,7 +54,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                             {!item.product_title ? null : item.product_title}
                           </a>
                         </Link>
-                        <div className="overflow-hidden text-ellipsis">
+                        <div className="overflow-hidden text-sm text-ellipsis">
                           <Link href={`/product/sample/${item.id}`}>
                             <a aria-label="Read more">{item.description}</a>
                           </Link>
@@ -77,7 +77,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                             {!item.subtitle ? null : <div>{item.subtitle}</div>}
                             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </div>
-                          <div className="overflow-hidden text-ellipsis">
+                          <div className="overflow-hidden text-sm text-ellipsis">
                             <div>{item.description}</div>
                           </div>
                         </div>
@@ -127,7 +127,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                           {!item.subtitle ? null : <div>{item.subtitle}</div>}
                           {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                         </div>
-                        <div className="overflow-hidden text-ellipsis">{item.description}</div>
+                        <div className="overflow-hidden text-sm text-ellipsis">{item.description}</div>
                       </div>
                     </div>
                   </a>
@@ -159,7 +159,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                           {!item.subtitle ? null : <div>{item.subtitle}</div>}
                           {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                         </a>
-                        <div className="overflow-hidden text-ellipsis">
+                        <div className="overflow-hidden text-sm text-ellipsis">
                           <div>
                             {item.description}
                             <br />
@@ -195,7 +195,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                         {!item.subtitle ? null : <div>{item.subtitle}</div>}
                         {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                       </div>
-                      <div className="overflow-hidden text-ellipsis">{item.description}</div>
+                      <div className="overflow-hidden text-sm text-ellipsis">{item.description}</div>
                     </div>
                   </div>
                 </a>
@@ -251,7 +251,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                           {!item.subtitle ? null : <div>{item.subtitle}</div>}
                           {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                         </div>
-                        <div className="overflow-hidden text-ellipsis">
+                        <div className="overflow-hidden text-sm text-ellipsis">
                           <div>{item.description}</div>
                         </div>
                       </div>
