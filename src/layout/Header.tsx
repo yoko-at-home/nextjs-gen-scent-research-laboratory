@@ -31,8 +31,8 @@ export const Header: VFC<Props> = (props) => {
           <Logo />
           <LogoSmall />
         </div>
-        <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[40%]">
-          <h1 className="z-20 font-caribri text-2xl font-black tracking-wide text-white whitespace-nowrap sm:text-3xl md:text-5xl lg:text-5xl xl:text-6xl">
+        <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[35%]">
+          <h1 className="z-20 font-caribri text-lg font-black text-white whitespace-nowrap sm:text-3xl md:text-5xl md:tracking-wide lg:text-5xl xl:text-6xl">
             {siteMetadata.headerTitle}
           </h1>
         </div>
@@ -51,8 +51,8 @@ export const Header: VFC<Props> = (props) => {
           </div>
           <div className="md:hidden">
             <Image
-              width="1800px"
-              height="401px"
+              width="100%"
+              height="33%"
               layout="responsive"
               src="/static/images/header/background.jpg"
               alt={siteMetadata.author}
