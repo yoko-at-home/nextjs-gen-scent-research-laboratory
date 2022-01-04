@@ -12,7 +12,7 @@ const OdorId: VFC<OdorProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
-        title={`${props.odor.title} - におい分析機器類 - ${siteMetadata.title}`}
+        title={`${props.odor.title} - ${siteMetadata.title}`}
         description={props.odor.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
