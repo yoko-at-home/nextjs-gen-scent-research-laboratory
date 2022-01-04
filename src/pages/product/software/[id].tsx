@@ -22,7 +22,7 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
         />
       ) : !props.software.title && !props.software.subtitle ? (
         <PageSEO
-          title={`${props.software.product_title}  - ${siteMetadata.title}`}
+          title={`${props.software.product_title} - ${siteMetadata.title}`}
           description={props.software.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
@@ -30,7 +30,7 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
         />
       ) : (
         <PageSEO
-          title={`${props.software.title} - ${props.software.subtitle}- ${siteMetadata.title}`}
+          title={`${props.software.title} - ${props.software.subtitle} - ${siteMetadata.title}`}
           description={props.software.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
