@@ -41,7 +41,7 @@ const Product: VFC<ProductProps> = (props: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
+                  className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
@@ -51,7 +51,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                           <a className="mb-2 font-bold leading-tight">
                             {item.title}
                             <br />
-                            {!undefined ? item.product_title : null}
+                            {!item.product_title ? null : item.product_title}
                           </a>
                         </Link>
                         <div className="overflow-hidden text-ellipsis">
@@ -60,30 +60,29 @@ const Product: VFC<ProductProps> = (props: any) => {
                           </Link>
                         </div>
                       </div>
-                      <div className="w-20">
-                        <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col px-2 pt-2 w-full">
                       <Link href={`/product/sample/${item.id}`}>
                         <a className="mb-2 font-bold leading-tight">
-                          {item.title}
-                          {undefined ? null : <div>{item.subtitle}</div>}
-                          {undefined ? null : (
-                            <div className="mt-1">
-                              <br />
-                              {item.product_title}
-                            </div>
-                          )}
+                          <div className="w-20">
+                            <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
+                          </div>
                         </a>
                       </Link>
-                      <div className="overflow-hidden text-ellipsis">
-                        <Link href={`/product/sample/${item.id}`}>
-                          <a aria-label="Read more">{item.description}</a>
-                        </Link>
-                      </div>
                     </div>
+                  ) : (
+                    <Link href={`/product/sample/${item.id}`}>
+                      <a aria-label="Read more">
+                        <div className="flex flex-col px-2 pt-2 w-full">
+                          <div className="mb-2 font-bold leading-tight">
+                            {!item.title ? null : item.title}
+                            {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                            {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
+                          </div>
+                          <div className="overflow-hidden text-ellipsis">
+                            <div>{item.description}</div>
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
                   )}
                 </div>
               </li>
@@ -116,25 +115,23 @@ const Product: VFC<ProductProps> = (props: any) => {
           {props.odor.map((item: any) => {
             return (
               <li key={item.id}>
-                <div
-                  className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                >
-                  <div className="flex flex-col px-2 pt-2 w-full">
-                    <Link href={`/product/odor-analysis/${item.id}`}>
-                      <a className="mb-2 font-bold leading-tight">
-                        {!item.title ? null : item.title}
-                        {!item.subtitle ? null : <div>{item.subtitle}</div>}
-                        {!item.product_title ? null : <div className="mt-1">{item.product_title}</div>}
-                      </a>
-                    </Link>
-                    <div className="overflow-hidden text-ellipsis">
-                      <Link href={`/product/odor-analysis/${item.id}`}>
-                        <a aria-label="Read more">{item.description}</a>
-                      </Link>
+                <Link href={`/product/odor-analysis/${item.id}`}>
+                  <a aria-label="Read more">
+                    <div
+                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                      style={{ background: `center/cover no-repeat url(${item.image.url})` }}
+                    >
+                      <div className="flex flex-col px-2 pt-2 w-full">
+                        <div className="mb-2 font-bold leading-tight">
+                          {!item.title ? null : item.title}
+                          {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                          {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
+                        </div>
+                        <div className="overflow-hidden text-ellipsis">{item.description}</div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </a>
+                </Link>
               </li>
             );
           })}
@@ -150,29 +147,29 @@ const Product: VFC<ProductProps> = (props: any) => {
           {props.other.map((item: any) => {
             return (
               <li key={item.id}>
-                <div
-                  className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                >
-                  <div className="flex flex-col px-2 pt-2 w-full">
-                    <Link href={`/product/other-services/${item.id}`}>
-                      <a className="mb-2 font-bold leading-tight">
-                        {!item.title ? null : item.title}
-                        {!item.subtitle ? null : <div>{item.subtitle}</div>}
-                        {!item.product_title ? null : <div className="mt-1">{item.product_title}</div>}
-                      </a>
-                    </Link>
-                    <div className="overflow-hidden text-ellipsis">
-                      <Link href={`/product/other-services/${item.id}`}>
-                        <a aria-label="Read more">
-                          {item.description}
-                          <br />
-                          {item.note}
+                <Link href={`/product/other-services/${item.id}`}>
+                  <a aria-label="Read more">
+                    <div
+                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                      style={{ background: `center/cover no-repeat url(${item.image.url})` }}
+                    >
+                      <div className="flex flex-col px-2 pt-2 w-full">
+                        <a className="mb-2 font-bold leading-tight">
+                          {!item.title ? null : item.title}
+                          {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                          {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                         </a>
-                      </Link>
+                        <div className="overflow-hidden text-ellipsis">
+                          <div>
+                            {item.description}
+                            <br />
+                            {item.note}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </a>
+                </Link>
               </li>
             );
           })}
@@ -186,21 +183,23 @@ const Product: VFC<ProductProps> = (props: any) => {
         {props.software2.map((item: any) => {
           return (
             <li key={item.id}>
-              <div
-                className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
-                style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-              >
-                <div className="flex flex-col px-2 pt-2 w-full">
-                  <Link href={`/product/software2/${item.id}`}>
-                    <a className="mb-2 font-bold leading-tight">
-                      {!item.title ? null : item.title}
-                      {!item.subtitle ? null : <div>{item.subtitle}</div>}
-                      {!item.product_title ? null : <div className="mt-1">{item.product_title}</div>}
-                    </a>
-                  </Link>
-                  <div className="overflow-hidden text-ellipsis">{item.description}</div>
-                </div>
-              </div>
+              <Link href={`/product/software2/${item.id}`}>
+                <a aria-label="Read more">
+                  <div
+                    className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                    style={{ background: `center/cover no-repeat url(${item.image.url})` }}
+                  >
+                    <div className="flex flex-col px-2 pt-2 w-full">
+                      <div className="mb-2 font-bold leading-tight">
+                        {!item.title ? null : item.title}
+                        {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                        {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
+                      </div>
+                      <div className="overflow-hidden text-ellipsis">{item.description}</div>
+                    </div>
+                  </div>
+                </a>
+              </Link>
             </li>
           );
         })}
@@ -240,25 +239,25 @@ const Product: VFC<ProductProps> = (props: any) => {
           {props.software.map((item: any) => {
             return (
               <li key={item.id}>
-                <div
-                  className="flex p-1 h-36 rounded hover:opacity-80 hover:scale-[0.99] sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                >
-                  <div className="flex flex-col px-2 pt-2 w-full">
-                    <Link href={`/product/software/${item.id}`}>
-                      <a className="mb-2 font-bold leading-tight">
-                        {!item.title ? null : item.title}
-                        {!item.subtitle ? null : <div>{item.subtitle}</div>}
-                        {!item.product_title ? null : <div className="mt-1">{item.product_title}</div>}
-                      </a>
-                    </Link>
-                    <div className="overflow-hidden text-ellipsis">
-                      <Link href={`/product/software/${item.id}`}>
-                        <a aria-label="Read more">{item.description}</a>
-                      </Link>
+                <Link href={`/product/software/${item.id}`}>
+                  <a aria-label="Read more">
+                    <div
+                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                      style={{ background: `center/cover no-repeat url(${item.image.url})` }}
+                    >
+                      <div className="flex flex-col px-2 pt-2 w-full">
+                        <div className="mb-2 font-bold leading-tight">
+                          {!item.title ? null : item.title}
+                          {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                          {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
+                        </div>
+                        <div className="overflow-hidden text-ellipsis">
+                          <div>{item.description}</div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                  </a>
+                </Link>
               </li>
             );
           })}
