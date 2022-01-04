@@ -55,8 +55,6 @@ export type SoftwareProps = {
     revisedAt: Date;
     subtitle: string;
     title: string;
-    product_title1: string;
-    product_title2: string;
     updatedAt: Date;
   };
 };
@@ -78,8 +76,6 @@ export type Software2Props = {
     revisedAt: Date;
     subtitle: string;
     title: string;
-    product_title1: string;
-    product_title2: string;
     updatedAt: Date;
   };
 };

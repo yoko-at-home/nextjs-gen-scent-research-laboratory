@@ -21,15 +21,18 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
       />
 
       <main>
-        <ProductTitle>
-          {props.software.title}
-          <br />
-          {props.software.subtitle}
-          <div className="my-6 text-3xl md:text-4xl">{props.software.product_title}</div>
-          {/* 以下product_title1/2はシンプルGC-MSデータ処理ソフトウェアのためにのみ実装 */}
-          <div className="mt-3 text-xl">{props.software.product_title1}</div>
-          <div className="mt-3 text-3xl md:text-4xl">{props.software.product_title2}</div>
-        </ProductTitle>
+        {!props.software.title ? (
+          <div className="mt-8" />
+        ) : (
+          <ProductTitle>
+            {!props.software.title ? null : props.software.title}
+            <br />
+            {!props.software.subtitle ? null : props.software.subtitle}
+          </ProductTitle>
+        )}
+        <div className="mb-8 text-3xl font-bold leading-relaxed text-[#330033] md:text-4xl">
+          {props.software.product_title}
+        </div>
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.software.body}`,
