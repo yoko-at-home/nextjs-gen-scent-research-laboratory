@@ -27,5 +27,5 @@ export const PageSubTitle: VFC<FontProps> = (props) => {
   );
 };
 export const ProductTitle: NextPage = (props) => {
-  return <h1 className="mt-10 mb-12 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">{props.children}</h1>;
+  return <h1 className="mt-10 mb-6 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">{props.children}</h1>;
 };
