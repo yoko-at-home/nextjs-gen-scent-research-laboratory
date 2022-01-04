@@ -54,7 +54,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                             {!undefined ? item.product_title : null}
                           </a>
                         </Link>
-                        <div className="overflow-hidden text-xs text-ellipsis">
+                        <div className="overflow-hidden text-ellipsis">
                           <Link href={`/product/sample/${item.id}`}>
                             <a aria-label="Read more">{item.description}</a>
                           </Link>
@@ -78,7 +78,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                           )}
                         </a>
                       </Link>
-                      <div className="overflow-hidden text-xs text-ellipsis">
+                      <div className="overflow-hidden text-ellipsis">
                         <Link href={`/product/sample/${item.id}`}>
                           <a aria-label="Read more">{item.description}</a>
                         </Link>
@@ -123,12 +123,12 @@ const Product: VFC<ProductProps> = (props: any) => {
                   <div className="flex flex-col px-2 pt-2 w-full">
                     <Link href={`/product/odor-analysis/${item.id}`}>
                       <a className="mb-2 font-bold leading-tight">
-                        {item.title}
-                        {undefined ? null : <div>{item.subtitle}</div>}
-                        {undefined ? null : <div className="mt-1">{item.product_title}</div>}
+                        {!item.title ? null : item.title}
+                        {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                        {!item.product_title ? null : <div className="mt-1">{item.product_title}</div>}
                       </a>
                     </Link>
-                    <div className="overflow-hidden text-xs text-ellipsis">
+                    <div className="overflow-hidden text-ellipsis">
                       <Link href={`/product/odor-analysis/${item.id}`}>
                         <a aria-label="Read more">{item.description}</a>
                       </Link>
@@ -157,12 +157,12 @@ const Product: VFC<ProductProps> = (props: any) => {
                   <div className="flex flex-col px-2 pt-2 w-full">
                     <Link href={`/product/other-services/${item.id}`}>
                       <a className="mb-2 font-bold leading-tight">
-                        {item.title}
-                        {undefined ? null : <div>{item.subtitle}</div>}
-                        {undefined ? null : <div className="mt-1">{item.product_title}</div>}
+                        {!item.title ? null : item.title}
+                        {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                        {!item.product_title ? null : <div className="mt-1">{item.product_title}</div>}
                       </a>
                     </Link>
-                    <div className="overflow-hidden text-xs text-ellipsis">
+                    <div className="overflow-hidden text-ellipsis">
                       <Link href={`/product/other-services/${item.id}`}>
                         <a aria-label="Read more">
                           {item.description}
@@ -193,12 +193,12 @@ const Product: VFC<ProductProps> = (props: any) => {
                 <div className="flex flex-col px-2 pt-2 w-full">
                   <Link href={`/product/software2/${item.id}`}>
                     <a className="mb-2 font-bold leading-tight">
-                      {item.title}
-                      {undefined ? null : <div>{item.subtitle}</div>}
-                      {undefined ? null : <div className="mt-1">{item.product_title}</div>}
+                      {!item.title ? null : item.title}
+                      {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                      {!item.product_title ? null : <div className="mt-1">{item.product_title}</div>}
                     </a>
                   </Link>
-                  <div className="overflow-hidden text-xs text-ellipsis">{item.description}</div>
+                  <div className="overflow-hidden text-ellipsis">{item.description}</div>
                 </div>
               </div>
             </li>
@@ -247,14 +247,12 @@ const Product: VFC<ProductProps> = (props: any) => {
                   <div className="flex flex-col px-2 pt-2 w-full">
                     <Link href={`/product/software/${item.id}`}>
                       <a className="mb-2 font-bold leading-tight">
-                        {item.title}
-                        <br />
-                        {item.subtitle}
-                        <br />
-                        {item.product_title}
+                        {!item.title ? null : item.title}
+                        {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                        {!item.product_title ? null : <div className="mt-1">{item.product_title}</div>}
                       </a>
                     </Link>
-                    <div className="overflow-hidden text-xs text-ellipsis">
+                    <div className="overflow-hidden text-ellipsis">
                       <Link href={`/product/software/${item.id}`}>
                         <a aria-label="Read more">{item.description}</a>
                       </Link>
