@@ -39,20 +39,20 @@ export const Header: VFC<Props> = (props) => {
         <div
           className={cc([{ "opacity-100": props.opacity === "main" }, { "opacity-0": props.opacity === "aboutus" }])}
         >
-          <div className="hidden lg:block">
+          <div className="hidden md:block">
             <Image
               width="2234px"
-              height="350px"
+              height="401px"
               layout="responsive"
               src="/static/images/header/background-lg.jpg"
               alt={siteMetadata.author}
               priority
             />
           </div>
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <Image
-              width="100%"
-              height="30%"
+              width="1800px"
+              height="401px"
               layout="responsive"
               src="/static/images/header/background.jpg"
               alt={siteMetadata.author}
