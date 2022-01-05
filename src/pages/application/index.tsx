@@ -9,12 +9,7 @@ import { client } from "src/lib/client";
 /* eslint-disable import/no-default-export */
 const Application: NextPage = (props: any) => {
   return (
-    <div
-      // style={{
-      //   background: "top/cover no-repeat url('/static/images/application/gen.jpg')",
-      // }}
-      className="z-10 background"
-    >
+    <div className="z-10 background">
       <div className="z-40 bg-white bg-opacity-80">
         <FluidLayout width="main">
           <PageSEO
@@ -30,9 +25,21 @@ const Application: NextPage = (props: any) => {
               return (
                 <li key={item.id}>
                   <div className="flex flex-col p-5 mb-5 font-extrabold">
-                    <div className="flex justify-between items-end text-[#33CC33]">
-                      <div className="p-1 mb-3 text-3xl font-semibold sm:text-2xl sm:font-bold md:text-3xl">
-                        {item.title}
+                    <div className="flex flex-col justify-between">
+                      <div className="p-1 mb-3 text-3xl font-semibold text-[#33CC33] sm:text-2xl sm:font-bold md:text-3xl">
+                        {item.title}元の色
+                      </div>
+                      <div className="p-1 mb-3 text-3xl font-semibold text-[#33cc00] sm:text-2xl sm:font-bold md:text-3xl">
+                        {item.title}#33cc00
+                      </div>
+                      <div className="p-1 mb-3 text-3xl font-semibold text-[#37a34a] sm:text-2xl sm:font-bold md:text-3xl">
+                        {item.title}パロットグリーン
+                      </div>
+                      <div className="p-1 mb-3 text-3xl font-semibold text-[#55295b] sm:text-2xl sm:font-bold md:text-3xl">
+                        {item.title}桑の実色 くわのみいろ
+                      </div>
+                      <div className="p-1 mb-3 text-3xl font-semibold text-[#594255] sm:text-2xl sm:font-bold md:text-3xl">
+                        {item.title}滅紫 けしむらさき
                       </div>
                       <Link href={`/application/${item.id}`} passHref>
                         <a aria-label="Read more">
