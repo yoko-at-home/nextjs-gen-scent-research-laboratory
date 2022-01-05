@@ -15,7 +15,7 @@ const items = [
 
 type Props = {
   className?: string;
-  opacity?: "main" | "aboutus";
+  opacity?: "ordinary" | "aboutus";
 };
 
 /**
@@ -48,8 +48,8 @@ export const Header: VFC<Props> = (props) => {
             }}
           ></div>
           <div className="container relative">
-            <div className="flex flex-wrap items-center">
-              <div className="py-16 mr-auto ml-auto w-full text-center">
+            <div className="flex">
+              <div className="py-4 w-full text-center sm:py-12 md:py-16">
                 <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[35%]">
                   <h1 className="z-20 font-caribri text-lg font-black text-white whitespace-nowrap sm:text-2xl md:text-3xl lg:text-5xl lg:tracking-wide xl:text-6xl">
                     {siteMetadata.headerTitle}
