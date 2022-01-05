@@ -56,6 +56,7 @@ export type SoftwareProps = {
     createdAt: Date;
     description: string;
     description_body: string;
+    description_body2: string;
     image: {
       height: number;
       url: string;

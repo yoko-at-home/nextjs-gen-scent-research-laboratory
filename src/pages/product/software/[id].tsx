@@ -51,7 +51,11 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
         <div className="mb-6 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">
           {props.software.product_title}
         </div>
-        <div className="mb-12 text-[#330033]">{props.software.description_body}</div>
+        <div className="mb-12 text-[#330033]">
+          {props.software.description_body}
+          <br />
+          {props.software.description_body2}
+        </div>
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.software.body}`,
