@@ -1,5 +1,4 @@
 import cc from "classcat";
-import Image from "next/image";
 import type { VFC } from "react";
 import { NavLink } from "src/component/Button";
 import { Logo, LogoSmall } from "src/component/Logo";
@@ -12,7 +11,6 @@ const items = [
   { href: "/news", label: "News" },
   { href: "/aboutus", label: "About Us" },
   { href: "/contact", label: "Contact" },
-  // { href: "/members", label: "Members" },
 ];
 
 type Props = {
@@ -26,41 +24,42 @@ type Props = {
 export const Header: VFC<Props> = (props) => {
   return (
     <header>
-      <div className="relative">
-        <div className="absolute top-[3%] right-[8%] z-50 justify-between transform translate-x-[50%] translate-y-[50%] sm:block xl:top-[5%]">
+      <main>
+        <div className="absolute right-[6%] z-50 justify-between transform translate-x-[50%] translate-y-[50%] sm:block">
           <Logo />
           <LogoSmall />
         </div>
-        <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[35%]">
-          <h1 className="z-20 font-caribri text-lg font-black text-white whitespace-nowrap sm:text-3xl md:text-5xl md:tracking-wide lg:text-5xl xl:text-6xl">
-            {siteMetadata.headerTitle}
-          </h1>
-        </div>
         <div
-          className={cc([{ "opacity-100": props.opacity === "main" }, { "opacity-0": props.opacity === "aboutus" }])}
+          className={cc([
+            {
+              "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-100":
+                props.opacity === "main",
+            },
+            {
+              "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-0":
+                props.opacity === "aboutus",
+            },
+          ])}
         >
-          <div className="hidden md:block">
-            <Image
-              width="2234px"
-              height="401px"
-              layout="responsive"
-              src="/static/images/header/background-lg.jpg"
-              alt={siteMetadata.author}
-              priority
-            />
-          </div>
-          <div className="md:hidden">
-            <Image
-              width="100%"
-              height="33%"
-              layout="responsive"
-              src="/static/images/header/background.jpg"
-              alt={siteMetadata.author}
-              priority
-            />
+          <div
+            className="absolute top-0 w-full h-full bg-top bg-cover"
+            style={{
+              backgroundImage: "url('/static/images/header/background.jpg')",
+            }}
+          ></div>
+          <div className="container relative">
+            <div className="flex flex-wrap items-center">
+              <div className="py-16 mr-auto ml-auto w-full text-center">
+                <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[35%]">
+                  <h1 className="z-20 font-caribri text-lg font-black text-white whitespace-nowrap sm:text-2xl md:text-3xl lg:text-5xl lg:tracking-wide xl:text-6xl">
+                    {siteMetadata.headerTitle}
+                  </h1>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
       <nav className="flex flex-wrap justify-center text-gray-600 bg-gray-200">
         {items.map(({ href, label }) => {
           return (
