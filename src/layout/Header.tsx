@@ -19,20 +19,16 @@ export const Header: VFC<Props> = (props) => {
         <Logo />
         <LogoSmall />
       </div>
-      <div
-        className={cc([
-          {
-            "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-100":
-              props.opacity === "ordinary",
-          },
-          {
-            "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-0":
-              props.opacity === "aboutus",
-          },
-        ])}
-      >
+      <div className="flex relative justify-center pt-16 pb-32 min-w-full opacity-100">
         <div
-          className="absolute top-0 w-full h-full bg-top bg-cover"
+          className={cc([
+            {
+              "absolute top-0 w-full h-full bg-top bg-cover opacity-100": props.opacity === "ordinary",
+            },
+            {
+              "absolute top-0 w-full h-full bg-top bg-cover opacity-0": props.opacity === "aboutus",
+            },
+          ])}
           style={{
             backgroundImage: "url('/static/images/header/background.jpg')",
           }}
