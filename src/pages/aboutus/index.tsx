@@ -26,10 +26,10 @@ const AboutUs: NextPage = () => {
           <PageTitle>
             <span className="font-yui text-3xl tracking-widest sm:text-5xl">玄川リサーチ</span>
           </PageTitle>
-          <h2 className="my-5 font-caribri text-xl font-bold md:text-2xl lg:mb-10 lg:text-3xl animation">
+          <h2 className="my-5 font-caribri font-bold sm:text-xl md:text-2xl lg:mb-10 lg:text-3xl animation">
             Gen-Scent Research Laboratory
           </h2>
-          <span className="font-caribri text-lg font-bold animation">Shimomeguro, Meguro, Tokyo, Japan</span>
+          <span className="font-caribri font-bold sm:text-lg animation">Shimomeguro, Meguro, Tokyo, Japan</span>
           <div className="container flex pt-6 pb-8 space-y-2 md:space-y-10 animation">
             <span className="mr-5 text-xl font-semibold whitespace-nowrap">事業内容</span>
             <div className="">
@@ -63,18 +63,12 @@ const AboutUs: NextPage = () => {
       <style jsx>
         {`
           .background {
-            background-image: url("/static/images/about/background.jpg");
+            background-image: url("/static/images/header/background.jpg");
             object-fit: cover;
             background-size: cover;
             width: 100vw;
             min-height: 100vh;
             background-position: top;
-          }
-          @media (max-width: 639px) {
-            .background {
-              background-image: url("/static/images/about/background-mobile.jpg");
-              background-position: bottom;
-            }
           }
         `}
       </style>
