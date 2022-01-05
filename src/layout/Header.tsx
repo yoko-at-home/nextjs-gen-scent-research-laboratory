@@ -1,6 +1,5 @@
 import cc from "classcat";
 import type { VFC } from "react";
-import { NavLink } from "src/component/Button";
 import { Logo, LogoSmall } from "src/component/Logo";
 import { siteMetadata } from "src/data/siteMetaData";
 import Navigation from "src/layout/Navigation";
@@ -54,15 +53,7 @@ export const Header: VFC<Props> = (props) => {
 export const HeaderFixed: VFC = () => {
   return (
     <header>
-      <nav className="flex flex-wrap justify-center text-gray-100 bg-gray-400">
-        {items.map(({ href, label }) => {
-          return (
-            <NavLink key={href} href={href} activeClassName="bg-gray-500">
-              <a className="inline-block p-1 hover:text-gray-300 hover:bg-gray-600 sm:p-4">{label}</a>
-            </NavLink>
-          );
-        })}
-      </nav>
+      <Navigation />
     </header>
   );
 };
