@@ -20,7 +20,19 @@ const SampleId: VFC<SampleProps> = (props) => {
       />
 
       <main>
-        <ProductTitle>{props.sample.title}</ProductTitle>
+        {!props.sample.title ? (
+          <div className="mt-8" />
+        ) : (
+          <ProductTitle>
+            {!props.sample.title ? null : props.sample.title}
+            <br />
+            {!props.sample.subtitle ? null : props.sample.subtitle}
+          </ProductTitle>
+        )}
+        <div className="mb-6 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">
+          {props.sample.product_title}
+        </div>
+        <div className="mb-12 text-[#330033]">{props.sample.description_body}</div>
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.sample.body}`,
