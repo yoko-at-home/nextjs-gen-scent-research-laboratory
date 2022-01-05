@@ -2,7 +2,7 @@
 import Image from "next/image";
 import type { VFC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
-import { ProductTitle } from "src/component/PageTitle";
+import { ProductMainTitle, ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
@@ -12,13 +12,23 @@ import type { SampleProps } from "src/types/type";
 const SampleId: VFC<SampleProps> = (props) => {
   return (
     <FixedLayout>
-      <PageSEO
-        title={`${props.sample.title} - ${siteMetadata.title}`}
-        description={props.sample.description}
-        ogType="website"
-        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-        siteUrl={siteMetadata.siteUrl}
-      />
+      {!props.sample.title ? (
+        <PageSEO
+          title={`${props.sample.product_title}  - ${siteMetadata.title}`}
+          description={props.sample.description}
+          ogType="website"
+          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+          siteUrl={siteMetadata.siteUrl}
+        />
+      ) : (
+        <PageSEO
+          title={`${props.sample.title} - ${siteMetadata.title}`}
+          description={props.sample.description}
+          ogType="website"
+          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+          siteUrl={siteMetadata.siteUrl}
+        />
+      )}
 
       <main>
         {!props.sample.title ? (
@@ -37,9 +47,7 @@ const SampleId: VFC<SampleProps> = (props) => {
             )}
           </div>
         )}
-        <div className="mb-6 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">
-          {props.sample.product_title}
-        </div>
+        <ProductMainTitle>{props.sample.product_title}</ProductMainTitle>
         <div className="mb-12 text-[#330033]">{props.sample.description_body}</div>
         <div
           dangerouslySetInnerHTML={{
