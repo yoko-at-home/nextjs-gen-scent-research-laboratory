@@ -1,3 +1,14 @@
+export type HomeProps = {
+  data: {
+    body: HTMLAnchorElement;
+    createdAt: Date;
+    publishedAt: Date;
+    revisedAt: Date;
+    title: string;
+    updatedAt: Date;
+  };
+};
+
 export type ProductProps = {
   odor: {
     description: string;

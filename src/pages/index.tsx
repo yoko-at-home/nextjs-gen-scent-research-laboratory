@@ -1,21 +1,14 @@
-import type { NextPage } from "next";
+import type { VFC } from "react";
+import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
+import type { HomeProps } from "src/types/type";
 
-type Props = {
-  data: string;
-};
-
-const Home: NextPage<Props> = (props: any) => {
+const Home: VFC<HomeProps> = (props) => {
   return (
-    <div
-      className="background "
-      // style={{
-      //   background: "center/cover no-repeat url('/static/images/home/background.jpg')",
-      // }}
-    >
+    <div className="background ">
       <div className="z-40 font-sans bg-white bg-opacity-80">
         <FluidLayout width="main">
           <PageSEO
@@ -25,14 +18,16 @@ const Home: NextPage<Props> = (props: any) => {
             ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
             siteUrl={siteMetadata.siteUrl}
           />
-
-          <div
-            className="py-5 px-5 leading-loose md:py-8 lg:py-12 animation"
-            dangerouslySetInnerHTML={{
-              // eslint-disable-next-line @typescript-eslint/naming-convention
-              __html: `${props.data.body}`,
-            }}
-          />
+          <div className="px-5 ">
+            <PageTitle>{props.data.title}</PageTitle>
+            <div
+              className="leading-loose animation"
+              dangerouslySetInnerHTML={{
+                // eslint-disable-next-line @typescript-eslint/naming-convention
+                __html: `${props.data.body}`,
+              }}
+            />
+          </div>
         </FluidLayout>
       </div>
       <style jsx>
