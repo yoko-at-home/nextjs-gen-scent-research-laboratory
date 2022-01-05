@@ -48,7 +48,7 @@ export const Header: VFC<Props> = (props) => {
         ></div>
         <div className="container relative py-4 w-full text-center sm:py-10 md:py-14">
           <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[35%]">
-            <h1 className="z-20 font-caribri text-lg font-black text-white whitespace-nowrap sm:text-2xl md:text-3xl lg:text-5xl lg:tracking-wide xl:text-6xl">
+            <h1 className="z-20 font-caribri text-lg font-black text-white whitespace-nowrap sm:text-3xl md:text-4xl lg:text-6xl lg:tracking-wide xl:text-7xl">
               {siteMetadata.headerTitle}
             </h1>
           </div>
