@@ -48,7 +48,7 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
             {!props.software.subtitle ? null : props.software.subtitle}
           </ProductTitle>
         )}
-        <div className="mb-8 text-3xl font-bold leading-relaxed text-[#330033] md:text-4xl">
+        <div className="mb-6 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">
           {props.software.product_title}
         </div>
         <div
