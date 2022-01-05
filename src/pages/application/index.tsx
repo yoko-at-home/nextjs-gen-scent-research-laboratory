@@ -9,7 +9,12 @@ import { client } from "src/lib/client";
 /* eslint-disable import/no-default-export */
 const Application: NextPage = (props: any) => {
   return (
-    <div className="z-10 background">
+    <div
+      className="absolute top-0 w-full min-h-screen bg-top bg-cover"
+      style={{
+        backgroundImage: "url('/static/images/application/gen.jpg')",
+      }}
+    >
       <div className="z-40 bg-white bg-opacity-80">
         <FluidLayout width="main">
           <PageSEO
@@ -59,24 +64,6 @@ const Application: NextPage = (props: any) => {
           </ul>
         </FluidLayout>
       </div>
-      <style jsx>
-        {`
-          .background {
-            background-image: url("/static/images/application/gen.jpg");
-            object-fit: cover;
-            background-size: cover;
-            width: 100vw;
-            min-height: 100vh;
-            background-position: top;
-          }
-          @media (max-width: 639px) {
-            .background {
-              background-image: url("/static/images/application/gen-mobile.jpg");
-              background-position: bottom;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 };

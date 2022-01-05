@@ -9,10 +9,10 @@ import { siteMetadata } from "../../data/siteMetaData";
 const AboutUs: NextPage = () => {
   return (
     <div
-      // style={{
-      //   background: "top/cover no-repeat url('/static/images/about/background.jpg')",
-      // }}
-      className="text-gray-300 background"
+      className="absolute top-0 w-full min-h-screen text-white bg-top bg-cover"
+      style={{
+        backgroundImage: "url('/static/images/header/background.jpg')",
+      }}
     >
       <FluidLayout width="main">
         <PageSEO
