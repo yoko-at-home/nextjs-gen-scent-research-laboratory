@@ -23,8 +23,8 @@ export const FluidLayout: VFC<Props> = (props) => {
       {router.pathname === url ? <Header opacity="aboutus" /> : <Header opacity="ordinary" />}
       <main
         className={cc([
-          { "mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12 lg:w-9/12": props.width === "main" },
-          { "mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12": props.width === "product" },
+          { "mx-5 sm:mx-10 md:mx-auto md:w-11/12 lg:w-9/12": props.width === "main" },
+          { "mx-5 sm:mx-10 md:mx-auto md:w-11/12": props.width === "product" },
         ])}
       >
         <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>

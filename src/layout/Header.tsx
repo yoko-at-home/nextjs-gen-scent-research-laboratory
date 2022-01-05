@@ -24,38 +24,36 @@ type Props = {
 export const Header: VFC<Props> = (props) => {
   return (
     <header>
-      <main>
-        <div className="absolute right-[6%] z-50 justify-between transform translate-x-[50%] translate-y-[50%] sm:block">
-          <Logo />
-          <LogoSmall />
-        </div>
+      <div className="absolute right-[6%] z-50 justify-between transform translate-x-[50%] translate-y-[50%] sm:block">
+        <Logo />
+        <LogoSmall />
+      </div>
+      <div
+        className={cc([
+          {
+            "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-100":
+              props.opacity === "ordinary",
+          },
+          {
+            "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-0":
+              props.opacity === "aboutus",
+          },
+        ])}
+      >
         <div
-          className={cc([
-            {
-              "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-100":
-                props.opacity === "ordinary",
-            },
-            {
-              "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-0":
-                props.opacity === "aboutus",
-            },
-          ])}
-        >
-          <div
-            className="absolute top-0 w-full h-full bg-top bg-cover"
-            style={{
-              backgroundImage: "url('/static/images/header/background.jpg')",
-            }}
-          ></div>
-          <div className="container relative py-4 w-full text-center sm:py-12 md:py-16">
-            <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[35%]">
-              <h1 className="z-20 font-caribri text-lg font-black text-white whitespace-nowrap sm:text-2xl md:text-3xl lg:text-5xl lg:tracking-wide xl:text-6xl">
-                {siteMetadata.headerTitle}
-              </h1>
-            </div>
+          className="absolute top-0 w-full h-full bg-top bg-cover"
+          style={{
+            backgroundImage: "url('/static/images/header/background.jpg')",
+          }}
+        ></div>
+        <div className="container relative py-4 w-full text-center sm:py-10 md:py-14">
+          <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[35%]">
+            <h1 className="z-20 font-caribri text-lg font-black text-white whitespace-nowrap sm:text-2xl md:text-3xl lg:text-5xl lg:tracking-wide xl:text-6xl">
+              {siteMetadata.headerTitle}
+            </h1>
           </div>
         </div>
-      </main>
+      </div>
       <nav className="flex flex-wrap justify-center text-gray-600 bg-gray-200">
         {items.map(({ href, label }) => {
           return (
