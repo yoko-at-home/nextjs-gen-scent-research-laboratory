@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars*/
 import type { VFC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
-import { ProductTitle } from "src/component/PageTitle";
+import { ProductMainTitle, ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
@@ -48,9 +48,7 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
             {!props.software.subtitle ? null : props.software.subtitle}
           </ProductTitle>
         )}
-        <div className="mb-6 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">
-          {props.software.product_title}
-        </div>
+        <ProductMainTitle>{props.software.product_title}</ProductMainTitle>
         <div className="mb-12 text-[#330033]">
           {props.software.description_body}
           <br />

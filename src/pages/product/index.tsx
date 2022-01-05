@@ -49,9 +49,9 @@ const Product: VFC<ProductProps> = (props: any) => {
                       <div className="flex flex-col p-2 w-3/4">
                         <Link href={`/product/sample/${item.id}`}>
                           <a className="mb-2 font-bold leading-tight">
-                            {item.title}
-                            <br />
-                            {!item.product_title ? null : item.product_title}
+                            {!item.title ? null : item.title}
+                            {!item.subtitle ? null : <div>{item.subtitle}</div>}
+                            {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </a>
                         </Link>
                         <div className="overflow-hidden text-sm text-ellipsis">
