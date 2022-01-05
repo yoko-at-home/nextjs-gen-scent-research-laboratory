@@ -55,6 +55,7 @@ export type SoftwareProps = {
     button_desc: string;
     createdAt: Date;
     description: string;
+    description_body: string;
     image: {
       height: number;
       url: string;
@@ -76,6 +77,7 @@ export type Software2Props = {
     button_desc: string;
     createdAt: Date;
     description: string;
+    description_body: string;
     image: {
       height: number;
       url: string;
@@ -98,6 +100,7 @@ export type SampleProps = {
     button_desc: string;
     createdAt: Date;
     description: string;
+    description_body: string;
     image: {
       height: number;
       url: string;
