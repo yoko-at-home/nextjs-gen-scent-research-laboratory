@@ -33,7 +33,7 @@ export const Header: VFC<Props> = (props) => {
           className={cc([
             {
               "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-100":
-                props.opacity === "main",
+                props.opacity === "ordinary",
             },
             {
               "flex relative justify-center content-center items-center pt-16 pb-32 min-w-full opacity-0":

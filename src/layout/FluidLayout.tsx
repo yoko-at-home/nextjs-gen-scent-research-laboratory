@@ -20,7 +20,7 @@ export const FluidLayout: VFC<Props> = (props) => {
   const url = "/aboutus";
   return (
     <div className="grid grid-rows-[auto,1fr,auto] min-h-screen">
-      {router.pathname === url ? <Header opacity="aboutus" /> : <Header opacity="main" />}
+      {router.pathname === url ? <Header opacity="aboutus" /> : <Header opacity="ordinary" />}
       <main
         className={cc([
           { "mx-5 break-all sm:mx-10 md:mx-auto md:w-11/12 lg:w-9/12": props.width === "main" },
