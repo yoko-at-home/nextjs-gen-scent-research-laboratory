@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
+import Image from "next/image";
 import type { VFC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
 import { ProductTitle } from "src/component/PageTitle";
@@ -23,11 +24,18 @@ const SampleId: VFC<SampleProps> = (props) => {
         {!props.sample.title ? (
           <div className="mt-8" />
         ) : (
-          <ProductTitle>
-            {!props.sample.title ? null : props.sample.title}
-            <br />
-            {!props.sample.subtitle ? null : props.sample.subtitle}
-          </ProductTitle>
+          <div className="flex justify-start items-center">
+            <ProductTitle>
+              {!props.sample.title ? null : props.sample.title}
+              <br />
+              {!props.sample.subtitle ? null : props.sample.subtitle}
+            </ProductTitle>
+            {props.sample.charm_body === undefined ? null : (
+              <div className="pt-5 ml-10">
+                <Image src={props.sample.charm_body.url} width={`70%`} height="70%" alt={siteMetadata.altForImages} />
+              </div>
+            )}
+          </div>
         )}
         <div className="mb-6 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">
           {props.sample.product_title}

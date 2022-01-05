@@ -98,6 +98,16 @@ export type SampleProps = {
     body: HTMLAnchorElement;
     button: string;
     button_desc: string;
+    charm: {
+      height: number;
+      url: string;
+      width: number;
+    };
+    charm_body: {
+      height: number;
+      url: string;
+      width: number;
+    };
     createdAt: Date;
     description: string;
     description_body: string;
