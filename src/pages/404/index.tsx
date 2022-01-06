@@ -27,7 +27,7 @@ const Custom404: NextPage = () => {
         </Link>
         よりお問い合わせください。
         <div className="flex justify-center">
-          <Image src="/static/404-error.gif" alt="meil" width="180px" height="180px" />
+          <Image src="/static/animation/404-error.gif" alt="meil" width="180px" height="180px" />
         </div>
       </div>
     </FluidLayout>
