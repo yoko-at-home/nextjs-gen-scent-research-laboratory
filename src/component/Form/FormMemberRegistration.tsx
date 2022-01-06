@@ -45,12 +45,12 @@ export const FormMemberRegistration: NextPage = () => {
         to: siteMetadata.email,
         text:
           "以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。\n完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。\n\n" +
-          "姓名: " +
+          "姓: " +
           event.target.fullname.value +
           " 様\n" +
-          "英名: " +
+          "名: " +
           event.target.englishfullname.value +
-          "\n\nご配属先" +
+          "\n\nご所属先" +
           "\n会社/機関/⼤学： " +
           event.target.labo.value +
           "\n部署/研究：" +
@@ -70,7 +70,7 @@ export const FormMemberRegistration: NextPage = () => {
           event.target.phone1.value +
           " 内線: " +
           event.target.phone2.value +
-          "\n\n📨 " +
+          "\n\n✉️ " +
           event.target.email.value +
           "\n\nご専⾨分野: " +
           event.target.speciality.value +
@@ -112,7 +112,7 @@ export const FormMemberRegistration: NextPage = () => {
               placeholder="Surname"
               autoComplete="family-name"
               required
-              minLength={3}
+              minLength={1}
             />
             <label htmlFor="englishfullname" className="mx-3 whitespace-nowrap">
               名
