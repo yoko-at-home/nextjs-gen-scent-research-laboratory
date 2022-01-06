@@ -38,7 +38,7 @@ export const FormMemberRegistration: NextPage = () => {
     event.preventDefault();
     // const useremail = user?.email || "";
 
-    const newsletter = isCheckboxState === true ? "要" : "不要";
+    const newsletter = isCheckboxState === true ? "不要" : "要";
     const res = await fetch("/api/send", {
       body: JSON.stringify({
         subject: "登録を承りました。",
