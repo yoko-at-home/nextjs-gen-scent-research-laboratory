@@ -60,18 +60,6 @@ const AboutUs: NextPage = () => {
         </div>
         {/* </div> */}
       </FluidLayout>
-      <style jsx>
-        {`
-          .background {
-            background-image: url("/static/images/header/background.jpg");
-            object-fit: cover;
-            background-size: cover;
-            width: 100vw;
-            min-height: 100vh;
-            background-position: top;
-          }
-        `}
-      </style>
     </div>
   );
 };
