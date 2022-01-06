@@ -44,8 +44,8 @@ const SampleId: VFC<SampleProps> = (props) => {
               <div className="pt-3 ml-12">
                 <Image
                   src={props.sample.charm_body.url}
-                  width={`140px`}
-                  height={`110px`}
+                  width={`120px`}
+                  height={`94px`}
                   alt={siteMetadata.altForImages}
                 />
               </div>
