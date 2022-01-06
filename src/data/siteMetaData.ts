@@ -8,7 +8,8 @@ export const siteMetadata = {
   siteUrl: "https://www.gen-scent.com",
   siteLogo: "/static/images/logo.png",
   image: "/static/images/laurel.png",
-  email: "tech@gen-scent.com",
+  email: "yoko.iwasaki8@gmail.com",
+  // email: "tech@gen-scent.com",
   locale: "ja-JP",
   altForImages: "製品イメージ図",
 };
