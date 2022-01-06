@@ -45,11 +45,10 @@ export const FormMemberRegistration: NextPage = () => {
         to: siteMetadata.email,
         text:
           "以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。\n完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。\n\n" +
-          "姓: " +
-          event.target.fullname.value +
-          " 様\n" +
-          "名: " +
-          event.target.englishfullname.value +
+          event.target.surname.value +
+          " " +
+          event.target.givenname.value +
+          " 様" +
           "\n\nご所属先" +
           "\n会社/機関/⼤学： " +
           event.target.labo.value +
@@ -101,12 +100,12 @@ export const FormMemberRegistration: NextPage = () => {
         <form onSubmit={handleRegisterUser}>
           <div className="flex flex-col justify-between mb-3 sm:flex-row sm:items-center">
             <div className="mr-3 mb-3">お名前*</div>
-            <label htmlFor="fullname" className="mr-3 whitespace-nowrap">
+            <label htmlFor="surname" className="mr-3 whitespace-nowrap">
               姓
             </label>
             <input
-              id="fullname"
-              name="fullname"
+              id="surname"
+              name="surname"
               type="text"
               className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
               placeholder="Surname"
@@ -114,12 +113,12 @@ export const FormMemberRegistration: NextPage = () => {
               required
               minLength={1}
             />
-            <label htmlFor="englishfullname" className="mx-3 whitespace-nowrap">
+            <label htmlFor="givenname" className="mx-3 whitespace-nowrap">
               名
             </label>
             <input
-              id="englishfullname"
-              name="englishfullname"
+              id="givenname"
+              name="givenname"
               type="text"
               className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
               placeholder="Given name"
