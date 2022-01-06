@@ -41,8 +41,13 @@ const SampleId: VFC<SampleProps> = (props) => {
               {!props.sample.subtitle ? null : props.sample.subtitle}
             </ProductTitle>
             {props.sample.charm_body === undefined ? null : (
-              <div className="pt-5 ml-10">
-                <Image src={props.sample.charm_body.url} width={`70%`} height="70%" alt={siteMetadata.altForImages} />
+              <div className="pt-3 ml-12">
+                <Image
+                  src={props.sample.charm_body.url}
+                  width={`140px`}
+                  height={`110px`}
+                  alt={siteMetadata.altForImages}
+                />
               </div>
             )}
           </div>
