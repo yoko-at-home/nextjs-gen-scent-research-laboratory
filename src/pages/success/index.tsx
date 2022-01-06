@@ -18,12 +18,15 @@ const Success: NextPage = () => {
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
         siteUrl={siteMetadata.siteUrl}
       />
-      <div className="flex justify-center mt-24">
-        <Image src="/static/animation/88696-mail.gif" alt="meil" width="180px" height="180px" />
-      </div>
       <PageTitle>{router.query.subject}</PageTitle>
-      <div className="container p-3 text-lg">
-        <div className="mt-10 whitespace-pre-line break-words">{router.query.text}</div>
+      <div className="container">
+        <div className="whitespace-pre-line">{router.query.text}</div>
+      </div>
+      <div className="flex justify-center">
+        <Image src="/static/animation/88696-mail.gif" alt="mail sent icon" width="180px" height="180px" />
+      </div>
+      <div className="container mx-16">
+        <div className="whitespace-pre-line">{router.query.text2}</div>
       </div>
     </FluidLayout>
   );

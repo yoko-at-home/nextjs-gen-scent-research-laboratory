@@ -10,6 +10,7 @@ const handler = (req, res) => {
     from: req.body.email,
     subject: req.body.subject,
     text: req.body.text,
+    text2: req.body.text2,
   };
 
   (async () => {
