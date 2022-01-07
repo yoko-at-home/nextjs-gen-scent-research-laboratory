@@ -14,7 +14,7 @@ const Home: VFC<HomeProps> = (props) => {
         backgroundImage: "url('/static/images/home/background.jpg')",
       }}
     >
-      <div className="z-40 bg-white bg-opacity-80">
+      <div className="z-40 text-zinc-700 bg-white bg-opacity-80">
         <FluidLayout width="main">
           <PageSEO
             title={`${siteMetadata.title}`}
