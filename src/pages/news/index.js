@@ -7,8 +7,6 @@ import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 
 export default function News({ news, totalCount }) {
-  console.log(news);
-
   return (
     <FluidLayout width="main">
       <PageSEO
