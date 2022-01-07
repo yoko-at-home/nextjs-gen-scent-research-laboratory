@@ -29,7 +29,7 @@ const Application: NextPage = (props: any) => {
             {props.application.map((item: any) => {
               return (
                 <li key={item.id}>
-                  <div className="flex flex-col p-5 mb-5 font-extrabold">
+                  <div className="flex flex-col mb-5 font-extrabold">
                     <div className="flex flex-col justify-between">
                       <div className="p-1 mb-3 text-xl font-semibold text-[#2c4f54] sm:text-2xl sm:font-bold md:text-3xl">
                         {item.title}
