@@ -1,0 +1,14 @@
+{
+  "name": "Gen-Scent Research Laboratories",
+  "short_name": "玄川リサーチ",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#330033",
+  "background_color": "#330033",
+  "display": "standalone"
+}
