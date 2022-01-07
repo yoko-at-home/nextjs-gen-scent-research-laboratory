@@ -7,6 +7,7 @@ import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 import type { ApplicationProps } from "src/types/type";
 
+/* eslint-disable import/no-default-export */
 const Application: VFC<ApplicationProps> = (props) => {
   return (
     <div
