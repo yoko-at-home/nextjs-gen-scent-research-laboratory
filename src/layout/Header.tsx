@@ -5,7 +5,7 @@ import Navigation from "src/layout/Navigation";
 
 type Props = {
   className?: string;
-  opacity?: "ordinary" | "aboutus";
+  opacity?: "100" | "0";
 };
 
 /**
@@ -22,10 +22,10 @@ export const Header: VFC<Props> = (props) => {
         <div
           className={cc([
             {
-              "absolute top-0 w-full h-full bg-top bg-cover opacity-100": props.opacity === "ordinary",
+              "absolute top-0 w-full h-full bg-top bg-cover opacity-100": props.opacity === "100",
             },
             {
-              "absolute top-0 w-full h-full bg-top bg-cover opacity-0": props.opacity === "aboutus",
+              "absolute top-0 w-full h-full bg-top bg-cover opacity-0": props.opacity === "0",
             },
           ])}
           style={{
