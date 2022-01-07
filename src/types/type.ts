@@ -10,42 +10,52 @@ export type HomeProps = {
 };
 
 export type ProductProps = {
-  odor: {
-    description: string;
-    id: string;
-    image: { url: string; height: number; width: number };
-    title: string;
-  };
-  other: {
-    description: string;
-    id: string;
-    image: { url: string; height: number; width: number };
-    note: string;
-    title: string;
-  };
-  sample: {
-    description: string;
-    id: string;
-    image: { url: string; height: number; width: number };
-    title: string;
-    product_title: string;
-  };
-  software: {
-    description: string;
-    id: string;
-    image: { url: string; height: number; width: number };
-    title: string;
-    subtitle: string;
-    product_title: string;
-  };
-  software2: {
-    description: string;
-    id: string;
-    image: { url: string; height: number; width: number };
-    title: string;
-    subtitle: string;
-    product_title: string;
-  };
+  odor: [
+    {
+      description: string;
+      id: string;
+      image: { url: string; height: number; width: number };
+      title: string;
+    }
+  ];
+  other: [
+    {
+      description: string;
+      id: string;
+      image: { url: string; height: number; width: number };
+      note: string;
+      title: string;
+    }
+  ];
+  sample: [
+    {
+      description: string;
+      id: string;
+      image: { url: string; height: number; width: number };
+      title: string;
+      product_title: string;
+    }
+  ];
+  software: [
+    {
+      description: string;
+      id: string;
+      image: { url: string; height: number; width: number };
+      title: string;
+      subtitle: string;
+      product_title: string;
+    }
+  ];
+  software2: [
+    {
+      description: string;
+      id: string;
+      image: { url: string; height: number; width: number };
+      title: string;
+      subtitle: string;
+      product_title: string;
+    }
+  ];
 };
 
 export type ApplicationProps = {

@@ -17,9 +17,9 @@ const Contact: NextPage = () => {
         siteUrl={siteMetadata.siteUrl}
       />
       <PageTitle>お問い合わせ</PageTitle>
-      <div className="text-gray-600">
+      <div className="text-zinc-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <p className="text-lg leading-7 text-gray-500 ">
+          <p className="text-lg leading-7 text-zinc-600">
             資料ご請求、およびお問い合わせの場合は下記ご記入お願いいたします。
             <br />
             *は入力必須になります。
