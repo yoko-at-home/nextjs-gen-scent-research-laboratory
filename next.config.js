@@ -1,12 +1,4 @@
-const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
-
-module.exports = withPWA({
-  pwa: {
-    dest: "public",
-    runtimeCaching,
-    buildExcludes: [/.*\.js\.map/],
-  },
+module.exports = {
   i18n: { locales: ["ja"], defaultLocale: "ja" },
   reactStrictMode: true,
   typescript: { ignoreDevErrors: true },
@@ -14,4 +6,4 @@ module.exports = withPWA({
   images: {
     domains: ["images.microcms-assets.io"],
   },
-});
+};
