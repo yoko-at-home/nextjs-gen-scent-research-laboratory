@@ -14,7 +14,7 @@ type Props = {
 export const Header: VFC<Props> = (props) => {
   return (
     <header>
-      <div className="sm:block absolute top-2 right-[10%] md:right-[6%] z-50 justify-between translate-x-[50%] translate-y-[50%]">
+      <div className="absolute top-2 right-[10%] z-50 justify-between translate-x-[50%] translate-y-[50%] sm:block md:right-[6%]">
         <Logo />
         <LogoSmall />
       </div>
@@ -32,9 +32,9 @@ export const Header: VFC<Props> = (props) => {
             backgroundImage: "url('/static/images/header/background.jpg')",
           }}
         ></div>
-        <div className="container relative py-4 sm:py-10 md:py-14 w-full text-center">
-          <div className="absolute top-[30%] sm:top-[35%] right-[50%] z-30 translate-x-[50%] translate-y-[50%]">
-            <h1 className="z-20 font-caribri text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter lg:tracking-wide text-white xs:whitespace-nowrap">
+        <div className="container relative py-4 w-full text-center sm:py-10 md:py-14">
+          <div className="absolute top-[30%] right-[50%] z-30 translate-x-[50%] translate-y-[50%] sm:top-[35%]">
+            <h1 className="z-20 font-caribri text-2xl font-black text-white sm:text-3xl md:text-4xl md:whitespace-nowrap lg:text-5xl lg:tracking-wide xl:text-7xl">
               <span className="whitespace-nowrap ">Gen-Scent Research</span> <span>Laboratory</span>
             </h1>
           </div>

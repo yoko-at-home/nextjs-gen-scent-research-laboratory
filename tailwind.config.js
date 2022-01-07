@@ -2,9 +2,6 @@ module.exports = {
   mode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    screens: {
-      xs: "550px",
-    },
     fontFamily: {
       yui: ['"Yuji Syuku"', '"serif"'],
       sans: ['"游ゴシック体"', '"YuGothic"', '"游ゴシック"', '"Yu Gothic"', '"Calibri"', '"sans-serif"'],
