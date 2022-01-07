@@ -5,7 +5,7 @@ export const Logo = () => {
   const src = "/static/images/logo.png";
 
   return (
-    <div className="hidden sm:block">
+    <div className="hidden md:block">
       <Link href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
         <a aria-label="ホームへ">
           <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="60px" height="60px" />
@@ -21,7 +21,7 @@ export const LogoSmall = () => {
     <div className="sm:hidden">
       <Link href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
         <a aria-label="ホームへ">
-          <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="30px" height="30px" />
+          <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="40px" height="40px" />
         </a>
       </Link>
     </div>

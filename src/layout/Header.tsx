@@ -15,7 +15,7 @@ type Props = {
 export const Header: VFC<Props> = (props) => {
   return (
     <header>
-      <div className="absolute top-2 right-[10%] z-50 justify-between transform translate-x-[50%] translate-y-[50%] sm:block md:right-[6%]">
+      <div className="sm:block absolute top-2 right-[10%] md:right-[6%] z-50 justify-between translate-x-[50%] translate-y-[50%]">
         <Logo />
         <LogoSmall />
       </div>
@@ -33,9 +33,9 @@ export const Header: VFC<Props> = (props) => {
             backgroundImage: "url('/static/images/header/background.jpg')",
           }}
         ></div>
-        <div className="container relative py-4 w-full text-center sm:py-10 md:py-14">
-          <div className="absolute top-[30%] right-[50%] z-30 transform translate-x-[50%] translate-y-[50%] sm:top-[35%]">
-            <h1 className="z-20 font-caribri text-2xl font-black text-white whitespace-nowrap sm:text-4xl md:text-5xl lg:text-6xl lg:tracking-wide xl:text-7xl">
+        <div className="container relative py-4 sm:py-10 md:py-14 w-full text-center">
+          <div className="absolute top-[30%] sm:top-[35%] right-[50%] z-30 translate-x-[50%] translate-y-[50%]">
+            <h1 className="z-20 font-caribri sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter lg:tracking-wide text-white whitespace-nowrap xxs:text-2xl xs:text-3xl">
               {siteMetadata.headerTitle}
             </h1>
           </div>
