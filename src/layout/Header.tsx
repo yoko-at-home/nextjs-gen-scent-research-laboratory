@@ -1,7 +1,6 @@
 import cc from "classcat";
 import type { VFC } from "react";
 import { Logo, LogoSmall } from "src/component/Logo";
-import { siteMetadata } from "src/data/siteMetaData";
 import Navigation from "src/layout/Navigation";
 
 type Props = {
@@ -35,8 +34,8 @@ export const Header: VFC<Props> = (props) => {
         ></div>
         <div className="container relative py-4 sm:py-10 md:py-14 w-full text-center">
           <div className="absolute top-[30%] sm:top-[35%] right-[50%] z-30 translate-x-[50%] translate-y-[50%]">
-            <h1 className="z-20 font-caribri sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter lg:tracking-wide text-white whitespace-nowrap xxs:text-2xl xs:text-3xl">
-              {siteMetadata.headerTitle}
+            <h1 className="z-20 font-caribri text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter lg:tracking-wide text-white xs:whitespace-nowrap">
+              <span className="whitespace-nowrap ">Gen-Scent Research</span> <span>Laboratory</span>
             </h1>
           </div>
         </div>
