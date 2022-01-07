@@ -17,7 +17,7 @@ const Home: VFC<HomeProps> = (props) => {
       <div className="z-40 font-sans bg-white bg-opacity-80">
         <FluidLayout width="main">
           <PageSEO
-            title={`Home - ${siteMetadata.title}`}
+            title={`${siteMetadata.title}`}
             description={siteMetadata.description}
             ogType="website"
             ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
