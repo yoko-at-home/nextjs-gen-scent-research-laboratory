@@ -11,16 +11,16 @@ const MyDocument = () => {
         <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
         <link rel="manifest" href="/static/favicons/site.webmanifest" />
-        <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#330033" />
+        <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#FFF" />
         {/* windows */}
         <meta name="msapplication-square70x70logo" content="/static/favicons/site-tile-70x70.png" />
         <meta name="msapplication-square150x150logo" content="/static/favicons/site-tile-150x150.png" />
         <meta name="msapplication-wide310x150logo" content="/static/favicons/site-tile-310x150.png" />
         <meta name="msapplication-square310x310logo" content="/static/favicons/site-tile-310x310.png" />
-        <meta name="msapplication-TileColor" content="#330033" />
+        <meta name="msapplication-TileColor" content="#FFF" />
         {/* safari */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="#330033" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#FFF" />
         <meta name="apple-mobile-web-app-title" content={siteMetadata.title} />
         <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon-180x180.png" />
         {/* 一般 */}
