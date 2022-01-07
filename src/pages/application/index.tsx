@@ -31,7 +31,7 @@ const Application: NextPage = (props: any) => {
                 <li key={item.id}>
                   <div className="flex flex-col p-5 mb-5 font-extrabold">
                     <div className="flex flex-col justify-between">
-                      <div className="p-1 mb-3 text-xl sm:text-2xl md:text-3xl font-semibold sm:font-bold text-[#2c4f54]">
+                      <div className="p-1 mb-3 text-xl font-semibold text-[#2c4f54] sm:text-2xl sm:font-bold md:text-3xl">
                         {item.title}
                       </div>
                       <Link href={`/application/${item.id}`} passHref>
@@ -44,7 +44,7 @@ const Application: NextPage = (props: any) => {
                         </a>
                       </Link>
                     </div>
-                    <div className="text-sm sm:text-base text-[#33CC33]">{item.description}</div>
+                    <div className="text-sm text-[#33CC33] sm:text-base">{item.description}</div>
                   </div>
                 </li>
               );

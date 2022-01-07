@@ -18,7 +18,7 @@ export const Pagination: NextPage = (props: any) => {
             return (
               <li key={index}>
                 <Link href={`/news/page/${number}`}>
-                  <a className="p-3 sm:px-4 mr-6 text-gray-300 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80">
+                  <a className="p-3 mr-6 text-gray-300 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80 sm:px-4">
                     {number}
                   </a>
                 </Link>

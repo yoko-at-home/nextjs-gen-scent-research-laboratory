@@ -36,12 +36,12 @@ const Product: VFC<ProductProps> = (props: any) => {
     return (
       <div>
         <PageSubTitle fontWeight="bold">{productTitles[1].title}</PageSubTitle>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:px-3">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.sample.map((item: any) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 sm:p-3 h-36 rounded hover:opacity-90 hover:scale-[0.99]"
+                  className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
@@ -100,7 +100,7 @@ const Product: VFC<ProductProps> = (props: any) => {
             <PageSubTitle fontWeight="bold">{productTitles[2].title}</PageSubTitle>
             <p>{productTitles[2].description}</p>
           </div>
-          <div className="flex flex-col-reverse items-baseline md:p-3 px-1 sm:px-2 ml-5">
+          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
             <Image
               alt="揮発性成分用サンプリングシステム"
               src="/static/images/software/sampling.jpg"
@@ -111,14 +111,14 @@ const Product: VFC<ProductProps> = (props: any) => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:px-3">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.odor.map((item: any) => {
             return (
               <li key={item.id}>
                 <Link href={`/product/odor-analysis/${item.id}`}>
                   <a aria-label="Read more">
                     <div
-                      className="flex p-1 sm:p-3 h-36 rounded hover:opacity-90 hover:scale-[0.99]"
+                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
                       <div className="flex flex-col px-2 pt-2 w-full">
@@ -143,14 +143,14 @@ const Product: VFC<ProductProps> = (props: any) => {
     return (
       <div>
         <PageSubTitle fontWeight="bold">{productTitles[3].title}</PageSubTitle>
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:px-3">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.other.map((item: any) => {
             return (
               <li key={item.id}>
                 <Link href={`/product/other-services/${item.id}`}>
                   <a aria-label="Read more">
                     <div
-                      className="flex p-1 sm:p-3 h-36 rounded hover:opacity-90 hover:scale-[0.99]"
+                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
                       <div className="flex flex-col px-2 pt-2 w-full">
@@ -186,7 +186,7 @@ const Product: VFC<ProductProps> = (props: any) => {
               <Link href={`/product/software2/${item.id}`}>
                 <a aria-label="Read more">
                   <div
-                    className="flex p-1 sm:p-3 h-36 rounded hover:opacity-90 hover:scale-[0.99]"
+                    className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
                     style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                   >
                     <div className="flex flex-col px-2 pt-2 w-full">
@@ -224,7 +224,7 @@ const Product: VFC<ProductProps> = (props: any) => {
             <PageSubTitle fontWeight="bold">{productTitles[0].title}</PageSubTitle>
             <p>{productTitles[0].description}</p>
           </div>
-          <div className="flex flex-col-reverse items-baseline px-1 sm:px-2 ml-5 md:p-3-reverse">
+          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p">
             <Image
               alt="ソフトウェア・ライブラリ"
               src="/static/images/software/topimage.jpg"
@@ -235,14 +235,14 @@ const Product: VFC<ProductProps> = (props: any) => {
           </div>
         </div>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:px-3">
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
           {props.software.map((item: any) => {
             return (
               <li key={item.id}>
                 <Link href={`/product/software/${item.id}`}>
                   <a aria-label="Read more">
                     <div
-                      className="flex p-1 sm:p-3 h-36 rounded hover:opacity-90 hover:scale-[0.99]"
+                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
                       <div className="flex flex-col px-2 pt-2 w-full">
