@@ -16,7 +16,7 @@ const CommonSEO: VFC<Props> = ({ title, description, ogType, ogImage }) => {
   return (
     <Head>
       <title>{title}</title>
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/static/favicons/favicon.ico" />
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
       <meta property="og:url" content={`${siteMetadata.siteUrl}${router.asPath}`} />
@@ -41,7 +41,7 @@ export const PageSEO: VFC<Props> = ({ title, description }) => {
         siteUrl={siteMetadata.siteUrl}
         ogImage={ogSiteLogo}
       />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/static/favicons/favicon.ico" />
     </>
   );
 };
