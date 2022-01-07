@@ -25,7 +25,7 @@ const Home: VFC<HomeProps> = (props) => {
           />
           <PageTitle>{props.data.title}</PageTitle>
           <div
-            className="mb-12 leading-loose sm:mb-20 animation"
+            className="mb-12 sm:mb-20 leading-loose animation"
             dangerouslySetInnerHTML={{
               // eslint-disable-next-line @typescript-eslint/naming-convention
               __html: `${props.data.body}`,

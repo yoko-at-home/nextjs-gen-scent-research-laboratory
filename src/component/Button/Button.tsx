@@ -8,7 +8,7 @@ export const ButtonReturn = () => {
   };
   return (
     <button type="button" onClick={handleOnClick}>
-      <a className="p-3 px-3 mr-5 text-xs font-bold text-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80 sm:text-base">
+      <a className="p-3 px-3 mr-5 text-xs sm:text-base font-bold text-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80">
         Return
       </a>
     </button>
@@ -25,7 +25,7 @@ export const ButtonToContact: VFC<ButtonToContactProps> = (props) => {
   };
   return (
     <button type="button" onClick={handleOnClick}>
-      <a className="p-5 font-bold tracking-widest text-gray-100 bg-gradient-to-r from-gray-400 to-[#330033] rounded opacity-90 sm:text-lg">
+      <a className="p-5 sm:text-lg font-bold tracking-widest text-gray-100 bg-gradient-to-r from-gray-400 to-[#330033] rounded opacity-90">
         {props.children}
       </a>
     </button>

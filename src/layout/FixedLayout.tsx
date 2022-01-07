@@ -16,7 +16,7 @@ type Props = {
  */
 export const FixedLayout: VFC<Props> = (props) => {
   return (
-    <div className="grid grid-rows-[auto,1fr,auto] mx-auto max-w-screen-lg min-h-screen">
+    <div className="grid grid-rows-[auto,1fr,auto] mx-auto min-h-screen max-w-screen-lg">
       <HeaderFixed />
       <main className="mx-5 text-zinc-500">
         <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>

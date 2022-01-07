@@ -95,10 +95,10 @@ export const FormMemberRegistration: NextPage = () => {
   };
 
   return (
-    <div className="container mt-10 font-semibold sm:p-6 sm:mt-0 lg:px-20">
-      <div className="mt-5 whitespace-nowrap md:mt-0">
+    <div className="container sm:p-6 lg:px-20 mt-10 sm:mt-0 font-semibold">
+      <div className="mt-5 md:mt-0 whitespace-nowrap">
         <form onSubmit={handleRegisterUser}>
-          <div className="flex flex-col justify-between mb-3 sm:flex-row sm:items-center">
+          <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-3">
             <div className="mr-3 mb-3">お名前*</div>
             <label htmlFor="surname" className="mr-3 whitespace-nowrap">
               姓
@@ -107,7 +107,7 @@ export const FormMemberRegistration: NextPage = () => {
               id="surname"
               name="surname"
               type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
               placeholder="Surname"
               autoComplete="family-name"
               required
@@ -120,13 +120,13 @@ export const FormMemberRegistration: NextPage = () => {
               id="givenname"
               name="givenname"
               type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
               placeholder="Given name"
               required
               autoComplete="given-name"
             />
           </div>
-          <div className="flex flex-col mb-3 sm:flex-row">
+          <div className="flex flex-col sm:flex-row mb-3">
             <div className="my-3 mr-3">ご所属先*</div>
             <div className="flex flex-col justify-start">
               <div className="flex leading-tight">
@@ -137,7 +137,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="labo"
                   name="labo"
                   type="text"
-                  className="block overflow-x-scroll mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-96"
+                  className="block overflow-x-scroll mt-1 w-full md:w-96 sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                   placeholder="Company/Organization/University"
                   required
                   minLength={3}
@@ -151,7 +151,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="department"
                   name="department"
                   type="text"
-                  className="block overflow-x-scroll mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-96"
+                  className="block overflow-x-scroll mt-1 w-full md:w-96 sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                   placeholder="Department/Laboratory"
                   required
                   minLength={3}
@@ -206,7 +206,7 @@ export const FormMemberRegistration: NextPage = () => {
                   type="text"
                   id="other_occupation"
                   name="other_occupation"
-                  className="block overflow-x-scroll mt-1 border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-72"
+                  className="block overflow-x-scroll mt-1 md:w-72 sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                   onChange={handleOnChangeResearcherText}
                   value={otherOccupation}
                   disabled={enableOtherOccupation}
@@ -215,7 +215,7 @@ export const FormMemberRegistration: NextPage = () => {
               </label>
             </div>
           </div>
-          <div className="flex flex-col mb-3 sm:flex-row sm:items-center">
+          <div className="flex flex-col sm:flex-row sm:items-center mb-3">
             <div className="mr-3">ご住所*</div>
             <div className="flex flex-col sm:flex-row">
               <div className="flex">
@@ -226,20 +226,20 @@ export const FormMemberRegistration: NextPage = () => {
                   id="zipcode"
                   name="zipcode"
                   type="text"
-                  className="block mt-1 w-24 border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                  className="block mt-1 w-24 sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                   autoComplete="postal-code"
                   placeholder="zip code"
                 />
               </div>
               <div className="flex">
-                <label htmlFor="address" className="inline-flex items-center mr-3 whitespace-nowrap sm:mx-3">
+                <label htmlFor="address" className="inline-flex items-center sm:mx-3 mr-3 whitespace-nowrap">
                   住所
                 </label>
                 <input
                   id="address1"
                   name="address1"
                   type="text"
-                  className="block mt-1 w-20 border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:w-full sm:text-sm"
+                  className="block mt-1 w-20 sm:w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                   autoComplete="address-level1"
                   placeholder="Prefecture/State"
                   required
@@ -248,7 +248,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="address2"
                   name="address2"
                   type="text"
-                  className="block mx-2 mt-1 w-20 border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:w-full sm:text-sm"
+                  className="block mx-2 mt-1 w-20 sm:w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                   autoComplete="address-level2"
                   required
                   placeholder="City"
@@ -257,7 +257,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="address3"
                   name="address3"
                   type="text"
-                  className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                  className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                   autoComplete="street-address"
                   required
                   placeholder="Address"
@@ -265,14 +265,14 @@ export const FormMemberRegistration: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-between mb-3 sm:flex-row sm:items-center">
+          <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-3">
             <div className="mr-3">お電話番号*</div>
             <label htmlFor="phone1" className="mr-3 whitespace-nowrap"></label>
             <input
               id="phone1"
               name="phone1"
               type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
               autoComplete="tel"
               required
               placeholder="Phone Number"
@@ -284,7 +284,7 @@ export const FormMemberRegistration: NextPage = () => {
               id="phone2"
               name="phone2"
               type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
               placeholder="Extension/Secondary Phone Number"
             />
           </div>
@@ -297,7 +297,7 @@ export const FormMemberRegistration: NextPage = () => {
                 id="email"
                 name="email"
                 type="email"
-                className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                 autoComplete="email"
                 required
                 placeholder="Email Address"
@@ -313,7 +313,7 @@ export const FormMemberRegistration: NextPage = () => {
                 id="speciality"
                 name="speciality"
                 type="text"
-                className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                 placeholder="Field of Expertise"
               />
             </div>
@@ -326,7 +326,7 @@ export const FormMemberRegistration: NextPage = () => {
               <input
                 id="reference"
                 name="reference"
-                className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
                 type="text"
                 placeholder="Product name for which information is requested"
               ></input>
@@ -339,7 +339,7 @@ export const FormMemberRegistration: NextPage = () => {
             <textarea
               id="message"
               name="message"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full sm:text-sm border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm"
               rows={3}
               maxLength={300}
             ></textarea>
@@ -374,10 +374,10 @@ export const FormMemberRegistration: NextPage = () => {
               </label>
             </div>
           </div>
-          <div className="py-3 px-4 text-right bg-gray-50 sm:px-6">
+          <div className="py-3 px-4 sm:px-6 text-right bg-gray-50">
             <button
               type="submit"
-              className="p-2 w-full font-medium text-gray-200 bg-gradient-to-r from-gray-400 focus:from-[#885b88] to-gray-500 border border-gray-50 focus:ring-2 focus:ring-offset-2 shadow-md focus:outline-none focus:to[#412c41]"
+              className="p-2 w-full font-medium text-gray-200 bg-gradient-to-r from-gray-400 focus:from-[#885b88] to-gray-500 border border-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-md focus:to[#412c41]"
             >
               送信
             </button>

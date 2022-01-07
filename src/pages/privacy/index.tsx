@@ -21,10 +21,10 @@ const Private: NextPage<Props> = (props: any) => {
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
         siteUrl={siteMetadata.siteUrl}
       />
-      <div className="divide-y divide-gray-200 sm:mx-20">
+      <div className="sm:mx-20 divide-y divide-gray-200">
         <PageTitle>個人情報保護方針</PageTitle>
         <div
-          className="py-5 px-5 text-lg md:py-10 lg:py-16"
+          className="py-5 md:py-10 lg:py-16 px-5 text-lg"
           dangerouslySetInnerHTML={{
             // eslint-disable-next-line @typescript-eslint/naming-convention
             __html: `${props.data.body}`,

@@ -25,7 +25,7 @@ export default function News({ news, totalCount }) {
           return (
             <li key={item.id}>
               <div
-                className="flex flex-col p-8 mb-10 bg-gray-200 bg-opacity-50 rounded sm:p-3"
+                className="flex flex-col p-8 sm:p-3 mb-10 bg-gray-200 rounded bg-opacity-50"
                 // style={{ background: `center/cover no-repeat url(${item.image.url})` }}
               >
                 <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
