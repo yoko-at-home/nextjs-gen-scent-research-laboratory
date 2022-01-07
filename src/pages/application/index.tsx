@@ -7,7 +7,6 @@ import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 import type { ApplicationProps } from "src/types/type";
 
-/* eslint-disable import/no-default-export */
 const Application: VFC<ApplicationProps> = (props) => {
   return (
     <div
@@ -25,7 +24,7 @@ const Application: VFC<ApplicationProps> = (props) => {
             ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
             siteUrl={siteMetadata.siteUrl}
           />
-          <PageTitle>{/* <span className="tracking-wider text-[#2c4f54]">アプリケーション</span> */}</PageTitle>
+          <PageTitle> {/* <span className="tracking-wider text-[#2c4f54]">アプリケーション</span> */}</PageTitle>
           <ul>
             {props.application.map((item) => {
               return (
