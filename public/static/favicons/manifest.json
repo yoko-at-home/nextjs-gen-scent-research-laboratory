@@ -1,12 +1,12 @@
 {
-	"name":				"",
-	"short_name":		"",
-	"description":		"",
-	"start_url":		"/",
+	"name":				"玄川リサーチ Gen-Scent Research Laboratories",
+	"short_name":		"玄川リサーチ",
+	"description":		"玄川リサーチは、香気成分分析用のソフトウェアや、においの研究に関する製品をご紹介しています。ガスクロマトグラフィ- 質量分析計、その他に関する各種ご相談をお受けいたします。",
+	"start_url":		"https://www.gen-scent.com/",
 	"display":			"standalone",
 	"orientation":		"any",
-	"background_color":	"#fff",
-	"theme_color":		"#fff",
+	"background_color":	"#330033",
+	"theme_color":		"#330033",
 	"icons": [
 		{
 			"src": "/android-chrome-36x36.png",
