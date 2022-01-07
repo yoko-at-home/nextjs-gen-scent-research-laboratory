@@ -34,8 +34,9 @@ export const Header: VFC<Props> = (props) => {
         ></div>
         <div className="container relative py-4 w-full text-center sm:py-10 md:py-14">
           <div className="absolute top-[30%] right-[50%] z-30 translate-x-[50%] translate-y-[50%] sm:top-[35%]">
-            <h1 className="z-20 font-caribri text-2xl font-black text-white sm:text-3xl md:text-4xl md:whitespace-nowrap lg:text-5xl lg:tracking-wide xl:text-7xl">
-              <span className="whitespace-nowrap ">Gen-Scent Research</span> <span>Laboratory</span>
+            <h1 className="z-20 text-2xl font-black text-white sm:text-3xl md:text-4xl md:whitespace-nowrap lg:text-5xl lg:tracking-wide xl:text-7xl">
+              <span className="font-caribri whitespace-nowrap">Gen-Scent Research</span>{" "}
+              <span className="font-caribri">Laboratory</span>
             </h1>
           </div>
         </div>
