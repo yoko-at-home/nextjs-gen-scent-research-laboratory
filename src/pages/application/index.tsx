@@ -25,31 +25,33 @@ const Application: VFC<ApplicationProps> = (props) => {
             siteUrl={siteMetadata.siteUrl}
           />
           <PageTitle> {/* <span className="tracking-wider text-[#2c4f54]">アプリケーション</span> */}</PageTitle>
-          <ul>
-            {props.application.map((item) => {
-              return (
-                <li key={item.id}>
-                  <div className="flex flex-col mb-5 font-extrabold">
-                    <div className="flex flex-col justify-between">
-                      <div className="p-1 mb-3 text-xl font-semibold text-[#2c4f54] sm:text-2xl sm:font-bold md:text-3xl">
-                        {item.title}
+          <div className="min-h-[60vh]">
+            <ul>
+              {props.application.map((item) => {
+                return (
+                  <li key={item.id}>
+                    <div className="flex flex-col mb-5 font-extrabold">
+                      <div className="flex flex-col justify-between">
+                        <div className="p-1 mb-3 text-xl font-semibold text-[#2c4f54] sm:text-2xl sm:font-bold md:text-3xl">
+                          {item.title}
+                        </div>
+                        <Link href={`/application/${item.id}`} passHref>
+                          <a aria-label="Read more">
+                            {!item.body ? null : (
+                              <span className="p-2 ml-5 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-[#33CC33]">
+                                詳細
+                              </span>
+                            )}
+                          </a>
+                        </Link>
                       </div>
-                      <Link href={`/application/${item.id}`} passHref>
-                        <a aria-label="Read more">
-                          {!item.body ? null : (
-                            <span className="p-2 ml-5 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-[#33CC33]">
-                              詳細
-                            </span>
-                          )}
-                        </a>
-                      </Link>
+                      <div className="text-sm text-[#2c4f54] sm:text-base">{item.description}</div>
                     </div>
-                    <div className="text-sm text-[#2c4f54] sm:text-base">{item.description}</div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </FluidLayout>
       </div>
     </div>
