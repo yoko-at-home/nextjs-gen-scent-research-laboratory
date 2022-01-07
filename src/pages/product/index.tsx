@@ -6,7 +6,7 @@ import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
-import type { ProductProps } from "src/types/type";
+import type { ProductProps } from "src/types/pageType";
 
 const productTitles = [
   {
@@ -31,13 +31,13 @@ const productTitles = [
   },
 ];
 
-const Product: VFC<ProductProps> = (props: any) => {
+const Product: VFC<ProductProps> = (props) => {
   const Sample = () => {
     return (
       <div>
         <PageSubTitle fontWeight="bold">{productTitles[1].title}</PageSubTitle>
         <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
-          {props.sample.map((item: any) => {
+          {props.sample.map((item) => {
             return (
               <li key={item.id}>
                 <div
@@ -50,7 +50,6 @@ const Product: VFC<ProductProps> = (props: any) => {
                         <Link href={`/product/sample/${item.id}`}>
                           <a className="mb-2 font-bold leading-tight">
                             {!item.title ? null : item.title}
-                            {!item.subtitle ? null : <div>{item.subtitle}</div>}
                             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </a>
                         </Link>
@@ -74,7 +73,6 @@ const Product: VFC<ProductProps> = (props: any) => {
                         <div className="flex flex-col px-2 pt-2 w-full">
                           <div className="mb-2 font-bold leading-tight">
                             {!item.title ? null : item.title}
-                            {!item.subtitle ? null : <div>{item.subtitle}</div>}
                             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </div>
                           <div className="overflow-hidden text-sm text-ellipsis">
@@ -112,7 +110,7 @@ const Product: VFC<ProductProps> = (props: any) => {
         </div>
 
         <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
-          {props.odor.map((item: any) => {
+          {props.odor.map((item) => {
             return (
               <li key={item.id}>
                 <Link href={`/product/odor-analysis/${item.id}`}>
@@ -122,11 +120,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
                       <div className="flex flex-col px-2 pt-2 w-full">
-                        <div className="mb-2 font-bold leading-tight">
-                          {!item.title ? null : item.title}
-                          {!item.subtitle ? null : <div>{item.subtitle}</div>}
-                          {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
-                        </div>
+                        <div className="mb-2 font-bold leading-tight">{item.title}</div>
                         <div className="overflow-hidden text-sm text-ellipsis">{item.description}</div>
                       </div>
                     </div>
@@ -144,7 +138,7 @@ const Product: VFC<ProductProps> = (props: any) => {
       <div>
         <PageSubTitle fontWeight="bold">{productTitles[3].title}</PageSubTitle>
         <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
-          {props.other.map((item: any) => {
+          {props.other.map((item) => {
             return (
               <li key={item.id}>
                 <Link href={`/product/other-services/${item.id}`}>
@@ -154,11 +148,7 @@ const Product: VFC<ProductProps> = (props: any) => {
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
                       <div className="flex flex-col px-2 pt-2 w-full">
-                        <a className="mb-2 font-bold leading-tight">
-                          {!item.title ? null : item.title}
-                          {!item.subtitle ? null : <div>{item.subtitle}</div>}
-                          {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
-                        </a>
+                        <a className="mb-2 font-bold leading-tight">{item.title}</a>
                         <div className="overflow-hidden text-sm text-ellipsis">
                           <div>
                             {item.description}
@@ -180,7 +170,7 @@ const Product: VFC<ProductProps> = (props: any) => {
   const Software2 = () => {
     return (
       <ul>
-        {props.software2.map((item: any) => {
+        {props.software2.map((item) => {
           return (
             <li key={item.id}>
               <Link href={`/product/software2/${item.id}`}>
@@ -236,7 +226,7 @@ const Product: VFC<ProductProps> = (props: any) => {
         </div>
 
         <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 md:px-3 lg:grid-cols-3">
-          {props.software.map((item: any) => {
+          {props.software.map((item) => {
             return (
               <li key={item.id}>
                 <Link href={`/product/software/${item.id}`}>
