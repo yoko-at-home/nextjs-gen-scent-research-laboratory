@@ -45,7 +45,7 @@ const Application: VFC<ApplicationProps> = (props) => {
                         </a>
                       </Link>
                     </div>
-                    <div className="text-sm text-[#33CC33] sm:text-base">{item.description}</div>
+                    <div className="text-sm text-[#2c4f54] sm:text-base">{item.description}</div>
                   </div>
                 </li>
               );
