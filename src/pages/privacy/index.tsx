@@ -4,9 +4,9 @@ import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
-import type { PrivateProps } from "src/types/type";
+import type { PrivacyProps } from "src/types/pageType";
 
-const Private: VFC<PrivateProps> = (props) => {
+const Private: VFC<PrivacyProps> = (props) => {
   return (
     <FluidLayout width="main">
       <PageSEO

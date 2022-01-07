@@ -5,7 +5,7 @@ import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
-import type { ApplicationProps } from "src/types/type";
+import type { ApplicationProps } from "src/types/pageType";
 
 const Application: VFC<ApplicationProps> = (props) => {
   return (
