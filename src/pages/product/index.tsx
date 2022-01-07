@@ -224,7 +224,7 @@ const Product: VFC<ProductProps> = (props: any) => {
             <PageSubTitle fontWeight="bold">{productTitles[0].title}</PageSubTitle>
             <p>{productTitles[0].description}</p>
           </div>
-          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p">
+          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
             <Image
               alt="ソフトウェア・ライブラリ"
               src="/static/images/software/topimage.jpg"
