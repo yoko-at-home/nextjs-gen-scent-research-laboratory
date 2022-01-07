@@ -1,13 +1,14 @@
-import type { NextPage } from "next";
 import Link from "next/link";
+import type { VFC } from "react";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
+import type { ApplicationProps } from "src/types/type";
 
 /* eslint-disable import/no-default-export */
-const Application: NextPage = (props: any) => {
+const Application: VFC<ApplicationProps> = (props) => {
   return (
     <div
       className="absolute top-0 w-full min-h-screen bg-top bg-cover"
@@ -26,7 +27,7 @@ const Application: NextPage = (props: any) => {
           />
           <PageTitle>{/* <span className="tracking-wider text-[#2c4f54]">アプリケーション</span> */}</PageTitle>
           <ul>
-            {props.application.map((item: any) => {
+            {props.application.map((item) => {
               return (
                 <li key={item.id}>
                   <div className="flex flex-col mb-5 font-extrabold">
@@ -36,7 +37,7 @@ const Application: NextPage = (props: any) => {
                       </div>
                       <Link href={`/application/${item.id}`} passHref>
                         <a aria-label="Read more">
-                          {item.body === undefined ? null : (
+                          {!item.body ? null : (
                             <span className="p-2 ml-5 hover:text-gray-100 whitespace-nowrap bg-gray-300 bg-gradient-to-r hover:from-gray-300 hover:to-[#33CC33]">
                               詳細
                             </span>

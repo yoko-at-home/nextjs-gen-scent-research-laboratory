@@ -48,6 +48,21 @@ export type ProductProps = {
   };
 };
 
+export type ApplicationProps = {
+  application: [
+    {
+      body?: HTMLAnchorElement;
+      createdAt: Date;
+      description: string;
+      id: string;
+      publishedAt: Date;
+      revisedAt: Date;
+      title: string;
+      updatedAt: Date;
+    }
+  ];
+};
+
 export type SoftwareProps = {
   software: {
     body: HTMLAnchorElement;
