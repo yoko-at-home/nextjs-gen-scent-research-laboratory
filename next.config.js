@@ -5,9 +5,8 @@ module.exports = withPWA({
   pwa: {
     dest: "public",
     runtimeCaching,
+    buildExcludes: [/.*\.js\.map/],
   },
-});
-module.exports = {
   i18n: { locales: ["ja"], defaultLocale: "ja" },
   reactStrictMode: true,
   typescript: { ignoreDevErrors: true },
@@ -15,4 +14,4 @@ module.exports = {
   images: {
     domains: ["images.microcms-assets.io"],
   },
-};
+});
