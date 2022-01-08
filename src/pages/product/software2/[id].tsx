@@ -11,7 +11,7 @@ import type { Software2Props } from "src/types/type";
 const Software2Id: VFC<Software2Props> = (props) => {
   return (
     <FixedLayout>
-      {!props.software2.title || !props.software2.subtitle ? (
+      {props.software2.title && !props.software2.subtitle ? (
         <PageSEO
           title={`${props.software2.title}  - ${siteMetadata.title}`}
           description={props.software2.description}
@@ -21,7 +21,7 @@ const Software2Id: VFC<Software2Props> = (props) => {
         />
       ) : !props.software2.title && !props.software2.subtitle ? (
         <PageSEO
-          title={`${props.software2.product_title}  - ${siteMetadata.title}`}
+          title={`${props.software2.product_title} - ${siteMetadata.title}`}
           description={props.software2.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
@@ -29,7 +29,7 @@ const Software2Id: VFC<Software2Props> = (props) => {
         />
       ) : (
         <PageSEO
-          title={`${props.software2.title} - ${props.software2.subtitle}- ${siteMetadata.title}`}
+          title={`${props.software2.title} - ${props.software2.subtitle} - ${siteMetadata.title}`}
           description={props.software2.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}

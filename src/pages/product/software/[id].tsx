@@ -12,7 +12,7 @@ import type { SoftwareProps } from "src/types/type";
 const SoftwareId: VFC<SoftwareProps> = (props) => {
   return (
     <FixedLayout>
-      {!props.software.title || !props.software.subtitle ? (
+      {props.software.title && !props.software.subtitle ? (
         <PageSEO
           title={`${props.software.title}  - ${siteMetadata.title}`}
           description={props.software.description}
