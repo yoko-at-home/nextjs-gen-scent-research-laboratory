@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { VFC } from "react";
+import type { NextPage } from "next";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
-import type { NewsProps } from "src/types/type";
 
-const NewsId: VFC<NewsProps> = (props) => {
+const NewsId: NextPage = (props: any) => {
   return (
     <FixedLayout>
       <PageSEO

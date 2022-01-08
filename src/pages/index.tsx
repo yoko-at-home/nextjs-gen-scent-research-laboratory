@@ -4,7 +4,7 @@ import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
-import type { HomeProps } from "src/types/type";
+import type { HomeProps } from "src/types/pageType";
 
 const Home: VFC<HomeProps> = (props) => {
   return (
