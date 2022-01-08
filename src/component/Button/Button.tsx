@@ -1,15 +1,23 @@
 import { useRouter } from "next/router";
-import type { VFC } from "react";
+import type { ReactNode, VFC } from "react";
 
-export const ButtonReturn = () => {
+type ButtonProps = {
+  children: ReactNode;
+  onClick: "Home" | "Return";
+};
+
+export const Button: VFC<ButtonProps> = (props) => {
   const router = useRouter();
-  const handleOnClick = () => {
+  const handleOnClickHome = () => {
+    return router.push("/");
+  };
+  const handleOnClickReturn = () => {
     return router.back();
   };
   return (
-    <button type="button" onClick={handleOnClick}>
-      <a className="p-3 px-3 mr-5 text-xs font-bold text-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-80 sm:text-base">
-        Return
+    <button type="button" onClick={props.onClick === "Return" ? handleOnClickReturn : handleOnClickHome}>
+      <a className="p-3 px-3 mr-5 text-xs font-bold text-gray-300 bg-gradient-to-r from-gray-400 to-gray-500 rounded">
+        {props.children}
       </a>
     </button>
   );

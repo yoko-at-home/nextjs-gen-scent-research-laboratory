@@ -1,5 +1,5 @@
 import type { ReactNode, VFC } from "react";
-import { ButtonReturn } from "src/component/Button";
+import { Button } from "src/component/Button";
 
 import { Footer } from "./Footer";
 import { HeaderFixed } from "./Header";
@@ -21,15 +21,11 @@ export const FixedLayout: VFC<Props> = (props) => {
       <main className="mx-5 text-zinc-500">
         <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
       </main>
-      <div className="flex justify-between mt-16">
-        <div>
-          <a className="p-3 px-3 mr-5 text-xs font-bold text-gray-300 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-0">
-            Home
-          </a>
+      <div className="flex justify-around items-center mt-20">
+        <div className="opacity-0">
+          <Button onClick="Home">Home</Button>
         </div>
-        <div>
-          <ButtonReturn />
-        </div>
+        <Button onClick="Return">Return</Button>
       </div>
       <Footer />
     </div>
