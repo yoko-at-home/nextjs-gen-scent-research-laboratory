@@ -5,7 +5,7 @@ export const Logo = () => {
   const src = "/static/images/logo.png";
 
   return (
-    <div className="hidden md:block">
+    <div className="hidden sm:block">
       <Link href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
         <a aria-label="ホームへ">
           <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="60px" height="60px" />
