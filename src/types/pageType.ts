@@ -1,22 +1,15 @@
 // Product ページ共通型オブジェクト
 type BasicPageObject = {
-  body: HTMLAnchorElement;
-  button: string;
-  button_desc: string;
   createdAt: Date;
   description: string;
   id: string;
   image: { url: string; height: number; width: number };
-  publishedAt: Date;
-  revisedAt: Date;
   title: string;
-  updatedAt: Date;
-  note: string;
 };
 
 export type ProductProps = {
   odor: [BasicPageObject];
-  other: [BasicPageObject];
+  other: [BasicPageObject & { note: string }];
   sample: [
     BasicPageObject & {
       charm: {
