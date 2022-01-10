@@ -21,28 +21,6 @@ export type SoftwareProps = {
     updatedAt: Date;
   };
 };
-export type Software2Props = {
-  software2: {
-    body: HTMLAnchorElement;
-    button: string;
-    button_desc: string;
-    createdAt: Date;
-    description: string;
-    description_body: string;
-    image: {
-      height: number;
-      url: string;
-      width: number;
-    };
-    produced_by: string;
-    product_title: string;
-    publishedAt: Date;
-    revisedAt: Date;
-    subtitle: string;
-    title: string;
-    updatedAt: Date;
-  };
-};
 
 export type SampleProps = {
   sample: {
