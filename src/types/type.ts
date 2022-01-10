@@ -1,4 +1,4 @@
-export type SoftwareProps = {
+export type BasicProps = {
   data: {
     body: HTMLAnchorElement;
     button: string;
@@ -6,7 +6,6 @@ export type SoftwareProps = {
     createdAt: Date;
     description: string;
     description_body: string;
-    description_body2: string;
     image: {
       height: number;
       url: string;
@@ -22,11 +21,15 @@ export type SoftwareProps = {
   };
 };
 
-export type SampleProps = {
+export type SoftwareProps = BasicProps & {
   data: {
-    body: HTMLAnchorElement;
-    button: string;
-    button_desc: string;
+    produced_by: string;
+    description_body2: string;
+  };
+};
+
+export type SampleProps = BasicProps & {
+  data: {
     charm: {
       height: number;
       url: string;
@@ -37,65 +40,11 @@ export type SampleProps = {
       url: string;
       width: number;
     };
-    createdAt: Date;
-    description: string;
-    description_body: string;
-    image: {
-      height: number;
-      url: string;
-      width: number;
-    };
-    produced_by: string;
-    product_title: string;
-    publishedAt: Date;
-    revisedAt: Date;
-    subtitle: string;
-    title: string;
-    updatedAt: Date;
   };
 };
 
-export type OdorProps = {
+export type OtherProps = BasicProps & {
   data: {
-    body: HTMLAnchorElement;
-    button: string;
-    button_desc: string;
-    createdAt: Date;
-    description: string;
-    image: {
-      height: number;
-      url: string;
-      width: number;
-    };
-    produced_by: string;
-    product_title: string;
-    publishedAt: Date;
-    revisedAt: Date;
-    subtitle: string;
-    title: string;
-    updatedAt: Date;
-  };
-};
-
-export type OtherProps = {
-  data: {
-    body: HTMLAnchorElement;
-    button: string;
-    button_desc: string;
-    createdAt: Date;
-    description: string;
-    image: {
-      height: number;
-      url: string;
-      width: number;
-    };
     note: string;
-    produced_by: string;
-    product_title: string;
-    publishedAt: Date;
-    revisedAt: Date;
-    subtitle: string;
-    title: string;
-    updatedAt: Date;
   };
 };

@@ -6,9 +6,9 @@ import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
-import type { OdorProps } from "src/types/type";
+import type { BasicProps } from "src/types/type";
 
-const OdorId: VFC<OdorProps> = (props) => {
+const OdorId: VFC<BasicProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
