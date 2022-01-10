@@ -1,16 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { NextPage } from "next";
+import type { VFC } from "react";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
+import type { BasicProps } from "src/types/type";
 
-type Props = {
-  application: string;
-};
-
-const ApplicationId: NextPage<Props> = (props: any) => {
+const ApplicationId: VFC<BasicProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
@@ -21,10 +18,10 @@ const ApplicationId: NextPage<Props> = (props: any) => {
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
-        <PageSubTitle fontWeight="ordinary">{props.application.title}</PageSubTitle>
+        <PageSubTitle fontWeight="ordinary">{props.data.title}</PageSubTitle>
         <div
           dangerouslySetInnerHTML={{
-            __html: `${props.application.body}`,
+            __html: `${props.data.body}`,
           }}
         />
       </main>
@@ -51,7 +48,7 @@ export const getStaticProps = async (context: any) => {
 
   return {
     props: {
-      application: data,
+      data: data,
     },
   };
 };

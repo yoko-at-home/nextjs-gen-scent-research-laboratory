@@ -4,9 +4,9 @@ import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
-import type { HomeProps } from "src/types/pageType";
+import type { BasicObjextProps } from "src/types/pageType";
 
-const Home: VFC<HomeProps> = (props) => {
+const Home: VFC<BasicObjextProps> = (props) => {
   return (
     <div
       className="absolute top-0 w-full min-h-screen bg-top bg-cover"

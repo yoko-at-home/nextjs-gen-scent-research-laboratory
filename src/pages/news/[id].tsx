@@ -1,27 +1,28 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { NextPage } from "next";
+import type { VFC } from "react";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
+import type { BasicProps } from "src/types/type";
 
-const NewsId: NextPage = (props: any) => {
+const NewsId: VFC<BasicProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
-        title={`${props.news.description} - News - ${siteMetadata.title}`}
+        title={`${props.data.description} - News - ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
-        <PageSubTitle fontWeight="ordinary">{props.news.title}</PageSubTitle>
-        {/* <p>{props.news.publishedAt}</p> */}
+        <PageSubTitle fontWeight="ordinary">{props.data.title}</PageSubTitle>
+        {/* <p>{props.data.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
-            __html: `${props.news.body}`,
+            __html: `${props.data.body}`,
           }}
         />
       </main>
@@ -48,7 +49,7 @@ export const getStaticProps = async (context: any) => {
 
   return {
     props: {
-      news: data,
+      data: data,
     },
   };
 };

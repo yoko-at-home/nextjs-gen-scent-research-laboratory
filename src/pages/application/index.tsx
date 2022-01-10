@@ -5,9 +5,9 @@ import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
-import type { ApplicationProps } from "src/types/pageType";
+import type { BasicProps } from "src/types/pageType";
 
-const Application: VFC<ApplicationProps> = (props) => {
+const Application: VFC<BasicProps> = (props) => {
   return (
     <div
       className="absolute top-0 w-full min-h-screen bg-top bg-cover"
@@ -27,7 +27,7 @@ const Application: VFC<ApplicationProps> = (props) => {
           <PageTitle> {/* <span className="tracking-wider text-[#2c4f54]">アプリケーション</span> */}</PageTitle>
           <div className="min-h-[60vh]">
             <ul>
-              {props.application.map((item) => {
+              {props.data.map((item) => {
                 return (
                   <li key={item.id}>
                     <div className="flex flex-col mb-5 font-extrabold">
@@ -67,7 +67,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      application: data.contents,
+      data: data.contents,
     },
   };
 };
