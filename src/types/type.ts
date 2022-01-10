@@ -23,7 +23,7 @@ export type SoftwareProps = {
 };
 
 export type SampleProps = {
-  sample: {
+  data: {
     body: HTMLAnchorElement;
     button: string;
     button_desc: string;
@@ -56,7 +56,7 @@ export type SampleProps = {
 };
 
 export type OdorProps = {
-  odor: {
+  data: {
     body: HTMLAnchorElement;
     button: string;
     button_desc: string;
@@ -78,7 +78,7 @@ export type OdorProps = {
 };
 
 export type OtherProps = {
-  other: {
+  data: {
     body: HTMLAnchorElement;
     button: string;
     button_desc: string;

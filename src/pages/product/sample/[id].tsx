@@ -12,18 +12,18 @@ import type { SampleProps } from "src/types/type";
 const SampleId: VFC<SampleProps> = (props) => {
   return (
     <FixedLayout>
-      {!props.sample.title ? (
+      {!props.data.title ? (
         <PageSEO
-          title={`${props.sample.product_title}  - ${siteMetadata.title}`}
-          description={props.sample.description}
+          title={`${props.data.product_title}  - ${siteMetadata.title}`}
+          description={props.data.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
           siteUrl={siteMetadata.siteUrl}
         />
       ) : (
         <PageSEO
-          title={`${props.sample.title} - ${siteMetadata.title}`}
-          description={props.sample.description}
+          title={`${props.data.title} - ${siteMetadata.title}`}
+          description={props.data.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
           siteUrl={siteMetadata.siteUrl}
@@ -31,19 +31,19 @@ const SampleId: VFC<SampleProps> = (props) => {
       )}
 
       <main>
-        {!props.sample.title ? (
+        {!props.data.title ? (
           <div className="mt-8" />
         ) : (
           <div className="flex justify-start items-center">
             <ProductTitle>
-              {!props.sample.title ? null : props.sample.title}
+              {!props.data.title ? null : props.data.title}
               <br />
-              {!props.sample.subtitle ? null : props.sample.subtitle}
+              {!props.data.subtitle ? null : props.data.subtitle}
             </ProductTitle>
-            {props.sample.charm_body === undefined ? null : (
+            {props.data.charm_body === undefined ? null : (
               <div className="pt-3 ml-12">
                 <Image
-                  src={props.sample.charm_body.url}
+                  src={props.data.charm_body.url}
                   width={`120px`}
                   height={`94px`}
                   alt={siteMetadata.altForImages}
@@ -52,24 +52,22 @@ const SampleId: VFC<SampleProps> = (props) => {
             )}
           </div>
         )}
-        <ProductMainTitle>{props.sample.product_title}</ProductMainTitle>
-        <div className="mb-12 text-[#330033]">{props.sample.description_body}</div>
+        <ProductMainTitle>{props.data.product_title}</ProductMainTitle>
+        <div className="mb-12 text-[#330033]">{props.data.description_body}</div>
         <div
           dangerouslySetInnerHTML={{
-            __html: `${props.sample.body}`,
+            __html: `${props.data.body}`,
           }}
         />
-        {!props.sample.button ? null : (
+        {!props.data.button ? null : (
           <div className="mt-20">
-            <div className="mb-10 text-[#330033]">{props.sample.button_desc}</div>
+            <div className="mb-10 text-[#330033]">{props.data.button_desc}</div>
             <div className="ml-20">
-              <ButtonToContact>{props.sample.button}</ButtonToContact>
+              <ButtonToContact>{props.data.button}</ButtonToContact>
             </div>
           </div>
         )}
-        {!props.sample.produced_by ? null : (
-          <div className="mt-20 font-bold">Produced by {props.sample.produced_by}</div>
-        )}
+        {!props.data.produced_by ? null : <div className="mt-20 font-bold">Produced by {props.data.produced_by}</div>}
       </main>
     </FixedLayout>
   );
@@ -94,7 +92,7 @@ export const getStaticProps = async (context: any) => {
 
   return {
     props: {
-      sample: data,
+      data: data,
     },
   };
 };

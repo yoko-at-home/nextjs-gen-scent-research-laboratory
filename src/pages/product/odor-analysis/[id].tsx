@@ -12,32 +12,32 @@ const OdorId: VFC<OdorProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
-        title={`${props.odor.title} - ${siteMetadata.title}`}
-        description={props.odor.description}
+        title={`${props.data.title} - ${siteMetadata.title}`}
+        description={props.data.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
         <ProductTitle>
-          {props.odor.title}
+          {props.data.title}
           <br />
-          {props.odor.subtitle}
+          {props.data.subtitle}
         </ProductTitle>
         <div
           dangerouslySetInnerHTML={{
-            __html: `${props.odor.body}`,
+            __html: `${props.data.body}`,
           }}
         />
-        {!props.odor.button ? null : (
+        {!props.data.button ? null : (
           <div className="mt-20">
-            <div className="mb-10 text-[#330033]">{props.odor.button_desc}</div>
+            <div className="mb-10 text-[#330033]">{props.data.button_desc}</div>
             <div className="ml-20">
-              <ButtonToContact>{props.odor.button}</ButtonToContact>
+              <ButtonToContact>{props.data.button}</ButtonToContact>
             </div>
           </div>
         )}
-        {!props.odor.produced_by ? null : <div className="mt-20 font-bold">Produced by {props.odor.produced_by}</div>}
+        {!props.data.produced_by ? null : <div className="mt-20 font-bold">Produced by {props.data.produced_by}</div>}
       </main>
     </FixedLayout>
   );
@@ -62,7 +62,7 @@ export const getStaticProps = async (context: any) => {
 
   return {
     props: {
-      odor: data,
+      data: data,
     },
   };
 };

@@ -12,28 +12,28 @@ const OtherId: VFC<OtherProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO
-        title={`${props.other.title} - ${siteMetadata.title}`}
-        description={props.other.description}
+        title={`${props.data.title} - ${siteMetadata.title}`}
+        description={props.data.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
         siteUrl={siteMetadata.siteUrl}
       />
       <main>
         <ProductTitle>
-          {props.other.title}
+          {props.data.title}
           <br />
-          {props.other.subtitle}
+          {props.data.subtitle}
         </ProductTitle>
         <div
           dangerouslySetInnerHTML={{
-            __html: `${props.other.body}`,
+            __html: `${props.data.body}`,
           }}
         />
-        {!props.other.button ? null : (
+        {!props.data.button ? null : (
           <div className="mt-20">
-            <div className="mb-10 text-[#330033]">{props.other.button_desc}</div>
+            <div className="mb-10 text-[#330033]">{props.data.button_desc}</div>
             <div className="ml-20">
-              <ButtonToContact>{props.other.button}</ButtonToContact>
+              <ButtonToContact>{props.data.button}</ButtonToContact>
             </div>
           </div>
         )}
@@ -61,7 +61,7 @@ export const getStaticProps = async (context: any) => {
 
   return {
     props: {
-      other: data,
+      data: data,
     },
   };
 };
