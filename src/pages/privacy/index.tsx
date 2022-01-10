@@ -19,7 +19,7 @@ const Private: VFC<BasicObjextProps> = (props) => {
       <div className="divide-y divide-gray-200 sm:mx-20">
         <PageTitle>{props.data.title}</PageTitle>
         <div
-          className="py-5 px-5 text-lg md:py-10 lg:py-16"
+          className="p-5 text-lg md:py-10 lg:py-16"
           dangerouslySetInnerHTML={{
             // eslint-disable-next-line @typescript-eslint/naming-convention
             __html: `${props.data.body}`,
