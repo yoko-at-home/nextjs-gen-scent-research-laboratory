@@ -148,7 +148,7 @@ const Product: VFC<ProductProps> = (props) => {
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
                       <div className="flex flex-col px-2 pt-2 w-full">
-                        <a className="mb-2 font-bold leading-tight">{item.title}</a>
+                        <div className="mb-2 font-bold leading-tight">{item.title}</div>
                         <div className="overflow-hidden text-sm text-ellipsis">
                           <div>
                             {item.description}

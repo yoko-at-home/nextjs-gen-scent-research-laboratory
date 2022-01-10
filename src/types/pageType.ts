@@ -11,6 +11,7 @@ type BasicPageObject = {
   revisedAt: Date;
   title: string;
   updatedAt: Date;
+  note: string;
 };
 
 export type ProductProps = {
