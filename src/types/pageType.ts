@@ -1,144 +1,48 @@
-export type HomeProps = {
-  data: {
-    body: HTMLAnchorElement;
-    createdAt: Date;
-    publishedAt: Date;
-    revisedAt: Date;
-    title: string;
-    updatedAt: Date;
-  };
+// Product ページ共通型オブジェクト
+type BasicPageObject = {
+  body: HTMLAnchorElement;
+  button: string;
+  button_desc: string;
+  createdAt: Date;
+  description: string;
+  id: string;
+  image: { url: string; height: number; width: number };
+  publishedAt: Date;
+  revisedAt: Date;
+  title: string;
+  updatedAt: Date;
 };
 
 export type ProductProps = {
-  odor: [
-    {
-      body: HTMLAnchorElement;
-      button: string;
-      button_desc: string;
-      createdAt: Date;
-      description: string;
-      id: string;
-      image: { url: string; height: number; width: number };
-      publishedAt: Date;
-      revisedAt: Date;
-      title: string;
-      updatedAt: Date;
-    }
-  ];
-  other: [
-    {
-      body: HTMLAnchorElement;
-      button: string;
-      button_desc: string;
-      createdAt: Date;
-      description: string;
-      id: string;
-      image: { url: string; height: number; width: number };
-      note: string;
-      publishedAt: Date;
-      revisedAt: Date;
-      title: string;
-      updatedAt: Date;
-    }
-  ];
+  odor: [BasicPageObject];
+  other: [BasicPageObject];
   sample: [
-    {
-      body: HTMLAnchorElement;
-      button: string;
-      button_desc: string;
+    BasicPageObject & {
       charm: {
         height: number;
         url: string;
         width: number;
       };
-      charm_body: {
-        height: number;
-        url: string;
-        width: number;
-      };
-      createdAt: Date;
-      description: string;
-      description_body: string;
-      id: string;
-      image: {
-        height: number;
-        url: string;
-        width: number;
-      };
-      produced_by: string;
       product_title: string;
-      publishedAt: Date;
-      revisedAt: Date;
-      title: string;
-      updatedAt: Date;
     }
   ];
   software: [
-    {
-      body: HTMLAnchorElement;
-      button: string;
-      button_desc: string;
-      createdAt: Date;
-      description: string;
-      description_body: string;
-      description_body2: string;
-      id: string;
-      image: {
-        height: number;
-        url: string;
-        width: number;
-      };
-      produced_by: string;
+    BasicPageObject & {
       product_title: string;
-      publishedAt: Date;
-      revisedAt: Date;
       subtitle: string;
-      title: string;
-      updatedAt: Date;
     }
   ];
   software2: [
-    {
-      body: HTMLAnchorElement;
-      button: string;
-      button_desc: string;
-      createdAt: Date;
-      description: string;
-      description_body: string;
-      description_body2: string;
-      id: string;
-      image: {
-        height: number;
-        url: string;
-        width: number;
-      };
-      produced_by: string;
+    BasicPageObject & {
       product_title: string;
-      publishedAt: Date;
-      revisedAt: Date;
       subtitle: string;
-      title: string;
-      updatedAt: Date;
     }
   ];
 };
 
-export type NewsProps = {
-  news: [
-    {
-      body: HTMLAnchorElement;
-      createdAt: Date;
-      description: string;
-      id: string;
-      publishedAt: Date;
-      revisedAt: Date;
-      title: string;
-      updatedAt: Date;
-    }
-  ];
-};
-export type ApplicationProps = {
-  application: [
+// Productページ以外の共通型定義（リスト用
+export type BasicProps = {
+  data: [
     {
       body: HTMLAnchorElement;
       createdAt: Date;
@@ -152,7 +56,8 @@ export type ApplicationProps = {
   ];
 };
 
-export type PrivacyProps = {
+// Productページ以外の共通型定義（オブジェクト用
+export type BasicObjextProps = {
   data: {
     body?: HTMLAnchorElement;
     createdAt: Date;
