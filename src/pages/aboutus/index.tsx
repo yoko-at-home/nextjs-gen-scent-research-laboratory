@@ -11,7 +11,7 @@ const AboutUs: NextPage = () => {
     <div
       className="absolute top-0 w-full min-h-screen text-white bg-top bg-cover"
       style={{
-        backgroundImage: "url('/static/images/header/background.jpg')",
+        backgroundImage: "url('/static/images/header/background.webp')",
       }}
     >
       <FluidLayout width="main">

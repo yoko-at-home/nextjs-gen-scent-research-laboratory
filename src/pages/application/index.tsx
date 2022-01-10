@@ -12,7 +12,7 @@ const Application: VFC<BasicProps> = (props) => {
     <div
       className="absolute top-0 w-full min-h-screen bg-top bg-cover"
       style={{
-        backgroundImage: "url('/static/images/application/gen.jpg')",
+        backgroundImage: "url('/static/images/application/gen.webp')",
       }}
     >
       <div className="z-40 bg-white bg-opacity-80">
