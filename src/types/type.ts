@@ -1,5 +1,5 @@
 export type SoftwareProps = {
-  software: {
+  data: {
     body: HTMLAnchorElement;
     button: string;
     button_desc: string;

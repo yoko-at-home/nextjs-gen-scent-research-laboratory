@@ -11,26 +11,26 @@ import type { SoftwareProps } from "src/types/type";
 const Software2Id: VFC<SoftwareProps> = (props) => {
   return (
     <FixedLayout>
-      {props.software.title && !props.software.subtitle ? (
+      {props.data.title && !props.data.subtitle ? (
         <PageSEO
-          title={`${props.software.title}  - ${siteMetadata.title}`}
-          description={props.software.description}
+          title={`${props.data.title}  - ${siteMetadata.title}`}
+          description={props.data.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
           siteUrl={siteMetadata.siteUrl}
         />
-      ) : !props.software.title && !props.software.subtitle ? (
+      ) : !props.data.title && !props.data.subtitle ? (
         <PageSEO
-          title={`${props.software.product_title} - ${siteMetadata.title}`}
-          description={props.software.description}
+          title={`${props.data.product_title} - ${siteMetadata.title}`}
+          description={props.data.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
           siteUrl={siteMetadata.siteUrl}
         />
       ) : (
         <PageSEO
-          title={`${props.software.title} - ${props.software.subtitle} - ${siteMetadata.title}`}
-          description={props.software.description}
+          title={`${props.data.title} - ${props.data.subtitle} - ${siteMetadata.title}`}
+          description={props.data.description}
           ogType="website"
           ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
           siteUrl={siteMetadata.siteUrl}
@@ -38,27 +38,25 @@ const Software2Id: VFC<SoftwareProps> = (props) => {
       )}
       <main>
         <ProductTitle>
-          {props.software.title}
+          {props.data.title}
           <br />
-          {props.software.subtitle}
-          <div className="mt-3 text-3xl md:text-4xl">{props.software.product_title}</div>
+          {props.data.subtitle}
+          <div className="mt-3 text-3xl md:text-4xl">{props.data.product_title}</div>
         </ProductTitle>
         <div
           dangerouslySetInnerHTML={{
-            __html: `${props.software.body}`,
+            __html: `${props.data.body}`,
           }}
         />
-        {!props.software.button ? null : (
+        {!props.data.button ? null : (
           <div className="mt-20">
-            <div className="mb-10 text-[#330033]">{props.software.button_desc}</div>
+            <div className="mb-10 text-[#330033]">{props.data.button_desc}</div>
             <div className="ml-20">
-              <ButtonToContact>{props.software.button}</ButtonToContact>
+              <ButtonToContact>{props.data.button}</ButtonToContact>
             </div>
           </div>
         )}
-        {!props.software.produced_by ? null : (
-          <div className="mt-20 font-bold">Produced by {props.software.produced_by}</div>
-        )}
+        {!props.data.produced_by ? null : <div className="mt-20 font-bold">Produced by {props.data.produced_by}</div>}
       </main>
     </FixedLayout>
   );
@@ -83,7 +81,7 @@ export const getStaticProps = async (context: any) => {
 
   return {
     props: {
-      software: data,
+      data: data,
     },
   };
 };
