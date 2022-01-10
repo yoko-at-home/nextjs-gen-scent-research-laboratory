@@ -37,7 +37,6 @@ const AboutUs: NextPage = () => {
               <p>香り分析関連製品販売</p>
             </div>
           </div>
-          {/* <div className="divide-y divide-gray-200"> */}
           <div className="container flex-1">
             <div className="container flex pt-40 pb-3 space-y-2 md:space-y-10 animation">
               <span className="font-semibold whitespace-nowrap">ロゴマークについて</span>
@@ -58,7 +57,6 @@ const AboutUs: NextPage = () => {
             <sub>写真は明治38年に国内に渡来した月桂樹で、日比谷公園、青山霊園などに植樹されたうちの一株です。</sub>
           </div>
         </div>
-        {/* </div> */}
       </FluidLayout>
     </div>
   );
