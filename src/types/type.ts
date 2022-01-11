@@ -6,6 +6,7 @@ export type BasicProps = {
     createdAt: Date;
     description: string;
     description_body: string;
+    id: string;
     image: {
       height: number;
       url: string;
