@@ -47,7 +47,7 @@ export default function newsPageId({ news, totalCount }) {
 // 動的なページを作成
 export const getStaticPaths = async () => {
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
+    headers: { "X-MICROCMS-API-KEY": process.env.MICROCMS_API_KEY },
   };
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news`, key);
@@ -72,7 +72,7 @@ export const getStaticProps = async (context) => {
   const id = context.params.id;
 
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
+    headers: { "X-MICROCMS-API-KEY": process.env.MICROCMS_API_KEY },
   };
 
   const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news?offset=${(id - 1) * 4}&limit=4`, key)
