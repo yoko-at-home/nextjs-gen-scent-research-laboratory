@@ -19,14 +19,11 @@ const Success: NextPage = () => {
         siteUrl={siteMetadata.siteUrl}
       />
       <PageTitle>{router.query.subject}</PageTitle>
-      <div className="container">
-        <div className="whitespace-pre-line">{router.query.text}</div>
-      </div>
       <div className="flex justify-center">
         <Image src="/static/animation/88696-mail.gif" alt="mail sent icon" width="180px" height="180px" />
       </div>
-      <div className="container mx-16">
-        <div className="whitespace-pre-line">{router.query.text2}</div>
+      <div className="container">
+        <div className="whitespace-pre-line">{router.query.text}</div>
       </div>
     </FluidLayout>
   );
