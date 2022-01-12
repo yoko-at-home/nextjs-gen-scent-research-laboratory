@@ -49,7 +49,7 @@ export default function News({ news, totalCount }) {
 export const getStaticProps = async () => {
   const url = `${process.env.NEXT_PUBLIC_API_URL}/news?offset=0&limit=5`;
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.MICROCMS_API_KEY },
+    headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
   };
   const data = await fetch(url, key)
     .then((res) => {
