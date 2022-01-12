@@ -43,8 +43,8 @@ export const FormMemberRegistration: NextPage = () => {
       body: JSON.stringify({
         subject: "登録を承りました。",
         to: siteMetadata.email,
-        text: "以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。\n完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。\n\n",
-        text2:
+        text:
+          "以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。\n完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。\n\n" +
           event.target.surname.value +
           " " +
           event.target.givenname.value +
