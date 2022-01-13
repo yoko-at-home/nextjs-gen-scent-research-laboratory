@@ -19,7 +19,6 @@ const NewsId: VFC<BasicProps> = (props) => {
       />
       <main>
         <PageSubTitle fontWeight="ordinary">{props.data.title}</PageSubTitle>
-        {/* <p>{props.data.publishedAt}</p> */}
         <div
           dangerouslySetInnerHTML={{
             __html: `${props.data.body}`,
