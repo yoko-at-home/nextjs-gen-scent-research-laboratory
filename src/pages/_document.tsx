@@ -21,10 +21,10 @@ const MyDocument = () => {
         {/* safari */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5" />
-        <meta name="apple-mobile-web-app-title" content={siteMetadata.title} />
+        <meta name="apple-mobile-web-app-title" content="玄川リサーチ Gen-Scent Research Laboratory" />
         <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon-180x180.png" />
         {/* 一般 */}
-        <meta name="application-name" content={siteMetadata.title} />
+        <meta name="application-name" content="玄川リサーチ Gen-Scent Research Laboratory" />
         <meta name="theme-color" content="#330033" />
         <meta name="description" content={siteMetadata.description} />
         <link rel="icon" sizes="192x192" href="/static/favicons/icon-192x192.png" />
