@@ -3,6 +3,9 @@ import type { NextApiHandler } from "next";
 
 const preview: NextApiHandler = async (req, res) => {
   // クエリの確認
+  if (!req.query.slug) {
+    return res.status(404).end();
+  }
   if (req.query.secret !== process.env.CMS_API_KEY || !req.query.id || !req.query.draftKey) {
     return res.status(401).json({ message: `Invalid query, ${process.env.CMS_API_KEY}` });
   }
