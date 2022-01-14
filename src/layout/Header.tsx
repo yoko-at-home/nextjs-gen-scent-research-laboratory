@@ -29,7 +29,7 @@ export const Header: VFC<Props> = (props) => {
             },
           ])}
           style={{
-            backgroundImage: "url('/static/images/header/background.jpg')",
+            backgroundImage: "url('/static/images/header/background.webp')",
           }}
         ></div>
         <div className="container relative py-4 w-full text-center sm:py-10 md:py-14">
