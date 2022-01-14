@@ -20,9 +20,6 @@ type Props = {
     updatedAt: Date;
   }[];
   totalCount: number;
-
-  // draftKey: string;
-  // previewData: string;
 };
 
 const News: VFC<Props> = (props) => {
