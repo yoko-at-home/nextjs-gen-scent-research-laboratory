@@ -49,11 +49,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const key = {
     headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY || "" },
   };
-  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news?limit=9999", key);
+  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news", key);
   const data: Array<Props> = await res.data.contents;
   const paths = data.map((item) => {
     return {
-      params: { id: item.id.toString() },
+      params: { id: `/news/${item.id.toString()}` },
     };
   });
 
