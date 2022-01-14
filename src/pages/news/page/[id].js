@@ -72,7 +72,7 @@ export const getStaticProps = async (context) => {
   const id = context.params.id;
 
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
+    headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY },
   };
 
   const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news?offset=${(id - 1) * 4}&limit=4`, key)
