@@ -16,6 +16,8 @@ const preview: NextApiHandler = async (req, res) => {
   };
   // console.log(req.query.id);
 
+  const content =
+    `${process.env.NEXT_PUBLIC_API_URL}news/` + `${req.query.slug}?fields=id&draftKey=${req.query.draftKey}`;
   const url = `${process.env.NEXT_PUBLIC_API_URL}news/` + req.query.id + `?draftKey=${req.query.draftKey}`;
   const post = await axios.get(url, key);
 
@@ -23,11 +25,14 @@ const preview: NextApiHandler = async (req, res) => {
   if (!post) {
     return res.status(401).json({ message: "Invalid draft key" });
   }
+  if (!content) {
+    return res.status(401).json({ message: "Invalid slug" });
+  }
 
   // プレビューデータを格納
   res.setPreviewData({
     draftKey: req.query.draftKey,
-    id: req.query.id,
+    slug: req.query.id,
   });
 
   // 詳細ページへリダイレクト
