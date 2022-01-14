@@ -30,7 +30,7 @@ const preview: NextApiHandler = async (req, res) => {
   });
 
   // 詳細ページへリダイレクト
-  res.writeHead(307, { Location: `/news/${req.query.id}` });
+  res.writeHead(307, { Location: `/news/${post.data.id}` });
 
   res.end("Preview mode enabled");
 };
