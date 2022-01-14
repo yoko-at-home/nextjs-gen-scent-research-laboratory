@@ -12,6 +12,8 @@ const MyDocument = () => {
         <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
         <link rel="manifest" href="/static/favicons/site.webmanifest" />
         <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#f5f5f5" />
+        {/* インデックス（再）登録のリクエスト処理 */}
+        <meta name="google-site-verification" content="tbi8VEYGkbgp_2NDtH2iBpbxciUV7jkGINfZBZq5_xs" />
         {/* windows */}
         <meta name="msapplication-square70x70logo" content="/static/favicons/site-tile-70x70.png" />
         <meta name="msapplication-square150x150logo" content="/static/favicons/site-tile-150x150.png" />

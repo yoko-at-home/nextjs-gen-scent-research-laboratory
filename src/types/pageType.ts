@@ -51,13 +51,26 @@ export type BasicProps = {
 };
 
 // Productページ以外の共通型定義（オブジェクト用
-export type BasicObjextProps = {
+export type BasicObjectProps = {
   data: {
     body?: HTMLAnchorElement;
     createdAt: Date;
+    description: string;
+    id: string;
     publishedAt: Date;
     revisedAt: Date;
     title: string;
     updatedAt: Date;
   };
+};
+
+export type SimpleObject = {
+  body: HTMLAnchorElement;
+  createdAt: Date;
+  description: string;
+  id: string;
+  publishedAt: Date;
+  revisedAt: Date;
+  title: string;
+  updatedAt: Date;
 };

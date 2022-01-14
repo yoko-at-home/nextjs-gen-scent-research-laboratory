@@ -11,7 +11,7 @@ type Props = {
   siteUrl: string;
 };
 
-const CommonSEO: VFC<Props> = ({ title, description, ogType, ogImage }) => {
+const CommonSEO: VFC<Props> = ({ description, ogImage, ogType, title }) => {
   const router = useRouter();
   return (
     <Head>
@@ -29,7 +29,7 @@ const CommonSEO: VFC<Props> = ({ title, description, ogType, ogImage }) => {
   );
 };
 
-export const PageSEO: VFC<Props> = ({ title, description }) => {
+export const PageSEO: VFC<Props> = ({ description, title }) => {
   const ogSiteLogo = siteMetadata.siteUrl + siteMetadata.siteLogo;
 
   return (

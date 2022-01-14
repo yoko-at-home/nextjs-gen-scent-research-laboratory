@@ -1,7 +1,11 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 
-export const Pagination: NextPage = (props: any) => {
+type Props = {
+  totalCount: number;
+};
+
+export const Pagination: NextPage<Props> = ({ totalCount }) => {
   const PER_PAGE = 6;
 
   const range = (start: number, end: number) => {
@@ -14,7 +18,7 @@ export const Pagination: NextPage = (props: any) => {
     <div className="flex justify-center pt-6 pb-8 space-y-2 md:space-y-5">
       <nav className="flex flex-row">
         <ul className="flex">
-          {range(1, Math.ceil(props.totalCount / PER_PAGE)).map((number, index) => {
+          {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => {
             return (
               <li key={index}>
                 <Link href={`/news/page/${number}`}>
