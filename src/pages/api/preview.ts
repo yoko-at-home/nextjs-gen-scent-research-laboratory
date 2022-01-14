@@ -9,7 +9,7 @@ const preview: NextApiHandler = async (req, res) => {
 
   // 下書きのデータを取得
   const key = {
-    headers: { "X-API-KEY": process.env.CMS_API_KEY },
+    headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY },
   };
   // console.log(req.query.id);
 
