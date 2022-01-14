@@ -7,14 +7,25 @@ import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
-import type { BasicProps } from "src/types/pageType";
 
-interface Props {
-  news: BasicProps;
+type Props = {
+  data: {
+    body: HTMLAnchorElement;
+    createdAt: Date;
+    description: string;
+    id: string;
+    publishedAt: Date;
+    revisedAt: Date;
+    title: string;
+    updatedAt: Date;
+  }[];
   totalCount: number;
-}
 
-const News: VFC<Props> = ({ news, totalCount }) => {
+  // draftKey: string;
+  // previewData: string;
+};
+
+const News: VFC<Props> = (props) => {
   return (
     <FluidLayout width="main">
       <PageSEO
@@ -29,7 +40,7 @@ const News: VFC<Props> = ({ news, totalCount }) => {
         <span className="tracking-wider ">最新情報</span>
       </PageTitle>
       <ul>
-        {news.map((item) => {
+        {props.data.map((item) => {
           return (
             <li key={item.id}>
               <div className="flex flex-col p-8 mb-10 bg-gray-200 rounded sm:p-3 bg-opacity-50">
@@ -49,33 +60,42 @@ const News: VFC<Props> = ({ news, totalCount }) => {
           );
         })}
       </ul>
-      {totalCount < 6 ? null : <Pagination totalCount={totalCount} />}
+      {props.totalCount < 6 ? null : <Pagination totalCount={props.totalCount} />}
     </FluidLayout>
   );
 };
 export default News;
 
-export const getStaticProps: GetStaticProps = async ({
+export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey: string }> = async ({
   preview,
   previewData,
 }): Promise<{
   props: Props;
 }> => {
   const key = {
-    headers: { "X-API-KEY": process.env.CMS_API_KEY || "" },
+    headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY || "" },
   };
-  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news/?limit=9999", key);
-  const data: Array<Props> = await res.data.contents;
+  // console.log(process.env.NEXT_PUBLIC_API_URL + "/news?limit=9999");
+  // console.log(process.env.CMS_API_KEY);
+
+  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/news/?limit=9999", key);
+  // console.log("foooooooooooooooxxx?");
+  const data = await res.data;
+  // console.log("foooooooooooooooooooooooo");
+
+  // console.log(res.data);
+
   // プレビュー時は draft のコンテンツを追加
   if (preview) {
-    const draftUrl = process.env.NEXT_PUBLIC_API_URL + "news/" + previewData.id + `?draftKey=${previewData.draftKey}`;
+    const draftUrl =
+      process.env.NEXT_PUBLIC_API_URL + "/news/" + previewData?.id + `?draftKey=${previewData?.draftKey}`;
     const draftRes = await axios.get(draftUrl, key);
     data.unshift(await draftRes.data);
   }
 
   return {
     props: {
-      news: data.contents,
+      data: data.contents,
       totalCount: data.totalCount,
     },
   };

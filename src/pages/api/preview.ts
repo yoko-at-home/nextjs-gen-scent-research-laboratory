@@ -11,6 +11,8 @@ const preview: NextApiHandler = async (req, res) => {
   const key = {
     headers: { "X-API-KEY": process.env.CMS_API_KEY },
   };
+  // console.log(req.query.id);
+
   const url = "https://genscent.microcms.io/api/v1/news/" + req.query.id + `?draftKey=${req.query.draftKey}`;
   const post = await axios.get(url, key);
 
