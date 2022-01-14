@@ -1,12 +1,20 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+import axios from "axios";
+import type { GetStaticProps } from "next";
 import Link from "next/link";
+import type { VFC } from "react";
 import { Pagination } from "src/component/Pagenation";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
+import type { BasicProps } from "src/types/pageType";
 
-const News = ({ news, totalCount }) => {
+interface Props {
+  news: BasicProps;
+  totalCount: number;
+}
+
+const News: VFC<Props> = ({ news, totalCount }) => {
   return (
     <FluidLayout width="main">
       <PageSEO
@@ -47,18 +55,23 @@ const News = ({ news, totalCount }) => {
 };
 export default News;
 
-export const getStaticProps = async () => {
-  const url = `${process.env.NEXT_PUBLIC_API_URL}/news?offset=0&limit=5`;
+export const getStaticProps: GetStaticProps = async ({
+  preview,
+  previewData,
+}): Promise<{
+  props: Props;
+}> => {
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY },
+    headers: { "X-API-KEY": process.env.CMS_API_KEY || "" },
   };
-  const data = await fetch(url, key)
-    .then((res) => {
-      return res.json();
-    })
-    .catch(() => {
-      return null;
-    });
+  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news/?limit=9999", key);
+  const data: Array<Props> = await res.data.contents;
+  // プレビュー時は draft のコンテンツを追加
+  if (preview) {
+    const draftUrl = process.env.NEXT_PUBLIC_API_URL + "news/" + previewData.id + `?draftKey=${previewData.draftKey}`;
+    const draftRes = await axios.get(draftUrl, key);
+    data.unshift(await draftRes.data);
+  }
 
   return {
     props: {
