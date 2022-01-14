@@ -26,7 +26,7 @@ const preview: NextApiHandler = async (req, res) => {
   // プレビューデータを格納
   res.setPreviewData({
     draftKey: req.query.draftKey,
-    id: req.query.id,
+    slug: post.data.id,
   });
 
   // 詳細ページへリダイレクト
