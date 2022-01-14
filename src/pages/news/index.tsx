@@ -75,10 +75,10 @@ export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey
   const key = {
     headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY || "" },
   };
-  // console.log(process.env.NEXT_PUBLIC_API_URL + "/news?limit=9999");
+  // console.log(process.env.NEXT_PUBLIC_API_URL + "news?limit=9999");
   // console.log(process.env.CMS_API_KEY);
 
-  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/news/?limit=9999", key);
+  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news/?limit=9999", key);
   // console.log("foooooooooooooooxxx?");
   const data = await res.data;
   // console.log("foooooooooooooooooooooooo");
@@ -87,8 +87,7 @@ export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey
 
   // プレビュー時は draft のコンテンツを追加
   if (preview) {
-    const draftUrl =
-      process.env.NEXT_PUBLIC_API_URL + "/news/" + previewData?.id + `?draftKey=${previewData?.draftKey}`;
+    const draftUrl = process.env.NEXT_PUBLIC_API_URL + "news/" + previewData?.id + `?draftKey=${previewData?.draftKey}`;
     const draftRes = await axios.get(draftUrl, key);
     data.unshift(await draftRes.data);
   }

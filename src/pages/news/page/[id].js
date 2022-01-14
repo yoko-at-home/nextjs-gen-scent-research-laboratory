@@ -50,7 +50,7 @@ export const getStaticPaths = async () => {
     headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY },
   };
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news`, key);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}news`, key);
 
   const repos = await res.json();
 
@@ -75,7 +75,7 @@ export const getStaticProps = async (context) => {
     headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY },
   };
 
-  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/news?offset=${(id - 1) * 4}&limit=4`, key)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}news?offset=${(id - 1) * 4}&limit=4`, key)
     .then((res) => {
       return res.json();
     })

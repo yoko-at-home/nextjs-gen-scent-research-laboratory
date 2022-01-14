@@ -13,7 +13,7 @@ const preview: NextApiHandler = async (req, res) => {
   };
   // console.log(req.query.id);
 
-  const url = "https://genscent.microcms.io/api/v1/news/" + req.query.id + `?draftKey=${req.query.draftKey}`;
+  const url = `${process.env.NEXT_PUBLIC_API_URL}news/` + req.query.id + `?draftKey=${req.query.draftKey}`;
   const post = await axios.get(url, key);
 
   // エラー処理

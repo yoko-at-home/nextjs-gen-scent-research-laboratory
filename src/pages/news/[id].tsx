@@ -49,7 +49,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const key = {
     headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY || "" },
   };
-  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "/news?limit=9999", key);
+  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news?limit=9999", key);
   const data: Array<Props> = await res.data.contents;
   const paths = data.map((item) => {
     return {
@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps<{ data: SimpleObject }, { id: string
   const key = {
     headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY || "" },
   };
-  let url = process.env.NEXT_PUBLIC_API_URL + "/news/" + params?.id;
+  let url = process.env.NEXT_PUBLIC_API_URL + "news/" + params?.id;
   // 下書きは draftKey を含む必要があるのでプレビューの時は追加
   // console.log(url);
 
