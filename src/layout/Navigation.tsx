@@ -35,7 +35,7 @@ const Navigation = () => {
     >
       {items.map(({ href, label }) => {
         return (
-          <NavLink key={href} href={href} activeClassName="bg-gray-700 text-white">
+          <NavLink key={href} href={href} activeClassName="bg-[#291a29] text-white bg-opacity-40">
             <a className="inline-block p-1 font-caribri text-base font-semibold hover:text-gray-200 whitespace-nowrap hover:bg-gray-400 bg-gradient-to-r focus:from-gray-300 focus:to-[#330033] sm:p-4 bg-opacity-80">
               {label}
             </a>
