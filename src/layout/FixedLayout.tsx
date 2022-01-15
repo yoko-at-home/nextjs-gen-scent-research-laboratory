@@ -7,7 +7,6 @@ import { LayoutErrorBoundary } from "./LayoutErrorBoundary";
 
 type Props = {
   className?: string;
-  // theme?: "main" | "about" | "newsArticles";
   children: ReactNode;
 };
 

@@ -48,11 +48,3 @@ export const Header: VFC<Props> = (props) => {
     </header>
   );
 };
-
-export const HeaderFixed: VFC = () => {
-  return (
-    <header>
-      <Navigation />
-    </header>
-  );
-};
