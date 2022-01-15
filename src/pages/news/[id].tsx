@@ -53,7 +53,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const data: Array<Props> = await res.data.contents;
   const paths = data.map((item) => {
     return {
-      params: { id: `/news/${item.id.toString()}` },
+      params: { id: item.id.toString() },
     };
   });
 
