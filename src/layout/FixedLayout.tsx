@@ -2,12 +2,12 @@ import type { ReactNode, VFC } from "react";
 import { Button } from "src/component/Button";
 
 import { Footer } from "./Footer";
-import { HeaderFixed } from "./Header";
+import { Header } from "./Header";
 import { LayoutErrorBoundary } from "./LayoutErrorBoundary";
 
 type Props = {
   className?: string;
-  theme?: "main" | "about" | "newsArticles";
+  // theme?: "main" | "about" | "newsArticles";
   children: ReactNode;
 };
 
@@ -16,9 +16,9 @@ type Props = {
  */
 export const FixedLayout: VFC<Props> = (props) => {
   return (
-    <div className="grid grid-rows-[auto,1fr,auto] mx-auto max-w-screen-lg min-h-screen">
-      <HeaderFixed />
-      <main className="mx-5 text-zinc-500">
+    <div className="grid grid-rows-[auto,1fr,auto] mx-auto min-h-screen">
+      <Header opacity="80" />
+      <main className="mx-5 text-zinc-500 sm:mx-20 lg:mx-32">
         <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
       </main>
       <div className="flex justify-around items-center mt-20">
