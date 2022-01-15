@@ -30,7 +30,7 @@ const NewsId: VFC<Props> = (props) => {
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
         siteUrl={siteMetadata.siteUrl}
       />
-      <main>
+      <main className="break-all">
         {props.preview && <Link href="/api/clear-preview">プレビューモードを解除</Link>}
         <PageSubTitle fontWeight="ordinary">{props.data.title}</PageSubTitle>
         <div
