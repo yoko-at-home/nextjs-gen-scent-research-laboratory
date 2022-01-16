@@ -16,7 +16,7 @@ export const Button: VFC<ButtonProps> = (props) => {
   };
   return (
     <button type="button" onClick={props.onClick === "Return" ? handleOnClickReturn : handleOnClickHome}>
-      <a className="p-3 mr-5 text-xs font-bold text-gray-300 bg-gradient-to-r from-gray-400 to-gray-500 rounded">
+      <a className="p-3 font-bold leading-10 text-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded sm:text-lg">
         {props.children}
       </a>
     </button>
