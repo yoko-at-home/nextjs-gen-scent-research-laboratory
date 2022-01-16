@@ -5,7 +5,7 @@ import Navigation from "src/layout/Navigation";
 
 type Props = {
   className?: string;
-  opacity?: "100" | "0";
+  opacity?: "100" | "80" | "0";
 };
 
 /**
@@ -25,6 +25,9 @@ export const Header: VFC<Props> = (props) => {
               "absolute top-0 w-full h-full bg-top bg-cover opacity-100": props.opacity === "100",
             },
             {
+              "absolute top-0 w-full h-full bg-top bg-cover opacity-80": props.opacity === "80",
+            },
+            {
               "absolute top-0 w-full h-full bg-top bg-cover opacity-0": props.opacity === "0",
             },
           ])}
@@ -41,14 +44,6 @@ export const Header: VFC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <Navigation />
-    </header>
-  );
-};
-
-export const HeaderFixed: VFC = () => {
-  return (
-    <header>
       <Navigation />
     </header>
   );
