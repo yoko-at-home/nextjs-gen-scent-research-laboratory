@@ -20,11 +20,13 @@ export const FixedLayout: VFC<Props> = (props) => {
       <main className="mx-5 text-zinc-500 sm:mx-20 md:mt-16 lg:mx-32 mt8">
         <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
       </main>
-      <div className="flex justify-around items-center mt-20">
+      <div className="flex justify-around items-center mt-20 h-24">
         <div className="opacity-0">
           <Button onClick="Home">Home</Button>
         </div>
-        <Button onClick="Return">Return</Button>
+        <div>
+          <Button onClick="Return">Return</Button>
+        </div>
       </div>
       <Footer />
     </div>
