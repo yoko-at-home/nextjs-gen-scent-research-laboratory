@@ -20,7 +20,21 @@ const Success: NextPage = () => {
       />
       <PageTitle>{router.query.subject}</PageTitle>
       <div className="flex justify-center">
-        <Image src="/static/animation/88696-mail.gif" alt="mail sent icon" width="180px" height="180px" />
+        <div className="flex">
+          <Image src="/static/animation/88696-mail.gif" alt="mail sent icon" width="180px" height="180px" />
+          <span className="font-caribri text-xs text-gray-500 rotate-45 origin-left md:ml-32">
+            <sup>LottieFiles by</sup>
+            <br />
+            <a
+              href="https://lottiefiles.com/panizk.kazemi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#330033]"
+            >
+              panizk.kazemi
+            </a>
+          </span>
+        </div>
       </div>
       <div className="container">
         <div className="whitespace-pre-line">{router.query.text}</div>
