@@ -49,7 +49,7 @@ export const getStaticPaths = async () => {
   const repos = await res.json();
 
   const paths = repos.contents.map((repo) => {
-    return `/news/${repo.id}`;
+    return `/news/${repo.contents?.id}`;
   });
   return { paths, fallback: true };
 };
