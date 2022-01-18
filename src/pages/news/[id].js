@@ -59,7 +59,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params, preview = false, previewData }) => {
-  const id = params.id;
+  const id = params?.id;
   const draftKey = previewData?.draftKey;
   const key = {
     headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY },
