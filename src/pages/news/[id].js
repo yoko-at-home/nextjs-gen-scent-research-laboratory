@@ -28,11 +28,15 @@ const NewsId = (props) => {
       <main className="break-all">
         {props.preview && <Link href="/api/clear-preview">プレビューモードを解除</Link>}
         <PageSubTitle fontWeight="ordinary">{props.data.title}</PageSubTitle>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${props.data.body}`,
-          }}
-        />
+        {!props.data.body ? (
+          <div>入力がありません</div>
+        ) : (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `${props.data.body}`,
+            }}
+          />
+        )}
       </main>
     </FixedLayout>
   );
