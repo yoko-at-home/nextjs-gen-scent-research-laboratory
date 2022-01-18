@@ -13,7 +13,7 @@ const NewsId = (props) => {
   // }
   const router = useRouter();
 
-  if (router.isFallback && !data?.id) {
+  if (router.isFallback && !props.data?.id) {
     return <ErrorPage statusCode={404} />;
   }
   return (
