@@ -2,6 +2,8 @@
 
 const withPWA = require("next-pwa");
 
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = withPWA({
   reactStrictMode: true,
   i18n: { locales: ["ja"], defaultLocale: "ja" },
@@ -13,6 +15,8 @@ module.exports = withPWA({
   pwa: {
     dest: "public",
     register: true,
-    disable: process.env.NODE_ENV === "development",
+    disable: isProd ? false : true,
+    scope: "/app",
+    sw: "service-worker.js",
   },
 });
