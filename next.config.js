@@ -16,7 +16,6 @@ module.exports = withPWA({
     dest: "public",
     register: true,
     disable: isProd ? false : true,
-    scope: "/app",
     sw: "service-worker.js",
   },
 });
