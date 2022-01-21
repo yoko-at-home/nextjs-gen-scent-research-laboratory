@@ -46,7 +46,7 @@ export default NewsId;
 
 export const getStaticPaths = async () => {
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY },
+    headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
   };
 
   const res = await fetch("https://genscent.microcms.io/api/v1/news", key);
@@ -62,7 +62,7 @@ export const getStaticProps = async ({ params, preview = false, previewData }) =
   const id = params?.id;
   const draftKey = previewData?.draftKey;
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY },
+    headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
   };
 
   const res = await fetch(

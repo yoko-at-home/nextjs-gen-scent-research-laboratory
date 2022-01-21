@@ -70,10 +70,10 @@ export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey
   props: Props;
 }> => {
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.CMS_API_KEY || "" },
+    headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" },
   };
   // console.log(process.env.NEXT_PUBLIC_API_URL + "news?limit=9999");
-  // console.log(process.env.CMS_API_KEY);
+  // console.log(process.env.API_KEY);
 
   const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news/?limit=9999", key);
   // console.log("foooooooooooooooxxx?");
