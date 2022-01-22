@@ -10,7 +10,7 @@ const MyDocument = () => {
         <link rel="canonical" href={siteMetadata.siteUrl} />
         <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
-        <link rel="manifest" href="/static/favicons/site.webmanifest" />
+        <link rel="manifest" href="/static/favicons/site.webmanifest" crossOrigin="use-credentials" />
         <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#330033" />
         {/* インデックス（再）登録のリクエスト処理 */}
         <meta name="google-site-verification" content="tbi8VEYGkbgp_2NDtH2iBpbxciUV7jkGINfZBZq5_xs" />
@@ -31,7 +31,7 @@ const MyDocument = () => {
         <meta name="description" content={siteMetadata.description} />
         <link rel="icon" sizes="192x192" href="/static/favicons/icon-192x192.png" />
         <link rel="icon" href="/static/favicons/favicon.ico" />
-        <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials" />
+        {/* <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials" /> */}
         {/* <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@900&display=swap" rel="stylesheet" /> */}
         <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet"></link>
       </Head>
