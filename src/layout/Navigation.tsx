@@ -29,7 +29,7 @@ const Navigation = () => {
     <nav
       className={
         isScrolled
-          ? "flex flex-wrap justify-center text-gray-200 fixed inset-x-0 z-50 top-[0%] bg-opacity-40 backdrop-blur bg-[#330033]"
+          ? "flex flex-wrap justify-center text-gray-200 fixed inset-x-0 z-50 top-[0%] bg-opacity-40 backdrop-blur bg-primary"
           : "flex flex-wrap justify-center text-gray-600 bg-gray-200"
       }
     >

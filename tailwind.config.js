@@ -14,6 +14,9 @@ module.exports = {
       borderColor: {
         primary: "#330033",
       },
+      backgroundColor: {
+        primary: "#330033",
+      },
       typography: {
         DEFAULT: {
           css: {
