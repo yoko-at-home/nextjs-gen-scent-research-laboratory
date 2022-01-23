@@ -29,7 +29,7 @@ const Success: NextPage = () => {
               href="https://lottiefiles.com/panizk.kazemi"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#330033]"
+              className="hover:text-primary"
             >
               panizk.kazemi
             </a>

@@ -31,7 +31,7 @@ const OtherId: VFC<OtherProps> = (props) => {
         />
         {!props.data.button ? null : (
           <div className="mt-20">
-            <div className="mb-10 text-[#330033]">{props.data.button_desc}</div>
+            <div className="mb-10 text-primary">{props.data.button_desc}</div>
             <div className="ml-20">
               <ButtonToContact>{props.data.button}</ButtonToContact>
             </div>

@@ -8,6 +8,9 @@ module.exports = {
       caribri: ['"Calibri"', '"sans-serif"'],
     },
     extend: {
+      textColor: {
+        primary: "#330033",
+      },
       typography: {
         DEFAULT: {
           css: {

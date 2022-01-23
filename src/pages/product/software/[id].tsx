@@ -49,7 +49,7 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
           </ProductTitle>
         )}
         <ProductMainTitle>{props.data.product_title}</ProductMainTitle>
-        <div className="mb-12 text-[#330033]">
+        <div className="mb-12 text-primary">
           {props.data.description_body}
           <br />
           {props.data.description_body2}
@@ -61,7 +61,7 @@ const SoftwareId: VFC<SoftwareProps> = (props) => {
         />
         {!props.data.button ? null : (
           <div className="mt-20">
-            <div className="mb-10 text-[#330033]">{props.data.button_desc}</div>
+            <div className="mb-10 text-primary">{props.data.button_desc}</div>
             <div className="ml-20">
               <ButtonToContact>{props.data.button}</ButtonToContact>
             </div>

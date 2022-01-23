@@ -18,8 +18,8 @@ export const PageSubTitle: VFC<FontProps> = (props) => {
   return (
     <h2
       className={cc([
-        { "mt-10 mb-5 text-lg font-bold text-[#330033] md:mt-14 md:mb-8 md:text-2xl": "ordinary" },
-        { "mt-10 mb-5 text-lg text-[#330033] md:mt-14 md:mb-8 md:text-2xl": "bold" },
+        { "mt-10 mb-5 text-lg font-bold text-primary md:mt-14 md:mb-8 md:text-2xl": "ordinary" },
+        { "mt-10 mb-5 text-lg text-primary md:mt-14 md:mb-8 md:text-2xl": "bold" },
       ])}
     >
       {props.children}
@@ -27,8 +27,8 @@ export const PageSubTitle: VFC<FontProps> = (props) => {
   );
 };
 export const ProductTitle: NextPage = (props) => {
-  return <h1 className="mt-10 mb-6 text-xl font-bold leading-relaxed text-[#330033]">{props.children}</h1>;
+  return <h1 className="mt-10 mb-6 text-xl font-bold leading-relaxed text-primary">{props.children}</h1>;
 };
 export const ProductMainTitle: NextPage = (props) => {
-  return <h1 className="mb-6 text-xl font-bold leading-relaxed text-[#330033] md:text-2xl">{props.children}</h1>;
+  return <h1 className="mb-6 text-xl font-bold leading-relaxed text-primary md:text-2xl">{props.children}</h1>;
 };
