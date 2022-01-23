@@ -107,7 +107,7 @@ export const FormMemberRegistration: NextPage = () => {
               id="surname"
               name="surname"
               type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
               placeholder="Surname"
               autoComplete="family-name"
               required
@@ -120,7 +120,7 @@ export const FormMemberRegistration: NextPage = () => {
               id="givenname"
               name="givenname"
               type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
               placeholder="Given name"
               required
               autoComplete="given-name"
@@ -137,7 +137,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="labo"
                   name="labo"
                   type="text"
-                  className="block overflow-x-scroll mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-96"
+                  className="block overflow-x-scroll mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-96"
                   placeholder="Company/Organization/University"
                   required
                   minLength={3}
@@ -151,7 +151,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="department"
                   name="department"
                   type="text"
-                  className="block overflow-x-scroll mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-96"
+                  className="block overflow-x-scroll mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-96"
                   placeholder="Department/Laboratory"
                   required
                   minLength={3}
@@ -167,7 +167,7 @@ export const FormMemberRegistration: NextPage = () => {
                   required
                   type="radio"
                   id="researcher"
-                  className="text-primary focus:border-[#330033] focus:ring-[#412c41] "
+                  className="text-primary focus:border-primary focus:ring-[#412c41] "
                   name="researcher"
                   value="研究者"
                   onChange={handleOnChangeResearcher0}
@@ -180,7 +180,7 @@ export const FormMemberRegistration: NextPage = () => {
                   required
                   type="radio"
                   id="researcher"
-                  className="text-primary focus:border-[#330033] focus:ring-[#412c41] "
+                  className="text-primary focus:border-primary focus:ring-[#412c41] "
                   name="researcher"
                   value="代理店/販売店"
                   onChange={handleOnChangeResearcher1}
@@ -193,7 +193,7 @@ export const FormMemberRegistration: NextPage = () => {
                   required
                   type="radio"
                   id="researcher"
-                  className="text-primary focus:border-[#330033] focus:ring-[#412c41]"
+                  className="text-primary focus:border-primary focus:ring-[#412c41]"
                   name="researcher"
                   value="その他"
                   onChange={handleOnChangeResearcher2}
@@ -206,7 +206,7 @@ export const FormMemberRegistration: NextPage = () => {
                   type="text"
                   id="other_occupation"
                   name="other_occupation"
-                  className="block overflow-x-scroll mt-1 border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-72"
+                  className="block overflow-x-scroll mt-1 border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm md:w-72"
                   onChange={handleOnChangeResearcherText}
                   value={otherOccupation}
                   disabled={enableOtherOccupation}
@@ -226,7 +226,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="zipcode"
                   name="zipcode"
                   type="text"
-                  className="block mt-1 w-24 border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                  className="block mt-1 w-24 border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
                   autoComplete="postal-code"
                   placeholder="zip code"
                 />
@@ -239,7 +239,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="address1"
                   name="address1"
                   type="text"
-                  className="block mt-1 w-20 border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:w-full sm:text-sm"
+                  className="block mt-1 w-20 border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:w-full sm:text-sm"
                   autoComplete="address-level1"
                   placeholder="Prefecture/State"
                   required
@@ -248,7 +248,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="address2"
                   name="address2"
                   type="text"
-                  className="block mx-2 mt-1 w-20 border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:w-full sm:text-sm"
+                  className="block mx-2 mt-1 w-20 border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:w-full sm:text-sm"
                   autoComplete="address-level2"
                   required
                   placeholder="City"
@@ -257,7 +257,7 @@ export const FormMemberRegistration: NextPage = () => {
                   id="address3"
                   name="address3"
                   type="text"
-                  className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                  className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
                   autoComplete="street-address"
                   required
                   placeholder="Address"
@@ -272,7 +272,7 @@ export const FormMemberRegistration: NextPage = () => {
               id="phone1"
               name="phone1"
               type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
               autoComplete="tel"
               required
               placeholder="Phone Number"
@@ -284,7 +284,7 @@ export const FormMemberRegistration: NextPage = () => {
               id="phone2"
               name="phone2"
               type="text"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
               placeholder="Extension/Secondary Phone Number"
             />
           </div>
@@ -297,7 +297,7 @@ export const FormMemberRegistration: NextPage = () => {
                 id="email"
                 name="email"
                 type="email"
-                className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
                 autoComplete="email"
                 required
                 placeholder="Email Address"
@@ -313,7 +313,7 @@ export const FormMemberRegistration: NextPage = () => {
                 id="speciality"
                 name="speciality"
                 type="text"
-                className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
                 placeholder="Field of Expertise"
               />
             </div>
@@ -326,7 +326,7 @@ export const FormMemberRegistration: NextPage = () => {
               <input
                 id="reference"
                 name="reference"
-                className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+                className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
                 type="text"
                 placeholder="Product name for which information is requested"
               ></input>
@@ -339,7 +339,7 @@ export const FormMemberRegistration: NextPage = () => {
             <textarea
               id="message"
               name="message"
-              className="block mt-1 w-full border-gray-300 focus:border-[#330033] focus:ring-[#a37da3] shadow-sm sm:text-sm"
+              className="block mt-1 w-full border-gray-300 focus:border-primary focus:ring-[#a37da3] shadow-sm sm:text-sm"
               rows={3}
               maxLength={300}
             ></textarea>
@@ -352,7 +352,7 @@ export const FormMemberRegistration: NextPage = () => {
                 <input
                   type="radio"
                   id="newsletter"
-                  className="text-primary focus:border-[#330033] focus:ring-[#412c41] "
+                  className="text-primary focus:border-primary focus:ring-[#412c41] "
                   name="newsletter"
                   value="要"
                   onChange={handleOnChange}
@@ -364,7 +364,7 @@ export const FormMemberRegistration: NextPage = () => {
                 <input
                   type="radio"
                   id="newsletter"
-                  className="text-primary focus:border-[#330033] focus:ring-[#412c41]"
+                  className="text-primary focus:border-primary focus:ring-[#412c41]"
                   name="newsletter"
                   value="不要"
                   onChange={handleOnChange}

@@ -11,6 +11,9 @@ module.exports = {
       textColor: {
         primary: "#330033",
       },
+      borderColor: {
+        primary: "#330033",
+      },
       typography: {
         DEFAULT: {
           css: {
