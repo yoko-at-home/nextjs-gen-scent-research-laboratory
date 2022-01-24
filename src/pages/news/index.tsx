@@ -40,7 +40,7 @@ const News: VFC<Props> = (props) => {
         {props.data.map((item) => {
           return (
             <li key={item.id}>
-              <div className="flex flex-col p-8 mb-10 bg-gray-200 rounded sm:p-3 bg-opacity-50">
+              <div className="flex flex-col p-8 mb-10 bg-gray-200/50 rounded sm:p-3">
                 <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
                 <div className="flex flex-row-reverse justify-between items-end">
                   <Link href={`/news/${item.id}`} passHref>

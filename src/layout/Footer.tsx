@@ -7,7 +7,7 @@ import { siteMetadata } from "src/data/siteMetaData";
  */
 export const Footer: VFC = () => {
   return (
-    <footer className="mt-5 bg-stone-50 bg-opacity-40">
+    <footer className="mt-5 bg-stone-50/40">
       <div className="flex flex-col items-center mt-16">
         <div className="flex justify-between mx-5 mb-2 space-x-2 text-sm">
           <div>{siteMetadata.author}</div>

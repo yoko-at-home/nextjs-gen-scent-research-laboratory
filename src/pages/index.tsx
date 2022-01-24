@@ -14,7 +14,7 @@ const Home: VFC<BasicObjectProps> = (props) => {
         backgroundImage: "url('/static/images/home/background.webp')",
       }}
     >
-      <div className="z-40 text-zinc-700 bg-white bg-opacity-80">
+      <div className="z-40 text-zinc-700 bg-white/80">
         <FluidLayout width="main">
           <PageSEO
             title={`${siteMetadata.title}`}

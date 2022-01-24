@@ -15,7 +15,7 @@ const Application: VFC<BasicProps> = (props) => {
         backgroundImage: "url('/static/images/application/gen.webp')",
       }}
     >
-      <div className="z-40 bg-white bg-opacity-80">
+      <div className="z-40 bg-white/80">
         <FluidLayout width="main">
           <PageSEO
             title={`Application - ${siteMetadata.title}`}
