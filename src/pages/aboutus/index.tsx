@@ -52,29 +52,29 @@ const AboutUs: NextPage<Props> = (props) => {
             <div className="container flex pt-6 pb-8 space-y-2 md:space-y-10 animation">
               <span className="mr-5 text-xl font-semibold whitespace-nowrap">事業内容</span>
               <div className="">
-                <p>{props.data.description1}</p>
-                <p>{props.data.description2}</p>
+                <p className="mb-3">{props.data.description1}</p>
+                <p className="mb-3">{props.data.description2}</p>
               </div>
             </div>
             <div className="container flex pt-6 pb-8 space-y-2 md:space-y-10 animation">
               <span className="mr-5 text-xl font-semibold whitespace-nowrap">所属団体</span>
               <div className="">
-                <p>
+                <p className="mb-3">
                   <a href={props.data.affiliate1_url} target="_blank" rel="noopener noreferrer">
                     {props.data.affiliate1}
                   </a>
                 </p>
-                <p>
+                <p className="mb-3">
                   <a href={props.data.affiliate2_url} target="_blank" rel="noopener noreferrer">
                     {props.data.affiliate2}
                   </a>
                 </p>
-                <p>
+                <p className="mb-3">
                   <a href={props.data.affiliate3_url} target="_blank" rel="noopener noreferrer">
                     {props.data.affiliate3}
                   </a>
                 </p>
-                <p>
+                <p className="mb-3">
                   <a href={props.data.affiliate4_url} target="_blank" rel="noopener noreferrer">
                     {props.data.affiliate4}
                   </a>
@@ -128,29 +128,29 @@ const AboutUs: NextPage<Props> = (props) => {
             <div className="container flex pt-6 pb-8 space-y-2 md:space-y-10 animation">
               <span className="mr-5 text-xl font-semibold whitespace-nowrap">事業内容</span>
               <div className="">
-                <p>{props.data.description1}</p>
-                <p>{props.data.description2}</p>
+                <p className="mb-3">{props.data.description1}</p>
+                <p className="mb-3">{props.data.description2}</p>
               </div>
             </div>
             <div className="container flex pt-6 pb-8 space-y-2 md:space-y-10 animation">
               <span className="mr-5 text-xl font-semibold whitespace-nowrap">所属団体</span>
               <div className="">
-                <p>
+                <p className="mb-3">
                   <a href={props.data.affiliate1_url} target="_blank" rel="noopener noreferrer">
                     {props.data.affiliate1}
                   </a>
                 </p>
-                <p>
+                <p className="mb-3">
                   <a href={props.data.affiliate2_url} target="_blank" rel="noopener noreferrer">
                     {props.data.affiliate2}
                   </a>
                 </p>
-                <p>
+                <p className="mb-3">
                   <a href={props.data.affiliate3_url} target="_blank" rel="noopener noreferrer">
                     {props.data.affiliate3}
                   </a>
                 </p>
-                <p>
+                <p className="mb-3">
                   <a href={props.data.affiliate4_url} target="_blank" rel="noopener noreferrer">
                     {props.data.affiliate4}
                   </a>
