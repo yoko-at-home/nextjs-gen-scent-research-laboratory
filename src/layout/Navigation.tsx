@@ -30,7 +30,7 @@ const Navigation = () => {
       className={
         isScrolled
           ? "flex flex-wrap justify-center text-gray-200 fixed inset-x-0 z-50 top-[0%] backdrop-blur bg-primary/40"
-          : "flex flex-wrap justify-center text-gray-600 bg-gray-200"
+          : "flex flex-wrap justify-center text-gray-600 bg-gray-300"
       }
     >
       {items.map(({ href, label }) => {
