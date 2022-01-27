@@ -16,7 +16,7 @@ const Success: NextPage = () => {
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-        siteUrl={siteMetadata.siteUrl}
+        siteUrl={siteMetadata.siteUrl + `/success`}
       />
       <PageTitle>{router.query.subject}</PageTitle>
       <div className="flex justify-center">

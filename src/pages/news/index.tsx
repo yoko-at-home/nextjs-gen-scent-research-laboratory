@@ -30,7 +30,7 @@ const News: VFC<Props> = (props) => {
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-        siteUrl={siteMetadata.siteUrl}
+        siteUrl={siteMetadata.siteUrl + `/news`}
       />
 
       <PageTitle>

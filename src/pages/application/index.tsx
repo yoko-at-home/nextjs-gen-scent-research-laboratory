@@ -22,7 +22,7 @@ const Application: VFC<BasicProps> = (props) => {
             description={siteMetadata.description}
             ogType="website"
             ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-            siteUrl={siteMetadata.siteUrl}
+            siteUrl={siteMetadata.siteUrl + `/application`}
           />
           <PageTitle> {/* <span className="tracking-wider text-[#2c4f54]">アプリケーション</span> */}</PageTitle>
           <div className="min-h-[60vh]">

@@ -14,7 +14,7 @@ const Private: VFC<BasicObjectProps> = (props) => {
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-        siteUrl={siteMetadata.siteUrl}
+        siteUrl={siteMetadata.siteUrl + `/privacy`}
       />
       <div className="divide-y divide-gray-200 sm:mx-20">
         <PageTitle>{props.data.title}</PageTitle>

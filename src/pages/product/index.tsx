@@ -204,7 +204,7 @@ const Product: VFC<ProductProps> = (props) => {
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-        siteUrl={siteMetadata.siteUrl}
+        siteUrl={siteMetadata.siteUrl + `/product`}
       />
 
       <div>

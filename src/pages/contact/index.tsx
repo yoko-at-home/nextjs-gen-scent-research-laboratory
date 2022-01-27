@@ -14,7 +14,7 @@ const Contact: NextPage = () => {
         description={siteMetadata.description}
         ogType="website"
         ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-        siteUrl={siteMetadata.siteUrl}
+        siteUrl={siteMetadata.siteUrl + `/contact`}
       />
       <PageTitle>お問い合わせ</PageTitle>
       <div className="text-zinc-700">

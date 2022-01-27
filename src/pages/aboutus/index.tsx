@@ -39,7 +39,7 @@ const AboutUs: NextPage<Props> = (props) => {
             description={siteMetadata.description}
             ogType="website"
             ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-            siteUrl={siteMetadata.siteUrl}
+            siteUrl={siteMetadata.siteUrl + `/aboutus`}
           />
           <div className="flex flex-col justify-between">
             <PageTitle>
