@@ -7,7 +7,7 @@ const MyDocument = () => {
   return (
     <Html lang="ja-JP" dir="ltr">
       <Head>
-        <link rel="canonical" href={siteMetadata.siteUrl} />
+        <link rel="canonical" href="https://www.gen-scent.com/" />
         <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
         <link rel="manifest" href="/static/favicons/site.webmanifest" crossOrigin="use-credentials" />
