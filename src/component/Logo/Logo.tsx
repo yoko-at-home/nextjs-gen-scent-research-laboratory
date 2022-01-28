@@ -7,9 +7,9 @@ export const Logo = () => {
   return (
     <div className="hidden sm:block">
       <Link href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
-        <a aria-label="ホームへ">
-          <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="60" height="60" />
-        </a>
+        {/* <a aria-label="ホームへ"> */}
+        <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="60" height="60" />
+        {/* </a> */}
       </Link>
     </div>
   );
@@ -20,9 +20,9 @@ export const LogoSmall = () => {
   return (
     <div className="sm:hidden">
       <Link href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
-        <a aria-label="ホームへ">
-          <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="40" height="40" />
-        </a>
+        {/* <a aria-label="ホームへ"> */}
+        <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="40" height="40" />
+        {/* </a> */}
       </Link>
     </div>
   );
