@@ -163,7 +163,7 @@ const AboutUs: NextPage<Props> = (props) => {
               </div>
               <div className="flex items-center">
                 <div className="mx-6 animation">
-                  <Image src={"/static/images/logo.png"} alt="logo" width="80" height="80" />
+                  <Image src={"/static/images/logo.png"} alt="logo" width="80px" height="80px" />
                 </div>
                 <div className="text-sm font-thin animation">
                   玄川の家紋をデザイン化したものです。

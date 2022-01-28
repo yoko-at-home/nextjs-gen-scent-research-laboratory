@@ -8,7 +8,7 @@ export const Logo = () => {
     <div className="hidden sm:block">
       <Link href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
         {/* <a aria-label="ホームへ"> */}
-        <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="60" height="60" />
+        <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="60px" height="60px" />
         {/* </a> */}
       </Link>
     </div>
@@ -21,7 +21,7 @@ export const LogoSmall = () => {
     <div className="sm:hidden">
       <Link href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
         {/* <a aria-label="ホームへ"> */}
-        <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="40" height="40" />
+        <Image src={src} alt="Gen-Scent Research Laboratoryロゴ" width="40px" height="40px" />
         {/* </a> */}
       </Link>
     </div>
