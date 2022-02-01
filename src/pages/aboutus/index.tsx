@@ -31,7 +31,7 @@ const AboutUs: NextPage<Props> = (props) => {
         className="hidden absolute top-0 w-full min-h-screen text-white bg-top bg-cover sm:block"
         style={{
           backgroundImage:
-            "url('https://images.microcms-assets.io/assets/7e488163bae049938953f9f59d95f21d/fdc37910136b4a3b9592554ae91d18ac/aboutus-background.jpg?w=2600')",
+            "url('https://images.microcms-assets.io/assets/7e488163bae049938953f9f59d95f21d/aa5b535010b041a48156f6033a59822c/aboutus-background.webp?w=2234')",
         }}
       >
         <FluidLayout width="main">
