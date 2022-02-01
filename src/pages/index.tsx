@@ -11,7 +11,8 @@ const Home: VFC<BasicObjectProps> = (props) => {
     <div
       className="absolute top-0 w-full min-h-screen bg-top bg-cover"
       style={{
-        backgroundImage: "url('/static/images/home/background.webp')",
+        backgroundImage:
+          "url('https://images.microcms-assets.io/assets/7e488163bae049938953f9f59d95f21d/a862f573942149d687a788dbaaa68868/home-background.jpg?w=2600')",
       }}
     >
       <div className="z-40 text-zinc-700 bg-white/80">

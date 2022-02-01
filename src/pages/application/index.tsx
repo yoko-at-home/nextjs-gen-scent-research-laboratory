@@ -12,7 +12,8 @@ const Application: VFC<BasicProps> = (props) => {
     <div
       className="absolute top-0 w-full min-h-screen bg-top bg-cover"
       style={{
-        backgroundImage: "url('/static/images/application/gen.webp')",
+        backgroundImage:
+          "url('https://images.microcms-assets.io/assets/7e488163bae049938953f9f59d95f21d/6c28a22308404cad978581d4196aba4f/application-background-gen.jpg?w=2600')",
       }}
     >
       <div className="z-40 bg-white/80">
