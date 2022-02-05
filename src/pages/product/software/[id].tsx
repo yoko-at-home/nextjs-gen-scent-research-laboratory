@@ -10,32 +10,47 @@ import { client } from "src/lib/client";
 import type { SoftwareProps } from "src/types/type";
 
 const SoftwareId: VFC<SoftwareProps> = (props) => {
+  const SeoTitleOnly = () => {
+    return (
+      <PageSEO
+        title={`${props.data.title}  - ${siteMetadata.title}`}
+        description={props.data.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
+    );
+  };
+  const SeoProductTitleOnly = () => {
+    return (
+      <PageSEO
+        title={`${props.data.product_title} - ${siteMetadata.title}`}
+        description={props.data.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
+    );
+  };
+  const SeoTitleWithSubtitle = () => {
+    return (
+      <PageSEO
+        title={`${props.data.title} - ${props.data.subtitle} - ${siteMetadata.title}`}
+        description={props.data.description}
+        ogType="website"
+        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
+        siteUrl={siteMetadata.siteUrl}
+      />
+    );
+  };
   return (
     <FixedLayout>
       {props.data.title && !props.data.subtitle ? (
-        <PageSEO
-          title={`${props.data.title}  - ${siteMetadata.title}`}
-          description={props.data.description}
-          ogType="website"
-          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-          siteUrl={siteMetadata.siteUrl}
-        />
+        <SeoTitleOnly />
       ) : !props.data.title && !props.data.subtitle ? (
-        <PageSEO
-          title={`${props.data.product_title} - ${siteMetadata.title}`}
-          description={props.data.description}
-          ogType="website"
-          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-          siteUrl={siteMetadata.siteUrl}
-        />
+        <SeoProductTitleOnly />
       ) : (
-        <PageSEO
-          title={`${props.data.title} - ${props.data.subtitle} - ${siteMetadata.title}`}
-          description={props.data.description}
-          ogType="website"
-          ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-          siteUrl={siteMetadata.siteUrl}
-        />
+        <SeoTitleWithSubtitle />
       )}
 
       <main>
