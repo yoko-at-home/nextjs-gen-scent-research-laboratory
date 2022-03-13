@@ -20,6 +20,18 @@ type Props = {
     affiliate3_url: string;
     affiliate4: string;
     affiliate4_url: string;
+    affiliate5: string;
+    affiliate5_url: string;
+    affiliate6: string;
+    affiliate6_url: string;
+    affiliate7: string;
+    affiliate7_url: string;
+    affiliate8: string;
+    affiliate8_url: string;
+    affiliate9: string;
+    affiliate9_url: string;
+    affiliate10: string;
+    affiliate10_url: string;
     title: string;
   };
 };
@@ -80,6 +92,48 @@ const AboutUs: NextPage<Props> = (props) => {
                     {props.data.affiliate4}
                   </a>
                 </p>
+                {props.data.affiliate5 === undefined ? null : (
+                  <p className="mb-3">
+                    <a href={props.data.affiliate5_url} target="_blank" rel="noopener noreferrer">
+                      {props.data.affiliate5}
+                    </a>
+                  </p>
+                )}
+                {props.data.affiliate6 === undefined ? null : (
+                  <p className="mb-3">
+                    <a href={props.data.affiliate6_url} target="_blank" rel="noopener noreferrer">
+                      {props.data.affiliate6}
+                    </a>
+                  </p>
+                )}
+                {props.data.affiliate7 === undefined ? null : (
+                  <p className="mb-3">
+                    <a href={props.data.affiliate7_url} target="_blank" rel="noopener noreferrer">
+                      {props.data.affiliate7}
+                    </a>
+                  </p>
+                )}
+                {props.data.affiliate8 === undefined ? null : (
+                  <p className="mb-3">
+                    <a href={props.data.affiliate8_url} target="_blank" rel="noopener noreferrer">
+                      {props.data.affiliate8}
+                    </a>
+                  </p>
+                )}
+                {props.data.affiliate9 === undefined ? null : (
+                  <p className="mb-3">
+                    <a href={props.data.affiliate9_url} target="_blank" rel="noopener noreferrer">
+                      {props.data.affiliate9}
+                    </a>
+                  </p>
+                )}
+                {props.data.affiliate10 === undefined ? null : (
+                  <p className="mb-3">
+                    <a href={props.data.affiliate10_url} target="_blank" rel="noopener noreferrer">
+                      {props.data.affiliate10}
+                    </a>
+                  </p>
+                )}
               </div>
             </div>
             <div className="container flex-1">
