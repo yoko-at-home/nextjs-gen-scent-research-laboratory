@@ -1674,13 +1674,13 @@ bser@2.1.1:
   dependencies:
     node-int64 "^0.4.0"
 
-budoux@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/budoux/-/budoux-0.0.3.tgz#a0fce0e62b7daa6b9dc12653fb21773f2ad2c624"
-  integrity sha512-w1qJHcRPAFoUNJqc001Fr+e20D8CciD5W3G7ey3p2pFrTQTtWzRDz62wkXGSNHVvj9DkAkYgRd6Gd/aI2sTrAg==
+budoux@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/budoux/-/budoux-0.0.4.tgz#2ff27543bdcd16c34754de2be265366d87c2349b"
+  integrity sha512-Z3s+lEvk/M9ab4VvCW/a1aCddJvWbbSgrWkibgFee/mq930AsMl+txH6C0ZYvsdC2tw9Vf6HeG3WPK+nzi0kaQ==
   dependencies:
-    commander "^8.3.0"
-    jsdom "^18.0.0"
+    commander "^9.1.0"
+    jsdom "^19.0.0"
 
 buffer-crc32@~0.2.3:
   version "0.2.13"
@@ -1877,6 +1877,11 @@ commander@8.3.0, commander@^8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-8.3.0.tgz#4837ea1b2da67b9c616a67afbb0fafee567bca66"
   integrity sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==
+
+commander@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-9.1.0.tgz#a6b263b2327f2e188c6402c42623327909f2dbec"
+  integrity sha512-i0/MaqBtdbnJ4XQs4Pmyb+oFQl+q0lsAmokVUH92SlSw4fkeAcG3bVon+Qt7hmtF+u3Het6o4VgrcY3qAoEB6w==
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -3664,10 +3669,10 @@ jsdom@^16.6.0:
     ws "^7.4.6"
     xml-name-validator "^3.0.0"
 
-jsdom@^18.0.0:
-  version "18.1.1"
-  resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-18.1.1.tgz#15ec896f5ab7df9669a62375606f47c8c09551aa"
-  integrity sha512-NmJQbjQ/gpS/1at/ce3nCx89HbXL/f5OcenBe8wU1Eik0ROhyUc3LtmG3567dEHAGXkN8rmILW/qtCOPxPHQJw==
+jsdom@^19.0.0:
+  version "19.0.0"
+  resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-19.0.0.tgz#93e67c149fe26816d38a849ea30ac93677e16b6a"
+  integrity sha512-RYAyjCbxy/vri/CfnjUWJQQtZ3LKlLnDqj+9XLNnJPgEGeirZs3hllKR20re8LUZ6o1b1X4Jat+Qd26zmP41+A==
   dependencies:
     abab "^2.0.5"
     acorn "^8.5.0"
