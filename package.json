@@ -68,7 +68,7 @@
     "microcms-js-sdk": "2.0.0",
     "npm-run-all": "4.1.5",
     "postcss": "8.4.12",
-    "prettier": "2.6.1",
+    "prettier": "2.6.2",
     "react-hooks-use-modal": "2.1.0",
     "react-test-renderer": "18.0.0",
     "swr": "1.2.2",
