@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "src/component/Button";
 
 const items = [
@@ -22,9 +22,14 @@ const Navigation = () => {
       setIsScrolled(false);
     }
   };
+  const isMountedRef = useRef(false);
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  });
+    isMountedRef.current = true;
+    return () => {
+      window.addEventListener("scroll", handleScroll);
+      isMountedRef.current = false;
+    };
+  }, []);
   return (
     <nav
       className={
