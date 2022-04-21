@@ -10,19 +10,19 @@ export default function newsPageId({ news, totalCount }) {
   return (
     <FixedLayout>
       <PageSubTitle fontWeight="bold">ニュース一覧</PageSubTitle>
-      <div className="flex flex-col justify-between min-h-full">
+      <div className="flex flex-col justify-between mx-auto min-h-full">
         <ul>
           {news.map((news) => {
             return (
               <li key={news.id}>
                 {!news.body ? (
                   <div>
-                    <div className="p-1 whitespace-nowrap">{news.title}</div>
+                    <div className="p-1">{news.title}</div>
                     <div className=" p-1">{news.description}</div>
                   </div>
                 ) : (
                   <div>
-                    <div className="p-1 whitespace-nowrap">{news.title}</div>
+                    <div className="p-1">{news.title}</div>
                     <div className="flex justify-between items-end">
                       <div className=" p-1">{news.description}</div>
                       <Link href={`/news/${news.id}`} passHref>
