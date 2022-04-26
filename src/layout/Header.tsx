@@ -1,5 +1,5 @@
 import cc from "classcat";
-import type { VFC } from "react";
+import type { FC } from "react";
 import { Logo, LogoSmall } from "src/component/Logo";
 import Navigation from "src/layout/Navigation";
 
@@ -11,7 +11,7 @@ type Props = {
 /**
  * @package
  */
-export const Header: VFC<Props> = (props) => {
+export const Header: FC<Props> = (props) => {
   return (
     <header>
       <div className="absolute top-2 right-[10%] z-50 justify-between translate-x-[50%] translate-y-[50%] sm:block md:right-[6%]">

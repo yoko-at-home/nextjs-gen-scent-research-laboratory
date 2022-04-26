@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import type { VFC } from "react";
+import type { FC } from "react";
 import { siteMetadata } from "src/data/siteMetaData";
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
   siteUrl: string;
 };
 
-const CommonSEO: VFC<Props> = ({ description, ogImage, ogType, title }) => {
+const CommonSEO: FC<Props> = ({ description, ogImage, ogType, title }) => {
   const router = useRouter();
   return (
     <Head>
@@ -29,7 +29,7 @@ const CommonSEO: VFC<Props> = ({ description, ogImage, ogType, title }) => {
   );
 };
 
-export const PageSEO: VFC<Props> = ({ description, title }) => {
+export const PageSEO: FC<Props> = ({ description, title }) => {
   const ogSiteLogo = siteMetadata.siteUrl + siteMetadata.siteLogo;
 
   return (

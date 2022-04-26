@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { VFC } from "react";
+import type { FC } from "react";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -31,7 +31,7 @@ const productTitles = [
   },
 ];
 
-const Product: VFC<ProductProps> = (props) => {
+const Product: FC<ProductProps> = (props) => {
   const Sample = () => {
     return (
       <div>

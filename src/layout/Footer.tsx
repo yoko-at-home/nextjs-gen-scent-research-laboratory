@@ -1,11 +1,11 @@
 import Link from "next/link";
-import type { VFC } from "react";
+import type { FC } from "react";
 import { siteMetadata } from "src/data/siteMetaData";
 
 /**
  * @package
  */
-export const Footer: VFC = () => {
+export const Footer: FC = () => {
   return (
     <footer className="mt-5 bg-stone-50/40">
       <div className="flex flex-col items-center mt-16">

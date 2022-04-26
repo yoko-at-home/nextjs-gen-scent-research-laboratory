@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { VFC } from "react";
+import type { FC } from "react";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -7,7 +7,7 @@ import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
 import type { BasicProps } from "src/types/type";
 
-const ApplicationId: VFC<BasicProps> = (props) => {
+const ApplicationId: FC<BasicProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO

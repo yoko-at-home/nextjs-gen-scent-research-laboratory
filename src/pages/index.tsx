@@ -1,4 +1,4 @@
-import type { VFC } from "react";
+import type { FC } from "react";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -6,7 +6,7 @@ import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 import type { BasicObjectProps } from "src/types/pageType";
 
-const Home: VFC<BasicObjectProps> = (props) => {
+const Home: FC<BasicObjectProps> = (props) => {
   return (
     <div
       className="absolute top-0 w-full min-h-screen bg-top bg-cover"

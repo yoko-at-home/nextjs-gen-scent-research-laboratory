@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { GetStaticProps } from "next";
 import Link from "next/link";
-import type { VFC } from "react";
+import type { FC } from "react";
 import { Pagination } from "src/component/Pagenation";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -22,7 +22,7 @@ type Props = {
   totalCount: number;
 };
 
-const News: VFC<Props> = (props) => {
+const News: FC<Props> = (props) => {
   return (
     <FluidLayout width="main">
       <PageSEO

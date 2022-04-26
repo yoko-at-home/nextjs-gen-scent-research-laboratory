@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
-import type { VFC } from "react";
+import type { FC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
 import { ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -8,7 +8,7 @@ import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
 import type { OtherProps } from "src/types/type";
 
-const OtherId: VFC<OtherProps> = (props) => {
+const OtherId: FC<OtherProps> = (props) => {
   return (
     <FixedLayout>
       <PageSEO

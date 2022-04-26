@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { VFC } from "react";
+import type { FC } from "react";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -7,7 +7,7 @@ import { FluidLayout } from "src/layout";
 import { client } from "src/lib/client";
 import type { BasicProps } from "src/types/pageType";
 
-const Application: VFC<BasicProps> = (props) => {
+const Application: FC<BasicProps> = (props) => {
   return (
     <div
       className="absolute top-0 w-full min-h-screen bg-top bg-cover"

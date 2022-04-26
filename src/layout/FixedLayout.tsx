@@ -1,4 +1,4 @@
-import type { ReactNode, VFC } from "react";
+import type { FC, ReactNode } from "react";
 import { Button } from "src/component/Button";
 
 import { Footer } from "./Footer";
@@ -13,7 +13,7 @@ type Props = {
 /**
  * @package
  */
-export const FixedLayout: VFC<Props> = (props) => {
+export const FixedLayout: FC<Props> = (props) => {
   return (
     <div className="grid grid-rows-[auto,1fr,auto] mx-auto min-h-screen">
       <Header opacity="80" />

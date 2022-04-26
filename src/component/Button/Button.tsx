@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
-import type { ReactNode, VFC } from "react";
+import type { FC, ReactNode } from "react";
 
 type ButtonProps = {
   children: ReactNode;
   onClick: "Home" | "Return";
 };
 
-export const Button: VFC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props) => {
   const router = useRouter();
   const handleOnClickHome = () => {
     return router.push("/");
@@ -26,7 +26,7 @@ export const Button: VFC<ButtonProps> = (props) => {
 type ButtonToContactProps = {
   children: string;
 };
-export const ButtonToContact: VFC<ButtonToContactProps> = (props) => {
+export const ButtonToContact: FC<ButtonToContactProps> = (props) => {
   const router = useRouter();
   const handleOnClick = () => {
     return router.push("/contact");

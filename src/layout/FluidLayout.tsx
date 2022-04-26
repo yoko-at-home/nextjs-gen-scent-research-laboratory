@@ -1,6 +1,6 @@
 import cc from "classcat";
 import { useRouter } from "next/router";
-import type { ReactNode, VFC } from "react";
+import type { FC, ReactNode } from "react";
 
 import { Footer } from "./Footer";
 import { Header } from "./Header";
@@ -15,7 +15,7 @@ type Props = {
 /**
  * @package
  */
-export const FluidLayout: VFC<Props> = (props) => {
+export const FluidLayout: FC<Props> = (props) => {
   const router = useRouter();
   const url = "/aboutus";
   return (
