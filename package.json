@@ -62,7 +62,7 @@
     "eslint-plugin-sort-destructure-keys": "1.4.0",
     "eslint-plugin-tailwindcss": "3.5.0",
     "eslint-plugin-testing-library": "5.4.0",
-    "husky": "7.0.4",
+    "husky": "8.0.0",
     "jest": "28.1.0",
     "lint-staged": "12.4.1",
     "microcms-js-sdk": "2.0.0",
