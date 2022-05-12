@@ -96,7 +96,7 @@ const Product: FC<ProductProps> = (props) => {
         <div className="flex flex-row mb-6">
           <div>
             <PageSubTitle fontWeight="bold">{productTitles[2].title}</PageSubTitle>
-            <p>{productTitles[2].description}</p>
+            <div>{productTitles[2].description}</div>
           </div>
           <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
             <Image
@@ -212,7 +212,7 @@ const Product: FC<ProductProps> = (props) => {
           <div>
             {/* <PageTitle>製品</PageTitle> */}
             <PageSubTitle fontWeight="bold">{productTitles[0].title}</PageSubTitle>
-            <p>{productTitles[0].description}</p>
+            <div>{productTitles[0].description}</div>
           </div>
           <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
             <Image
