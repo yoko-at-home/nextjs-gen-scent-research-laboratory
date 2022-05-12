@@ -44,7 +44,11 @@ export const Header: FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <Navigation />
+      <div className="relative min-h-full">
+        <div className="sticky top-0 z-50">
+          <Navigation />
+        </div>
+      </div>
     </header>
   );
 };
