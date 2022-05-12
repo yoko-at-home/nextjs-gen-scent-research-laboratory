@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import cc from "classcat";
 import type { FC } from "react";
 import { Logo, LogoSmall } from "src/component/Logo";
-import Navigation from "src/layout/Navigation";
 
 type Props = {
   className?: string;
@@ -42,11 +42,6 @@ export const Header: FC<Props> = (props) => {
               <span className="font-caribri">Laboratory</span>
             </h1>
           </div>
-        </div>
-      </div>
-      <div className="relative min-h-full">
-        <div className="sticky top-0 z-50">
-          <Navigation />
         </div>
       </div>
     </header>
