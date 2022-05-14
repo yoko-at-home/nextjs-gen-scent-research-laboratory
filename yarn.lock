@@ -5331,7 +5331,7 @@ react-hooks-use-modal@2.1.0:
   dependencies:
     disable-scroll "^0.6.0"
 
-react-intersection-observer@^9.1.0:
+react-intersection-observer@9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-9.1.0.tgz#27e66be9113fdf6fc6d745e849e1ad6ef20f97f1"
   integrity sha512-XSDWQGzgJ4/B4eW39+qa3S+uc4Gb+m6lxXR54m/uD5lqeL5sLrgYdntbjl4BlTYAblgUhz+JB5obINhZaD+c0Q==
