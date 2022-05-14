@@ -1,7 +1,7 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import cc from "classcat";
 import type { FC } from "react";
 import { Logo, LogoSmall } from "src/component/Logo";
-import Navigation from "src/layout/Navigation";
 
 type Props = {
   className?: string;
@@ -44,7 +44,6 @@ export const Header: FC<Props> = (props) => {
           </div>
         </div>
       </div>
-      <Navigation />
     </header>
   );
 };
