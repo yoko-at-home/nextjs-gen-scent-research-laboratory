@@ -28,14 +28,16 @@ export const FluidLayout: FC<Props> = (props) => {
       {router.pathname === url ? <Header opacity="0" /> : <Header opacity="100" />}
       <Navigation inView={inView} />
       <div ref={ref} />
-      <main
-        className={cc([
-          { "mx-5 sm:mx-10 md:mx-auto md:w-11/12 lg:w-9/12": props.width === "main" },
-          { "mx-5 sm:mx-10 md:mx-auto md:w-11/12": props.width === "product" },
-        ])}
-      >
-        <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
-      </main>
+      <div className="-z-10">
+        <main
+          className={cc([
+            { "mx-5 sm:mx-10 md:mx-auto md:w-11/12 lg:w-9/12": props.width === "main" },
+            { "mx-5 sm:mx-10 md:mx-auto md:w-11/12": props.width === "product" },
+          ])}
+        >
+          <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
+        </main>
+      </div>
       <Footer />
     </div>
   );

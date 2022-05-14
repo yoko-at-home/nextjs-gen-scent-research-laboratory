@@ -25,9 +25,11 @@ export const FixedLayout: FC<Props> = (props) => {
       <Header opacity="80" />
       <Navigation inView={inView} />
       <div ref={ref} />
-      <main className="mx-5 mt-8 text-zinc-500 sm:mx-20 md:mt-16 lg:mx-32">
-        <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
-      </main>
+      <div className="-z-10">
+        <main className="mx-5 mt-8 text-zinc-500 sm:mx-20 md:mt-16 lg:mx-32">
+          <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
+        </main>
+      </div>
       <div className="flex justify-around items-center mt-20 h-24">
         <div className="opacity-0">
           <Button onClick="Home">Home</Button>
