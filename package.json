@@ -39,7 +39,7 @@
     "react-intersection-observer": "9.4.0"
   },
   "devDependencies": {
-    "@playwright/test": "1.24.0",
+    "@playwright/test": "1.24.1",
     "@sendgrid/mail": "7.7.0",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.3.0",
