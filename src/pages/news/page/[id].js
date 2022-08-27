@@ -2,13 +2,13 @@
 import Link from "next/link";
 import { Pagination } from "src/component/Pagenation";
 import { PageSubTitle } from "src/component/PageTitle";
-import { FixedLayout } from "src/layout";
+import { LayoutNews } from "src/layout";
 
 const PER_PAGE = 6;
 
 export default function newsPageId({ news, totalCount }) {
   return (
-    <FixedLayout>
+    <LayoutNews>
       <PageSubTitle fontWeight="bold">ニュース一覧</PageSubTitle>
       <div className="flex flex-col justify-between mx-auto min-h-full">
         <ul>
@@ -40,7 +40,7 @@ export default function newsPageId({ news, totalCount }) {
         </ul>
         <Pagination totalCount={totalCount} />
       </div>
-    </FixedLayout>
+    </LayoutNews>
   );
 }
 
