@@ -29,6 +29,7 @@ const MyDocument = () => {
         <meta name="application-name" content={siteMetadata.title} />
         <meta name="theme-color" content="#330033" />
         <meta name="description" content={siteMetadata.description} />
+        <meta name="keywords" content={siteMetadata.keywords} />
         <link rel="icon" sizes="192x192" href="/static/favicons/icon-192x192.png" />
         <link rel="icon" href="/static/favicons/favicon.ico" />
         {/* <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials" /> */}

@@ -1,6 +1,6 @@
 import cc from "classcat";
 import type { NextPage } from "next";
-import type { ReactNode, VFC } from "react";
+import type { FC, ReactNode } from "react";
 
 type FontProps = {
   fontWeight: "ordinary" | "bold";
@@ -14,7 +14,7 @@ export const PageTitle: NextPage = (props) => {
     </h1>
   );
 };
-export const PageSubTitle: VFC<FontProps> = (props) => {
+export const PageSubTitle: FC<FontProps> = (props) => {
   return (
     <h2
       className={cc([

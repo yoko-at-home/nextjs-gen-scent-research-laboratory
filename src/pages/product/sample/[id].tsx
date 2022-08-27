@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 import Image from "next/image";
-import type { VFC } from "react";
+import type { FC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
 import { ProductMainTitle, ProductTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -9,7 +9,7 @@ import { FixedLayout } from "src/layout";
 import { client } from "src/lib/client";
 import type { SampleProps } from "src/types/type";
 
-const SampleId: VFC<SampleProps> = (props) => {
+const SampleId: FC<SampleProps> = (props) => {
   return (
     <FixedLayout>
       {!props.data.title ? (
