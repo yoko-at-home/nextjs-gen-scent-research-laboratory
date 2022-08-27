@@ -73,7 +73,7 @@ export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey
     headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" },
   };
 
-const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news/?limit=6", key);
+  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news/?limit=6", key);
   const data = await res.data;
 
   // プレビュー時は draft のコンテンツを追加
