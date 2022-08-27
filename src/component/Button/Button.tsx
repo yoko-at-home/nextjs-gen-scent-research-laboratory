@@ -40,7 +40,7 @@ export const ButtonToContact: FC<ButtonToContactProps> = (props) => {
   );
 };
 
-export const ButtonToNews: VFC<ButtonToContactProps> = (props) => {
+export const ButtonToNews: FC<ButtonToContactProps> = (props) => {
   const router = useRouter();
   const handleOnClick = () => {
     return router.push("/news");
