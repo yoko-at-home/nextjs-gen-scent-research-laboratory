@@ -2,13 +2,13 @@
 import Link from "next/link";
 import { Pagination } from "src/component/Pagenation";
 import { PageSubTitle } from "src/component/PageTitle";
-import { FixedLayout } from "src/layout";
+import { LayoutNews } from "src/layout";
 
-const PER_PAGE = 4;
+const PER_PAGE = 6;
 
 export default function newsPageId({ news, totalCount }) {
   return (
-    <FixedLayout>
+    <LayoutNews>
       <PageSubTitle fontWeight="bold">ニュース一覧</PageSubTitle>
       <div className="flex flex-col justify-between min-h-full">
         <ul>
@@ -40,7 +40,7 @@ export default function newsPageId({ news, totalCount }) {
         </ul>
         <Pagination totalCount={totalCount} />
       </div>
-    </FixedLayout>
+    </LayoutNews>
   );
 }
 
@@ -75,7 +75,7 @@ export const getStaticProps = async (context) => {
     headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
   };
 
-  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}news?offset=${(id - 1) * 4}&limit=4`, key)
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}news?offset=${(id - 1) * 6}&limit=6`, key)
     .then((res) => {
       return res.json();
     })
