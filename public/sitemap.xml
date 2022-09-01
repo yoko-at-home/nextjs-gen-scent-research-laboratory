@@ -1,134 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
+<!--  created with free sitemap generation system www.sitemapxml.jp  -->
 <url>
-  <loc>https://www.gen-scent.com/</loc>
-  <priority>1.0</priority>
+<loc>https://www.gen-scent.com/</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product</loc>
-  <priority>0.8</priority>
+<loc>https://www.gen-scent.com/product</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/application</loc>
-  <priority>0.8</priority>
+<loc>https://www.gen-scent.com/application</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/news</loc>
-  <priority>0.8</priority>
+<loc>https://www.gen-scent.com/news</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/aboutus</loc>
-  <priority>0.8</priority>
+<loc>https://www.gen-scent.com/aboutus</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/contact</loc>
-  <priority>0.8</priority>
+<loc>https://www.gen-scent.com/contact</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/privacy</loc>
-  <priority>0.8</priority>
+<loc>https://www.gen-scent.com/privacy</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/mass-spectral-libraries</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/mass-spectral-libraries
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/chrom-compare-plus</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/chrom-compare-plus
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/mass-finder-and-terpenoids-library</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/mass-finder-and-terpenoids-library
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/gc-ms-deconvolution-software</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/gc-ms-deconvolution-software
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/gc-ms-and-lc-ms-software-for-metabolome-analysis</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/gc-ms-and-lc-ms-software-for-metabolome-analysis
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/analysis-software-for-gcxgc-tofms</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/analysis-software-for-gcxgc-tofms
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/flavor-fragrance-and-odor-simulator</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/flavor-fragrance-and-odor-simulator
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/mass-spectral-analysis-support-software</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/mass-spectral-analysis-support-software
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/simple-gc-ms-data-processing-software</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/simple-gc-ms-data-processing-software
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software/customized-software</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software/customized-software
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/software2/odor-evaluation-software</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/software2/odor-evaluation-software
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/sample/samples-for-training</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/sample/samples-for-training
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/sample/concentrating-element-for-thermal-decomposition</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/sample/concentrating-element-for-thermal-decomposition
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/sample/high-heat-resistant-gc-columns</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/sample/high-heat-resistant-gc-columns
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/odor-analysis/volatile-component-sampling-system</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/odor-analysis/volatile-component-sampling-system
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/odor-analysis/gas-chromatograph-mass-spectrometer</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/odor-analysis/gas-chromatograph-mass-spectrometer
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/odor-analysis/other-equipment</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/odor-analysis/other-equipment
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/other-services/gc-ms-data-analysis-services</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/other-services/gc-ms-data-analysis-services
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/other-services/technical-consultation</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/other-services/technical-consultation
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/product/other-services/various-consultations</loc>
-  <priority>0.7</priority>
+<loc>
+https://www.gen-scent.com/product/other-services/various-consultations
+</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/application/trffrdicg</loc>
-  <priority>0.7</priority>
+<loc>https://www.gen-scent.com/application/trffrdicg</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/news/2022-february-18</loc>
-  <priority>0.7</priority>
+<loc>https://www.gen-scent.com/news/sdsz6zi8apa</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/news/2021-november</loc>
-  <priority>0.7</priority>
+<loc>https://www.gen-scent.com/news/r5o4pfpi1u</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/news/2021-september</loc>
-  <priority>0.7</priority>
+<loc>https://www.gen-scent.com/news/zkx4n5njf-z6</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gen-scent.com/news/2021-july</loc>
-  <priority>0.7</priority>
+<loc>https://www.gen-scent.com/news/4ay0s0aogwy4</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/vci3ky86l</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/0r93racnr2im</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/page/1</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/page/2</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/wy-ojxt-i52b</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/z-95xdzcore</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/2022-february-18</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/2021-september</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.51</priority>
+</url>
+<url>
+<loc>https://www.gen-scent.com/news/2021-july</loc>
+<lastmod>2022-09-01T00:30:22+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 
 </urlset>
