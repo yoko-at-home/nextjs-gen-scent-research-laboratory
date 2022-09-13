@@ -54,7 +54,7 @@
     "axios": "0.27.2",
     "budoux": "0.2.0",
     "classcat": "5.0.4",
-    "date-fns": "2.29.2",
+    "date-fns": "2.29.3",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",
     "eslint-config-prettier": "8.5.0",
