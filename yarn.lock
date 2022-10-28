@@ -5718,10 +5718,10 @@ react-error-boundary@3.1.4:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-react-hooks-use-modal@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/react-hooks-use-modal/-/react-hooks-use-modal-3.1.0.tgz#fef663ee91966740d16d7c2504b7e54c6b7982de"
-  integrity sha512-jmXyAm43Wv6+gHFZPUcMKscULNKY8ljKstbZ9wRKQGqKaoXsRccLGkCsT+cZWqkEwhqYxouOPO/Sau68WN867Q==
+react-hooks-use-modal@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-hooks-use-modal/-/react-hooks-use-modal-3.2.0.tgz#a999b689aa45aa3d3bd69c17de13660eab97ec52"
+  integrity sha512-fYdoPBCkIBtvc3Xc1FnpZBdOEfF2a30nGHNprQ9bzOEZXyueYGHNDIJN78HMjABNlGTrcOfDqCpAp1T/gpj9Gg==
   dependencies:
     body-scroll-lock "^3.1.5"
     focus-trap "^7.0.0"
