@@ -2450,10 +2450,10 @@ bser@2.1.1:
   dependencies:
     node-int64 "^0.4.0"
 
-budoux@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/budoux/-/budoux-0.3.0.tgz#6aa206ee99c1f9f4b6f8be0dcd419bdfbeb89378"
-  integrity sha512-5wVP5qemJSZlp1iFNwLuzd/m0d7I6Hti84huvddwvZfdIecxyCMIZc6OMTKjuwWDl5Qxhz9awFtF9nl5CL4L4w==
+budoux@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/budoux/-/budoux-0.4.0.tgz#bd5069b5384de93c315acb37e7b2f5a60ca6cf74"
+  integrity sha512-7t2cz5Y6mEji4EgpgTB431k4kLAiCRqfZM9eoONDjsjd4VeXxphZPfaoQICqIGfizwEVs07UV2jITCETpTwDCg==
   dependencies:
     commander "^9.3.0"
     jsdom "^20.0.0"
