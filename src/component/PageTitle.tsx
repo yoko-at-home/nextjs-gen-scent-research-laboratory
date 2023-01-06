@@ -9,7 +9,7 @@ type FontProps = {
 
 export const PageTitle: NextPage = (props) => {
   return (
-    <h1 className="mt-20 mb-5 text-2xl font-extrabold tracking-tight leading-9 sm:text-2xl sm:leading-10 md:mt-24 md:mb-16 md:text-3xl md:leading-10 lg:mb-10">
+    <h1 className="mt-20 mb-5 text-2xl font-extrabold leading-9 tracking-tight sm:text-2xl sm:leading-10 md:mt-24 md:mb-16 md:text-3xl md:leading-10 lg:mb-10">
       {props.children}
     </h1>
   );

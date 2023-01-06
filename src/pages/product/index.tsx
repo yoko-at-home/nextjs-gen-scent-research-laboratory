@@ -41,19 +41,19 @@ const Product: FC<ProductProps> = (props) => {
             return (
               <li key={item.id}>
                 <div
-                  className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                  className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
                   style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                 >
                   {item.charm ? (
                     <div className="flex">
-                      <div className="flex flex-col p-2 w-3/4">
+                      <div className="flex w-3/4 flex-col p-2">
                         <Link href={`/product/sample/${item.id}`}>
                           <a className="mb-2 font-bold leading-tight">
                             {!item.title ? null : item.title}
                             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </a>
                         </Link>
-                        <div className="text-sm text-ellipsis line-clamp-4">
+                        <div className="text-ellipsis text-sm line-clamp-4">
                           <Link href={`/product/sample/${item.id}`}>
                             <a aria-label="Read more">{item.description}</a>
                           </Link>
@@ -70,12 +70,12 @@ const Product: FC<ProductProps> = (props) => {
                   ) : (
                     <Link href={`/product/sample/${item.id}`}>
                       <a aria-label="Read more">
-                        <div className="flex flex-col px-2 pt-2 w-full">
+                        <div className="flex w-full flex-col px-2 pt-2">
                           <div className="mb-2 font-bold leading-tight">
                             {!item.title ? null : item.title}
                             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </div>
-                          <div className="text-sm text-ellipsis line-clamp-4">
+                          <div className="text-ellipsis text-sm line-clamp-4">
                             <div>{item.description}</div>
                           </div>
                         </div>
@@ -93,12 +93,12 @@ const Product: FC<ProductProps> = (props) => {
   const Odor = () => {
     return (
       <div>
-        <div className="flex flex-row mb-6">
+        <div className="mb-6 flex flex-row">
           <div>
             <PageSubTitle fontWeight="bold">{productTitles[2].title}</PageSubTitle>
             <div>{productTitles[2].description}</div>
           </div>
-          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
+          <div className="ml-5 flex flex-col-reverse items-baseline px-1 sm:px-2 md:p-3">
             <Image
               alt="揮発性成分用サンプリングシステム"
               src="/static/images/software/sampling.jpg"
@@ -116,12 +116,12 @@ const Product: FC<ProductProps> = (props) => {
                 <Link href={`/product/odor-analysis/${item.id}`}>
                   <a aria-label="Read more">
                     <div
-                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                      className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
-                      <div className="flex flex-col px-2 pt-2 w-full">
+                      <div className="flex w-full flex-col px-2 pt-2">
                         <div className="mb-2 font-bold leading-tight">{item.title}</div>
-                        <div className="text-sm text-ellipsis line-clamp-4">{item.description}</div>
+                        <div className="text-ellipsis text-sm line-clamp-4">{item.description}</div>
                       </div>
                     </div>
                   </a>
@@ -144,12 +144,12 @@ const Product: FC<ProductProps> = (props) => {
                 <Link href={`/product/other-services/${item.id}`}>
                   <a aria-label="Read more">
                     <div
-                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                      className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
-                      <div className="flex flex-col px-2 pt-2 w-full">
+                      <div className="flex w-full flex-col px-2 pt-2">
                         <div className="mb-2 font-bold leading-tight">{item.title}</div>
-                        <div className="text-sm text-ellipsis line-clamp-4">
+                        <div className="text-ellipsis text-sm line-clamp-4">
                           <div>
                             {item.description}
                             <br />
@@ -176,16 +176,16 @@ const Product: FC<ProductProps> = (props) => {
               <Link href={`/product/software2/${item.id}`}>
                 <a aria-label="Read more">
                   <div
-                    className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                    className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
                     style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                   >
-                    <div className="flex flex-col px-2 pt-2 w-full">
+                    <div className="flex w-full flex-col px-2 pt-2">
                       <div className="mb-2 font-bold leading-tight">
                         {!item.title ? null : item.title}
                         {!item.subtitle ? null : <div>{item.subtitle}</div>}
                         {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                       </div>
-                      <div className="text-sm text-ellipsis line-clamp-4">{item.description}</div>
+                      <div className="text-ellipsis text-sm line-clamp-4">{item.description}</div>
                     </div>
                   </div>
                 </a>
@@ -208,13 +208,13 @@ const Product: FC<ProductProps> = (props) => {
       />
 
       <div>
-        <div className="flex flex-row mb-6">
+        <div className="mb-6 flex flex-row">
           <div>
             {/* <PageTitle>製品</PageTitle> */}
             <PageSubTitle fontWeight="bold">{productTitles[0].title}</PageSubTitle>
             <div>{productTitles[0].description}</div>
           </div>
-          <div className="flex flex-col-reverse items-baseline px-1 ml-5 sm:px-2 md:p-3">
+          <div className="ml-5 flex flex-col-reverse items-baseline px-1 sm:px-2 md:p-3">
             <Image
               alt="ソフトウェア・ライブラリ"
               src="/static/images/software/topimage.jpg"
@@ -232,16 +232,16 @@ const Product: FC<ProductProps> = (props) => {
                 <Link href={`/product/software/${item.id}`}>
                   <a aria-label="Read more">
                     <div
-                      className="flex p-1 h-36 rounded hover:opacity-90 hover:scale-[0.99] sm:p-3"
+                      className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
                       style={{ background: `center/cover no-repeat url(${item.image.url})` }}
                     >
-                      <div className="flex flex-col px-2 pt-2 w-full">
+                      <div className="flex w-full flex-col px-2 pt-2">
                         <div className="mb-2 font-bold leading-tight">
                           {!item.title ? null : item.title}
                           {!item.subtitle ? null : <div>{item.subtitle}</div>}
                           {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                         </div>
-                        <div className="text-sm text-ellipsis line-clamp-4">
+                        <div className="text-ellipsis text-sm line-clamp-4">
                           <div>{item.description}</div>
                         </div>
                       </div>

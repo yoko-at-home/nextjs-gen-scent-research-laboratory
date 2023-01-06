@@ -9,13 +9,13 @@ import type { BasicObjectProps } from "src/types/pageType";
 const Home: FC<BasicObjectProps> = (props) => {
   return (
     <div
-      className="absolute top-0 w-full min-h-screen bg-top bg-cover"
+      className="absolute top-0 min-h-screen w-full bg-cover bg-top"
       style={{
         backgroundImage:
           "url('https://images.microcms-assets.io/assets/7e488163bae049938953f9f59d95f21d/1101535894b042978b00b2ed8858b362/home-background.webp?w=2234')",
       }}
     >
-      <div className="z-40 text-zinc-700 bg-white/80">
+      <div className="z-40 bg-white/80 text-zinc-700">
         <FluidLayout width="main">
           <PageSEO
             title={`${siteMetadata.title}`}
@@ -26,7 +26,7 @@ const Home: FC<BasicObjectProps> = (props) => {
           />
           <PageTitle>{props.data.title}</PageTitle>
           <div
-            className="mb-12 leading-loose sm:mb-20 animation"
+            className="animation mb-12 leading-loose sm:mb-20"
             dangerouslySetInnerHTML={{
               // eslint-disable-next-line @typescript-eslint/naming-convention
               __html: `${props.data.body}`,

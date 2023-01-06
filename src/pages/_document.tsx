@@ -36,7 +36,7 @@ const MyDocument = () => {
         {/* <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@900&display=swap" rel="stylesheet" /> */}
         <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet"></link>
       </Head>
-      <body className="font-sans antialiased bg-white">
+      <body className="bg-white font-sans antialiased">
         <Main />
         <div id="root"></div>
         <NextScript />

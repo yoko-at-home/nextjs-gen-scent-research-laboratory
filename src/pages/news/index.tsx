@@ -40,13 +40,13 @@ const News: FC<Props> = (props) => {
         {props.data.map((item) => {
           return (
             <li key={item.id}>
-              <div className="flex flex-col p-8 mb-10 bg-gray-200/50 rounded sm:p-3">
+              <div className="mb-10 flex flex-col rounded bg-gray-200/50 p-8 sm:p-3">
                 <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
-                <div className="flex flex-row-reverse justify-between items-end">
+                <div className="flex flex-row-reverse items-end justify-between">
                   <Link href={`/news/${item.id}`} passHref>
                     <a aria-label="Read more">
                       {item.body === undefined ? null : (
-                        <span className="p-2 ml-5 whitespace-nowrap bg-gray-300">詳細</span>
+                        <span className="ml-5 whitespace-nowrap bg-gray-300 p-2">詳細</span>
                       )}
                     </a>
                   </Link>

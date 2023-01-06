@@ -22,7 +22,7 @@ const Success: NextPage = () => {
       <div className="flex justify-center">
         <div className="flex">
           <Image src="/static/animation/88696-mail.gif" alt="mail sent icon" width="180px" height="180px" />
-          <span className="font-caribri text-xs text-gray-500 rotate-45 origin-left md:ml-32">
+          <span className="origin-left rotate-45 font-caribri text-xs text-gray-500 md:ml-32">
             <sup>LottieFiles by</sup>
             <br />
             <a

@@ -10,7 +10,7 @@ export default function newsPageId({ news, totalCount }) {
   return (
     <LayoutNews>
       <PageSubTitle fontWeight="bold">ニュース一覧</PageSubTitle>
-      <div className="flex flex-col justify-between mx-auto min-h-full">
+      <div className="mx-auto flex min-h-full flex-col justify-between">
         <ul>
           {news.map((news) => {
             return (
@@ -23,10 +23,10 @@ export default function newsPageId({ news, totalCount }) {
                 ) : (
                   <div>
                     <div className="p-1">{news.title}</div>
-                    <div className="flex justify-between items-end">
+                    <div className="flex items-end justify-between">
                       <div className=" p-1">{news.description}</div>
                       <Link href={`/news/${news.id}`} passHref>
-                        <a className="p-1 text-blue-400 hover:text-blue-900 whitespace-nowrap hover:bg-gray-300">
+                        <a className="whitespace-nowrap p-1 text-blue-400 hover:bg-gray-300 hover:text-blue-900">
                           詳細
                         </a>
                       </Link>

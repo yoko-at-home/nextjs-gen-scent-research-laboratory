@@ -30,7 +30,7 @@ export const FixedLayout: FC<Props> = (props) => {
           <LayoutErrorBoundary>{props.children}</LayoutErrorBoundary>
         </main>
       </div>
-      <div className="flex justify-around items-center mt-20 h-24">
+      <div className="mt-20 flex h-24 items-center justify-around">
         <div className="opacity-0">
           <Button onClick="Home">Home</Button>
         </div>

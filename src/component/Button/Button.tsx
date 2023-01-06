@@ -16,7 +16,7 @@ export const Button: FC<ButtonProps> = (props) => {
   };
   return (
     <button type="button" onClick={props.onClick === "Return" ? handleOnClickReturn : handleOnClickHome}>
-      <a className="p-3 font-bold leading-10 text-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded sm:text-lg">
+      <a className="rounded bg-gradient-to-r from-gray-400 to-gray-500 p-3 font-bold leading-10 text-gray-100 sm:text-lg">
         {props.children}
       </a>
     </button>
@@ -33,7 +33,7 @@ export const ButtonToContact: FC<ButtonToContactProps> = (props) => {
   };
   return (
     <button type="button" onClick={handleOnClick}>
-      <a className="p-5 font-bold tracking-widest text-gray-100 bg-gradient-to-r from-gray-400 to-[#330033] rounded opacity-90 sm:text-lg">
+      <a className="rounded bg-gradient-to-r from-gray-400 to-[#330033] p-5 font-bold tracking-widest text-gray-100 opacity-90 sm:text-lg">
         {props.children}
       </a>
     </button>
@@ -47,7 +47,7 @@ export const ButtonToNews: FC<ButtonToContactProps> = (props) => {
   };
   return (
     <button type="button" onClick={handleOnClick}>
-      <a className="p-3 font-bold tracking-tight text-gray-100 bg-gradient-to-r from-gray-400 to-gray-500 rounded opacity-90 sm:text-lg">
+      <a className="rounded bg-gradient-to-r from-gray-400 to-gray-500 p-3 font-bold tracking-tight text-gray-100 opacity-90 sm:text-lg">
         {props.children}
       </a>
     </button>

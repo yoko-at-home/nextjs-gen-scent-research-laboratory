@@ -8,13 +8,13 @@ import { siteMetadata } from "src/data/siteMetaData";
 export const Footer: FC = () => {
   return (
     <footer className="mt-5 bg-stone-50/40">
-      <div className="flex flex-col items-center mt-16">
-        <div className="flex justify-between mx-5 mb-2 space-x-2 text-sm">
+      <div className="mt-16 flex flex-col items-center">
+        <div className="mx-5 mb-2 flex justify-between space-x-2 text-sm">
           <div>{siteMetadata.author}</div>
           <div className="whitespace-nowrap">{`© ${new Date().getFullYear()}`}</div>
-          <div className="font-caribri whitespace-nowrap">All Rights Reserved.</div>
+          <div className="whitespace-nowrap font-caribri">All Rights Reserved.</div>
         </div>
-        <div className="flex mb-2 space-x-2 text-xs hover:text-gray-400">
+        <div className="mb-2 flex space-x-2 text-xs hover:text-gray-400">
           <Link href="/privacy">個人情報保護方針</Link>
         </div>
         <div className="my-8 font-caribri text-xs hover:text-gray-400">

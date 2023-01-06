@@ -34,14 +34,14 @@ const SampleId: FC<SampleProps> = (props) => {
         {!props.data.title ? (
           <div className="mt-8" />
         ) : (
-          <div className="flex justify-start items-center">
+          <div className="flex items-center justify-start">
             <ProductTitle>
               {!props.data.title ? null : props.data.title}
               <br />
               {!props.data.subtitle ? null : props.data.subtitle}
             </ProductTitle>
             {props.data.charm_body === undefined ? null : (
-              <div className="pt-3 ml-12">
+              <div className="ml-12 pt-3">
                 <Image
                   src={props.data.charm_body.url}
                   width={`120px`}
