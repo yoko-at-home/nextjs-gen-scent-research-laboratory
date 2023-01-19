@@ -1715,10 +1715,10 @@ binary-extensions@^2.0.0:
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-body-scroll-lock@^3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-3.1.5.tgz#c1392d9217ed2c3e237fee1e910f6cdd80b7aaec"
-  integrity sha512-Yi1Xaml0EvNA0OYWxXiYNqY24AfWkbA6w5vxE7GWxtKfzIbZM+Qw+aSmkgsbWzbHiy/RCSkUZBplVxTA+E4jJg==
+body-scroll-lock@^4.0.0-beta.0:
+  version "4.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-4.0.0-beta.0.tgz#4f78789d10e6388115c0460cd6d7d4dd2bbc4f7e"
+  integrity sha512-a7tP5+0Mw3YlUJcGAKUqIBkYYGlYxk2fnCasq/FUph1hadxlTRjF+gAcZksxANnaMnALjxEddmSi/H3OR8ugcQ==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -2607,7 +2607,7 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.7.tgz#609f39207cb614b89d0765b477cb2d437fbf9787"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-focus-trap@^7.0.0:
+focus-trap@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-7.2.0.tgz#25af61b5635d3c18cd2fd176087db7b60be72c6b"
   integrity sha512-v4wY6HDDYvzkBy4735kW5BUEuw6Yz9ABqMYLuTNbzAFPcBOGiGHwwcNVMvUz4G0kgSYh13wa/7TG3XwTeT4O/A==
@@ -4045,13 +4045,13 @@ react-error-boundary@3.1.4:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
-react-hooks-use-modal@3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/react-hooks-use-modal/-/react-hooks-use-modal-3.2.0.tgz#a999b689aa45aa3d3bd69c17de13660eab97ec52"
-  integrity sha512-fYdoPBCkIBtvc3Xc1FnpZBdOEfF2a30nGHNprQ9bzOEZXyueYGHNDIJN78HMjABNlGTrcOfDqCpAp1T/gpj9Gg==
+react-hooks-use-modal@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-hooks-use-modal/-/react-hooks-use-modal-3.3.0.tgz#82489e9ccdd6ccfaba0505345bd8651e02a5f810"
+  integrity sha512-B6mVkPDgeq+vDXXAxha7oljgrb8XJwsMG9oG2A+4/9yXSLYNS1MnXH4vtFECaIfaMxYgWlDUlgAK9khfbawMqA==
   dependencies:
-    body-scroll-lock "^3.1.5"
-    focus-trap "^7.0.0"
+    body-scroll-lock "^4.0.0-beta.0"
+    focus-trap "^7.2.0"
 
 react-intersection-observer@9.4.1:
   version "9.4.1"
