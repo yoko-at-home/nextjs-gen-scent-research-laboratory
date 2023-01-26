@@ -42,7 +42,7 @@
     "@typescript-eslint/eslint-plugin": "5.49.0",
     "@typescript-eslint/parser": "5.49.0",
     "autoprefixer": "10.4.13",
-    "axios": "1.2.4",
+    "axios": "1.2.5",
     "classcat": "5.0.4",
     "date-fns": "2.29.3",
     "eslint": "8.32.0",
