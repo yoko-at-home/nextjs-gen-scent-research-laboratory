@@ -1,21 +1,11 @@
 /** @type {import('next').NextConfig} */
-
-const withPWA = require("next-pwa");
-
-const isProd = process.env.NODE_ENV === "production";
-
-module.exports = withPWA({
-  reactStrictMode: true,
+const nextConfig = {
   i18n: { locales: ["ja"], defaultLocale: "ja" },
-  typescript: { ignoreDevErrors: true },
+  reactStrictMode: true,
   poweredByHeader: false,
   images: {
     domains: ["images.microcms-assets.io"],
   },
-  pwa: {
-    dest: "public",
-    register: true,
-    disable: isProd ? false : true,
-    sw: "service-worker.js",
-  },
-});
+};
+
+module.exports = nextConfig;

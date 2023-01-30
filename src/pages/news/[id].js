@@ -26,7 +26,11 @@ const NewsId = (props) => {
         siteUrl={siteMetadata.siteUrl}
       />
       <main className="break-all">
-        {props.preview && <Link href="/api/clear-preview">プレビューモードを解除</Link>}
+        {props.preview && (
+          <Link legacyBehavior href="/api/clear-preview">
+            プレビューモードを解除
+          </Link>
+        )}
         <PageSubTitle fontWeight="ordinary">{props.data.title}</PageSubTitle>
         {!props.data.body ? (
           <div>入力がありません</div>

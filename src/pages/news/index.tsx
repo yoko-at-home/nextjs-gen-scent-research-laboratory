@@ -43,7 +43,7 @@ const News: FC<Props> = (props) => {
               <div className="mb-10 flex flex-col rounded bg-gray-200/50 p-8 sm:p-3">
                 <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
                 <div className="flex flex-row-reverse items-end justify-between">
-                  <Link href={`/news/${item.id}`} passHref>
+                  <Link legacyBehavior href={`/news/${item.id}`} passHref>
                     <a aria-label="Read more">
                       {item.body === undefined ? null : (
                         <span className="ml-5 whitespace-nowrap bg-gray-300 p-2">詳細</span>
