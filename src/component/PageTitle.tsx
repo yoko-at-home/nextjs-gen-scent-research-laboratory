@@ -3,11 +3,11 @@ import type { NextPage } from "next";
 import type { FC, ReactNode } from "react";
 
 type FontProps = {
-  fontWeight: "ordinary" | "bold";
+  fontWeight?: "ordinary" | "bold";
   children: ReactNode;
 };
 
-export const PageTitle: NextPage = (props) => {
+export const PageTitle: NextPage<FontProps> = (props) => {
   return (
     <h1 className="mt-20 mb-5 text-2xl font-extrabold leading-9 tracking-tight sm:text-2xl sm:leading-10 md:mt-24 md:mb-16 md:text-3xl md:leading-10 lg:mb-10">
       {props.children}
