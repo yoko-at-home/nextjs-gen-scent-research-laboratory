@@ -36,7 +36,7 @@ const Application: FC<BasicProps> = (props) => {
                         <div className="mb-3 p-1 text-xl font-semibold text-[#2c4f54] sm:text-2xl sm:font-bold md:text-3xl">
                           {item.title}
                         </div>
-                        <Link href={`/application/${item.id}`} passHref>
+                        <Link legacyBehavior href={`/application/${item.id}`} passHref>
                           <a aria-label="Read more">
                             {!item.body ? null : (
                               <span className="ml-5 whitespace-nowrap bg-gray-300 bg-gradient-to-r p-2 hover:from-gray-300 hover:to-[#33CC33] hover:text-gray-100">

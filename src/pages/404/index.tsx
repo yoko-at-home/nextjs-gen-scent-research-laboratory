@@ -2,6 +2,7 @@
 import type { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Image404 from "public/static/animation/404-error.gif";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -22,12 +23,12 @@ const Custom404: NextPage = () => {
         お探しのページが見つかりません。
         <br />
         サポートをご希望の場合は、
-        <Link href="/contact">
+        <Link legacyBehavior href="/contact">
           <a className="font-bold text-[#830683]">コンタクトページ </a>
         </Link>
         よりお問い合わせください。
         <div className="flex justify-center">
-          <Image src="/static/animation/404-error.gif" alt="meil" width="180px" height="180px" />
+          <Image alt="お探しのページが見つかりません" src={Image404} />
         </div>
       </div>
     </FluidLayout>

@@ -21,10 +21,10 @@ export const Pagination: NextPage<Props> = ({ totalCount }) => {
           {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => {
             return (
               <li key={index}>
-                <Link href={`/news/page/${number}`}>
-                  <a className="mr-6 rounded bg-gradient-to-r from-gray-400 to-gray-500 p-3 text-gray-300 opacity-80 sm:px-4">
+                <Link legacyBehavior href={`/news/page/${number}`}>
+                  <div className="mr-6 rounded bg-gradient-to-r from-gray-400 to-gray-500 p-3 text-gray-300 opacity-80 sm:px-4">
                     {number}
-                  </a>
+                  </div>
                 </Link>
               </li>
             );

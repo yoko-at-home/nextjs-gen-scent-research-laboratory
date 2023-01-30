@@ -42,12 +42,7 @@ const SampleId: FC<SampleProps> = (props) => {
             </ProductTitle>
             {props.data.charm_body === undefined ? null : (
               <div className="ml-12 pt-3">
-                <Image
-                  src={props.data.charm_body.url}
-                  width={`120px`}
-                  height={`94px`}
-                  alt={siteMetadata.altForImages}
-                />
+                <Image src={props.data.charm_body.url} width={120} height={94} alt={siteMetadata.altForImages} />
               </div>
             )}
           </div>

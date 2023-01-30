@@ -21,7 +21,7 @@ const Success: NextPage = () => {
       <PageTitle>{router.query.subject}</PageTitle>
       <div className="flex justify-center">
         <div className="flex">
-          <Image src="/static/animation/88696-mail.gif" alt="mail sent icon" width="180px" height="180px" />
+          <Image src="/static/animation/88696-mail.gif" alt="mail sent icon" width={180} height={180} />
           <span className="origin-left rotate-45 font-caribri text-xs text-gray-500 md:ml-32">
             <sup>LottieFiles by</sup>
             <br />

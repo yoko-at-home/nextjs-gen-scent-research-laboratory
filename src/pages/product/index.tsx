@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import ImageSoftwareLibrary from "public//static/images/software/topimage.jpg";
+import ImageSampling from "public/static/images/software/sampling.jpg";
 import type { FC } from "react";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -47,28 +49,26 @@ const Product: FC<ProductProps> = (props) => {
                   {item.charm ? (
                     <div className="flex">
                       <div className="flex w-3/4 flex-col p-2">
-                        <Link href={`/product/sample/${item.id}`}>
+                        <Link legacyBehavior href={`/product/sample/${item.id}`}>
                           <a className="mb-2 font-bold leading-tight">
                             {!item.title ? null : item.title}
                             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </a>
                         </Link>
                         <div className="text-ellipsis text-sm line-clamp-4">
-                          <Link href={`/product/sample/${item.id}`}>
+                          <Link legacyBehavior href={`/product/sample/${item.id}`}>
                             <a aria-label="Read more">{item.description}</a>
                           </Link>
                         </div>
                       </div>
-                      <Link href={`/product/sample/${item.id}`}>
+                      <Link legacyBehavior href={`/product/sample/${item.id}`}>
                         <a className="mb-2 font-bold leading-tight">
-                          <div className="w-20">
-                            <Image src={item.charm.url} alt="product" width={`100%`} height="140px" />
-                          </div>
+                          <Image src={item.charm.url} alt="product" width="90" height="140" />
                         </a>
                       </Link>
                     </div>
                   ) : (
-                    <Link href={`/product/sample/${item.id}`}>
+                    <Link legacyBehavior href={`/product/sample/${item.id}`}>
                       <a aria-label="Read more">
                         <div className="flex w-full flex-col px-2 pt-2">
                           <div className="mb-2 font-bold leading-tight">
@@ -99,13 +99,7 @@ const Product: FC<ProductProps> = (props) => {
             <div>{productTitles[2].description}</div>
           </div>
           <div className="ml-5 flex flex-col-reverse items-baseline px-1 sm:px-2 md:p-3">
-            <Image
-              alt="揮発性成分用サンプリングシステム"
-              src="/static/images/software/sampling.jpg"
-              height="62px"
-              width={`100%`}
-              priority
-            />
+            <Image alt="揮発性成分用サンプリングシステム" src={ImageSampling} width="62" height="100" />
           </div>
         </div>
 
@@ -113,7 +107,7 @@ const Product: FC<ProductProps> = (props) => {
           {props.odor.map((item) => {
             return (
               <li key={item.id}>
-                <Link href={`/product/odor-analysis/${item.id}`}>
+                <Link legacyBehavior href={`/product/odor-analysis/${item.id}`}>
                   <a aria-label="Read more">
                     <div
                       className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
@@ -141,7 +135,7 @@ const Product: FC<ProductProps> = (props) => {
           {props.other.map((item) => {
             return (
               <li key={item.id}>
-                <Link href={`/product/other-services/${item.id}`}>
+                <Link legacyBehavior href={`/product/other-services/${item.id}`}>
                   <a aria-label="Read more">
                     <div
                       className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
@@ -173,7 +167,7 @@ const Product: FC<ProductProps> = (props) => {
         {props.software2.map((item) => {
           return (
             <li key={item.id}>
-              <Link href={`/product/software2/${item.id}`}>
+              <Link legacyBehavior href={`/product/software2/${item.id}`}>
                 <a aria-label="Read more">
                   <div
                     className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
@@ -215,13 +209,7 @@ const Product: FC<ProductProps> = (props) => {
             <div>{productTitles[0].description}</div>
           </div>
           <div className="ml-5 flex flex-col-reverse items-baseline px-1 sm:px-2 md:p-3">
-            <Image
-              alt="ソフトウェア・ライブラリ"
-              src="/static/images/software/topimage.jpg"
-              height="62px"
-              width="250px"
-              priority
-            />
+            <Image alt="ソフトウェア・ライブラリ" src={ImageSoftwareLibrary} width={250} height={100} />
           </div>
         </div>
 
@@ -229,7 +217,7 @@ const Product: FC<ProductProps> = (props) => {
           {props.software.map((item) => {
             return (
               <li key={item.id}>
-                <Link href={`/product/software/${item.id}`}>
+                <Link legacyBehavior href={`/product/software/${item.id}`}>
                   <a aria-label="Read more">
                     <div
                       className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
