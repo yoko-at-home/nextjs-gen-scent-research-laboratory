@@ -1,5 +1,4 @@
 import cc from "classcat";
-import type { NextPage } from "next";
 import type { FC, ReactNode } from "react";
 
 type FontProps = {
@@ -7,7 +6,7 @@ type FontProps = {
   children: ReactNode;
 };
 
-export const PageTitle: NextPage<FontProps> = (props) => {
+export const PageTitle: FC<FontProps> = (props) => {
   return (
     <h1 className="mt-20 mb-5 text-2xl font-extrabold leading-9 tracking-tight sm:text-2xl sm:leading-10 md:mt-24 md:mb-16 md:text-3xl md:leading-10 lg:mb-10">
       {props.children}
@@ -26,9 +25,9 @@ export const PageSubTitle: FC<FontProps> = (props) => {
     </h2>
   );
 };
-export const ProductTitle: NextPage = (props) => {
+export const ProductTitle: FC<FontProps> = (props) => {
   return <h1 className="mt-10 mb-6 text-xl font-bold leading-relaxed text-primary">{props.children}</h1>;
 };
-export const ProductMainTitle: NextPage = (props) => {
+export const ProductMainTitle: FC<FontProps> = (props) => {
   return <h1 className="mb-6 text-xl font-bold leading-relaxed text-primary md:text-2xl">{props.children}</h1>;
 };
