@@ -45,7 +45,7 @@
     "classcat": "5.0.4",
     "date-fns": "2.30.0",
     "eslint": "8.41.0",
-    "eslint-config-next": "13.4.3",
+    "eslint-config-next": "13.4.4",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import-access": "1.1.1",
     "eslint-plugin-simple-import-sort": "10.0.0",
