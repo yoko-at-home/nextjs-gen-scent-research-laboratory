@@ -40,7 +40,7 @@
     "@types/react": "18.2.20",
     "@typescript-eslint/eslint-plugin": "6.3.0",
     "@typescript-eslint/parser": "6.3.0",
-    "autoprefixer": "10.4.14",
+    "autoprefixer": "10.4.15",
     "axios": "1.4.0",
     "classcat": "5.0.4",
     "date-fns": "2.30.0",
