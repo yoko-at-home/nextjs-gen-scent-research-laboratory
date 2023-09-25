@@ -58,7 +58,7 @@
     "postcss": "8.4.30",
     "prettier": "3.0.3",
     "react-hooks-use-modal": "3.3.1",
-    "swr": "2.2.2",
+    "swr": "2.2.4",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
   },
