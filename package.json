@@ -35,7 +35,7 @@
     "react-intersection-observer": "9.8.0"
   },
   "devDependencies": {
-    "@sendgrid/mail": "8.1.0",
+    "@sendgrid/mail": "8.1.1",
     "@types/node": "20.11.17",
     "@types/react": "18.2.55",
     "@typescript-eslint/eslint-plugin": "7.0.1",
