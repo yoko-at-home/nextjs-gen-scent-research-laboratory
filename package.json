@@ -50,7 +50,7 @@
     "eslint-plugin-import-access": "2.1.2",
     "eslint-plugin-simple-import-sort": "12.0.0",
     "eslint-plugin-sort-destructure-keys": "1.5.0",
-    "eslint-plugin-tailwindcss": "3.14.2",
+    "eslint-plugin-tailwindcss": "3.14.3",
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
     "microcms-js-sdk": "2.7.0",
