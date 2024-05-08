@@ -44,7 +44,7 @@
     "axios": "1.6.8",
     "classcat": "5.0.5",
     "date-fns": "3.6.0",
-    "eslint": "8.57.0",
+    "eslint": "9.2.0",
     "eslint-config-next": "13.5.6",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import-access": "2.1.2",
