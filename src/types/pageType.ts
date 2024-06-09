@@ -18,19 +18,19 @@ export type ProductProps = {
         width: number;
       };
       product_title: string;
-    }
+    },
   ];
   software: [
     BasicPageObject & {
       product_title: string;
       subtitle: string;
-    }
+    },
   ];
   software2: [
     BasicPageObject & {
       product_title: string;
       subtitle: string;
-    }
+    },
   ];
 };
 
@@ -46,7 +46,7 @@ export type BasicProps = {
       revisedAt: Date;
       title: string;
       updatedAt: Date;
-    }
+    },
   ];
 };
 

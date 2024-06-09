@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import Link from "next/link";
 import { Pagination } from "src/component/Pagenation";
+import { Pagination2 } from "src/component/Pagenation2";
 import { PageSubTitle } from "src/component/PageTitle";
 import { LayoutNews } from "src/layout";
 
@@ -39,6 +40,7 @@ export default function newsPageId({ news, totalCount }) {
           })}
         </ul>
         <Pagination totalCount={totalCount} />
+        <Pagination2 totalCount={totalCount} cardsPerPage={6} />
       </div>
     </LayoutNews>
   );
