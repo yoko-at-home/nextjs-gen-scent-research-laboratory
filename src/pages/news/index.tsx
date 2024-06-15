@@ -3,7 +3,6 @@ import type { GetStaticProps } from "next";
 import Link from "next/link";
 import type { FC } from "react";
 import { Pagination } from "src/component/Pagenation";
-import { Pagination2 } from "src/component/Pagenation2";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
@@ -59,7 +58,6 @@ const News: FC<Props> = (props) => {
         })}
       </ul>
       {props.totalCount < 6 ? null : <Pagination totalCount={props.totalCount} />}
-      <Pagination2 totalCount={props.totalCount} cardsPerPage={10} currentPageNumber={0} />
     </FluidLayout>
   );
 };
