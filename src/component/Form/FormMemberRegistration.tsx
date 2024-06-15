@@ -99,7 +99,7 @@ export const FormMemberRegistration: NextPage = () => {
       <div className="mt-5 whitespace-nowrap md:mt-0">
         <form onSubmit={handleRegisterUser}>
           <div className="mb-3 flex flex-col justify-between sm:flex-row sm:items-center">
-            <div className="mr-3 mb-3">お名前*</div>
+            <div className="mb-3 mr-3">お名前*</div>
             <label htmlFor="surname" className="mr-3 whitespace-nowrap">
               姓
             </label>
@@ -374,7 +374,7 @@ export const FormMemberRegistration: NextPage = () => {
               </label>
             </div>
           </div>
-          <div className="bg-gray-50 py-3 px-4 text-right sm:px-6">
+          <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
             <button
               type="submit"
               className="w-full border border-gray-50 bg-gradient-to-r from-gray-400 to-gray-500 p-2 font-medium text-gray-200 shadow-md focus:from-[#885b88] focus:to-[#412c41] focus:outline-none focus:ring-2 focus:ring-offset-2"

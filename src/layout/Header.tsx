@@ -14,11 +14,11 @@ type Props = {
 export const Header: FC<Props> = (props) => {
   return (
     <header>
-      <div className="absolute top-2 right-[10%] z-50 translate-x-[50%] translate-y-[50%] justify-between sm:block md:right-[6%]">
+      <div className="absolute right-[10%] top-2 z-50 translate-x-[50%] translate-y-[50%] justify-between sm:block md:right-[6%]">
         <Logo />
         <LogoSmall />
       </div>
-      <div className="relative flex min-w-full justify-center pt-16 pb-32 opacity-100">
+      <div className="relative flex min-w-full justify-center pb-32 pt-16 opacity-100">
         <div
           className={cc([
             {
@@ -36,7 +36,7 @@ export const Header: FC<Props> = (props) => {
           }}
         ></div>
         <div className="container relative w-full py-4 text-center sm:py-10 md:py-14">
-          <div className="absolute top-[30%] right-[50%] z-30 translate-x-[50%] translate-y-[50%] sm:top-[35%]">
+          <div className="absolute right-[50%] top-[30%] z-30 translate-x-[50%] translate-y-[50%] sm:top-[35%]">
             <h1 className="z-20 text-2xl font-black text-white sm:text-3xl md:whitespace-nowrap md:text-4xl lg:text-5xl lg:tracking-wide xl:text-7xl">
               <span className="whitespace-nowrap font-caribri">Gen-Scent Research</span>{" "}
               <span className="font-caribri">Laboratory</span>

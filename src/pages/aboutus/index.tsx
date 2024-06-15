@@ -62,14 +62,14 @@ const AboutUs: NextPage<Props> = (props) => {
               Gen-Scent Research Laboratory
             </h2>
             <span className="animation font-caribri font-bold sm:text-lg">{props.data.address}</span>
-            <div className="animation container flex space-y-2 pt-6 pb-8 md:space-y-10">
+            <div className="animation container flex space-y-2 pb-8 pt-6 md:space-y-10">
               <span className="mr-5 whitespace-nowrap text-xl font-semibold">事業内容</span>
               <div className="">
                 <p className="mb-3">{props.data.description1}</p>
                 <p className="mb-3">{props.data.description2}</p>
               </div>
             </div>
-            <div className="animation container flex space-y-2 pt-6 pb-8 md:space-y-10">
+            <div className="animation container flex space-y-2 pb-8 pt-6 md:space-y-10">
               <span className="mr-5 whitespace-nowrap text-xl font-semibold">所属団体</span>
               <div className="">
                 <p className="mb-3">
@@ -137,7 +137,7 @@ const AboutUs: NextPage<Props> = (props) => {
               </div>
             </div>
             <div className="container flex-1">
-              <div className="animation container flex space-y-2 pt-40 pb-3 md:space-y-10">
+              <div className="animation container flex space-y-2 pb-3 pt-40 md:space-y-10">
                 <span className="whitespace-nowrap font-semibold">ロゴマークについて</span>
               </div>
               <div className="flex items-center">
@@ -180,14 +180,14 @@ const AboutUs: NextPage<Props> = (props) => {
               Gen-Scent Research Laboratory
             </h2>
             <span className="animation font-caribri font-bold sm:text-lg">{props.data.address}</span>
-            <div className="animation container flex space-y-2 pt-6 pb-8 md:space-y-10">
+            <div className="animation container flex space-y-2 pb-8 pt-6 md:space-y-10">
               <span className="mr-5 whitespace-nowrap text-xl font-semibold">事業内容</span>
               <div className="">
                 <p className="mb-3">{props.data.description1}</p>
                 <p className="mb-3">{props.data.description2}</p>
               </div>
             </div>
-            <div className="animation container flex space-y-2 pt-6 pb-8 md:space-y-10">
+            <div className="animation container flex space-y-2 pb-8 pt-6 md:space-y-10">
               <span className="mr-5 whitespace-nowrap text-xl font-semibold">所属団体</span>
               <div className="">
                 <p className="mb-3">
@@ -213,7 +213,7 @@ const AboutUs: NextPage<Props> = (props) => {
               </div>
             </div>
             <div className="container flex-1">
-              <div className="animation container flex space-y-2 pt-40 pb-3 md:space-y-10">
+              <div className="animation container flex space-y-2 pb-3 pt-40 md:space-y-10">
                 <span className="whitespace-nowrap font-semibold">ロゴマークについて</span>
               </div>
               <div className="flex items-center">

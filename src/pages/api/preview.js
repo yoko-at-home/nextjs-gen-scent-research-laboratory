@@ -6,7 +6,7 @@ export default async function preview(req, res) {
   }
   const content = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}news/${req.query.slug}?fields=id&draftKey=${req.query.draftKey}`,
-    { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" } }
+    { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" } },
   )
     .then((res) => {
       return res.json();
