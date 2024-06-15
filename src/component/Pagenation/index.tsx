@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const Pagination: NextPage<Props> = ({ totalCount }) => {
-  const PER_PAGE = 6;
+  const PER_PAGE = 10;
 
   const range = (start: number, end: number) => {
     return [...Array(end - start + 1)].map((_, i) => {
@@ -15,7 +15,7 @@ export const Pagination: NextPage<Props> = ({ totalCount }) => {
   };
 
   return (
-    <div className="flex justify-center space-y-2 pt-6 pb-8 md:space-y-5">
+    <div className="flex justify-center space-y-2 pb-8 pt-6 md:space-y-5">
       <nav className="flex flex-row">
         <ul className="flex">
           {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => {
