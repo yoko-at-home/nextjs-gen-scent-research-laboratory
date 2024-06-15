@@ -55,7 +55,7 @@ const Product: FC<ProductProps> = (props) => {
                             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </a>
                         </Link>
-                        <div className="text-ellipsis text-sm line-clamp-4">
+                        <div className="line-clamp-4 text-ellipsis text-sm">
                           <Link legacyBehavior href={`/product/sample/${item.id}`}>
                             <a aria-label="Read more">{item.description}</a>
                           </Link>
@@ -75,7 +75,7 @@ const Product: FC<ProductProps> = (props) => {
                             {!item.title ? null : item.title}
                             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                           </div>
-                          <div className="text-ellipsis text-sm line-clamp-4">
+                          <div className="line-clamp-4 text-ellipsis text-sm">
                             <div>{item.description}</div>
                           </div>
                         </div>
@@ -115,7 +115,7 @@ const Product: FC<ProductProps> = (props) => {
                     >
                       <div className="flex w-full flex-col px-2 pt-2">
                         <div className="mb-2 font-bold leading-tight">{item.title}</div>
-                        <div className="text-ellipsis text-sm line-clamp-4">{item.description}</div>
+                        <div className="line-clamp-4 text-ellipsis text-sm">{item.description}</div>
                       </div>
                     </div>
                   </a>
@@ -143,7 +143,7 @@ const Product: FC<ProductProps> = (props) => {
                     >
                       <div className="flex w-full flex-col px-2 pt-2">
                         <div className="mb-2 font-bold leading-tight">{item.title}</div>
-                        <div className="text-ellipsis text-sm line-clamp-4">
+                        <div className="line-clamp-4 text-ellipsis text-sm">
                           <div>
                             {item.description}
                             <br />
@@ -179,7 +179,7 @@ const Product: FC<ProductProps> = (props) => {
                         {!item.subtitle ? null : <div>{item.subtitle}</div>}
                         {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                       </div>
-                      <div className="text-ellipsis text-sm line-clamp-4">{item.description}</div>
+                      <div className="line-clamp-4 text-ellipsis text-sm">{item.description}</div>
                     </div>
                   </div>
                 </a>
@@ -229,7 +229,7 @@ const Product: FC<ProductProps> = (props) => {
                           {!item.subtitle ? null : <div>{item.subtitle}</div>}
                           {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
                         </div>
-                        <div className="text-ellipsis text-sm line-clamp-4">
+                        <div className="line-clamp-4 text-ellipsis text-sm">
                           <div>{item.description}</div>
                         </div>
                       </div>

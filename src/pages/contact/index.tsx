@@ -18,7 +18,7 @@ const Contact: NextPage = () => {
       />
       <PageTitle>お問い合わせ</PageTitle>
       <div className="text-zinc-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <p className="text-lg leading-7 text-zinc-600">
             資料ご請求、およびお問い合わせの場合は下記ご記入お願いいたします。
             <br />
