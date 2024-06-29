@@ -56,7 +56,7 @@
     "lint-staged": "14.0.1",
     "microcms-js-sdk": "2.7.0",
     "npm-run-all2": "6.2.0",
-    "postcss": "8.4.38",
+    "postcss": "8.4.39",
     "prettier": "3.3.2",
     "react-hooks-use-modal": "3.3.1",
     "swr": "2.2.5",
