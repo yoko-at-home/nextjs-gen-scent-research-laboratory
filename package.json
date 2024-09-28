@@ -53,7 +53,7 @@
     "eslint-plugin-tailwindcss": "3.17.0",
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
-    "microcms-js-sdk": "2.7.0",
+    "microcms-js-sdk": "3.1.2",
     "npm-run-all2": "6.2.3",
     "postcss": "8.4.47",
     "prettier": "3.3.3",
