@@ -63,23 +63,37 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params, preview = false, previewData }) => {
-  const id = params?.id;
-  const draftKey = previewData?.draftKey;
-  const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
-  };
+  try {
+    const id = params?.id;
+    const draftKey = previewData?.draftKey;
+    const key = {
+      headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
+    };
 
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}news/${id}?${draftKey !== undefined ? `draftKey=${draftKey}` : ""}`,
-    key,
-  );
-  const data = await res.json();
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}news/${id}?${draftKey !== undefined ? `draftKey=${draftKey}` : ""}`,
+      key,
+    );
+    const data = await res.json();
 
-  return {
-    props: {
-      data: data,
-      preview,
-    },
-    revalidate: 1,
-  };
+    // データが存在しない場合
+    if (!data) {
+      return {
+        notFound: true, // これにより404ページにリダイレクトされます
+      };
+    }
+
+    return {
+      props: {
+        data,
+        preview,
+      },
+      revalidate: 1,
+    };
+  } catch (error) {
+    // エラーが発生した場合も404ページにリダイレクト
+    return {
+      notFound: true,
+    };
+  }
 };
