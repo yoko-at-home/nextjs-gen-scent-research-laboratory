@@ -18,7 +18,7 @@ export const NavLink = (props: Props) => {
   const className =
     pathname === linkProps.href
       ? `${activeClassName} ${children.props.className ?? ""}`
-      : children.props.className ?? "";
+      : (children.props.className ?? "");
 
   return (
     <Link legacyBehavior {...linkProps}>
