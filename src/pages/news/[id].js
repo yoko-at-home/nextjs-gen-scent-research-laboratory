@@ -59,7 +59,7 @@ export const getStaticPaths = async () => {
   const paths = repos.contents.map((repo) => {
     return `/news/${repo.id}`;
   });
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 };
 
 export const getStaticProps = async ({ params, preview = false, previewData }) => {

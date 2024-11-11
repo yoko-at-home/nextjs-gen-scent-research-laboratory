@@ -68,6 +68,7 @@ export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey
   previewData,
 }): Promise<{
   props: Props;
+  revalidate?: number | boolean;
 }> => {
   const key = {
     headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" },
@@ -88,5 +89,6 @@ export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey
       data: data.contents,
       totalCount: data.totalCount,
     },
+    revalidate: false,
   };
 };
