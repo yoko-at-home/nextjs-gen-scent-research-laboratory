@@ -88,7 +88,7 @@ export const getStaticProps = async ({ params, preview = false, previewData }) =
         data,
         preview,
       },
-      revalidate: 1,
+      revalidate: false,
     };
   } catch (error) {
     // エラーが発生した場合も404ページにリダイレクト
