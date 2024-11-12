@@ -49,51 +49,72 @@ const NewsId = (props) => {
 export default NewsId;
 
 export const getStaticPaths = async () => {
-  const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
-  };
+  try {
+    const key = {
+      headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
+    };
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}news`, key);
-  const repos = await res.json();
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}news`, key);
 
-  const paths = repos.contents.map((repo) => {
-    return `/news/${repo.id}`;
-  });
-  return { paths, fallback: false };
+    if (!res.ok) {
+      throw new Error(`Failed to fetch: ${res.status}`);
+    }
+
+    const repos = await res.json();
+
+    const paths = repos.contents.map((repo) => {
+      return { params: { id: repo.id } };
+    });
+
+    return {
+      paths,
+      fallback: "blocking",
+    };
+  } catch (error) {
+    console.error("Error in getStaticPaths:", error);
+    return {
+      paths: [],
+      fallback: "blocking",
+    };
+  }
 };
 
 export const getStaticProps = async ({ params, preview = false, previewData }) => {
   try {
     const id = params?.id;
+    if (!id) {
+      return { notFound: true };
+    }
+
     const draftKey = previewData?.draftKey;
     const key = {
       headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
     };
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}news/${id}?${draftKey !== undefined ? `draftKey=${draftKey}` : ""}`,
+      `${process.env.NEXT_PUBLIC_API_URL}news/${id}${draftKey !== undefined ? `?draftKey=${draftKey}` : ""}`,
       key,
     );
+
+    if (!res.ok) {
+      return { notFound: true };
+    }
+
     const data = await res.json();
 
-    // データが存在しない場合
     if (!data) {
-      return {
-        notFound: true, // これにより404ページにリダイレクトされます
-      };
+      return { notFound: true };
     }
 
     return {
       props: {
         data,
-        preview,
+        preview: preview || false,
       },
-      revalidate: false,
+      revalidate: 60,
     };
   } catch (error) {
-    // エラーが発生した場合も404ページにリダイレクト
-    return {
-      notFound: true,
-    };
+    console.error("Error in getStaticProps:", error);
+    return { notFound: true };
   }
 };
