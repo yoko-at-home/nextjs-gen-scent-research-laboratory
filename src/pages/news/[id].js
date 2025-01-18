@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
+import parse from "html-react-parser";
 import ErrorPage from "next/error";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -35,11 +36,7 @@ const NewsId = (props) => {
         {!props.data.body ? (
           <div>入力がありません</div>
         ) : (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `${props.data.body}`,
-            }}
-          />
+          <div className="prose max-w-none">{parse(props.data.body)}</div>
         )}
       </main>
     </FixedLayout>

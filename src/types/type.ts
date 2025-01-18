@@ -1,6 +1,6 @@
 export type BasicProps = {
   data: {
-    body: HTMLAnchorElement;
+    body: string;
     button: string;
     button_desc: string;
     createdAt: Date;
@@ -46,6 +46,11 @@ export type SampleProps = BasicProps & {
 
 export type OtherProps = BasicProps & {
   data: {
-    note: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    body: string;
+    button?: string;
+    button_desc?: string;
   };
 };

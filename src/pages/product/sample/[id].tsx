@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
+import parse from "html-react-parser";
+import type { GetStaticProps } from "next";
 import Image from "next/image";
 import type { FC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
@@ -49,11 +51,7 @@ const SampleId: FC<SampleProps> = (props) => {
         )}
         <ProductMainTitle>{props.data.product_title}</ProductMainTitle>
         <div className="mb-12 text-primary">{props.data.description_body}</div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${props.data.body}`,
-          }}
-        />
+        <div className="prose max-w-none">{parse(props.data.body)}</div>
         {!props.data.button ? null : (
           <div className="mt-20">
             <div className="mb-10 text-primary">{props.data.button_desc}</div>
@@ -74,15 +72,15 @@ export default SampleId;
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "sample" });
 
-  const paths = data.contents.map((content: any) => {
+  const paths = data.contents.map((content: { id: string }) => {
     return `/product/sample/${content.id}`;
   });
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context: any) => {
-  const id = context.params.id;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const id = params?.id as string;
   const data = await client.get({ endpoint: "sample", contentId: id });
 
   return {
