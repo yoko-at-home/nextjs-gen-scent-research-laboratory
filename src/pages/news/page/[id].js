@@ -26,14 +26,14 @@ export default function newsPageId({ news, totalCount }) {
                     <div className="flex items-end justify-between">
                       <div className=" p-1">{news.description}</div>
                       <Link legacyBehavior href={`/news/${news.id}`} passHref>
-                        <a className="whitespace-nowrap p-1 text-blue-400 hover:bg-gray-300 hover:text-blue-900">
+                        <span className="cursor-pointer whitespace-nowrap p-1 text-blue-400 hover:bg-gray-300 hover:text-blue-900">
                           詳細
-                        </a>
+                        </span>
                       </Link>
                     </div>
                   </div>
                 )}
-                <hr></hr>
+                <hr />
               </li>
             );
           })}

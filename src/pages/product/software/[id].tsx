@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention*/
 /* eslint-disable @typescript-eslint/no-unused-vars*/
+import parse from "html-react-parser";
+import type { GetStaticProps } from "next";
 import type { FC } from "react";
 import { ButtonToContact } from "src/component/Button/Button";
 import { ProductMainTitle, ProductTitle } from "src/component/PageTitle";
@@ -69,11 +71,7 @@ const SoftwareId: FC<SoftwareProps> = (props) => {
           <br />
           {props.data.description_body2}
         </div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `${props.data.body}`,
-          }}
-        />
+        <div className="prose max-w-none">{parse(props.data.body)}</div>
         {!props.data.button ? null : (
           <div className="mt-20">
             <div className="mb-10 text-primary">{props.data.button_desc}</div>
@@ -94,15 +92,15 @@ export default SoftwareId;
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "software" });
 
-  const paths = data.contents.map((content: any) => {
+  const paths = data.contents.map((content: { id: string }) => {
     return `/product/software/${content.id}`;
   });
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context: any) => {
-  const id = context.params.id;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const id = params?.id as string;
   const data = await client.get({ endpoint: "software", contentId: id });
 
   return {
