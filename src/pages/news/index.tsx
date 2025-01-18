@@ -29,8 +29,8 @@ const News: FC<Props> = (props) => {
         title={`News - ${siteMetadata.title}`}
         description={siteMetadata.description}
         ogType="website"
-        ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-        siteUrl={siteMetadata.siteUrl + `/news`}
+        ogImage={`${siteMetadata.siteUrl}${siteMetadata.siteLogo}`}
+        siteUrl={`${siteMetadata.siteUrl}/news`}
       />
 
       <PageTitle>
@@ -43,12 +43,10 @@ const News: FC<Props> = (props) => {
               <div className="mb-10 flex flex-col rounded bg-gray-200/50 p-8 sm:p-3">
                 <div className="mb-3 font-semibold sm:font-bold">{item.title}</div>
                 <div className="flex flex-row-reverse items-end justify-between">
-                  <Link legacyBehavior href={`/news/${item.id}`} passHref>
-                    <a aria-label="Read more">
-                      {item.body === undefined ? null : (
-                        <span className="ml-5 whitespace-nowrap bg-gray-300 p-2">詳細</span>
-                      )}
-                    </a>
+                  <Link href={`/news/${item.id}`} aria-label="Read more">
+                    {item.body === undefined ? null : (
+                      <span className="ml-5 cursor-pointer whitespace-nowrap bg-gray-300 p-2">詳細</span>
+                    )}
                   </Link>
                   <div className="text-sm sm:text-base">{item.description}</div>
                 </div>
@@ -74,12 +72,12 @@ export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey
     headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" },
   };
 
-  const res = await axios.get(process.env.NEXT_PUBLIC_API_URL + "news/?limit=6", key);
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}news/?limit=6`, key);
   const data = await res.data;
 
   // プレビュー時は draft のコンテンツを追加
   if (preview) {
-    const draftUrl = process.env.NEXT_PUBLIC_API_URL + "news/" + previewData?.id + `?draftKey=${previewData?.draftKey}`;
+    const draftUrl = `${process.env.NEXT_PUBLIC_API_URL}news/${previewData?.id}?draftKey=${previewData?.draftKey}`;
     const draftRes = await axios.get(draftUrl, key);
     data.unshift(await draftRes.data);
   }
