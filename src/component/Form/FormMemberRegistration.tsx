@@ -34,64 +34,101 @@ export const FormMemberRegistration: NextPage = () => {
     setOtherOccupation(event.currentTarget.value);
   };
 
-  const handleRegisterUser = async (event: any) => {
+  const handleRegisterUser = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     // const useremail = user?.email || "";
 
-    const newsletter = isCheckboxState === true ? "不要" : "要";
-    const res = await fetch("/api/send", {
-      body: JSON.stringify({
-        subject: "登録を承りました。",
-        to: siteMetadata.email,
-        text:
-          "以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。\n完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。\n\n" +
-          event.target.surname.value +
-          " " +
-          event.target.givenname.value +
-          " 様" +
-          "\n\nご所属先" +
-          "\n会社/機関/⼤学： " +
-          event.target.labo.value +
-          "\n部署/研究：" +
-          event.target.department.value +
-          "\n\nご職業: " +
-          researcher +
-          "\n その他: " +
-          event.target.other_occupation.value +
-          "\n\nご住所" +
-          "\n〒 " +
-          event.target.zipcode.value +
-          "\n" +
-          event.target.address1.value +
-          event.target.address2.value +
-          event.target.address3.value +
-          "\n\n📞 " +
-          event.target.phone1.value +
-          " 内線: " +
-          event.target.phone2.value +
-          "\n\n✉️ " +
-          event.target.email.value +
-          "\n\nご専⾨分野: " +
-          event.target.speciality.value +
-          "\n\n資料ご請求製品名: " +
-          event.target.reference.value +
-          "\n\nお問い合わせ内容:\n" +
-          event.target.message.value +
-          "\n\n\nニュースレター配信: " +
-          newsletter,
-        email: event.target.email.value,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
-    const result = await res.json();
-    router.push({
-      pathname: "/success",
-      query: result,
-    });
+    const newsletter = isCheckboxState === true ? "不要" : "要";
+    try {
+      const res = await fetch("/api/send", {
+        body: JSON.stringify({
+          subject: "登録を承りました。",
+          to: siteMetadata.email,
+          from: `Gen-Scent Research Laboratory <${process.env.NEXT_PUBLIC_RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
+          text: `以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。
+完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。
+
+${formData.get("surname")} ${formData.get("givenname")} 様
+
+ご所属先
+会社/機関/⼤学： ${formData.get("labo")}
+部署/研究：${formData.get("department")}
+
+ご職業: ${researcher}
+ その他: ${formData.get("other_occupation")}
+
+ご住所
+〒 ${formData.get("zipcode")}
+${formData.get("address1")}${formData.get("address2")}${formData.get("address3")}
+
+📞 ${formData.get("phone1")} 内線: ${formData.get("phone2")}
+
+✉️ ${formData.get("email")}
+
+ご専⾨分野: ${formData.get("speciality")}
+
+資料ご請求製品名: ${formData.get("reference")}
+
+お問い合わせ内容:
+${formData.get("message")}
+
+
+ニュースレター配信: ${newsletter}`,
+          replyTo: formData.get("email") as string, // 返信先としてユーザーのメールアドレスを設定
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        console.error("API Error:", result);
+        router.push({
+          pathname: "/success",
+          query: { error: result.error || "送信に失敗しました" },
+        });
+        return;
+      }
+
+      // eslint-disable-next-line no-console
+      // eslint-disable-next-line no-console
+      console.log("Email sent successfully:", result);
+
+      // 送信内容をクエリパラメータとして渡す
+      const formSummary = {
+        name: `${formData.get("surname")} ${formData.get("givenname")}`,
+        organization: `${formData.get("labo")} - ${formData.get("department")}`,
+        occupation: researcher,
+        address: `〒${formData.get("zipcode")} ${formData.get("address1")}${formData.get("address2")}${formData.get("address3")}`,
+        phone: `${formData.get("phone1")} 内線: ${formData.get("phone2")}`,
+        email: formData.get("email") as string,
+        specialty: formData.get("speciality") as string,
+        reference: formData.get("reference") as string,
+        message: formData.get("message") as string,
+        newsletter: newsletter,
+      };
+
+      router.push({
+        pathname: "/success",
+        query: {
+          data: "送信が完了しました",
+          id: result.id,
+          ...formSummary,
+        },
+      });
+    } catch (error) {
+      console.error("Fetch error:", error);
+      router.push({
+        pathname: "/success",
+        query: { error: "送信に失敗しました" },
+      });
+    }
   };
 
   return (
@@ -232,9 +269,7 @@ export const FormMemberRegistration: NextPage = () => {
                 />
               </div>
               <div className="flex">
-                <label htmlFor="address" className="mr-3 inline-flex items-center whitespace-nowrap sm:mx-3">
-                  住所
-                </label>
+                <span className="mr-3 inline-flex items-center whitespace-nowrap sm:mx-3">住所</span>
                 <input
                   id="address1"
                   name="address1"
@@ -267,7 +302,7 @@ export const FormMemberRegistration: NextPage = () => {
           </div>
           <div className="mb-3 flex flex-col justify-between sm:flex-row sm:items-center">
             <div className="mr-3">お電話番号*</div>
-            <label htmlFor="phone1" className="mr-3 whitespace-nowrap"></label>
+            <span className="mr-3 whitespace-nowrap" />
             <input
               id="phone1"
               name="phone1"
@@ -329,7 +364,7 @@ export const FormMemberRegistration: NextPage = () => {
                 className="mt-1 block w-full border-gray-300 shadow-sm focus:border-primary focus:ring-[#a37da3] sm:text-sm"
                 type="text"
                 placeholder="Product name for which information is requested"
-              ></input>
+              />
             </div>
           </div>
           <div className="mb-3">
@@ -342,7 +377,7 @@ export const FormMemberRegistration: NextPage = () => {
               className="mt-1 block w-full border-gray-300 shadow-sm focus:border-primary focus:ring-[#a37da3] sm:text-sm"
               rows={3}
               maxLength={300}
-            ></textarea>
+            />
           </div>
 
           <div className="my-6 flex">
