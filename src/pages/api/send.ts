@@ -16,6 +16,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
+  // デバッグ用ログ
+  // eslint-disable-next-line no-console
+  console.log("API Key exists:", !!process.env.RESEND_API_KEY);
+  // eslint-disable-next-line no-console
+  console.log("Request body:", req.body);
+
   try {
     const { from, replyTo, subject, text, to }: EmailRequest = req.body;
 
@@ -50,6 +56,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     console.log("Email sent successfully:", data);
     res.status(200).json(data);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error("Error sending email:", error);
 
     if (error instanceof Error) {
