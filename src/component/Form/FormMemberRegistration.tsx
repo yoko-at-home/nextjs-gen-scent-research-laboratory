@@ -8,10 +8,10 @@ import { siteMetadata } from "src/data/siteMetaData";
 export const FormMemberRegistration: NextPage = () => {
   const router = useRouter();
   const [isCheckboxState, setIsCheckboxState] = useState(false);
-  const [isCheckboxResearcherState, setIsCheckboxResearcherState] = useState(0);
-  const [researcher, setResearcher] = useState("研究者");
+  const [isCheckboxResearcherState, setIsCheckboxResearcherState] = useState(-1); // 初期状態は未選択
+  const [researcher, setResearcher] = useState("");
   const [otherOccupation, setOtherOccupation] = useState("");
-  const enableOtherOccupation = isCheckboxResearcherState !== 2;
+  const enableOtherOccupation = isCheckboxResearcherState === 2;
 
   const handleOnChange = () => {
     setIsCheckboxState((prevCheck) => {
@@ -28,10 +28,14 @@ export const FormMemberRegistration: NextPage = () => {
   };
   const handleOnChangeResearcher2 = () => {
     setIsCheckboxResearcherState(2);
-    setResearcher(otherOccupation);
+    setResearcher(otherOccupation || "その他");
   };
   const handleOnChangeResearcherText: InputHTMLAttributes<HTMLInputElement>["onChange"] = (event) => {
-    setOtherOccupation(event.currentTarget.value);
+    const value = event.currentTarget.value;
+    setOtherOccupation(value);
+    if (isCheckboxResearcherState === 2) {
+      setResearcher(value || "その他");
+    }
   };
 
   const handleRegisterUser = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -41,7 +45,29 @@ export const FormMemberRegistration: NextPage = () => {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    // 職業が選択されていない場合のバリデーション
+    if (isCheckboxResearcherState === -1) {
+      alert("ご職業を選択してください。");
+      return;
+    }
+
+    // その他を選択した場合のバリデーション
+    if (isCheckboxResearcherState === 2 && (!otherOccupation || otherOccupation.trim() === "")) {
+      alert("その他を選択した場合は、職業を入力してください。");
+      return;
+    }
+
     const newsletter = isCheckboxState === true ? "不要" : "要";
+
+    // デバッグ用ログ
+    // eslint-disable-next-line no-console
+    console.log("Form submission debug:", {
+      isCheckboxResearcherState,
+      researcher,
+      otherOccupation,
+      newsletter,
+    });
+
     try {
       const res = await fetch("/api/send", {
         body: JSON.stringify({
@@ -57,8 +83,7 @@ ${formData.get("surname")} ${formData.get("givenname")} 様
 会社/機関/⼤学： ${formData.get("labo")}
 部署/研究：${formData.get("department")}
 
-ご職業: ${researcher}
- その他: ${formData.get("other_occupation")}
+ご職業: ${isCheckboxResearcherState === 2 && otherOccupation ? `その他（${otherOccupation}）` : researcher}
 
 ご住所
 〒 ${formData.get("zipcode")}
@@ -100,11 +125,26 @@ ${formData.get("message")}
       // eslint-disable-next-line no-console
       console.log("Email sent successfully:", result);
 
+      // デバッグ用: フォームデータの内容を確認
+      // eslint-disable-next-line no-console
+      console.log("Form data debug:", {
+        other_occupation: formData.get("other_occupation"),
+        reference: formData.get("reference"),
+        speciality: formData.get("speciality"),
+        message: formData.get("message"),
+      });
+
+      // 職業の値を正しく設定
+      let occupationValue = researcher;
+      if (isCheckboxResearcherState === 2 && otherOccupation) {
+        occupationValue = `その他（${otherOccupation}）`;
+      }
+
       // 送信内容をクエリパラメータとして渡す
       const formSummary = {
         name: `${formData.get("surname")} ${formData.get("givenname")}`,
         organization: `${formData.get("labo")} - ${formData.get("department")}`,
-        occupation: researcher,
+        occupation: occupationValue,
         address: `〒${formData.get("zipcode")} ${formData.get("address1")}${formData.get("address2")}${formData.get("address3")}`,
         phone: `${formData.get("phone1")} 内線: ${formData.get("phone2")}`,
         email: formData.get("email") as string,
@@ -246,8 +286,9 @@ ${formData.get("message")}
                   className="mt-1 block overflow-x-scroll border-gray-300 shadow-sm focus:border-primary focus:ring-[#a37da3] sm:text-sm md:w-72"
                   onChange={handleOnChangeResearcherText}
                   value={otherOccupation}
-                  disabled={enableOtherOccupation}
-                  required
+                  disabled={!enableOtherOccupation}
+                  required={isCheckboxResearcherState === 2}
+                  placeholder={isCheckboxResearcherState === 2 ? "職業を入力してください" : ""}
                 />
               </label>
             </div>
