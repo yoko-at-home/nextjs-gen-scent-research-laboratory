@@ -10,8 +10,8 @@ export const siteMetadata = {
   image: "/static/images/laurel.png",
   // email: "yoko_iwasakijp@yahoo.co.jp",
   // email_sub: "yoko_iwasakijp@yahoo.co.jp",
-  email: "ygsrl@outlook.jp",
-  email_sub: "gsrl@outlook.jp",
+  email: "gsrl@outlook.jp",
+  email_sub: "tech@gen-scent.com",
   locale: "ja-JP",
   altForImages: "製品イメージ図",
 };
