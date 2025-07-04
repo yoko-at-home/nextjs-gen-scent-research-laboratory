@@ -4,7 +4,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface EmailRequest {
-  to: string | string[];
+  to: string;
   from: string;
   subject: string;
   text: string;
@@ -38,7 +38,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       replyTo?: string;
     } = {
       from: from,
-      to: Array.isArray(to) ? to : [to],
+      to: [to],
       subject: subject,
       text: text,
     };

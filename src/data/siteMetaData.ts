@@ -9,9 +9,7 @@ export const siteMetadata = {
   siteLogo: "/static/images/logo.png",
   image: "/static/images/laurel.png",
   // email: "yoko_iwasakijp@yahoo.co.jp",
-  // email_sub: "yoko_iwasakijp@yahoo.co.jp",
   email: "gsrl@outlook.jp",
-  email_sub: "tech@gen-scent.com",
   locale: "ja-JP",
   altForImages: "製品イメージ図",
 };
