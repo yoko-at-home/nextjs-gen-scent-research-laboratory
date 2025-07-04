@@ -11,7 +11,7 @@ export const siteMetadata = {
   // email: "yoko_iwasakijp@yahoo.co.jp",
   // email_sub: "yoko_iwasakijp@yahoo.co.jp",
   email: "ygsrl@outlook.jp",
-  email_sub: "tech@gen-scent.com",
+  email_sub: "gsrl@outlook.jp",
   locale: "ja-JP",
   altForImages: "製品イメージ図",
 };
