@@ -72,7 +72,7 @@ export const FormMemberRegistration: NextPage = () => {
       const res = await fetch("/api/send", {
         body: JSON.stringify({
           subject: "登録を承りました。",
-          to: siteMetadata.email,
+          to: [siteMetadata.email, siteMetadata.email_sub],
           from: `Gen-Scent Research Laboratory <${process.env.NEXT_PUBLIC_RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
           text: `以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。
 完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。
