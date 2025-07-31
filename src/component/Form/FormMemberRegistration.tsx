@@ -59,15 +59,6 @@ export const FormMemberRegistration: NextPage = () => {
 
     const newsletter = isCheckboxState === true ? "不要" : "要";
 
-    // デバッグ用ログ
-    // eslint-disable-next-line no-console
-    console.log("Form submission debug:", {
-      isCheckboxResearcherState,
-      researcher,
-      otherOccupation,
-      newsletter,
-    });
-
     try {
       const res = await fetch("/api/send", {
         body: JSON.stringify({
@@ -113,26 +104,12 @@ ${formData.get("message")}
       const result = await res.json();
 
       if (!res.ok) {
-        console.error("API Error:", result);
         router.push({
           pathname: "/success",
           query: { error: result.error || "送信に失敗しました" },
         });
         return;
       }
-
-      // eslint-disable-next-line no-console
-      // eslint-disable-next-line no-console
-      console.log("Email sent successfully:", result);
-
-      // デバッグ用: フォームデータの内容を確認
-      // eslint-disable-next-line no-console
-      console.log("Form data debug:", {
-        other_occupation: formData.get("other_occupation"),
-        reference: formData.get("reference"),
-        speciality: formData.get("speciality"),
-        message: formData.get("message"),
-      });
 
       // 職業の値を正しく設定
       let occupationValue = researcher;
@@ -163,7 +140,6 @@ ${formData.get("message")}
         },
       });
     } catch (error) {
-      console.error("Fetch error:", error);
       router.push({
         pathname: "/success",
         query: { error: "送信に失敗しました" },

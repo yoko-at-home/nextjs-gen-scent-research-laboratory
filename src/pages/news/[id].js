@@ -68,7 +68,6 @@ export const getStaticPaths = async () => {
       fallback: "blocking",
     };
   } catch (error) {
-    console.error("Error in getStaticPaths:", error);
     return {
       paths: [],
       fallback: "blocking",
@@ -111,7 +110,6 @@ export const getStaticProps = async ({ params, preview = false, previewData }) =
       revalidate: 60,
     };
   } catch (error) {
-    console.error("Error in getStaticProps:", error);
     return { notFound: true };
   }
 };
