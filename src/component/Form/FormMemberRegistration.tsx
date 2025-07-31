@@ -2,68 +2,102 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import type { InputHTMLAttributes } from "react";
-import { useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import { siteMetadata } from "src/data/siteMetaData";
 
-export const FormMemberRegistration: NextPage = () => {
+const FormMemberRegistrationComponent: NextPage = () => {
   const router = useRouter();
   const [isCheckboxState, setIsCheckboxState] = useState(false);
   const [isCheckboxResearcherState, setIsCheckboxResearcherState] = useState(-1); // 初期状態は未選択
   const [researcher, setResearcher] = useState("");
   const [otherOccupation, setOtherOccupation] = useState("");
-  const enableOtherOccupation = isCheckboxResearcherState === 2;
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleOnChange = () => {
-    setIsCheckboxState((prevCheck) => {
-      return !prevCheck;
-    });
-  };
-  const handleOnChangeResearcher0 = () => {
-    setIsCheckboxResearcherState(0);
-    setResearcher("研究者");
-  };
-  const handleOnChangeResearcher1 = () => {
-    setIsCheckboxResearcherState(1);
-    setResearcher("代理店/販売店");
-  };
-  const handleOnChangeResearcher2 = () => {
-    setIsCheckboxResearcherState(2);
-    setResearcher(otherOccupation || "その他");
-  };
-  const handleOnChangeResearcherText: InputHTMLAttributes<HTMLInputElement>["onChange"] = (event) => {
-    const value = event.currentTarget.value;
-    setOtherOccupation(value);
-    if (isCheckboxResearcherState === 2) {
-      setResearcher(value || "その他");
-    }
-  };
+  const enableOtherOccupation = useMemo(() => {
+    return isCheckboxResearcherState === 2;
+  }, [isCheckboxResearcherState]);
 
-  const handleRegisterUser = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // const useremail = user?.email || "";
+  const validateForm = useCallback(() => {
+    const newErrors: Record<string, string> = {};
 
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    // 職業が選択されていない場合のバリデーション
+    // 職業のバリデーション（HTMLのrequiredでは検証できない）
     if (isCheckboxResearcherState === -1) {
-      alert("ご職業を選択してください。");
-      return;
+      newErrors.occupation = "ご職業を選択してください。";
     }
 
     // その他を選択した場合のバリデーション
     if (isCheckboxResearcherState === 2 && (!otherOccupation || otherOccupation.trim() === "")) {
-      alert("その他を選択した場合は、職業を入力してください。");
-      return;
+      newErrors.otherOccupation = "その他を選択した場合は、職業を入力してください。";
     }
 
-    const newsletter = isCheckboxState === true ? "不要" : "要";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }, [isCheckboxResearcherState, otherOccupation]);
 
-    try {
-      const res = await fetch("/api/send", {
-        body: JSON.stringify({
+  const clearError = useCallback((field: string) => {
+    setErrors((prev) => {
+      const newErrors = { ...prev };
+      delete newErrors[field];
+      return newErrors;
+    });
+  }, []);
+
+  const handleOnChange = useCallback(() => {
+    setIsCheckboxState((prevCheck) => {
+      return !prevCheck;
+    });
+  }, []);
+
+  const handleOnChangeResearcher0 = useCallback(() => {
+    setIsCheckboxResearcherState(0);
+    setResearcher("研究者");
+    clearError("occupation");
+  }, [clearError]);
+
+  const handleOnChangeResearcher1 = useCallback(() => {
+    setIsCheckboxResearcherState(1);
+    setResearcher("代理店/販売店");
+    clearError("occupation");
+  }, [clearError]);
+
+  const handleOnChangeResearcher2 = useCallback(() => {
+    setIsCheckboxResearcherState(2);
+    setResearcher(otherOccupation || "その他");
+    clearError("occupation");
+  }, [otherOccupation, clearError]);
+
+  const handleOnChangeResearcherText: InputHTMLAttributes<HTMLInputElement>["onChange"] = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const value = event.currentTarget.value;
+      setOtherOccupation(value);
+      if (isCheckboxResearcherState === 2) {
+        setResearcher(value || "その他");
+        clearError("otherOccupation");
+      }
+    },
+    [isCheckboxResearcherState, clearError],
+  );
+
+  const handleRegisterUser = useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const formData = new FormData(form);
+
+      // バリデーションを実行
+      if (!validateForm()) {
+        return;
+      }
+
+      const newsletter = isCheckboxState === true ? "不要" : "要";
+
+      try {
+        const emailData = {
           subject: "登録を承りました。",
-          to: siteMetadata.email,
+          to:
+            process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
+            (process.env.NODE_ENV === "development" ? "yoko_iwasakijp@yahoo.co.jp" : siteMetadata.email),
           from: `Gen-Scent Research Laboratory <${process.env.NEXT_PUBLIC_RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
           text: `以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。
 完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。
@@ -94,58 +128,67 @@ ${formData.get("message")}
 
 ニュースレター配信: ${newsletter}`,
           replyTo: formData.get("email") as string, // 返信先としてユーザーのメールアドレスを設定
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      });
+        };
 
-      const result = await res.json();
+        // console.log("Sending email with data:", emailData);
 
-      if (!res.ok) {
+        const res = await fetch("/api/send", {
+          body: JSON.stringify(emailData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+        });
+
+        const result = await res.json();
+        // console.log("API Response:", result);
+
+        if (!res.ok) {
+          // console.error("API Error:", result);
+          router.push({
+            pathname: "/success",
+            query: { error: result.error || "送信に失敗しました" },
+          });
+          return;
+        }
+
+        // 職業の値を正しく設定
+        let occupationValue = researcher;
+        if (isCheckboxResearcherState === 2 && otherOccupation) {
+          occupationValue = `その他（${otherOccupation}）`;
+        }
+
+        // 送信内容をクエリパラメータとして渡す
+        const formSummary = {
+          name: `${formData.get("surname")} ${formData.get("givenname")}`,
+          organization: `${formData.get("labo")} - ${formData.get("department")}`,
+          occupation: occupationValue,
+          address: `〒${formData.get("zipcode")} ${formData.get("address1")}${formData.get("address2")}${formData.get("address3")}`,
+          phone: `${formData.get("phone1")} 内線: ${formData.get("phone2")}`,
+          email: formData.get("email") as string,
+          specialty: formData.get("speciality") as string,
+          reference: formData.get("reference") as string,
+          message: formData.get("message") as string,
+          newsletter: newsletter,
+        };
+
         router.push({
           pathname: "/success",
-          query: { error: result.error || "送信に失敗しました" },
+          query: {
+            data: "送信が完了しました",
+            id: result.id,
+            ...formSummary,
+          },
         });
-        return;
+      } catch (error) {
+        router.push({
+          pathname: "/success",
+          query: { error: "送信に失敗しました" },
+        });
       }
-
-      // 職業の値を正しく設定
-      let occupationValue = researcher;
-      if (isCheckboxResearcherState === 2 && otherOccupation) {
-        occupationValue = `その他（${otherOccupation}）`;
-      }
-
-      // 送信内容をクエリパラメータとして渡す
-      const formSummary = {
-        name: `${formData.get("surname")} ${formData.get("givenname")}`,
-        organization: `${formData.get("labo")} - ${formData.get("department")}`,
-        occupation: occupationValue,
-        address: `〒${formData.get("zipcode")} ${formData.get("address1")}${formData.get("address2")}${formData.get("address3")}`,
-        phone: `${formData.get("phone1")} 内線: ${formData.get("phone2")}`,
-        email: formData.get("email") as string,
-        specialty: formData.get("speciality") as string,
-        reference: formData.get("reference") as string,
-        message: formData.get("message") as string,
-        newsletter: newsletter,
-      };
-
-      router.push({
-        pathname: "/success",
-        query: {
-          data: "送信が完了しました",
-          id: result.id,
-          ...formSummary,
-        },
-      });
-    } catch (error) {
-      router.push({
-        pathname: "/success",
-        query: { error: "送信に失敗しました" },
-      });
-    }
-  };
+    },
+    [isCheckboxResearcherState, otherOccupation, isCheckboxState, researcher, router, validateForm],
+  );
 
   return (
     <div className="container mt-10 font-semibold sm:mt-0 sm:p-6 lg:px-20">
@@ -269,6 +312,9 @@ ${formData.get("message")}
               </label>
             </div>
           </div>
+          {/* エラーメッセージの表示 */}
+          {errors.occupation && <div className="mb-3 text-sm text-red-600">{errors.occupation}</div>}
+          {errors.otherOccupation && <div className="mb-3 text-sm text-red-600">{errors.otherOccupation}</div>}
           <div className="mb-3 flex flex-col sm:flex-row sm:items-center">
             <div className="mr-3">ご住所*</div>
             <div className="flex flex-col sm:flex-row">
@@ -296,6 +342,7 @@ ${formData.get("message")}
                   placeholder="Prefecture/State"
                   required
                 />
+
                 <input
                   id="address2"
                   name="address2"
@@ -439,3 +486,5 @@ ${formData.get("message")}
     </div>
   );
 };
+
+export const FormMemberRegistration: NextPage = memo(FormMemberRegistrationComponent);
