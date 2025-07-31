@@ -18,9 +18,9 @@ export const Pagination: NextPage<Props> = ({ totalCount }) => {
     <div className="flex justify-center space-y-2 pb-8 pt-6 md:space-y-5">
       <nav className="flex flex-row">
         <ul className="flex">
-          {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => {
+          {range(1, Math.ceil(totalCount / PER_PAGE)).map((number) => {
             return (
-              <li key={index}>
+              <li key={number}>
                 <Link legacyBehavior href={`/news/page/${number}`}>
                   <div className="mr-6 rounded bg-gradient-to-r from-gray-400 to-gray-500 p-3 text-gray-300 opacity-80 sm:px-4">
                     {number}
