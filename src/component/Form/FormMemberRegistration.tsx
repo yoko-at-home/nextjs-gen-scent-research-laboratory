@@ -98,7 +98,7 @@ const FormMemberRegistrationComponent: NextPage = () => {
           to:
             process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
             (process.env.NODE_ENV === "development" ? "yoko_iwasakijp@yahoo.co.jp" : siteMetadata.email),
-          from: `Gen-Scent Research Laboratory <${process.env.NEXT_PUBLIC_RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
+          from: `Gen-Scent Research Laboratory Ltd. <${process.env.NEXT_PUBLIC_RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
           text: `以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。
 完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。
 

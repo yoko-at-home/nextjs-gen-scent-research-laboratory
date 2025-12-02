@@ -12,6 +12,8 @@ type Props = {
     address: string;
     description1: string;
     description2: string;
+    description3?: string;
+    description4?: string;
     affiliate1: string;
     affiliate1_url: string;
     affiliate2: string;
@@ -52,14 +54,14 @@ const AboutUs: NextPage<Props> = (props) => {
             description={siteMetadata.description}
             ogType="website"
             ogImage={siteMetadata.siteUrl + siteMetadata.siteLogo}
-            siteUrl={siteMetadata.siteUrl + `/aboutus`}
+            siteUrl={`${siteMetadata.siteUrl}/aboutus`}
           />
           <div className="flex flex-col justify-between">
             <PageTitle>
               <span className="font-yui text-3xl tracking-widest sm:text-5xl">玄川リサーチ</span>
             </PageTitle>
             <h2 className="animation my-5 font-caribri font-bold sm:text-xl md:text-2xl lg:mb-10 lg:text-3xl">
-              Gen-Scent Research Laboratory
+              Gen-Scent Research Laboratory Ltd.
             </h2>
             <span className="animation font-caribri font-bold sm:text-lg">{props.data.address}</span>
             <div className="animation container flex space-y-2 pb-8 pt-6 md:space-y-10">
@@ -67,6 +69,8 @@ const AboutUs: NextPage<Props> = (props) => {
               <div className="">
                 <p className="mb-3">{props.data.description1}</p>
                 <p className="mb-3">{props.data.description2}</p>
+                {props.data?.description3 && <p className="mb-3">{props.data.description3}</p>}
+                {props.data?.description4 && <p className="mb-3">{props.data.description4}</p>}
               </div>
             </div>
             <div className="animation container flex space-y-2 pb-8 pt-6 md:space-y-10">
@@ -177,7 +181,7 @@ const AboutUs: NextPage<Props> = (props) => {
               <span className="font-yui text-3xl tracking-widest sm:text-5xl">玄川リサーチ</span>
             </PageTitle>
             <h2 className="animation my-5 font-caribri font-bold sm:text-xl md:text-2xl lg:mb-10 lg:text-3xl">
-              Gen-Scent Research Laboratory
+              Gen-Scent Research Laboratory Ltd.
             </h2>
             <span className="animation font-caribri font-bold sm:text-lg">{props.data.address}</span>
             <div className="animation container flex space-y-2 pb-8 pt-6 md:space-y-10">
@@ -218,7 +222,12 @@ const AboutUs: NextPage<Props> = (props) => {
               </div>
               <div className="flex items-center">
                 <div className="animation mx-6">
-                  <Image src="/static/Logo-80.svg" alt="Gen-Scent Research Laboratoryロゴ" width={80} height={80} />
+                  <Image
+                    src="/static/Logo-80.svg"
+                    alt="Gen-Scent Research Laboratory Ltd.ロゴ"
+                    width={80}
+                    height={80}
+                  />
                 </div>
                 <div className="animation text-sm font-thin">
                   玄川の家紋をデザイン化したものです。
