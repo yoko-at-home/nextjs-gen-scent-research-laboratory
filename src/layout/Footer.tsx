@@ -20,10 +20,8 @@ export const Footer: FC = () => {
           </Link>
         </div>
         <div className="my-8 font-caribri text-xs hover:text-gray-400">
-          <Link legacyBehavior href="https://over40web.club">
-            <a target="_blank" rel="noopener noreferrer">
-              Powered by Over 40 Web Club
-            </a>
+          <Link href="https://over40web.club" target="_blank" rel="noopener noreferrer">
+            Powered by Over 40 Web Club
           </Link>
         </div>
       </div>

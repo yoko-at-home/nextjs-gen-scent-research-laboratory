@@ -1,3 +1,4 @@
+import parse from "html-react-parser";
 import type { FC } from "react";
 import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
@@ -25,13 +26,9 @@ const Home: FC<BasicObjectProps> = (props) => {
             siteUrl={siteMetadata.siteUrl}
           />
           <PageTitle>{props.data.title}</PageTitle>
-          <div
-            className="animation mb-12 leading-loose sm:mb-20"
-            dangerouslySetInnerHTML={{
-              // eslint-disable-next-line @typescript-eslint/naming-convention
-              __html: `${props.data.body}`,
-            }}
-          />
+          <div className="animation mb-12 leading-loose sm:mb-20">
+            {props.data.body ? parse(props.data.body) : null}
+          </div>
         </FluidLayout>
       </div>
     </div>

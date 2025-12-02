@@ -4,10 +4,8 @@ import Link from "next/link";
 export const Logo = () => {
   return (
     <div className="hidden sm:block">
-      <Link legacyBehavior href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
-        <a aria-label="ホームへ">
-          <img src="/static/Logo-60.svg" alt="Gen-Scent Research Laboratoryロゴ" width={60} height={60} />
-        </a>
+      <Link href="/" aria-label="Gen-Scent Research Laboratory Ltd. ロゴ">
+        <img src="/static/Logo-60.svg" alt="Gen-Scent Research Laboratory Ltd. ロゴ" width={60} height={60} />
       </Link>
     </div>
   );
@@ -15,10 +13,8 @@ export const Logo = () => {
 export const LogoSmall = () => {
   return (
     <div className="sm:hidden">
-      <Link legacyBehavior href="/" aria-label="Gen-Scent Research Laboratoryロゴ" passHref>
-        <a aria-label="ホームへ">
-          <img src="/static/Logo-40.svg" alt="Gen-Scent Research Laboratoryロゴ" width={40} height={40} />
-        </a>
+      <Link href="/" aria-label="Gen-Scent Research Laboratory Ltd. ロゴ">
+        <img src="/static/Logo-40.svg" alt="Gen-Scent Research Laboratory Ltd. ロゴ" width={40} height={40} />
       </Link>
     </div>
   );
