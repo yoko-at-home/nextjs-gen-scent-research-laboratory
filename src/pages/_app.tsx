@@ -1,4 +1,4 @@
-import "/src/style/index.css";
+import "../style/index.css";
 
 import type { AppProps } from "next/app";
 import { GoogleAnalytics } from "src/component/GoogleAnalytics";
