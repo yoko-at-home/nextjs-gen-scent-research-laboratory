@@ -9,7 +9,7 @@ export const Footer: FC = () => {
   return (
     <footer className="mt-5 bg-stone-50/40">
       <div className="mt-16 flex flex-col items-center">
-        <div className="mx-5 mb-2 flex justify-between space-x-2 text-sm">
+        <div className="mx-5 mb-2 flex justify-between space-x-2 pt-5 text-sm">
           <div>{siteMetadata.author}</div>
           <div className="whitespace-nowrap">{`© ${new Date().getFullYear()}`}</div>
           <div className="whitespace-nowrap font-caribri">All Rights Reserved.</div>
@@ -21,7 +21,7 @@ export const Footer: FC = () => {
         </div>
         <div className="my-8 font-caribri text-xs hover:text-gray-400">
           <Link href="https://over40web.club" target="_blank" rel="noopener noreferrer">
-            Powered by Over 40 Web Club
+            {/* Powered by Over 40 Web Club */}
           </Link>
         </div>
       </div>
