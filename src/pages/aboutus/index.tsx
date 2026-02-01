@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { client } from "src/lib/client";
 
-import { Contents } from "./Contents";
+import { Contents } from "../../component/Contents";
 
 type Props = {
   data: {
