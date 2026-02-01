@@ -10,7 +10,7 @@
     "lint": "next lint",
     "prettier": "prettier --check .",
     "fix": "run-s -l -c fix:lint fix:prettier",
-    "fix:lint": "next lint --fix",
+    "fix:lint": "eslint --fix .",
     "fix:prettier": "prettier --write .",
     "env": "vc env pull .env.local",
     "prepare": "husky install"
