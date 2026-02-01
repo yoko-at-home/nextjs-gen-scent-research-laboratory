@@ -1,13 +1,11 @@
-import Image from "next/image";
-import Link from "next/link";
-// import ImageSoftwareLibrary from "public//static/images/software/topimage.jpg";
-// import ImageSampling from "public/static/images/software/sampling.jpg";
 import type { FC } from "react";
 import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
 import type { ProductProps } from "src/types/pageType";
+
+import { ProductCard } from "../../component/ProductCard";
 
 const productTitles = [
   {
@@ -38,21 +36,7 @@ const Software2: FC<ProductProps> = (props) => {
       {props.software2.map((item) => {
         return (
           <li key={item.id}>
-            <Link href={`/product/software2/${item.id}`} aria-label="Read more">
-              <div
-                className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
-                style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-              >
-                <div className="flex w-full flex-col px-2 pt-2">
-                  <div className="mb-2 font-bold leading-tight">
-                    {!item.title ? null : item.title}
-                    {!item.subtitle ? null : <div>{item.subtitle}</div>}
-                    {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
-                  </div>
-                  <div className="line-clamp-4 text-ellipsis text-sm">{item.description}</div>
-                </div>
-              </div>
-            </Link>
+            <ProductCard item={item} basePath="/product/software2" />
           </li>
         );
       })}
@@ -68,41 +52,7 @@ const Sample: FC<ProductProps> = (props) => {
         {props.sample.map((item) => {
           return (
             <li key={item.id}>
-              <div
-                className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
-                style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-              >
-                {item.charm ? (
-                  <div className="flex">
-                    <div className="flex w-3/4 flex-col p-2">
-                      <Link href={`/product/sample/${item.id}`} className="mb-2 font-bold leading-tight">
-                        {!item.title ? null : item.title}
-                        {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
-                      </Link>
-                      <div className="line-clamp-4 text-ellipsis text-sm">
-                        <Link href={`/product/sample/${item.id}`} aria-label="Read more">
-                          {item.description}
-                        </Link>
-                      </div>
-                    </div>
-                    <Link href={`/product/sample/${item.id}`} className="mb-2 font-bold leading-tight">
-                      <Image src={item.charm.url} alt="product" width="90" height="140" />
-                    </Link>
-                  </div>
-                ) : (
-                  <Link href={`/product/sample/${item.id}`} aria-label="Read more">
-                    <div className="flex w-full flex-col px-2 pt-2">
-                      <div className="mb-2 font-bold leading-tight">
-                        {!item.title ? null : item.title}
-                        {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
-                      </div>
-                      <div className="line-clamp-4 text-ellipsis text-sm">
-                        <div>{item.description}</div>
-                      </div>
-                    </div>
-                  </Link>
-                )}
-              </div>
+              <ProductCard item={item} basePath="/product/sample" />
             </li>
           );
         })}
@@ -128,17 +78,7 @@ const Odor: FC<ProductProps> = (props) => {
         {props.odor.map((item) => {
           return (
             <li key={item.id}>
-              <Link href={`/product/odor-analysis/${item.id}`} aria-label="Read more">
-                <div
-                  className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                >
-                  <div className="flex w-full flex-col px-2 pt-2">
-                    <div className="mb-2 font-bold leading-tight">{item.title}</div>
-                    <div className="line-clamp-4 text-ellipsis text-sm">{item.description}</div>
-                  </div>
-                </div>
-              </Link>
+              <ProductCard item={item} basePath="/product/odor-analysis" />
             </li>
           );
         })}
@@ -155,23 +95,7 @@ const Other: FC<ProductProps> = (props) => {
         {props.other.map((item) => {
           return (
             <li key={item.id}>
-              <Link href={`/product/other-services/${item.id}`} aria-label="Read more">
-                <div
-                  className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
-                  style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                >
-                  <div className="flex w-full flex-col px-2 pt-2">
-                    <div className="mb-2 font-bold leading-tight">{item.title}</div>
-                    <div className="line-clamp-4 text-ellipsis text-sm">
-                      <div>
-                        {item.description}
-                        <br />
-                        {item.note}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+              <ProductCard item={item} basePath="/product/other-services" />
             </li>
           );
         })}
@@ -206,23 +130,7 @@ const Product: FC<ProductProps> = (props) => {
           {props.software.map((item) => {
             return (
               <li key={item.id}>
-                <Link href={`/product/software/${item.id}`} aria-label="Read more">
-                  <div
-                    className="flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
-                    style={{ background: `center/cover no-repeat url(${item.image.url})` }}
-                  >
-                    <div className="flex w-full flex-col px-2 pt-2">
-                      <div className="mb-2 font-bold leading-tight">
-                        {!item.title ? null : item.title}
-                        {!item.subtitle ? null : <div>{item.subtitle}</div>}
-                        {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
-                      </div>
-                      <div className="line-clamp-4 text-ellipsis text-sm">
-                        <div>{item.description}</div>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+                <ProductCard item={item} basePath="/product/software" />
               </li>
             );
           })}
