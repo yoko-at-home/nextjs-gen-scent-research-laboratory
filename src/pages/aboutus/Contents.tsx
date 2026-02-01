@@ -151,7 +151,7 @@ export const Contents = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="animation container pt-10 text-left text-sm font-thin text-gray-300 sm:text-base lg:text-lg">
+        <div className="animation container pt-10 text-left text-sm font-thin text-gray-300 ">
           写真は明治38年に国内に渡来した月桂樹で、日比谷公園、青山霊園などに植樹されたうちの一株です。
         </div>
       </div>
