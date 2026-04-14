@@ -22,17 +22,17 @@ export const ProductCard: FC<Props> = ({ basePath, item }) => {
     <Link href={`${basePath}/${item.id}`} aria-label="Read more">
       <div
         className="relative flex h-36 rounded p-1 hover:scale-[0.99] hover:opacity-90 sm:p-3"
-        style={{ background: `center/cover no-repeat url(${item.image.url})`, opacity: 0.7 }}
+        style={{ background: `center/cover no-repeat url(${item.image.url})` }}
       >
         {/* オーバーレイ用の div を追加 */}
-        <div className="absolute inset-0 rounded bg-black/20" /> {/* 透過性の背景色を設定 */}
+        <div className="absolute inset-0 rounded bg-primary/40" /> {/* 透過性の背景色を設定 */}
         <div className="relative z-10 flex w-full flex-col px-2 pt-2">
-          <div className="mb-2 font-bold leading-tight">
+          <div className="mb-2 font-bold leading-tight text-white">
             {!item.title ? null : item.title}
             {!item.subtitle ? null : <div>{item.subtitle}</div>}
             {!item.product_title ? <div className="mt-1" /> : <div>{item.product_title}</div>}
           </div>
-          <div className="line-clamp-4 text-ellipsis text-sm">
+          <div className="line-clamp-4 text-ellipsis text-sm text-white">
             {item.description}
             {item.note && (
               <>
