@@ -1,6 +1,7 @@
 import { createClient } from "microcms-js-sdk";
+import { env } from "src/lib/env";
 
 export const client = createClient({
   serviceDomain: "genscent",
-  apiKey: process.env.NEXT_PUBLIC_API_KEY || "",
+  apiKey: env.require("API_KEY"),
 });

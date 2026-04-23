@@ -7,6 +7,7 @@ import { PageSubTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FixedLayout } from "src/layout";
+import { env } from "src/lib/env";
 
 const NewsId = (props) => {
   // if (!props.data) {
@@ -48,10 +49,10 @@ export default NewsId;
 export const getStaticPaths = async () => {
   try {
     const key = {
-      headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
+      headers: { "X-MICROCMS-API-KEY": env.require("API_KEY") },
     };
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}news`, key);
+    const res = await fetch(`${env.require("NEXT_PUBLIC_API_URL")}news`, key);
 
     if (!res.ok) {
       throw new Error(`Failed to fetch: ${res.status}`);
@@ -84,11 +85,11 @@ export const getStaticProps = async ({ params, preview = false, previewData }) =
 
     const draftKey = previewData?.draftKey;
     const key = {
-      headers: { "X-MICROCMS-API-KEY": process.env.API_KEY },
+      headers: { "X-MICROCMS-API-KEY": env.require("API_KEY") },
     };
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}news/${id}${draftKey !== undefined ? `?draftKey=${draftKey}` : ""}`,
+      `${env.require("NEXT_PUBLIC_API_URL")}news/${id}${draftKey !== undefined ? `?draftKey=${draftKey}` : ""}`,
       key,
     );
 

@@ -1,18 +1,19 @@
 import fetch from "node-fetch";
+import { env } from "src/lib/env";
 
 export default async function preview(req, res) {
   if (!req.query.slug) {
     return res.status(404).end();
   }
   const content = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}news/${req.query.slug}?fields=id&draftKey=${req.query.draftKey}`,
-    { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" } },
+    `${env.require("NEXT_PUBLIC_API_URL")}news/${req.query.slug}?fields=id&draftKey=${req.query.draftKey}`,
+    { headers: { "X-MICROCMS-API-KEY": env.require("API_KEY") } },
   )
     .then((res) => {
       return res.json();
     })
-    .catch((error) => {
-      return alert(error);
+    .catch(() => {
+      return null;
     });
 
   if (!content) {

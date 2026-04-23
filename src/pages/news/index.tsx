@@ -7,6 +7,7 @@ import { PageTitle } from "src/component/PageTitle";
 import { PageSEO } from "src/component/SEO";
 import { siteMetadata } from "src/data/siteMetaData";
 import { FluidLayout } from "src/layout";
+import { env } from "src/lib/env";
 
 type Props = {
   data: {
@@ -69,15 +70,15 @@ export const getStaticProps: GetStaticProps<Props, never, { id: string; draftKey
   revalidate?: number | boolean;
 }> => {
   const key = {
-    headers: { "X-MICROCMS-API-KEY": process.env.API_KEY || "" },
+    headers: { "X-MICROCMS-API-KEY": env.require("API_KEY") },
   };
 
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}news/?limit=6`, key);
+  const res = await axios.get(`${env.require("NEXT_PUBLIC_API_URL")}news/?limit=6`, key);
   const data = await res.data;
 
   // プレビュー時は draft のコンテンツを追加
   if (preview) {
-    const draftUrl = `${process.env.NEXT_PUBLIC_API_URL}news/${previewData?.id}?draftKey=${previewData?.draftKey}`;
+    const draftUrl = `${env.require("NEXT_PUBLIC_API_URL")}news/${previewData?.id}?draftKey=${previewData?.draftKey}`;
     const draftRes = await axios.get(draftUrl, key);
     data.unshift(await draftRes.data);
   }

@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { env } from "src/lib/env";
 
 interface EmailRequest {
   to: string;
@@ -17,6 +16,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
+    const resend = new Resend(env.require("RESEND_API_KEY"));
     const { from, replyTo, subject, text, to }: EmailRequest = req.body;
 
     // デバッグログ
