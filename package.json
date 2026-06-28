@@ -13,6 +13,7 @@
     "fix:lint": "eslint --fix .",
     "fix:prettier": "prettier --write .",
     "env": "vc env pull .env.local",
+    "resend:403-logs": "node --env-file=.env.local scripts/fetch-resend-403-logs.mjs",
     "prepare": "husky install"
   },
   "postcss": {
