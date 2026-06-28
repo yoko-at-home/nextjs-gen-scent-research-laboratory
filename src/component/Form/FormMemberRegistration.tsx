@@ -2,8 +2,14 @@
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import type { InputHTMLAttributes } from "react";
-import { memo, useCallback, useMemo, useState } from "react";
-import { siteMetadata } from "src/data/siteMetaData";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { TurnstileWidget, type TurnstileWidgetHandle } from "src/component/Form/TurnstileWidget";
+
+const turnstileEnabled = Boolean(
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+    process.env.NEXT_PUBLIC_TURNSTILE_USE_TEST_KEY === "true" ||
+    process.env.NODE_ENV === "development",
+);
 
 const FormMemberRegistrationComponent: NextPage = () => {
   const router = useRouter();
@@ -12,6 +18,13 @@ const FormMemberRegistrationComponent: NextPage = () => {
   const [researcher, setResearcher] = useState("");
   const [otherOccupation, setOtherOccupation] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [formLoadedAt, setFormLoadedAt] = useState<number>(0);
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<TurnstileWidgetHandle>(null);
+
+  useEffect(() => {
+    setFormLoadedAt(Date.now());
+  }, []);
 
   const enableOtherOccupation = useMemo(() => {
     return isCheckboxResearcherState === 2;
@@ -41,6 +54,16 @@ const FormMemberRegistrationComponent: NextPage = () => {
       return newErrors;
     });
   }, []);
+
+  const handleTurnstileVerify = useCallback(
+    (token: string) => {
+      setTurnstileToken(token);
+      if (token) {
+        clearError("turnstile");
+      }
+    },
+    [clearError],
+  );
 
   const handleOnChange = useCallback(() => {
     setIsCheckboxState((prevCheck) => {
@@ -90,50 +113,42 @@ const FormMemberRegistrationComponent: NextPage = () => {
         return;
       }
 
+      if (turnstileEnabled && !turnstileToken) {
+        setErrors((prev) => {
+          return {
+            ...prev,
+            turnstile: "送信前の認証が完了していません。しばらく待ってから再度お試しください。",
+          };
+        });
+        return;
+      }
+
       const newsletter = isCheckboxState === true ? "不要" : "要";
 
       try {
-        const emailData = {
-          subject: "登録を承りました。",
-          to:
-            process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
-            (process.env.NODE_ENV === "development" ? "yoko_iwasakijp@yahoo.co.jp" : siteMetadata.email),
-          from: `Gen-Scent Research Laboratory Ltd. <${process.env.NEXT_PUBLIC_RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`,
-          text: `以下の内容でご登録を承りました。後ほど、ご登録完了のお知らせをメールでお送りいたします。
-完了まで１⽇程度お時間がかかる場合がございますのでご了承ください。
-
-${formData.get("surname")} ${formData.get("givenname")} 様
-
-ご所属先
-会社/機関/⼤学： ${formData.get("labo")}
-部署/研究：${formData.get("department")}
-
-ご職業: ${isCheckboxResearcherState === 2 && otherOccupation ? `その他（${otherOccupation}）` : researcher}
-
-ご住所
-〒 ${formData.get("zipcode")}
-${formData.get("address1")}${formData.get("address2")}${formData.get("address3")}
-
-📞 ${formData.get("phone1")} 内線: ${formData.get("phone2")}
-
-✉️ ${formData.get("email")}
-
-ご専⾨分野: ${formData.get("speciality")}
-
-資料ご請求製品名: ${formData.get("reference")}
-
-お問い合わせ内容:
-${formData.get("message")}
-
-
-ニュースレター配信: ${newsletter}`,
-          replyTo: formData.get("email") as string, // 返信先としてユーザーのメールアドレスを設定
-        };
-
-        // console.log("Sending email with data:", emailData);
-
-        const res = await fetch("/api/send", {
-          body: JSON.stringify(emailData),
+        const res = await fetch("/api/contact", {
+          body: JSON.stringify({
+            surname: formData.get("surname"),
+            givenname: formData.get("givenname"),
+            labo: formData.get("labo"),
+            department: formData.get("department"),
+            researcher: formData.get("researcher"),
+            other_occupation: formData.get("other_occupation"),
+            zipcode: formData.get("zipcode"),
+            address1: formData.get("address1"),
+            address2: formData.get("address2"),
+            address3: formData.get("address3"),
+            phone1: formData.get("phone1"),
+            phone2: formData.get("phone2"),
+            email: formData.get("email"),
+            speciality: formData.get("speciality"),
+            reference: formData.get("reference"),
+            message: formData.get("message"),
+            newsletter,
+            website: formData.get("website"),
+            _ts: formLoadedAt,
+            turnstileToken,
+          }),
           headers: {
             "Content-Type": "application/json",
           },
@@ -144,7 +159,8 @@ ${formData.get("message")}
         // console.log("API Response:", result);
 
         if (!res.ok) {
-          // console.error("API Error:", result);
+          turnstileRef.current?.reset();
+          setTurnstileToken("");
           router.push({
             pathname: "/success",
             query: { error: result.error || "送信に失敗しました" },
@@ -181,19 +197,38 @@ ${formData.get("message")}
           },
         });
       } catch (error) {
+        turnstileRef.current?.reset();
+        setTurnstileToken("");
         router.push({
           pathname: "/success",
           query: { error: "送信に失敗しました" },
         });
       }
     },
-    [isCheckboxResearcherState, otherOccupation, isCheckboxState, researcher, router, validateForm],
+    [
+      formLoadedAt,
+      isCheckboxResearcherState,
+      otherOccupation,
+      isCheckboxState,
+      researcher,
+      router,
+      turnstileToken,
+      validateForm,
+    ],
   );
 
   return (
     <div className="container mt-10 font-semibold sm:mt-0 sm:p-6 lg:px-20">
       <div className="mt-5 whitespace-nowrap md:mt-0">
-        <form onSubmit={handleRegisterUser}>
+        <form className="relative" onSubmit={handleRegisterUser}>
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-[9999px] size-0 opacity-0"
+          />
           <div className="mb-3 flex flex-col justify-between sm:flex-row sm:items-center">
             <div className="mb-3 mr-3">お名前*</div>
             <label htmlFor="surname" className="mr-3 whitespace-nowrap">
@@ -473,6 +508,8 @@ ${formData.get("message")}
               </label>
             </div>
           </div>
+          {errors.turnstile && <div className="mb-3 text-sm text-red-600">{errors.turnstile}</div>}
+          <TurnstileWidget ref={turnstileRef} onVerify={handleTurnstileVerify} />
           <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
             <button
               type="submit"

@@ -5,6 +5,8 @@ type EnvKey =
   | "NEXT_PUBLIC_CONTACT_EMAIL"
   | "NEXT_PUBLIC_RESEND_FROM_EMAIL"
   | "NEXT_PUBLIC_GOOGLE_ANALYTICS_ID"
+  | "NEXT_PUBLIC_TURNSTILE_SITE_KEY"
+  | "TURNSTILE_SECRET_KEY"
   | "SITE_URL";
 
 const getRaw = (name: EnvKey): string | undefined => {
