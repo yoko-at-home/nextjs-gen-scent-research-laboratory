@@ -1,4 +1,5 @@
 import { siteMetadata } from "src/data/siteMetaData";
+import { env } from "src/lib/env";
 
 import type { ContactFormPayload } from "./spamFilter";
 
@@ -11,13 +12,13 @@ const resolveOccupation = (payload: ContactFormPayload): string => {
 
 export const resolveContactRecipient = (): string => {
   return (
-    process.env.NEXT_PUBLIC_CONTACT_EMAIL ||
+    env.get("CONTACT_EMAIL") ||
     (process.env.NODE_ENV === "development" ? "yoko_iwasakijp@yahoo.co.jp" : siteMetadata.email)
   );
 };
 
 export const resolveFromAddress = (): string => {
-  const fromEmail = process.env.NEXT_PUBLIC_RESEND_FROM_EMAIL || "onboarding@resend.dev";
+  const fromEmail = env.get("RESEND_FROM_EMAIL") || "onboarding@resend.dev";
   return `Gen-Scent Research Laboratory Ltd. <${fromEmail}>`;
 };
 
