@@ -9,7 +9,12 @@ const nextConfig = {
   compress: true,
   generateEtags: false,
   images: {
-    domains: ["images.microcms-assets.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.microcms-assets.io",
+      },
+    ],
     formats: ["image/webp", "image/avif"],
   },
   compiler: {
